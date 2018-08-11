@@ -1,0 +1,24 @@
+---
+id: 243
+title: Using hibernate default schema as a variable
+date: 2016-09-05T01:53:44+00:00
+author: mrbusche
+layout: post
+guid: http://matthewbusche.com/blog2/?p=243
+permalink: /2016/09/05/using-hibernate-default-schema-as-a-variable/
+categories:
+  - java
+tags:
+  - hibernate
+  - java
+  - native sql query
+---
+Given you have set up a default_schema in your hibernate configuration
+
+    <hibernate-configuration> 
+    &nbsp;&nbsp; <session-factory>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<property name="hibernate.default_schema">mySchema</property>
+    &nbsp;&nbsp; </session-factory>
+    </hibernate-configuration>
+
+Rather than writing a native SQL query like `SELECT x FROM mySchema.tableName` you can write your query as `SELECT x FROM {h-schema}tableName` rather than trying to do a find/replace when your schema name inevitably changes. Note that the . after the schema name is not only not required it will not work if it is added.

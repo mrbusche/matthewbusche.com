@@ -1,0 +1,56 @@
+---
+id: 71
+title: Converting roman numerals to numbers using Groovy/Grails
+date: 2015-01-18T03:43:36+00:00
+author: mrbusche
+layout: post
+guid: http://matthewbusche.com/blog2/?p=71
+permalink: /2015/01/18/converting-roman-numerals-to-numbers-using-groovygrails/
+categories:
+  - groovy
+---
+I wrote up a [post](http://matthewbusche.com/blog/index.cfm/2015/1/10/Converting-roman-numerals-to-numbers-using-ColdFusion) last week about my experience converting roman numerals to numbers using ColdFusion and I promised a follow up doing the same thing in Grails.
+
+I did learn an interesting tidbit about Grails, the maximum numbers of tests you can have in a where clause is 999. Not a big deal as this is a somewhat contrived example, but something to note nonetheless. Without further ado here is my code, once again this assumes you have entered a valid roman numeral and I&#8217;ve tested the accuracy up to 2000.
+
+    class RomanService {
+    &nbsp;&nbsp;Integer romanToDecimal(String romanNumber) {
+    &nbsp;&nbsp;&nbsp;&nbsp;Integer newNumber = 0, previousNumber = 0
+    &nbsp;&nbsp;&nbsp;&nbsp;Map romanToNumberMapping = [M:1000, D:500, C:100, L:50, X:10, V:5, I:1]
+    &nbsp;&nbsp;&nbsp;&nbsp;for (Integer oneChar = romanNumber.length() - 1; oneChar >= 0; oneChar--) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String oneLetter = romanNumber.charAt(oneChar)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newNumber = processNumber(romanToNumberMapping[oneLetter], previousNumber, newNumber)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;previousNumber = romanToNumberMapping[oneLetter]
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    &nbsp;&nbsp;&nbsp;&nbsp;return newNumber 
+    &nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;Integer processNumber(Integer currentNumber, Integer previousNumber, Integer newNumber) {
+    &nbsp;&nbsp;&nbsp;&nbsp;return previousNumber > currentNumber ? newNumber - currentNumber : newNumber + currentNumber
+    &nbsp;&nbsp;}
+    }
+    
+
+On the whole it&#8217;s really not much different than the ColdFusion version, semicolons are optional in most places (pretty much anything that&#8217;s not a for loop) and you can strongly type the return values, although that&#8217;s definitely not a requirement. I wrote the example above exactly how I&#8217;d write it for a project, but also wanted to point out some of what I&#8217;m doing isn&#8217;t really required.
+
+One interesting thing about Groovy and not one I&#8217;m terribly fond of is if you don&#8217;t have a return statement the last piece of code executed is returned, so newNumber doesn&#8217;t need a return statement in the romanToDecimal function and in processNumber the only line is returned. I&#8217;ve left the return statements off in the code below, but it&#8217;s not something I&#8217;d normally do, it saves .1 seconds of typing to not type it and can make the code confusing in my opinion. I also left off the types of variables, but my opinion is the same as not typing out return, it doesn&#8217;t save much time to not declare the type and it can cause some unnecesary confusion especially when it&#8217;s left off in the arguments.
+
+    class RomanService {
+    &nbsp;&nbsp;def romanToDecimal(romanNumber) {
+    &nbsp;&nbsp;&nbsp;&nbsp;def newNumber = 0, previousNumber = 0
+    &nbsp;&nbsp;&nbsp;&nbsp;def romanToNumberMapping = [M:1000, D:500, C:100, L:50, X:10, V:5, I:1]
+    &nbsp;&nbsp;&nbsp;&nbsp;for (def oneChar = romanNumber.length() - 1; oneChar >= 0; oneChar--) {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def oneLetter = romanNumber.charAt(oneChar)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newNumber = processNumber(romanToNumberMapping[oneLetter], previousNumber, newNumber)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;previousNumber = romanToNumberMapping[oneLetter]
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    &nbsp;&nbsp;&nbsp;&nbsp;newNumber
+    &nbsp;&nbsp;}
+    
+    &nbsp;&nbsp;def processNumber(currentNumber, previousNumber, newNumber) {
+    &nbsp;&nbsp;&nbsp;&nbsp;previousNumber > currentNumber ? newNumber - currentNumber : newNumber + currentNumber
+    &nbsp;&nbsp;}
+    }
+    
+
+I&#8217;ve attached my test case as an external file given the size
