@@ -1,6 +1,6 @@
 ---
 id: 41
-title: 'cf.Objective 2014 &#8211; Getting Started with Responsive Web Design'
+title: 'cf.Objective() 2014 - Getting Started with Responsive Web Design'
 date: 2014-02-18T03:26:07+00:00
 author: mrbusche
 layout: post

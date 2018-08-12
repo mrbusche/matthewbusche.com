@@ -1,6 +1,6 @@
 ---
 id: 403
-title: 'Jeff Hawkins &#8211; On Intelligence Notes'
+title: 'Jeff Hawkins - On Intelligence Notes'
 date: 2018-05-24T01:44:42+00:00
 author: mrbusche
 layout: post

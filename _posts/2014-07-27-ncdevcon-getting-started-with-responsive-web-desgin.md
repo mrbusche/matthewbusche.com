@@ -1,6 +1,6 @@
 ---
 id: 46
-title: 'NCDevCon &#8211; Getting Started with Responsive Web Design'
+title: 'NCDevCon - Getting Started with Responsive Web Design'
 date: 2014-07-27T03:30:34+00:00
 author: mrbusche
 layout: post

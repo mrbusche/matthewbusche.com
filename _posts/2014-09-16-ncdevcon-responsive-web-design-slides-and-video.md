@@ -1,6 +1,6 @@
 ---
 id: 51
-title: 'NCDevCon &#8211; Responsive Web Design slides and video'
+title: 'NCDevCon - Responsive Web Design slides and video'
 date: 2014-09-16T03:33:54+00:00
 author: mrbusche
 layout: post

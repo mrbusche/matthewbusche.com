@@ -1,6 +1,6 @@
 ---
 id: 183
-title: 'I&#8217;m speaking at Iowa Code Camp Fall 2015'
+title: 'I''m speaking at Iowa Code Camp Fall 2015'
 date: 2015-11-25T03:36:15+00:00
 author: mrbusche
 layout: post

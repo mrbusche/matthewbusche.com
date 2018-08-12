@@ -1,6 +1,6 @@
 ---
 id: 190
-title: 'Iowa Code Camp Fall 2015 &#8211; Responsible Responsive Web Design Slides'
+title: 'Iowa Code Camp Fall 2015 - Responsible Responsive Web Design Slides'
 date: 2015-12-21T03:06:47+00:00
 author: mrbusche
 layout: post

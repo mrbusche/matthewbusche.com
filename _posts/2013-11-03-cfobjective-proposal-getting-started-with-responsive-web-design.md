@@ -1,6 +1,6 @@
 ---
 id: 31
-title: 'cf.Objective() Proposal &#8211; Getting started with Responsive Web Design'
+title: 'cf.Objective() Proposal - Getting started with Responsive Web Design'
 date: 2013-11-03T09:34:15+00:00
 author: mrbusche
 layout: post
@@ -24,15 +24,15 @@ Objective: Introduce responsive web design and why it&#8217;s important
 Why I&#8217;m Qualified: Part of a team that created a mobile website for a large insurance company.
 
 What the audience will learn:
-  
+
 What is responsive Web Design
-  
+
 When is responsive Web Design appropriate
-  
+
 Pro/Cons of using a framework
-  
+
 Fixed vs Fluid layout
-  
+
 Concept of columns and grids
 
 Anything else you&#8217;d like to learn? Feel free to comment here and/or on the Trello board and if my talk is selected I&#8217;ll try to work a few suggestions in as well.
