@@ -6,7 +6,6 @@ redirect_from:
 date: 2017-02-26T16:46:17+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=268
 permalink: /2017/02/26/coldfusion-and-apache-poi-modifying-an-existing-file/
 categories:
   - ColdFusion

@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-11-18T22:22:17+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=179
 permalink: /2015/11/18/openingediting-sharepoint-documents-in-chrome/
 categories:
   - chrome

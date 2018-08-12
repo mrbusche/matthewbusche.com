@@ -6,7 +6,6 @@ redirect_from:
 date: 2014-10-20T03:34:47+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=53
 permalink: /2014/10/20/adding-a-default-commit-message-to-tortoisesvn/
 categories:
   - version control

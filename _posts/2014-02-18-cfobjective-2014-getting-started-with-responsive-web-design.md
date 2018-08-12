@@ -6,7 +6,6 @@ redirect_from:
 date: 2014-02-18T03:26:07+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=41
 permalink: /2014/02/18/cfobjective-2014-getting-started-with-responsive-web-design/
 categories:
   - cf.Objective

@@ -6,7 +6,6 @@ redirect_from:
 date: 2016-09-05T01:53:44+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=243
 permalink: /2016/09/05/using-hibernate-default-schema-as-a-variable/
 categories:
   - java

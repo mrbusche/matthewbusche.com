@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-06-21T19:25:21+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=117
 permalink: /2015/06/21/enabling-offline-mode-in-google-chrome/
 categories:
   - chrome

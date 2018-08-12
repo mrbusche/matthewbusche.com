@@ -6,7 +6,6 @@ redirect_from:
 date: 2016-08-06T01:10:28+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=239
 permalink: /2016/08/06/using-csrf-with-spring-security-and-ajax-calls/
 categories:
   - java

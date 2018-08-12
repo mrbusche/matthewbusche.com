@@ -6,7 +6,6 @@ redirectform:
 date: 2013-11-03T09:34:15+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=31
 permalink: /2013/11/03/cfobjective-proposal-getting-started-with-responsive-web-design/
 categories:
   - cf.Objective

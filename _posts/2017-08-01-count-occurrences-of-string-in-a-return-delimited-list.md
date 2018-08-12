@@ -6,7 +6,6 @@ redirect_from:
 date: 2017-08-01T22:19:16+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=310
 permalink: /2017/08/01/count-occurrences-of-string-in-a-return-delimited-list/
 categories:
   - JavaScript

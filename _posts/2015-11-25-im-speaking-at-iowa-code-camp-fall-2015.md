@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-11-25T03:36:15+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=183
 permalink: /2015/11/25/im-speaking-at-iowa-code-camp-fall-2015/
 categories:
   - conferences

@@ -6,7 +6,6 @@ redirect_from:
 date: 2014-09-16T03:33:54+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=51
 permalink: /2014/09/16/ncdevcon-responsive-web-design-slides-and-video/
 categories:
   - NCDevCon

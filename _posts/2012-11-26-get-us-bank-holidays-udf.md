@@ -6,7 +6,6 @@ redirect_form:
 date: 2012-11-26T23:55:09+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=12
 permalink: /2012/11/26/get-us-bank-holidays-udf/
 categories:
   - ColdFusion

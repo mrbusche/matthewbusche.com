@@ -6,7 +6,6 @@ redirect_from:
 date: 2016-05-20T02:25:12+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=213
 permalink: /2016/05/20/moving-a-file-from-a-local-computer-to-a-server-through-a-jump-server/
 categories:
   - linux

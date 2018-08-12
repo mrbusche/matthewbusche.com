@@ -6,7 +6,6 @@ redirect_from:
 date: 2018-05-15T02:22:51+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=398
 permalink: /2018/05/15/eric-ries-the-lean-startup-notes/
 categories:
   - book review

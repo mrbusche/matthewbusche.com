@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-05-24T02:12:16+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=106
 permalink: /2015/05/24/aligning-monitors-vertically-in-windows/
 categories:
   - computer management

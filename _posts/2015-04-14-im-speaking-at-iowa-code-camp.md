@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-04-14T03:49:53+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=82
 permalink: /2015/04/14/im-speaking-at-iowa-code-camp/
 categories:
   - conferences

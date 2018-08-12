@@ -6,7 +6,6 @@ redirect_from:
 date: 2014-07-27T03:30:34+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=46
 permalink: /2014/07/27/ncdevcon-getting-started-with-responsive-web-desgin/
 categories:
   - NCDevCon

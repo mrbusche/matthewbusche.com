@@ -6,7 +6,6 @@ redirect_from:
 date: 2014-12-21T03:39:45+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=62
 permalink: /2014/12/21/run-groovy-scripts-in-sublime-text/
 categories:
   - groovy

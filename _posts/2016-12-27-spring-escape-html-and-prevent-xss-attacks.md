@@ -6,7 +6,6 @@ redirect_from:
 date: 2016-12-27T21:30:43+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=261
 permalink: /2016/12/27/spring-escape-html-and-prevent-xss-attacks/
 categories:
   - java

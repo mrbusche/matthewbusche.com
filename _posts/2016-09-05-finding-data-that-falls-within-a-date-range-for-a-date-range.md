@@ -6,7 +6,6 @@ redirect_from:
 date: 2016-09-05T14:12:29+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=250
 permalink: /2016/09/05/finding-data-that-falls-within-a-date-range-for-a-date-range/
 categories:
   - SQL Server

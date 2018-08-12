@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-05-27T02:30:33+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=110
 permalink: /2015/05/27/hard-refreshing-in-google-chrome/
 categories:
   - chrome

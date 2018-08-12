@@ -6,7 +6,6 @@ redirect_from:
 date: 2018-05-15T01:59:35+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=394
 permalink: /2018/05/15/adding-java-properties-to-websphere-liberty/
 categories:
   - java

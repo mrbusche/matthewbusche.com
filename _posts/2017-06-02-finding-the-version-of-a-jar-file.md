@@ -6,7 +6,6 @@ redirect_from:
 date: 2017-06-02T02:26:36+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=291
 permalink: /2017/06/02/finding-the-version-of-a-jar-file/
 categories:
   - java

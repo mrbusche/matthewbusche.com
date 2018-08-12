@@ -4,7 +4,6 @@ title: Projects
 date: 2015-05-16T03:56:03+00:00
 author: mrbusche
 layout: page
-guid: http://matthewbusche.com/blog2/?page_id=90
 ---
 <a href="http://isitelectionday.com/" target="_blank" rel="noopener">Is it Election Day?</a> &#8211; [Github](https://github.com/mrbusche/isItElectionDay)
 

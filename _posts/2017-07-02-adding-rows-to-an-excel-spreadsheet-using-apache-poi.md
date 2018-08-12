@@ -6,7 +6,6 @@ redirect_from:
 date: 2017-07-02T02:35:19+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=301
 permalink: /2017/07/02/adding-rows-to-an-excel-spreadsheet-using-apache-poi/
 categories:
   - ColdFusion

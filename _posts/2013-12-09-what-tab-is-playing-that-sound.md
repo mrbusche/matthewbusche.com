@@ -6,7 +6,6 @@ redirect_from:
 date: 2013-12-09T02:59:56+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=33
 permalink: /2013/12/09/what-tab-is-playing-that-sound/
 categories:
   - computer management

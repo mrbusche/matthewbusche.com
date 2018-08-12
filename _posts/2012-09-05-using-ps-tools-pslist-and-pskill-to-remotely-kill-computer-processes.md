@@ -6,7 +6,6 @@ redirect_from:
 date: 2012-09-05T02:57:39+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=4
 permalink: /2012/09/05/using-ps-tools-pslist-and-pskill-to-remotely-kill-computer-processes/
 categories:
   - computer management

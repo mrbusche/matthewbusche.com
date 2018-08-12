@@ -6,7 +6,6 @@ redirect_from:
 date: 2017-05-27T02:31:29+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=285
 permalink: /2017/05/27/filtering-amazon-wishlist-items-with-price-drops/
 categories:
   - JavaScript

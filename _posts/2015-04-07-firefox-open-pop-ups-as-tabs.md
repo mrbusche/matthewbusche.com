@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-04-07T03:47:16+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=77
 permalink: /2015/04/07/firefox-open-pop-ups-as-tabs/
 categories:
   - firefox

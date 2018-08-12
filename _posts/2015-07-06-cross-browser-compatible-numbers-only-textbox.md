@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-07-06T01:28:29+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=123
 permalink: /2015/07/06/cross-browser-compatible-numbers-only-textbox/
 categories:
   - jQuery

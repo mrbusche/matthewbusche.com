@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-01-07T03:41:59+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=66
 permalink: /2015/01/07/enabling-multiple-cursors-based-on-a-selection-in-sublime-text/
 categories:
   - sublime text

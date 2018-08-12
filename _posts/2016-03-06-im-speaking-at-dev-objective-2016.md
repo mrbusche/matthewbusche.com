@@ -6,7 +6,6 @@ redirect_from:
 date: 2016-03-06T20:17:56+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=202
 permalink: /2016/03/06/im-speaking-at-dev-objective-2016/
 categories:
   - dev.objective

@@ -6,7 +6,6 @@ redirect_from:
 date: 2018-01-11T02:59:41+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=368
 permalink: /2018/01/11/what-ldap-groups-am-i-in/
 categories:
   - Uncategorized

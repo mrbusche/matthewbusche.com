@@ -6,7 +6,6 @@ redirect_from:
 date: 2018-05-20T03:08:20+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=400
 permalink: /2018/05/20/leading-the-transformation-applying-agile-and-devops-principles-at-scale-notes/
 categories:
   - book review

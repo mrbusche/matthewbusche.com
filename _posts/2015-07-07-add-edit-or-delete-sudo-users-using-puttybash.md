@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-07-07T02:00:47+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=145
 permalink: /2015/07/07/add-edit-or-delete-sudo-users-using-puttybash/
 categories:
   - linux

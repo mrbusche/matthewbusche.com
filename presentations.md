@@ -4,7 +4,6 @@ title: Presentations
 date: 2015-05-16T03:54:31+00:00
 author: mrbusche
 layout: page
-guid: http://matthewbusche.com/blog2/?page_id=88
 ---
 ### 2018
 

@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-04-13T03:48:47+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=80
 permalink: /2015/04/13/checking-an-html-page-for-duplicate-ids-using-javascript/
 categories:
   - JavaScript

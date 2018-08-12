@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-07-15T02:33:14+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=161
 permalink: /2015/07/15/creating-a-bookmarklet-to-log-a-user-in/
 categories:
   - Uncategorized

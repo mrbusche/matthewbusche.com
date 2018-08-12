@@ -6,7 +6,6 @@ redirect_from:
 date: 2016-06-08T14:07:03+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=225
 permalink: /2016/06/08/hibernate-returning-bigdecimal-instead-of-long/
 categories:
   - java

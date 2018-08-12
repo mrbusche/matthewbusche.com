@@ -6,7 +6,6 @@ redirect_from:
 date: 2014-08-03T03:32:43+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=48
 permalink: /2014/08/03/batch-inserting-records-to-a-database/
 categories:
   - ColdFusion

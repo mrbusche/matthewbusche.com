@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-01-18T03:43:36+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=71
 permalink: /2015/01/18/converting-roman-numerals-to-numbers-using-groovygrails/
 categories:
   - groovy

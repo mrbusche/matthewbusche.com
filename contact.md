@@ -4,7 +4,6 @@ title: Contact
 date: 2015-05-16T04:04:10+00:00
 author: mrbusche
 layout: page
-guid: http://matthewbusche.com/blog2/?page_id=96
 ---
 Twitter &#8211; <a href="http://twitter.com/mrbusche" target="_blank">twitter.com/mrbusche</a>
 

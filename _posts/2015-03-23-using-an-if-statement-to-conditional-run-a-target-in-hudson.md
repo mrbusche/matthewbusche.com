@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-03-23T03:44:31+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=73
 permalink: /2015/03/23/using-an-if-statement-to-conditional-run-a-target-in-hudson/
 categories:
   - hudson

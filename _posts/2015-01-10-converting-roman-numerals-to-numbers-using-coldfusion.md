@@ -6,7 +6,6 @@ redirect_from:
 date: 2015-01-10T03:42:38+00:00
 author: mrbusche
 layout: post
-guid: http://matthewbusche.com/blog2/?p=68
 permalink: /2015/01/10/converting-roman-numerals-to-numbers-using-coldfusion/
 categories:
   - ColdFusion
