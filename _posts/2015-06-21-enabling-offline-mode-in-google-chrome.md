@@ -17,9 +17,9 @@ In April and May I was traveling every other week for work and to keep myself oc
 Simply type `chrome://flags` into your address bar and find the Enable Show Saved Copy Button setting.
 
 > **Enable Show Saved Copy Button** Mac, Windows, Linux, Chrome OS, Android setting.
-  
+
 > When a page fails to load, if a stale copy of the page exists in the browser cache, a button will be presented to allow the user to load that stale copy. The primary enabling choice puts the button in the most salient position on the error page; the secondary enabling choice puts it secondary to the reload button. #show-saved-copy
 
-You can enable this setting as a primary or secondary button. Primary will enable this setting as the most noticeable option when you&#8217;re offline and secondary will make itÂ the secondary option to reloading the page.
+You can enable this setting as a primary or secondary button. Primary will enable this setting as the most noticeable option when you&#8217;re offline and secondary will make it the secondary option to reloading the page.
 
-Before I found this setting I stumbled upon [Pocket](https://getpocket.com/)Â which is a much better optionÂ for saving articles overall, but won&#8217;t help you recall a webpage you visited earlier. The other downside to pocket is it&#8217;s much easier to forget about than an open tab and you&#8217;ll probably let articles sit in their forever before you read them.
+Before I found this setting I stumbled upon [Pocket](https://getpocket.com/) which is a much better option for saving articles overall, but won&#8217;t help you recall a webpage you visited earlier. The other downside to pocket is it&#8217;s much easier to forget about than an open tab and you&#8217;ll probably let articles sit in their forever before you read them.

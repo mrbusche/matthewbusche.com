@@ -29,10 +29,10 @@ To add a user in WebSphere
   6. Click OK
   7. Click Save
 
-Step 7 is super important because it requires an additional save than most programs do and I find myself forgetting to do the second confirmation too often.Â After you&#8217;ve added the appropriate permissions redeploy your ear and you should be all set.
+Step 7 is super important because it requires an additional save than most programs do and I find myself forgetting to do the second confirmation too often. After you&#8217;ve added the appropriate permissions redeploy your ear and you should be all set.
 
 Full stack trace of the error I was getting
-  
+
 
 
     [INFO] No custom module-to-server mappings found -- using default configuration.

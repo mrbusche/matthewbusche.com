@@ -1,5 +1,26 @@
-url: http://matthewbusche.com/
-name: 'Matt Busche&#039;s blog'
-description: >
-  JavaScript, Java based languages and
-  Responsive Design
+title: matthewbusche.com
+email: mrbusche@gmail.com
+description: >-
+  Things I've learned
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://matthewbusche.com" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: mrbusche
+github_username:  mrbusche
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

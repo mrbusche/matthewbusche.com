@@ -1,2 +1,0 @@
-# matthewbusche.com
-Public website

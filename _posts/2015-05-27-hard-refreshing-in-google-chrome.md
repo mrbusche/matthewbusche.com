@@ -14,7 +14,7 @@ tags:
   - clear cache
   - hard refresh
 ---
-All of us are probably familiar with ctrl + F5 to hard refresh a page but I ran into a cool feature in Chrome today that will save you a second or two if your hand is already on the mouse. If you have the console� open and long press on the refresh button you&#8217;re given three options
+All of us are probably familiar with ctrl + F5 to hard refresh a page but I ran into a cool feature in Chrome today that will save you a second or two if your hand is already on the mouse. If you have the console open and long press on the refresh button you&#8217;re given three options
 
   1. Normal Reload
   2. Hard Reload
