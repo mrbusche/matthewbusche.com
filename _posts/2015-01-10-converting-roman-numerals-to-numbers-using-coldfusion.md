@@ -1,6 +1,8 @@
 ---
 id: 68
 title: Converting roman numerals to numbers using ColdFusion
+redirect_from:
+  - /blog2/2015/01/10/converting-roman-numerals-to-numbers-using-coldfusion/
 date: 2015-01-10T03:42:38+00:00
 author: mrbusche
 layout: post
@@ -29,7 +31,7 @@ I recently worked on a project that required translating roman numerals to the n
     &nbsp;&nbsp;&nbsp;&nbsp;return newNumber;
     &nbsp;&nbsp;}
     }
-    
+
 
 It&#8217;s simple enough that you should be able to add each roman numeral and it&#8217;s number into the mapping and this should theoretically work for any roman numeral, but I only tested up to 2000. This assumes that you have entered a valid roman numeral that can be translated to 1-2000.
 

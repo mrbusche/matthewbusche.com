@@ -1,6 +1,8 @@
 ---
 id: 57
 title: Windows Media Center Reports No Signal when Recording
+redirect_from:
+  - /blog2/2014/12/09/windows-media-center-reports-no-signal-when-recording/
 date: 2014-12-09T03:37:17+00:00
 author: mrbusche
 layout: post
@@ -13,7 +15,7 @@ I was having a problem with my local ABC station working when I viewed the chann
 
   1. Open the Program Guide
   2. Right click the problem channel
-  3. Choose Edit Channel 
+  3. Choose Edit Channel
   4. Choose Edit Sources &#8211; you should see two sources enabled
   5. Disable one of them and try the channel again. If that doesn&#8217;t work disable the other source and try the channel again.
 

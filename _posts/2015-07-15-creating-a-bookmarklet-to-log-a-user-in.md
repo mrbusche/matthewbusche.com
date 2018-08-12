@@ -1,6 +1,8 @@
 ---
 id: 161
 title: Creating a bookmarklet to log a user in
+redirect_from:
+  - /blog2/2015/07/15/creating-a-bookmarklet-to-log-a-user-in/
 date: 2015-07-15T02:33:14+00:00
 author: mrbusche
 layout: post
@@ -22,6 +24,6 @@ You&#8217;ll need to inspect the DOM and get the ID values of the username, pass
     &nbsp;&nbsp;f=d.getElementById("loginForm");
     &nbsp;&nbsp;f.submit();
     })();
-    
+
 
 Simple copy and paste the above code into the url field of a bookmark and you&#8217;ll be saving multiple seconds daily.

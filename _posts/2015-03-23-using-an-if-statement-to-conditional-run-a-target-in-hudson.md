@@ -1,6 +1,8 @@
 ---
 id: 73
 title: Using an if statement to conditionally run a target in Hudson
+redirect_from:
+  - /blog2/2015/03/23/using-an-if-statement-to-conditional-run-a-target-in-hudson/
 date: 2015-03-23T03:44:31+00:00
 author: mrbusche
 layout: post
@@ -14,7 +16,7 @@ We&#8217;re running a horribly outdated version of Hudson at work (2.2.1), so th
 I had this code in my Ant build properties
 
     do.test=false
-    
+
 
 This didn&#8217;t work, so I echoed the value into the console and it was correctly registering at false, but the tests were still being ran.
 
@@ -23,6 +25,6 @@ This didn&#8217;t work, so I echoed the value into the console and it was correc
     &nbsp;&nbsp;&nbsp;&nbsp;<cobertura-instrument todir="${temp.dir}/instrumented-classes" datafile="${temp.dir}/cobertura.ser">
     &nbsp;&nbsp;&nbsp;&nbsp;</cobertura-instrument>
     &nbsp;&nbsp;</target>
-    
+
 
 After quite a while trying to find an answer through Google I found out if there&#8217;s a parameter called do.test with ANY value then that is a true statement and the block will run. My solution was to rename the parameter to _do.test. You could obviously also delete the parameter, but once I had resolved my build issue I was going to turn the tests back on.

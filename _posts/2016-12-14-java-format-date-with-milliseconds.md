@@ -1,6 +1,8 @@
 ---
 id: 254
 title: Java Format date with 4, 5 or 6 milliseconds
+redirect_from:
+  - /blog2/2016/12/14/java-format-date-with-milliseconds/
 date: 2016-12-14T15:21:02+00:00
 author: mrbusche
 layout: post

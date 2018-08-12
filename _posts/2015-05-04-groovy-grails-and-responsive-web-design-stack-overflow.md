@@ -1,6 +1,8 @@
 ---
 id: 86
 title: Groovy, Grails and Responsive Web Design Stack Overflow
+redirect_from:
+  - /blog2/2015/05/04/groovy-grails-and-responsive-web-design-stack-overflow/
 date: 2015-05-04T03:51:22+00:00
 author: mrbusche
 layout: post
@@ -20,7 +22,7 @@ Stephen said he added some filters to prevent duplicates from posting, but I hav
 If anyone thinks other feeds should be added to these accounts let me know and I can get them added. Any feedback at all in appreciated
 
 <a href="https://twitter.com/groovyOverflow" target="_blank">Groovy questions</a>
-  
+
 <a href="https://twitter.com/grailsOverflow" target="_blank">Grails questions</a>
-  
+
 <a href="https://twitter.com/rwdOverflow" target="_blank">Responsive Web Design questions</a>

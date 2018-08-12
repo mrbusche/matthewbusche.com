@@ -1,6 +1,8 @@
 ---
 id: 29
 title: Checking an HTML page for duplicate IDs using jQuery
+redirect_from:
+  - /blog2/2013/05/10/checking-html-page-for-duplicate-ids-using-jquery/
 date: 2013-05-10T02:50:15+00:00
 author: mrbusche
 layout: post
@@ -13,7 +15,7 @@ At work our testers make use of the ID elements on HTML tags quite frequently an
 
 This code does require that jQuery is defined on the page you are testing.
 
-    
+
     javascript:(function () {
     var ids = {};
     var found = false;
@@ -26,9 +28,9 @@ This code does require that jQuery is defined on the page you are testing.
     });
     if (!found) console.log(&#039;No duplicate IDs found&#039;);
     })();
-    
+
 
 You can copy and paste the entire JavaScript function into a bookmark for quick access.
 
-    
+
     javascript:(function () { var ids = {}; var found = false; $(&#039;[id]&#039;).each(function() { if (this.id &amp;&amp; ids[this.id]) { found = true; console.warn(&#039;Duplicate ID #&#039;+this.id); } ids[this.id] = 1; }); if (!found) console.log(&#039;No duplicate IDs found&#039;); })();

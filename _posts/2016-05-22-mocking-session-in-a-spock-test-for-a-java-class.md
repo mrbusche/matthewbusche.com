@@ -1,6 +1,8 @@
 ---
 id: 218
 title: Mocking session in a Spock test for a java class
+redirect_from:
+  - /blog2/2016/05/22/mocking-session-in-a-spock-test-for-a-java-class/
 date: 2016-05-22T21:30:44+00:00
 author: mrbusche
 layout: post

@@ -1,6 +1,8 @@
 ---
 id: 400
 title: 'Leading the Transformation: Applying Agile and DevOps Principles at Scale Notes'
+redirect_from:
+  - /blog2/2018/05/20/leading-the-transformation-applying-agile-and-devops-principles-at-scale-notes/
 date: 2018-05-20T03:08:20+00:00
 author: mrbusche
 layout: post

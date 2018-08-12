@@ -1,6 +1,8 @@
 ---
 id: 301
 title: Adding rows to an excel spreadsheet using apache poi
+redirect_from:
+  - /blog2/2017/07/02/adding-rows-to-an-excel-spreadsheet-using-apache-poi/
 date: 2017-07-02T02:35:19+00:00
 author: mrbusche
 layout: post
@@ -25,7 +27,7 @@ In a recent project for a client I was tasked with modifying an existing excel s
     javaFile = createObject(&#039;java&#039;, &#039;java.io.File&#039;).init(currentFilePath & currentCharterTemplate);
     excelFile = createObject(&#039;java&#039;, &#039;java.io.FileInputStream&#039;).init(javaFile);
     xssfWorkbook = createObject(&#039;java&#039;, &#039;org.apache.poi.xssf.usermodel.XSSFWorkbook&#039;).init(excelFile);
-    
+
     summarySheet = xssfWorkbook.getSheetAt(0);
     totalColumns = 12;
     rowsToAdd = query.recordCount;

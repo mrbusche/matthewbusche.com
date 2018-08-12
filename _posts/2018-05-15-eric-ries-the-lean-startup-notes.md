@@ -1,6 +1,8 @@
 ---
 id: 398
 title: 'Eric Ries - The Lean Startup Notes'
+redirect_from:
+  - /blog2/2018/05/15/eric-ries-the-lean-startup-notes/
 date: 2018-05-15T02:22:51+00:00
 author: mrbusche
 layout: post

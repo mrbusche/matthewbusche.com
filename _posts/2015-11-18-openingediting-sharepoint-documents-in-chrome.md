@@ -1,6 +1,8 @@
 ---
 id: 179
 title: Opening/Editing Sharepoint documents in Chrome
+redirect_from:
+  - /blog2/2015/11/18/openingediting-sharepoint-documents-in-chrome/
 date: 2015-11-18T22:22:17+00:00
 author: mrbusche
 layout: post

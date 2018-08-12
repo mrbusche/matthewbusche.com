@@ -1,6 +1,8 @@
 ---
 id: 338
 title: Importing an SSL certificate into WebSphere
+redirect_from:
+  - /blog2/2017/10/19/importing-an-ssl-certificate-into-websphere/
 date: 2017-10-19T02:18:39+00:00
 author: mrbusche
 layout: post

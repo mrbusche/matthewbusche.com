@@ -1,6 +1,8 @@
 ---
 id: 12
 title: get US Bank Holidays UDF
+redirect_form:
+  - /blog2/2012/11/26/get-us-bank-holidays-udf/
 date: 2012-11-26T23:55:09+00:00
 author: mrbusche
 layout: post

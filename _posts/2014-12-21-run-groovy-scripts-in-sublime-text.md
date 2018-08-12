@@ -1,6 +1,8 @@
 ---
 id: 62
 title: Run groovy scripts in sublime text
+redirect_from:
+  - /blog2/2014/12/21/run-groovy-scripts-in-sublime-text/
 date: 2014-12-21T03:39:45+00:00
 author: mrbusche
 layout: post
@@ -19,7 +21,7 @@ Wondering how to run Groovy files in Sublime Text? It&#8217;s really quite simpl
     &nbsp;&nbsp;&nbsp;&nbsp;"shell": "cmd.exe"
     &nbsp;&nbsp;}
     }
-    
+
 
 Once the build system is saved you should be able to type Ctrl + B to run the code and output to the Sublime console. If nothing happens you may need to go to Tools > Build System and select groovy.
 

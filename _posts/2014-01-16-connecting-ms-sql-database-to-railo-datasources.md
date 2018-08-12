@@ -1,6 +1,8 @@
 ---
 id: 37
 title: Connecting MS SQL database to Railo datasource
+redirect_from:
+  - /blog2/2014/01/16/connecting-ms-sql-database-to-railo-datasources/
 date: 2014-01-16T03:22:29+00:00
 author: mrbusche
 layout: post

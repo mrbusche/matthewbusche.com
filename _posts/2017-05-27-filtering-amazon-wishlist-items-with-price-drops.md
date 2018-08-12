@@ -1,6 +1,8 @@
 ---
 id: 285
 title: Filtering Amazon Wishlist items with price drops
+redirect_from:
+  - /blog2/2017/05/27/filtering-amazon-wishlist-items-with-price-drops/
 date: 2017-05-27T02:31:29+00:00
 author: mrbusche
 layout: post

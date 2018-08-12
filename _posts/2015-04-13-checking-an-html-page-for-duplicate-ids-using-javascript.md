@@ -1,6 +1,8 @@
 ---
 id: 80
 title: Checking an HTML page for duplicate IDs using JavaScript
+redirect_from:
+  - /blog2/2015/04/13/checking-an-html-page-for-duplicate-ids-using-javascript/
 date: 2015-04-13T03:48:47+00:00
 author: mrbusche
 layout: post
@@ -28,12 +30,12 @@ A couple years back I wrote a post about [Checking an HTML page for duplicate ID
     if (!found) {
     &nbsp;&nbsp;console.log(&#039;No duplicate IDs found&#039;);
     }
-    
+
 
 All you need to do is create a new bookmark with the following as the URL
 
     javascript: (function() {var allElements = document.getElementsByTagName(&#039;*&#039;);var allIds = {};var found = false;for (var i = 0, n = allElements.length; i < n; ++i) {var id = allElements[i].id;if (id) {if (allIds[id] === undefined) {allIds[id] = 1;} else {found = true;console.warn(&#039;Duplicate ID #&#039; + id);}}}if (!found) {console.log(&#039;No duplicate IDs found&#039;);}})();
-    
+
 
 Or you can simply drag the bookmarklet below onto your bookmark toolbar
 

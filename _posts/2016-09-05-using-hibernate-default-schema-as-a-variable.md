@@ -1,6 +1,8 @@
 ---
 id: 243
 title: Using hibernate default schema as a variable
+redirect_from:
+  - /blog2/2016/09/05/using-hibernate-default-schema-as-a-variable/
 date: 2016-09-05T01:53:44+00:00
 author: mrbusche
 layout: post
@@ -15,7 +17,7 @@ tags:
 ---
 Given you have set up a default_schema in your hibernate configuration
 
-    <hibernate-configuration> 
+    <hibernate-configuration>
     &nbsp;&nbsp; <session-factory>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<property name="hibernate.default_schema">mySchema</property>
     &nbsp;&nbsp; </session-factory>

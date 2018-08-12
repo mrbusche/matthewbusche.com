@@ -1,6 +1,8 @@
 ---
 id: 368
 title: What LDAP groups am I in?
+redirect_from:
+  - /blog2/2018/01/11/what-ldap-groups-am-i-in/
 date: 2018-01-11T02:59:41+00:00
 author: mrbusche
 layout: post

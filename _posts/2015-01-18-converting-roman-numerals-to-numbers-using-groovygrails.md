@@ -1,6 +1,8 @@
 ---
 id: 71
 title: Converting roman numerals to numbers using Groovy/Grails
+redirect_from:
+  - /blog2/2015/01/18/converting-roman-numerals-to-numbers-using-groovygrails/
 date: 2015-01-18T03:43:36+00:00
 author: mrbusche
 layout: post
@@ -22,14 +24,14 @@ I did learn an interesting tidbit about Grails, the maximum numbers of tests you
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newNumber = processNumber(romanToNumberMapping[oneLetter], previousNumber, newNumber)
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;previousNumber = romanToNumberMapping[oneLetter]
     &nbsp;&nbsp;&nbsp;&nbsp;}
-    &nbsp;&nbsp;&nbsp;&nbsp;return newNumber 
+    &nbsp;&nbsp;&nbsp;&nbsp;return newNumber
     &nbsp;&nbsp;}
-    
+
     &nbsp;&nbsp;Integer processNumber(Integer currentNumber, Integer previousNumber, Integer newNumber) {
     &nbsp;&nbsp;&nbsp;&nbsp;return previousNumber > currentNumber ? newNumber - currentNumber : newNumber + currentNumber
     &nbsp;&nbsp;}
     }
-    
+
 
 On the whole it&#8217;s really not much different than the ColdFusion version, semicolons are optional in most places (pretty much anything that&#8217;s not a for loop) and you can strongly type the return values, although that&#8217;s definitely not a requirement. I wrote the example above exactly how I&#8217;d write it for a project, but also wanted to point out some of what I&#8217;m doing isn&#8217;t really required.
 
@@ -46,11 +48,11 @@ One interesting thing about Groovy and not one I&#8217;m terribly fond of is if 
     &nbsp;&nbsp;&nbsp;&nbsp;}
     &nbsp;&nbsp;&nbsp;&nbsp;newNumber
     &nbsp;&nbsp;}
-    
+
     &nbsp;&nbsp;def processNumber(currentNumber, previousNumber, newNumber) {
     &nbsp;&nbsp;&nbsp;&nbsp;previousNumber > currentNumber ? newNumber - currentNumber : newNumber + currentNumber
     &nbsp;&nbsp;}
     }
-    
+
 
 I&#8217;ve attached my test case as an external file given the size

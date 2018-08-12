@@ -1,6 +1,8 @@
 ---
 id: 261
 title: Spring Escape HTML and prevent XSS attacks
+redirect_from:
+  - /blog2/2016/12/27/spring-escape-html-and-prevent-xss-attacks/
 date: 2016-12-27T21:30:43+00:00
 author: mrbusche
 layout: post

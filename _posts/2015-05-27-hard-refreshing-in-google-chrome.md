@@ -1,6 +1,8 @@
 ---
 id: 110
 title: Hard refreshing in Google Chrome
+redirect_from:
+  - /blog2/2015/05/27/hard-refreshing-in-google-chrome/
 date: 2015-05-27T02:30:33+00:00
 author: mrbusche
 layout: post

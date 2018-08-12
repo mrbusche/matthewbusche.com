@@ -1,6 +1,8 @@
 ---
 id: 225
 title: Hibernate returning BigDecimal instead of Long
+redirect_from:
+  - /blog2/2016/06/08/hibernate-returning-bigdecimal-instead-of-long/
 date: 2016-06-08T14:07:03+00:00
 author: mrbusche
 layout: post
@@ -21,10 +23,10 @@ I was trying to run a query to get a list of IDs from a database table and then 
 
     public List<Long> retrieveOrgTypeWithoutParent() {
      Session session = getHibernateTemplate().getSessionFactory().openSession();
-    
+
      List<Long> orgTypeIds = session.createSQLQuery(
     &nbsp;&nbsp;"SELECT typeId FROM org_type_cd").addScalar("typeId", StandardBasicTypes.LONG).list();
-    
+
      session.close();
      return orgTypeIds;
     };

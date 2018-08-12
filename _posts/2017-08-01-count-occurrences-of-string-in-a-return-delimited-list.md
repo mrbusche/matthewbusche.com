@@ -1,6 +1,8 @@
 ---
 id: 310
 title: Count occurrences of string in a return, comma or pipe delimited list
+redirect_from:
+  - /blog2/2017/08/01/count-occurrences-of-string-in-a-return-delimited-list/
 date: 2017-08-01T22:19:16+00:00
 author: mrbusche
 layout: post

@@ -1,6 +1,8 @@
 ---
 id: 183
 title: 'I''m speaking at Iowa Code Camp Fall 2015'
+redirect_from:
+  - /blog2/2015/11/25/im-speaking-at-iowa-code-camp-fall-2015/
 date: 2015-11-25T03:36:15+00:00
 author: mrbusche
 layout: post

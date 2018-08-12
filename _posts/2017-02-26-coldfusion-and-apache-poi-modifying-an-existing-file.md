@@ -1,6 +1,8 @@
 ---
 id: 268
 title: ColdFusion and Apache POI modifying an existing file
+redirect_from:
+  - /blog2/2017/02/26/coldfusion-and-apache-poi-modifying-an-existing-file/
 date: 2017-02-26T16:46:17+00:00
 author: mrbusche
 layout: post
@@ -22,17 +24,17 @@ The following is the gist of what I ended up doing. This is 100% using the poi b
     &nbsp;&nbsp;javaFile = createObject(&#039;java&#039;, &#039;java.io.File&#039;).init(currentFilePath & currentTemplate);
     &nbsp;&nbsp;excelFile = createObject(&#039;java&#039;, &#039;java.io.FileInputStream&#039;).init(javaFile);
     &nbsp;&nbsp;xssfWorkbook = createObject(&#039;java&#039;, &#039;org.apache.poi.xssf.usermodel.XSSFWorkbook&#039;).init(excelFile);
-    
+
     &nbsp;&nbsp;// get the first sheet index is 0 based in Java
     &nbsp;&nbsp;sheet1 = xssfWorkbook.getSheetAt(0);
     &nbsp;&nbsp;rowIterator = sheet1.iterator();
     &nbsp;&nbsp;while (rowIterator.hasNext()) {
     &nbsp;&nbsp;&nbsp;&nbsp;currentRow = rowIterator.next();
-    
+
     &nbsp;&nbsp;&nbsp;&nbsp;// row 8 is where we want to start writing the names
     &nbsp;&nbsp;&nbsp;&nbsp;if (currentRow.getRowNum() > 7) {
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cellIterator = currentRow.iterator();
-    
+
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (cellIterator.hasNext()) {
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//1 - last name, 2 first name, 3 middle, 4 DOB, 5 Gender, 6 Weight
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentCell = cellIterator.next();
@@ -64,13 +66,13 @@ The following is the gist of what I ended up doing. This is 100% using the poi b
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
     &nbsp;&nbsp;&nbsp;&nbsp;}
     &nbsp;&nbsp;}
-    
+
     &nbsp;&nbsp;// need to force formulas to be recalculated once the file is written
     &nbsp;&nbsp;formulaEvaluator = createObject(&#039;java&#039;, &#039;org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator&#039;);
     &nbsp;&nbsp;formulaEvaluator.evaluateAllFormulaCells(xssfWorkbook);
     &nbsp;&nbsp;// and once the workbook is opened
     &nbsp;&nbsp;xssfWorkbook.setForceFormulaRecalculation(true);
-    
+
     &nbsp;&nbsp;// close the file input stream
     &nbsp;&nbsp;excelFile.close();
     &nbsp;&nbsp;// create a new excel file

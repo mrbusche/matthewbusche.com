@@ -1,6 +1,8 @@
 ---
 id: 239
 title: Using CSRF with Spring Security and AJAX calls
+redirect_from:
+  - /blog2/2016/08/06/using-csrf-with-spring-security-and-ajax-calls/
 date: 2016-08-06T01:10:28+00:00
 author: mrbusche
 layout: post
@@ -23,7 +25,7 @@ First we allowed CSRF which is a strange syntax in my opinion
 After we did that we were getting &#8220;405: Method Not Allowed&#8221; responses on all of our ajax requests. After some googling we discovered this is a security precaution to prevent cross site attacks, which makes a lot of sense. The biggest problem was we had probably 25 ajax calls and didn&#8217;t want to spend all day updating them individually, so we ended up adding in the csrf token and header name into the head meta tags in our application. This meant they were available on every page automatically and since they stay valid as long as the users&#8217; session this made the most sense.
 
 Added to the header template
-  
+
 
 
     <meta name="_csrf" content="${_csrf.token}"/>

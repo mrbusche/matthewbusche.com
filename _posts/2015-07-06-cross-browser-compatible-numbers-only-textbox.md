@@ -1,6 +1,8 @@
 ---
 id: 123
 title: Cross browser compatible numbers only textbox
+redirect_from:
+  - /blog2/2015/07/06/cross-browser-compatible-numbers-only-textbox/
 date: 2015-07-06T01:28:29+00:00
 author: mrbusche
 layout: post

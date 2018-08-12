@@ -1,6 +1,8 @@
 ---
 id: 250
 title: Finding data that falls within a date range for a date range
+redirect_from:
+  - /blog2/2016/09/05/finding-data-that-falls-within-a-date-range-for-a-date-range/
 date: 2016-09-05T14:12:29+00:00
 author: mrbusche
 layout: post
