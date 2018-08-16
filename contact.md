@@ -2,6 +2,8 @@
 id: 96
 title: Contact
 date: 2015-05-16T04:04:10+00:00
+redirect_from:
+  - /blog2/contact
 author: mrbusche
 layout: page
 ---
