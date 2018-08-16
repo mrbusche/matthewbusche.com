@@ -1,6 +1,6 @@
 ---
 layout: null
-? title
+title: Recent Posts
 ---
 
 {% for post in site.posts limit:5 %}
