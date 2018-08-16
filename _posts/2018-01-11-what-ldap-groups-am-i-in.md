@@ -10,6 +10,7 @@ permalink: /2018/01/11/what-ldap-groups-am-i-in/
 categories:
   - Uncategorized
 ---
+
 Ever wonder what LDAP groups you&#8217;re a part of? There&#8217;s a super simple command that will tell you
 
 `net user ${windowsUsername} /domain`

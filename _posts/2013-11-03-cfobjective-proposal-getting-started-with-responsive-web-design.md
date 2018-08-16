@@ -1,6 +1,6 @@
 ---
 id: 31
-title: 'cf.Objective() Proposal - Getting started with Responsive Web Design'
+title: "cf.Objective() Proposal - Getting started with Responsive Web Design"
 redirectform:
   - /blog2/2013/11/03/cfobjective-proposal-getting-started-with-responsive-web-design/
 date: 2013-11-03T09:34:15+00:00
@@ -12,6 +12,7 @@ categories:
   - ColdFusion
   - responsive design
 ---
+
 Interested in learning about responsive web design? Head on over to the [cf.Objective() Trello board](https://trello.com/b/4M6JSoyL/cf-objective-call-for-speakers-2014) and vote for [my talk on Responsive Web Design](https://trello.com/c/K6N8dJBx/106-getting-started-with-responsive-web-design-matt-busche) and any others that you would like to attend.
 
 Here&#8217;s a brief description of what my talk will be about

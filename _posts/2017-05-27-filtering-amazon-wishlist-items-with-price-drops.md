@@ -12,11 +12,10 @@ categories:
 tags:
   - amazon wishlist
 ---
+
 Amazon has recently changed their filters on wish list items so you can no longer view items with price drops (useful for books) or sort price from low to high. I wrote up some fairly crappy JavaScript that scrolls to the end of your wish list then removes all the items that don&#8217;t have &#8220;Price dropped&#8221; in the div. I sometimes need to run the code more than once to get all items to be removed, so this is far from perfect, but works for what I was intending it to do. If you have a few hundred items on your list it will take a few seconds to run the script, but each subsequent run should run pretty quick.
 
 Update: I added this to [github](https://github.com/mrbusche/amazonPriceDrops).
-
-
 
 <pre>function removeItemsWithoutPriceDrops() {
 &nbsp;&nbsp;var lowPrice = 999999;
@@ -36,8 +35,6 @@ Update: I added this to [github](https://github.com/mrbusche/amazonPriceDrops).
 
 removeItemsWithoutPriceDrops();
 </pre>
-
-
 
 You can also add the following code directly to a bookmark by copy and pasting the code into this [generator](https://mrcoles.com/bookmarklet/).
 

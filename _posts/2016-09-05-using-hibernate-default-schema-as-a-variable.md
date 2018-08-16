@@ -14,6 +14,7 @@ tags:
   - java
   - native sql query
 ---
+
 Given you have set up a default_schema in your hibernate configuration
 
     <hibernate-configuration>

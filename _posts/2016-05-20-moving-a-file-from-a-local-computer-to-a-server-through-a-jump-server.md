@@ -14,6 +14,7 @@ tags:
   - scp
   - ssh
 ---
+
 This is a problem I&#8217;ve been routinely facing at work because we have new firewall rules and can only access new servers through a jump box. Accessing the server through ssh isn&#8217;t a problem after I&#8217;ve ssh&#8217;d into the jump server, but moving a file from my local computer to the other server is a pain. What you need to do is move the file from your local computer to an accesible directory on the jump server. For me this involves using [WinSCP](https://winscp.net/eng/download.php) to drag and drop the file to my /home/mbusche directory.
 
 Once the file has been moved to the jump server you need to use the [scp command](https://docs.oracle.com/cd/E26502_01/html/E29001/remotehowtoaccess-55154.html) to move the file from the jump server to the other server. In my case the command looks something like this.

@@ -19,7 +19,8 @@ tags:
   - poi
   - shiftRows
 ---
-In a recent project for a client I was tasked with modifying an existing excel spreadsheet to add data from a query. Being familiar with Java and ColdFusion I assumed this would be a pretty trivial exercise. Read the existing file, get the sheet and then write the data, but I ran into an issue where adding rows using [shiftRows](https://poi.apache.org/apidocs/org/apache/poi/hssf/usermodel/HSSFSheet.html#shiftRows(int,%20int,%20int)) didn&#8217;t make them writable and/or visible to apache poi. I realized I needed to literally add the rows and the columns to the excel spreadsheet to be able to change the values. Not a big deal code-wise and also really fast to complete, but frustrating to figure out.
+
+In a recent project for a client I was tasked with modifying an existing excel spreadsheet to add data from a query. Being familiar with Java and ColdFusion I assumed this would be a pretty trivial exercise. Read the existing file, get the sheet and then write the data, but I ran into an issue where adding rows using [shiftRows](<https://poi.apache.org/apidocs/org/apache/poi/hssf/usermodel/HSSFSheet.html#shiftRows(int,%20int,%20int)>) didn&#8217;t make them writable and/or visible to apache poi. I realized I needed to literally add the rows and the columns to the excel spreadsheet to be able to change the values. Not a big deal code-wise and also really fast to complete, but frustrating to figure out.
 
     currentCharterTemplate = &#039;existingWorkbook.xlsx&#039;;
     currentFilePath = getDirectoryFromPath(getCurrentTemplatePath());

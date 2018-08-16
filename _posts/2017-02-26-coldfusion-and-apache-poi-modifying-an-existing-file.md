@@ -13,6 +13,7 @@ tags:
   - ColdFusion
   - poi
 ---
+
 I was tasked with creating an excel spreadsheet that mimics a template from a vendor and after a couple hours of struggling I realized it was fruitless and it&#8217;d be easier to modify the existing file. The existing file had macros that were ran to validate certain things and all I was adding was names, date of birth, weight and gender.
 
 The following is the gist of what I ended up doing. This is 100% using the poi built into ColdFusion and does not require extra jars or adding anything to the classpath.

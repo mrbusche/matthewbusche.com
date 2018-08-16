@@ -10,6 +10,7 @@ permalink: /2014/06/10/coldfusion-query-of-queries-strips-whitespace/
 categories:
   - ColdFusion
 ---
+
 I was tasked with tracking down a defect at work this week. We are creating a URL based on the results of a query and somehow a string of &#8221; ABC DEF 12345&#8243; was being turned into &#8220;ABC DEF 12345&#8221; (DB2 FTW!) The webservice we were using was unchanged and was still returning the whitespace, so I knew the issue was something on my end. We have a few pieces of code that strip out duplicate spaces and extra line breaks, so I removed those, but the issue still persisted. After working through about a dozen solutions I called over <a href="https://twitter.com/busches" target="_blank">Scott Busche</a> and we repeated everything I already gone through, but when we stumbled upon a Query of Queries, Scott suggested that could be the culprit.
 
 The query of queries was used to filter a result set down to the past two years only (the webservice we&#8217;re using just ignores end date, which is awesome in itself), so we googled and quickly found that QoQ trims leading and trailing whitespace from columns and has been doing this since ColdFusion 6, so I don&#8217;t think this is considered a bug, just something to be aware of.
@@ -24,7 +25,6 @@ We googled and found this <a href="http://stackoverflow.com/questions/5750763/ho
     &nbsp;&nbsp;</cfif>
     </cfloop>
 
-
 After implementing this fix our query was working correctly, but we still needed to add <a href="http://help.adobe.com/livedocs/coldfusion/8/htmldocs/help.html?content=functions_t-z_10.html" target="_blank">URLEncodedFormat</a> to our URL parameters, so the whitespace wouldn&#8217;t be stripped (and because it should have been done in the first place).
 
 FWIW Railo 4.2 does NOT strip out whitespace. Test case below
@@ -38,7 +38,6 @@ FWIW Railo 4.2 does NOT strip out whitespace. Test case below
     <cfdump eval=test>
     <cfdump eval=len(test.columnA)>
     <cfdump var="#replace(test.columnA,&#039; &#039;,&#039;a space&#039;,&#039;all&#039;)#">
-
 
 Returns
 

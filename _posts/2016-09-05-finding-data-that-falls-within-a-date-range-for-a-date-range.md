@@ -14,6 +14,7 @@ tags:
   - dates
   - sql
 ---
+
 The title of this is horribly confusing, but hopefully this is helpful for some people. The problem I was trying to solve is I have a report that shows where travelers are based on certain dates. For example a client requests a report to know where all of their travelers are that are traveling 9/1 &#8211; 9/2. Given that we know the departure and arrival dates of their trip this is pretty straightforward.
 
 Given that their departure date is stored in depDateTime and their return date is stored in arvDateTime and startDate and endDate are timestamps then this will return all users who are traveling during 9/1 &#8211; 9/2

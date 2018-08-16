@@ -11,16 +11,13 @@ categories:
   - java
   - websphere
 ---
+
 My latest project was moving a bunch of applications from running on WebSphere using Java 6 to running on Liberty running Java 8. For the most part this was pretty straightforward, but one major issue we ran into was a bean defined like so
-
-
 
 <pre>&lt;bean id="environment" class="org.springframework.jndi.JndiObjectFactoryBean"&gt;
 &nbsp;&nbsp;&lt;property name="jndiName" value="java:comp/env/string/nw/environment"/&gt;
 &lt;/bean&gt;
 </pre>
-
-
 
 What the heck does java:comp/env/string mean?
 

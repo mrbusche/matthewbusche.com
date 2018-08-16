@@ -14,6 +14,7 @@ tags:
   - javascript
   - jquery
 ---
+
 I started working on a new app recently with some people mostly new to front end development and noticed that on many pages we were including the same JavaScript file multiple times, either on the same page or within an included page, so I wrote up some JavaScript (using jQuery) to detect those on the page.
 
 The script itself is pretty straightforward.

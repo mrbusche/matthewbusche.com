@@ -10,6 +10,7 @@ permalink: /2016/12/18/espn-fantasycast-broken-in-chrome/
 categories:
   - Uncategorized
 ---
+
 Once again ESPN FantasyCast is broken in Chrome. If you&#8217;re using Chrome and are seeing the game score and stats on two separate lines. Hit F12 and copy the following into the Console and press enter
 
 `$(&#039;#real .progame&#039;).css(&#039;width&#039;, &#039;101%&#039;)`

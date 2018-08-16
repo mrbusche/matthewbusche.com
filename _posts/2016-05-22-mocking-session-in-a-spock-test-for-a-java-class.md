@@ -10,6 +10,7 @@ permalink: /2016/05/22/mocking-session-in-a-spock-test-for-a-java-class/
 categories:
   - Uncategorized
 ---
+
 Spock is an excellent test framework that is built on top of Groovy and can be used to replace JUnit for testing Java classes. The majority of spock syntax is simple, but sometimes we run into issues where it is difficult to mock a class. Session is one of those examples. Given we want to do something simple, say get the name from Spring Security in session we&#8217;d have a method call like this
 
     private String getUserId() {

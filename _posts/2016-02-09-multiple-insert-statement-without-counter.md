@@ -15,6 +15,7 @@ tags:
   - multiple insert
   - SQL Server
 ---
+
 I often have a need to write an INSERT statement that adds multiple rows to a database. Obviously you can run any number of inserts separately, but that&#8217;s innefficient, so I loop over a list with a counter to know when to end. Recently I learned that the counter is unnecessary and you can create a fake SELECT statement to avoid needing a counter
 
     <cfquery>

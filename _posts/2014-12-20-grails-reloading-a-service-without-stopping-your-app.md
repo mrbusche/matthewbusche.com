@@ -1,6 +1,6 @@
 ---
 id: 60
-title: 'Grails - Reloading a service without stopping your app'
+title: "Grails - Reloading a service without stopping your app"
 redirect_from:
   - /blog2/2014/12/20/grails-reloading-a-service-without-stopping-your-app/
 date: 2014-12-20T03:38:18+00:00
@@ -10,6 +10,7 @@ permalink: /2014/12/20/grails-reloading-a-service-without-stopping-your-app/
 categories:
   - grails
 ---
+
 When a grails application is started most Grails artificats are reloaded as they are changed &#8211; controllers, filters, tag libraries, but the opposite is true if you strongly type your services like below.
 
 <pre>FakeService fakeService

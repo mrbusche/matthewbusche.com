@@ -13,6 +13,7 @@ tags:
   - chrome
   - offline
 ---
+
 In April and May I was traveling every other week for work and to keep myself occupied I would open a bunch of articles in chrome on my phone to read them on the plane. Much to my chagrin the first time I did this about half the articles were automatically reloaded by chrome and I wasn&#8217;t able to read them because I didn&#8217;t have an internet connection. I started trying to fix this by looking for a way to disable the setting that would reload tabs, but was unsuccessful. What I did find was an option to reload an article from the cache if you were offline.
 
 Simply type `chrome://flags` into your address bar and find the Enable Show Saved Copy Button setting.

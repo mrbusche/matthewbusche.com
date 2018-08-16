@@ -10,6 +10,7 @@ permalink: /2015/01/10/converting-roman-numerals-to-numbers-using-coldfusion/
 categories:
   - ColdFusion
 ---
+
 I recently worked on a project that required translating roman numerals to the numerical counterpart, this needed to work for anything from 1-2000. I wrote my own using TDD and eventually came up with this
 
     component {
@@ -30,7 +31,6 @@ I recently worked on a project that required translating roman numerals to the n
     &nbsp;&nbsp;&nbsp;&nbsp;return newNumber;
     &nbsp;&nbsp;}
     }
-
 
 It&#8217;s simple enough that you should be able to add each roman numeral and it&#8217;s number into the mapping and this should theoretically work for any roman numeral, but I only tested up to 2000. This assumes that you have entered a valid roman numeral that can be translated to 1-2000.
 

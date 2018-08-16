@@ -1,6 +1,6 @@
 ---
 id: 202
-title: 'I''m speaking at dev.Objective() 2016'
+title: "I'm speaking at dev.Objective() 2016"
 redirect_from:
   - /blog2/2016/03/06/im-speaking-at-dev-objective-2016/
 date: 2016-03-06T20:17:56+00:00
@@ -11,6 +11,7 @@ categories:
   - dev.objective
   - responsive design
 ---
+
 I&#8217;m happy to announce I&#8217;ve been selected to speak at <a href="http://devobjective.com" target="_blank">dev.Objective() 2016</a>! I will speaking on &#8220;Delivering Responsibly&#8221;.
 
 <span style="text-decoration: underline;">Session Description</span>

@@ -15,6 +15,7 @@ tags:
   - internet explorer
   - regex
 ---
+
 While working on a browser compatibility project recently I ran into an issue where using an onkeypress attribute on an input field was firing when using the left and right arrows keys and the delete button. This functionality differs from how IE and Chrome work, so the old code that used to be IE only compatible wouldn&#8217;t let a user do anything except type numbers (Good!) and use the backspace (Bad!). The users needed to be able to use arrow keys and the delete button in Firefox.
 
 Since we&#8217;re only supporting the latest browsers, IE 11, Chrome, Safari and Firefox, We thought using an input with type=&#8221;number&#8221; was a good solution, but it adds awful looking up/down arrow buttons in the field and it actually doesn&#8217;t do anything to prevent letters from being entered, so that was obviously out.

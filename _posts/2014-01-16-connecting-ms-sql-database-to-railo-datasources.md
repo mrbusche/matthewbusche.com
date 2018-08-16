@@ -10,6 +10,7 @@ permalink: /2014/01/16/connecting-ms-sql-database-to-railo-datasources/
 categories:
   - ColdFusion
 ---
+
 Tonight was the 2nd time I&#8217;ve struggled getting Microsoft SQL Server set up to communicate with Railo (and really anything at all), so I thought I&#8217;d write up some quick tips on what I had to do. Once you think you have everything set up there are 2 steps that are left.
 
 Go to Microsoft SQL Server 20XX > Configuration Tools > SQL Server Configuration Manager

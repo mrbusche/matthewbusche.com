@@ -10,6 +10,7 @@ permalink: /2013/12/09/what-tab-is-playing-that-sound/
 categories:
   - computer management
 ---
+
 One of internet users biggest annoyances has been resolved in Chrome 33. When a tab starts playing audio Google Chrome version 33 adds a speaker icon to the tab.
 
 <img src="images/2015/05/sound.png" alt="sound" />

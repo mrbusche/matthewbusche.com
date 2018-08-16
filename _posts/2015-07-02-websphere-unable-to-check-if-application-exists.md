@@ -14,6 +14,7 @@ tags:
   - ibm
   - websphere
 ---
+
 I&#8217;m still fairly new to Websphere, but this seemed like a pretty common problem someone would have and I couldn&#8217;t find anything that properly explained the issue to me. I was running into an issue where WebSphere kept saying it was unable to check if application exists when it was being deployed. I thought initially this was a permissions problem, so I fooled around with permissions but had the same issue. If you scroll down a ways on the stack trace it says
 
 > insufficient or empty credentials
@@ -22,19 +23,17 @@ I double checked my configuration in Hudson/Jenkins and testing the connection w
 
 To add a user in WebSphere
 
-  1. Users and Groups
-  2. Administrative user roles
-  3. Select the Administrator role
-  4. Enter the user to search for
-  5. Use the arrow to move the user to the Mapped to role box
-  6. Click OK
-  7. Click Save
+1. Users and Groups
+2. Administrative user roles
+3. Select the Administrator role
+4. Enter the user to search for
+5. Use the arrow to move the user to the Mapped to role box
+6. Click OK
+7. Click Save
 
 Step 7 is super important because it requires an additional save than most programs do and I find myself forgetting to do the second confirmation too often. After you&#8217;ve added the appropriate permissions redeploy your ear and you should be all set.
 
 Full stack trace of the error I was getting
-
-
 
     [INFO] No custom module-to-server mappings found -- using default configuration.
     com.insertcompanynamehere.websphere.deployment.client.DeploymentException: Unable to check if application exists &#039;NewBusiness&#039;

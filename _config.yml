@@ -15,7 +15,7 @@ description: "Developer at Nationwide Insurance"
 tagline: "Things I've learned"
 
 # The subpath of your site, e.g. /blog, for generating urls
-baseurl:
+? baseurl
 
 sass:
   sass_dir: _sass
@@ -25,39 +25,39 @@ url: "https://matthewbusche.com"
 
 # Site navigation - each item must have a title and a url.
 navigation:
-- text: Home
-  url: /
-- text: Projects
-  url: /projects/
-- text: Presentations
-  url: /presentations/
-- text: Contact
-  url: /contact/
-- text: Search
-  url: /search/
+  - text: Home
+    url: /
+  - text: Projects
+    url: /projects/
+  - text: Presentations
+    url: /presentations/
+  - text: Contact
+    url: /contact/
+  - text: Search
+    url: /search/
 
-# The shortname for your Disqus site to enable comments.
-disqus:
+  # The shortname for your Disqus site to enable comments.
+? disqus
 
 # Author information - author info at the bottom of the post
 author_name: "Matt Busche"
 author_bio: "Matt is a developer at Nationwide Insurance."
-author_url:  "https://www.matthewbusche.com"
+author_url: "https://www.matthewbusche.com"
 author_location: "Des Moines, IA"
 #author_image: /images/avatar.jpg
 
 # Sidebar Add banner
-banner_url: 
-banner_image: 
+? banner_url
+? banner_image
 
 # Sidebar newsletter widget - add your form action url for MailChimp signup form here
-mailchimp_url: 
+? mailchimp_url
 
 # Social links in the site footer
 twitter_username: mrbusche
 #facebook_username: "username"
 #googleplus_username: "+username"
-github_username:  mrbusche
+github_username: mrbusche
 #codepen_username: "username"
 #dribbble_uername: "username"
 #medium_username: "@username"
@@ -68,10 +68,10 @@ linkedin_username: mrbusche
 
 # http://jekyllrb.com/docs/pagination/
 paginate: 5
-paginate_path: '/blog/page:num/'
+paginate_path: "/blog/page:num/"
 plugins: [jekyll-paginate]
 
 permalink: pretty
 markdown: kramdown
 kramdown:
-    auto_ids: false
+  auto_ids: false

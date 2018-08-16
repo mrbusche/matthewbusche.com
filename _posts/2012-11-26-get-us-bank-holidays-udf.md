@@ -10,6 +10,7 @@ permalink: /2012/11/26/get-us-bank-holidays-udf/
 categories:
   - ColdFusion
 ---
+
 I was looking for an existing UDF on cflib.org for current bank holidays but the only one I could find was for <a href="http://cflib.org/udf/getBankHolidays" target="_blank">German holidays only</a>. With this function you can pass in a year otherwise it will assume the current year is to be used.
 
 The following holidays are calculated using this UDF.
