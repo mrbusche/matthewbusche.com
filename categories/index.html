@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: Post Archives
 ---
@@ -8,15 +8,15 @@ title: Post Archives
         <main class="site-main">
             <article class="post">
                 <header class="entry-header">
-                    <div class="entry-header-wrap">  
+                    <div class="entry-header-wrap">
                         <h1 class="entry-title">{{page.title}}</h1>
                     </div>
-                </header><!-- .entry-header -->
+                </header>
                 <div class="entry-content">
                     <div class="archive-tags-list">
-                        {% capture site_cats %}{% for cat in site.categories %}{{ cat | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-                        {% assign sortedCats = site_cats | split:',' | sort %}
-                        {% for cat in sortedCats %}
+                        {% capture site_cats %}{% for cat in site.categories %}{{ cat | first }}{% unless forloop.last %},{% endunless %}{% endfor
+                        %}{% endcapture %} {% assign sortedCats = site_cats | split:',' | sort %} {% for cat in sortedCats
+                        %}
                         <a href="#{{ cat | cgi_escape }}">{{ cat }} </a>
                         {% endfor %}
                     </div>
@@ -24,14 +24,16 @@ title: Post Archives
                     <h2 id="{{ cat | cgi_escape }}">{{ cat }}</h2>
                     <ul class="archive-posts-list">
                         {% for post in site.categories[cat] %}
-                        <li><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark" title="Permanent Link to {{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <span class="archive-meta"> — <time class="published" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }}</time></span></li>
+                        <li><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark" title="Permanent Link to {{ site.baseurl }}{{ post.url }}">{{
+                                post.title }}</a> <span class="archive-meta"> — <time class="published" datetime="{{ post.date | date: "
+                                    %Y-%m-%d " }}">{{ post.date | date: "%B %-d, %Y" }}</time></span></li>
                         {% endfor %}
                     </ul>
                     <p><a href="#top" class="archive-top-link" title="Back to Top">Return to top</a></p>
                     {% endfor %}
-                </div><!-- .entry-content -->
-            </article><!-- .post -->
-        </main><!-- .site-main -->
+                </div>
+            </article>
+        </main>
         {% include sidebar.html %}
-    </div><!-- .inner -->
-</div><!-- .site-content -->
+    </div>
+</div>

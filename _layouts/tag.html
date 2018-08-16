@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 ---
 <div class="site-content">
@@ -6,19 +6,21 @@ layout: default
         <main class="site-main">
             <article class="post">
                 <header class="entry-header">
-                    <div class="entry-header-wrap">  
+                    <div class="entry-header-wrap">
                         <h1 class="entry-title">{{page.title}}</h1>
                     </div>
-                </header><!-- .entry-header -->
+                </header>
                 <div class="entry-content">
                     <ul class="archive-posts-list">
                         {% for post in site.tags[page.tag] %}
-                        <li><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark" title="Permanent Link to {{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <span class="archive-meta"> — <time class="published" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }}</time></span></li>
+                        <li><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark" title="Permanent Link to {{ site.baseurl }}{{ post.url }}">{{
+                                post.title }}</a> <span class="archive-meta"> — <time class="published" datetime="{{ post.date | date: "
+                                    %Y-%m-%d " }}">{{ post.date | date: "%B %-d, %Y" }}</time></span></li>
                         {% endfor %}
                     </ul>
-                </div><!-- .entry-content -->
-            </article><!-- .post -->
-        </main><!-- .site-main -->
+                </div>
+            </article>
+        </main>
         {% include sidebar.html %}
-    </div><!-- .inner -->
-</div><!-- .site-content -->
+    </div>
+</div>
