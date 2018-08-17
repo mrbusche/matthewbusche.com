@@ -20,20 +20,20 @@ I started working on a new app recently with some people mostly new to front end
 The script itself is pretty straightforward.
 
     function findDupes() {
-    &nbsp;&nbsp;var allScripts = [];
-    &nbsp;&nbsp;var dupe = false;
-    &nbsp;&nbsp;$.each(document.getElementsByTagName("script"), function(index, value) {
-    &nbsp;&nbsp;&nbsp;&nbsp;if ($.inArray(value.src, allScripts) !== -1 && value.src !== &#039;&#039;) {
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(&#039;already loaded :: &#039; + value.src);
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dupe=true;
-    &nbsp;&nbsp;&nbsp;&nbsp;}
-    &nbsp;&nbsp;&nbsp;&nbsp;allScripts.push(value.src);
-    &nbsp;&nbsp;});
-    &nbsp;&nbsp;if(!dupe){
-    &nbsp;&nbsp;&nbsp;&nbsp;console.log(&#039;no dupes&#039;);
-    &nbsp;&nbsp;}
+      var allScripts = [];
+      var dupe = false;
+      $.each(document.getElementsByTagName("script"), function(index, value) {
+        if ($.inArray(value.src, allScripts) !== -1 && value.src !== '') {
+          console.log('already loaded :: ' + value.src);
+          dupe=true;
+        }
+        allScripts.push(value.src);
+      });
+      if(!dupe){
+        console.log('no dupes');
+      }
     });
 
 I turned this into a bookmarklet as well if you want to add it as a bookmark to easily run on the page
 
-`javascript: (function() {var a = []; var b = false;$.each(document.getElementsByTagName("script"), function(index, value) {if ($.inArray(value.src, a) !== -1 && value.src !== &#039;&#039;) {console.log(&#039;already loaded :: &#039; + value.src);b=true;}a.push(value.src);});if(!b){console.log(&#039;no dupes&#039;);}})();`
+    javascript: (function() {var a = []; var b = false;$.each(document.getElementsByTagName("script"), function(index, value) {if ($.inArray(value.src, a) !== -1 && value.src !== '') {console.log('already loaded :: ' + value.src);b=true;}a.push(value.src);});if(!b){console.log('no dupes');}})();

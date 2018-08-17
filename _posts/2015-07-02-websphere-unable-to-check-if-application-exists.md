@@ -36,7 +36,7 @@ Step 7 is super important because it requires an additional save than most progr
 Full stack trace of the error I was getting
 
     [INFO] No custom module-to-server mappings found -- using default configuration.
-    com.insertcompanynamehere.websphere.deployment.client.DeploymentException: Unable to check if application exists &#039;NewBusiness&#039;
+    com.insertcompanynamehere.websphere.deployment.client.DeploymentException: Unable to check if application exists 'NewBusiness'
     at com.insertcompanynamehere.websphere.deployment.client.was61.DeploymentManager.applicationExists(DeploymentManager.java:265)
     at com.insertcompanynamehere.websphere.deployment.WebsphereDeploymentTask.execute(WebsphereDeploymentTask.java:59)
     at com.insertcompanynamehere.hudson.plugin.WebSphereDeploymentBuilder.perform(WebSphereDeploymentBuilder.java:194)
@@ -65,5 +65,5 @@ Full stack trace of the error I was getting
     at com.ibm.ws.management.AdminClientImpl.invoke(AdminClientImpl.java:224)
     at com.ibm.websphere.management.application.AppManagementProxy.proxyInvoke(AppManagementProxy.java:183)
     ... 13 more
-    Build step &#039;IBM WebSphere v8.0 Deployment&#039; changed build result to FAILURE
+    Build step 'IBM WebSphere v8.0 Deployment' changed build result to FAILURE
     Finished: FAILURE

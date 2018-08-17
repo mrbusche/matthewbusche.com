@@ -18,9 +18,9 @@ I was parsing through a csv file today and having issues with empty values. The 
 Dumping the list provides the expected list, but looping through the list it skips over values
 
     <cfoutput>
-    &nbsp;&nbsp;<cfloop list="#list1#" index="i">
-    &nbsp;&nbsp;&nbsp;&nbsp;#i#<br>
-    &nbsp;&nbsp;</cfloop>
+      <cfloop list="#list1#" index="i">
+        #i#<br>
+      </cfloop>
     </cfoutput>
 
 produces
@@ -34,11 +34,11 @@ After googling this for a bit I gave up and asked my [brother](http://twitter.co
 
 The code below produces the desired output. Notice I am now looping through an array instead of a list.
 
-    <cfset newlist = listToArray(list1,&#039;,&#039;,true) />
+    <cfset newlist = listToArray(list1,',',true) />
     <cfoutput>
-    &nbsp;&nbsp;<cfloop array="#newlist#" index="i">
-    &nbsp;&nbsp;&nbsp;&nbsp;#i#<br>
-    &nbsp;&nbsp;</cfloop>
+      <cfloop array="#newlist#" index="i">
+        #i#<br>
+      </cfloop>
     </cfoutput>
 
     1

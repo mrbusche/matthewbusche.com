@@ -20,9 +20,9 @@ I had this code in my Ant build properties
 This didn&#8217;t work, so I echoed the value into the console and it was correctly registering at false, but the tests were still being ran.
 
      <echo message="Do test? ${do.test}" />
-    &nbsp;&nbsp;<target name="test" depends="compile" description="execute unit and functional tests" if="do.test">
-    &nbsp;&nbsp;&nbsp;&nbsp;<cobertura-instrument todir="${temp.dir}/instrumented-classes" datafile="${temp.dir}/cobertura.ser">
-    &nbsp;&nbsp;&nbsp;&nbsp;</cobertura-instrument>
-    &nbsp;&nbsp;</target>
+      <target name="test" depends="compile" description="execute unit and functional tests" if="do.test">
+        <cobertura-instrument todir="${temp.dir}/instrumented-classes" datafile="${temp.dir}/cobertura.ser">
+        </cobertura-instrument>
+      </target>
 
 After quite a while trying to find an answer through Google I found out if there&#8217;s a parameter called do.test with ANY value then that is a true statement and the block will run. My solution was to rename the parameter to \_do.test. You could obviously also delete the parameter, but once I had resolved my build issue I was going to turn the tests back on.

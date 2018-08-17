@@ -16,25 +16,25 @@ I was writing some code for a client that processed a csv file and inserted each
 I was using MSSQL, so the max parameters I could send at one time was [2100](http://social.msdn.microsoft.com/Forums/sqlserver/en-US/f2ec73eb-f1e0-4048-95d0-1b1ff6c6fdf3/maximum-parameters-in-where-clause) (210 rows x 10 columns), but your mileage may vary. I&#8217;d set rowsPerInsert as high as possible and decrease as necessary. You should be able to easily modify the pseudo code below.
 
     <cfscript>
-    &nbsp;&nbsp;totalrows = 5000; // this would come from a structCount or something similar
-    &nbsp;&nbsp;rowsPerInsert = 210;
-    &nbsp;&nbsp;//this creates a struct with alternating values of true/false for test purposes
-    &nbsp;&nbsp;stRows = {};
-    &nbsp;&nbsp;for (i=1; i<=totalRows; i++) {
-    &nbsp;&nbsp;&nbsp;&nbsp;stRows[i] = i MOD 2 ? true : false;
-    &nbsp;&nbsp;}
+      totalrows = 5000; // this would come from a structCount or something similar
+      rowsPerInsert = 210;
+      //this creates a struct with alternating values of true/false for test purposes
+      stRows = {};
+      for (i=1; i<=totalRows; i++) {
+        stRows[i] = i MOD 2 ? true : false;
+      }
     </cfscript>
     <cfoutput>
     <cfloop from="0" to="#totalRows - 1#" step="#rowsPerInsert#" index="totalRow">
-    &nbsp;&nbsp;<br><br>INSERT #totalRow#<br>
-    &nbsp;&nbsp;<cfloop from="1" to="#rowsPerInsert#" index="indRow">
-    &nbsp;&nbsp;&nbsp;&nbsp;<cfset rowNumber = totalRow + indRow>
-    &nbsp;&nbsp;&nbsp;&nbsp;<cfif rowNumber LTE totalRows>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#rowNumber# #stRows[rowNumber]# <!--- SELECT goes here --->
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<cfif indRow NEQ rowsPerInsert AND rowNumber NEQ totalRows> UNION ALL</cfif>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;</cfif>
-    &nbsp;&nbsp;</cfloop>
+      <br><br>INSERT #totalRow#<br>
+      <cfloop from="1" to="#rowsPerInsert#" index="indRow">
+        <cfset rowNumber = totalRow + indRow>
+        <cfif rowNumber LTE totalRows>
+          #rowNumber# #stRows[rowNumber]# <!--- SELECT goes here --->
+          <cfif indRow NEQ rowsPerInsert AND rowNumber NEQ totalRows> UNION ALL</cfif>
+          <br>
+        </cfif>
+      </cfloop>
     </cfloop>
     </cfoutput>
 

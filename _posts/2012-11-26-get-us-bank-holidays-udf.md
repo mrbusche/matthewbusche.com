@@ -66,48 +66,28 @@ The following holidays are calculated using this UDF.
   </tr>
 </table>
 
-<cffunction name=&#8221;getUSBankHolidays&#8221; access=&#8221;public&#8221; output=&#8221;false&#8221; returntype=&#8221;struct&#8221; hint=&#8221;general bank holidays for US&#8221;>
+    <cffunction name=&#8221;getUSBankHolidays&#8221; access=&#8221;public&#8221; output=&#8221;false&#8221; returntype=&#8221;struct&#8221; hint=&#8221;general bank holidays for US&#8221;>
+      <cfargument name=&#8221;iYear&#8221; default=&#8221;#Year(now())#&#8221; />
+      <cfset var currentYear = arguments.iYear />
+      <cfset var strResult =
+      { NewYears = createDate(currentYear,1,1),
+        Independence = createDate(currentYear,7,4),
+        Veterans = createDate(currentYear,11,11),
+        Christmas = createDate(currentYear,12,25)
+      } />
 
-<cfargument name=&#8221;iYear&#8221; default=&#8221;#Year(now())#&#8221; />
-
-<cfset var currentYear = arguments.iYear />
-
-<cfset var strResult =
-
-{ NewYears = createDate(currentYear,1,1),
-
-Independence = createDate(currentYear,7,4),
-
-Veterans = createDate(currentYear,11,11),
-
-Christmas = createDate(currentYear,12,25)
-
-} />
-
-<cfif NOT (currentYear &#8211; 1) MOD 4>
-
-<cfset strResult.Inauguration = createDate(currentYear,1,20) />
-
-</cfif>
-
-<cfset strResult.MLKBirthday = createDate(currentYear,1,GetNthOccOfDayInMonth(3,2,1,currentYear)) />
-
-<cfset strResult.WashingtonsBirthday = createDate(currentYear,2,GetNthOccOfDayInMonth(3,2,2,currentYear)) />
-
-<cfset strResult.MemorialDay = createDate(currentYear,5,(DaysInMonth(createDate(2012,5,1))) &#8211; (DayOfWeek(createDate(2012,5,DaysInMonth(createDate(2012,5,1)))) &#8211; 2)) />
-
-<cfset strResult.LaborDay = createDate(currentYear,9,GetNthOccOfDayInMonth(1,2,9,currentYear)) />
-
-<cfset strResult.ColumbusDay = createDate(currentYear,10,GetNthOccOfDayInMonth(2,2,10,currentYear)) />
-
-<cfset strResult.Thanksgiving = createDate(currentYear,11,GetNthOccOfDayInMonth(4,6,11,currentYear)) />
-
-<cfreturn strResult />
-
-</cffunction>
+      <cfif NOT (currentYear &#8211; 1) MOD 4>
+        <cfset strResult.Inauguration = createDate(currentYear,1,20) />
+      </cfif>
+      <cfset strResult.MLKBirthday = createDate(currentYear,1,GetNthOccOfDayInMonth(3,2,1,currentYear)) />
+      <cfset strResult.WashingtonsBirthday = createDate(currentYear,2,GetNthOccOfDayInMonth(3,2,2,currentYear)) />
+      <cfset strResult.MemorialDay = createDate(currentYear,5,(DaysInMonth(createDate(2012,5,1))) &#8211; (DayOfWeek(createDate(2012,5,DaysInMonth(createDate(2012,5,1)))) &#8211; 2)) />
+      <cfset strResult.LaborDay = createDate(currentYear,9,GetNthOccOfDayInMonth(1,2,9,currentYear)) />
+      <cfset strResult.ColumbusDay = createDate(currentYear,10,GetNthOccOfDayInMonth(2,2,10,currentYear)) />
+      <cfset strResult.Thanksgiving = createDate(currentYear,11,GetNthOccOfDayInMonth(4,6,11,currentYear)) />
+      <cfreturn strResult />
+    </cffunction>
 
 This function is long overdue for me as monitors that run on week days run on Holidays and result in a lot of false positive &#8216;down&#8217; notifications. If the array returned is empty then the scheduled task should run. If the array has records then it&#8217;s a holiday
-
-&nbsp;
 
 This UDF requires the <a href="http://cflib.org/index.cfm?event=page.udfbyid&udfid=179" target="_blank">getNthOccOfDayInMonth</a> function from <a href="http://cflib.org/" target="_blank">cflib.org</a>

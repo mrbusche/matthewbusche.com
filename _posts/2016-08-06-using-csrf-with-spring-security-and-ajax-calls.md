@@ -20,7 +20,7 @@ I&#8217;m fairly new to Spring and especially Spring Security, so I had quite th
 
 First we allowed CSRF which is a strange syntax in my opinion
 
-`<security:csrf disabled="false" />`
+    <security:csrf disabled="false" />
 
 After we did that we were getting &#8220;405: Method Not Allowed&#8221; responses on all of our ajax requests. After some googling we discovered this is a security precaution to prevent cross site attacks, which makes a lot of sense. The biggest problem was we had probably 25 ajax calls and didn&#8217;t want to spend all day updating them individually, so we ended up adding in the csrf token and header name into the head meta tags in our application. This meant they were available on every page automatically and since they stay valid as long as the users&#8217; session this made the most sense.
 
@@ -31,11 +31,11 @@ Added to the header template
 
 Added to each JavaScript template (or could be added to a global JS file as well)
 
-    var token = $("meta[name=&#039;_csrf&#039;]").attr("content");
-    var header = $("meta[name=&#039;_csrf_header&#039;]").attr("content");
+    var token = $("meta[name='_csrf']").attr("content");
+    var header = $("meta[name='_csrf_header']").attr("content");
 
 Added to each ajax call
 
     , beforeSend: function( xhr ) {
-    &nbsp;&nbsp;xhr.setRequestHeader(header, token);
+      xhr.setRequestHeader(header, token);
     }

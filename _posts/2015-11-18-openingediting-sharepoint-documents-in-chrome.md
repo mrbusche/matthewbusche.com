@@ -21,4 +21,4 @@ If you&#8217;re like most people you don&#8217;t use Internet Explorer for any o
 
 For example if you want to edit a document clicking the EDIT button gives you an error saying it cannot find the appropriate program to edit with. Thankfully I stumbled across an &#8220;edit in browser&#8221; option. When viewing a document click on the &#8220;&#8230;&#8221; which brings up a pop up. From there click on &#8220;&#8230;&#8221; again and you will see an Edit in Browser option. Not all functionality is available when you do this, but for most quick edits this will work excellent.
 
-<img src="images/2015/11/EditSharepointDocumentInChrome.png" alt="EditSharepointDocumentInChrome" />
+ <img src="/images/2015/11/EditSharepointDocumentInChrome.png" alt="EditSharepointDocumentInChrome" />

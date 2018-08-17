@@ -24,4 +24,4 @@ All of us are probably familiar with ctrl + F5 to hard refresh a page but I ran 
 
 You can already disable cache while the console is open but this option will empty the entire cache and re-download everything on the current page. The difference is if the current website has content loaded through a CDN this will force a re-download of that content.
 
-<img src="images/2015/05/chromerefresh.png" alt="chromerefresh" />
+ <img src="/images/2015/05/chromerefresh.png" alt="chromerefresh" />

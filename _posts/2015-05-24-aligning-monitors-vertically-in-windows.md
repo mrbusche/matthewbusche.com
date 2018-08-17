@@ -15,4 +15,4 @@ At work I have dual monitors but with my docking station can also use my laptop 
 
 This would also work if you have one external monitor positioned directly above your laptop. Rather than scrolling to the right to get to the 2nd screen you can scroll verticallywhich is a lot more intuitive. This works with the Intel Control Panel and also with the GeForce Experience Control Panel.
 
-<img src="images/2015/05/3-monitors-1-below.png" />
+ <img src="/images/2015/05/3-monitors-1-below.png" />

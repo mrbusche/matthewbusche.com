@@ -20,8 +20,8 @@ TL;DR &#8211; If you think the context-param isn&#8217;t working, make sure you&
 I ran into an issue recently where after a security scan was ran we were told when you enter a variable into the URL i.e. `?endDate=someJavaScript` it was being executed on the page. Assumed it was an easy enough fix, so googled around and found, this solution for [Spring Framework](http://stackoverflow.com/questions/2147958/how-do-i-prevent-people-from-doing-xss-in-spring-mvc)
 
     <context-param>
-    &nbsp;&nbsp;<param-name>defaultHtmlEscape</param-name>
-    &nbsp;&nbsp;<param-value>true</param-value>
+      <param-name>defaultHtmlEscape</param-name>
+      <param-value>true</param-value>
     </context-param>
 
 I put that into the web.xml, restarted and it didn&#8217;t work, so I tried adding the page level and form level tags, but those didn&#8217;t work either. After messing around for a few hours I realized there was another place on the page where we were outputting the variable endDate, and it wasn&#8217;t inside a spring form.

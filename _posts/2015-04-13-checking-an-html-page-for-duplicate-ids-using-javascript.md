@@ -17,23 +17,23 @@ A couple years back I wrote a post about [Checking an HTML page for duplicate ID
     var allIds = {};
     var found = false;
     for (var i = 0, n = allElements.length; i < n; ++i) {
-    &nbsp;&nbsp;var id = allElements[i].id;
-    &nbsp;&nbsp;if (id) {
-    &nbsp;&nbsp;&nbsp;&nbsp;if (allIds[id] === undefined) {
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allIds[id] = 1;
-    &nbsp;&nbsp;&nbsp;&nbsp;} else {
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;found = true;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.warn(&#039;Duplicate ID #&#039; + id);
-    &nbsp;&nbsp;&nbsp;&nbsp;}
-    &nbsp;&nbsp;}
+      var id = allElements[i].id;
+      if (id) {
+        if (allIds[id] === undefined) {
+          allIds[id] = 1;
+        } else {
+          found = true;
+          console.warn('Duplicate ID #' + id);
+        }
+      }
     }
     if (!found) {
-    &nbsp;&nbsp;console.log(&#039;No duplicate IDs found&#039;);
+      console.log('No duplicate IDs found');
     }
 
 All you need to do is create a new bookmark with the following as the URL
 
-    javascript: (function() {var allElements = document.getElementsByTagName(&#039;*&#039;);var allIds = {};var found = false;for (var i = 0, n = allElements.length; i < n; ++i) {var id = allElements[i].id;if (id) {if (allIds[id] === undefined) {allIds[id] = 1;} else {found = true;console.warn(&#039;Duplicate ID #&#039; + id);}}}if (!found) {console.log(&#039;No duplicate IDs found&#039;);}})();
+    javascript: (function() {var allElements = document.getElementsByTagName('*');var allIds = {};var found = false;for (var i = 0, n = allElements.length; i < n; ++i) {var id = allElements[i].id;if (id) {if (allIds[id] === undefined) {allIds[id] = 1;} else {found = true;console.warn('Duplicate ID #' + id);}}}if (!found) {console.log('No duplicate IDs found');}})();
 
 Or you can simply drag the bookmarklet below onto your bookmark toolbar
 

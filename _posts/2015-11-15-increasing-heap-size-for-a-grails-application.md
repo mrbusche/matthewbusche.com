@@ -21,6 +21,6 @@ I had been running into a lot of issues with Grails running out of heap space on
 
 I knew that had to be an easier way, so I created an Environment Variable called GRAILS_OPTS and set the value to
 
-`-XX:PermSize=128m -XX:MaxPermSize=512m -Xms256m -Xmx512m -server`
+    -XX:PermSize=128m -XX:MaxPermSize=512m -Xms256m -Xmx512m -server
 
 Now these settings are used anytime I run grails.
