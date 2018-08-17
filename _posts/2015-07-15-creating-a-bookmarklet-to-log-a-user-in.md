@@ -16,13 +16,13 @@ As someone who is continually logging into an internal website while writing cod
 You&#8217;ll need to inspect the DOM and get the ID values of the username, password and form to make this work. What you do is set the dcoument into a variable get your element by the ID and set the value to your username. The same goes for the password. If you&#8217;re having trouble getting this to work make sure your input fields have ID and you have the case typed in correctly.
 
     javascript:(function(){
-    &nbsp;&nbsp;var d=document;
-    &nbsp;&nbsp;e=d.getElementById("userId");
-    &nbsp;&nbsp;e.value="matt.busche";
-    &nbsp;&nbsp;u=d.getElementById("password");
-    &nbsp;&nbsp;u.value="hunter2";
-    &nbsp;&nbsp;f=d.getElementById("loginForm");
-    &nbsp;&nbsp;f.submit();
+      var d=document;
+      e=d.getElementById("userId");
+      e.value="matt.busche";
+      u=d.getElementById("password");
+      u.value="hunter2";
+      f=d.getElementById("loginForm");
+      f.submit();
     })();
 
 Simple copy and paste the above code into the url field of a bookmark and you&#8217;ll be saving multiple seconds daily.

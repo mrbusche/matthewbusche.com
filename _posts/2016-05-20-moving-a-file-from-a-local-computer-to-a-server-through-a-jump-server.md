@@ -19,9 +19,11 @@ This is a problem I&#8217;ve been routinely facing at work because we have new f
 
 Once the file has been moved to the jump server you need to use the [scp command](https://docs.oracle.com/cd/E26502_01/html/E29001/remotehowtoaccess-55154.html) to move the file from the jump server to the other server. In my case the command looks something like this.
 
-`scp /home/mubusche/sonar.jar mbusche@cvms1255:/home/mbusche/`
+    scp /home/mubusche/sonar.jar mbusche@cvms1255:/home/mbusche/
 
-The syntax is `scp fileLocationOnCurrentServer username@servername:folderLocationToMoveFile/`
+The syntax is
+
+    scp fileLocationOnCurrentServer username@servername:folderLocationToMoveFile/
 
 Now generally you won&#8217;t have write access to all folders under your username and may need to sudo in as another user to move the file to the directory you need. To do that you need to login to the destination server via ssh, sign in as a user with permissions and then move the folder
 

@@ -17,7 +17,7 @@ All PS Tools programs are ran via the command line. I unzipped all the programs 
 
 `pslist \\mattbusche` is the command to find all running processes on my computer
 
-<img src="images/2012/09/pslist.png" alt="pslist" />
+ <img src="/images/2012/09/pslist.png" alt="pslist" />
 
 Normally if a rogue process is the problem with the computer it will have an extremely high CPU time. Idle and system will always have high times, so those can always be ignored. To kill a process you need the pid from the pslist command. You will need to reference the computer in this command as well `pskill \\mattbusche -t 344`
 

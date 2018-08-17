@@ -18,9 +18,9 @@ tags:
 Given you have set up a default_schema in your hibernate configuration
 
     <hibernate-configuration>
-    &nbsp;&nbsp; <session-factory>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<property name="hibernate.default_schema">mySchema</property>
-    &nbsp;&nbsp; </session-factory>
+       <session-factory>
+          <property name="hibernate.default_schema">mySchema</property>
+       </session-factory>
     </hibernate-configuration>
 
 Rather than writing a native SQL query like `SELECT x FROM mySchema.tableName` you can write your query as `SELECT x FROM {h-schema}tableName` rather than trying to do a find/replace when your schema name inevitably changes. Note that the . after the schema name is not only not required it will not work if it is added.

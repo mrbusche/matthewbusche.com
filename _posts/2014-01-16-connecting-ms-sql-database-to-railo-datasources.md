@@ -15,11 +15,11 @@ Tonight was the 2nd time I&#8217;ve struggled getting Microsoft SQL Server set u
 
 Go to Microsoft SQL Server 20XX > Configuration Tools > SQL Server Configuration Manager
 
-<img src="images/2015/05/sqlconfig.png" alt="sqlconfig" />
+ <img src="/images/2015/05/sqlconfig.png" alt="sqlconfig" />
 
 From there open up TCP/IP and make sure Listen All is set to No
 
-<img src="imagess/2015/05/tcpipproperties.png" alt="tcpipproperties" />
+ <img src="/images/2015/05/tcpipproperties.png" alt="tcpipproperties" />
 
 After that go to the IP Addresses tab and make sure Active and Enabled are yes (enabled defaults to no) and make sure you&#8217;re using the IP and correct TCP Port when configuring your datasource.
 

@@ -13,10 +13,10 @@ categories:
 
 Ever wonder what LDAP groups you&#8217;re a part of? There&#8217;s a super simple command that will tell you
 
-`net user ${windowsUsername} /domain`
+    net user ${windowsUsername} /domain
 
 In my case
 
-`net user mrbusche /domain`
+    net user mrbusche /domain
 
 Keep in mind this will run against your current domain on your computer, so if you&#8217;re a VPN user this may not work correctly if you&#8217;re computer domain is not your companies LDAP domain

@@ -15,4 +15,4 @@ We have an application at work that was built for IE 5.5, so this may have made 
 
 If you&#8217;re not familiar with about:config simply type about:config into the address bar and hit go, just like it&#8217;s a normal url. You will likely get a warning about &#8220;voiding your warranty&#8221;. Click &#8220;I&#8217;ll be careful, I promise!&#8221; and the search for newwindow. You will see an entry with a Preference Name of &#8220;browser.link.open_newwindow.restriction&#8221; and a value of 2. Change that value to 0 and all pop ups will open as tabs.
 
-<img src="images/2015/05/newwindow.png" alt="newwindow" />
+ <img src="/images/2015/05/newwindow.png" alt="newwindow" />

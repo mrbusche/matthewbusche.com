@@ -16,16 +16,16 @@ I&#8217;ve recently been switched to a Java project and one of the most frustrat
 The code ended up looking like this. In the message board post they used exception instead of error, but hopefully you get the point.
 
     <jsp:useBean id="error" scope="request" class="java.lang.Throwable" />
-    &nbsp;&nbsp;<%
-    &nbsp;&nbsp;&nbsp;&nbsp;Object billingError = request.getSession().getAttribute(RequestParamConstants.UNKNOWN_BILLING_ERROR);
-    &nbsp;&nbsp;&nbsp;&nbsp;error = (Throwable)billingError;
-    &nbsp;&nbsp;%>
-    &nbsp;&nbsp;<%@page isErrorPage="true" import="java.io.*"%>
-    &nbsp;&nbsp;<pre>
-    &nbsp;&nbsp;&nbsp;&nbsp;<%
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error.printStackTrace(new PrintWriter(out));
-    &nbsp;&nbsp;&nbsp;&nbsp;%>
-    &nbsp;&nbsp;</pre>
+      <%
+        Object billingError = request.getSession().getAttribute(RequestParamConstants.UNKNOWN_BILLING_ERROR);
+        error = (Throwable)billingError;
+      %>
+      <%@page isErrorPage="true" import="java.io.*"%>
+      <pre>
+        <%
+          error.printStackTrace(new PrintWriter(out));
+        %>
+      </pre>
 
 A while after implementing this I ran into an error where the first line was about 400 characters long, so I had to scroll way over to the right. This is because by default the [pre](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre) tag does not wrap, so I added this simple css fix which [allows the pre tag to wrap](http://www.impressivewebs.com/css-white-space/)
 

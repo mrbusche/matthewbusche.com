@@ -21,10 +21,10 @@ I ended up writing a bookmarklet that runs through all the elements in the DOM a
 Here&#8217;s the jQuery code
 
     $(function() {
-    &nbsp;&nbsp;$("body *").each(function() {
-    &nbsp;&nbsp;&nbsp;&nbsp;$(this).removeAttr("style");
-    &nbsp;&nbsp;&nbsp;&nbsp;$(this).removeClass("hidden");
-    &nbsp;&nbsp;})
+      $("body *").each(function() {
+        $(this).removeAttr("style");
+        $(this).removeClass("hidden");
+      })
     });
 
 Here&#8217;s the bookmarklet. You can simply create a new bookmark with this as the URL and click it to show the hidden elements.

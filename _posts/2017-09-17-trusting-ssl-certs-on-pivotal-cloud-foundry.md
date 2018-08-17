@@ -20,15 +20,15 @@ If you run into a scenario where you&#8217;re using a temporary SSL cert or a wi
 Note: the TRUST_CERTS: is indented under the env: and since this would be going into a yaml file the indentation does matter
 
 <pre>- name: mbusche
-&nbsp;&nbsp;instances: 1
-&nbsp;&nbsp;memory: 1024M
-&nbsp;&nbsp;disk_quota: 1024M
-&nbsp;&nbsp;buildpack: java_buildpack
-&nbsp;&nbsp;path: target/myapp.jar
-&nbsp;&nbsp;stack: cflinuxfs2
-&nbsp;&nbsp;timeout: 180
-&nbsp;&nbsp;services:
-&nbsp;&nbsp;- mbusche-config-server
-&nbsp;&nbsp;env:
-&nbsp;&nbsp;&nbsp;&nbsp;TRUST_CERTS: test.matthewbusche.com
+  instances: 1
+  memory: 1024M
+  disk_quota: 1024M
+  buildpack: java_buildpack
+  path: target/myapp.jar
+  stack: cflinuxfs2
+  timeout: 180
+  services:
+  - mbusche-config-server
+  env:
+    TRUST_CERTS: test.matthewbusche.com
 </pre>

@@ -36,4 +36,4 @@ My personal notes from [Leading the Transformation](https://www.amazon.com/Leadi
 - ROI on DevOps is substantial but you will never achieve full benefit until you get your automated testing built out and integrated into the development pipeline
 - Applying DevOps principles at scale really requires the executive to drive the cultural and technical changes for improving the stability of trunk. This is vitally important because of the productivity gains that are possible when you eliminate branches and integrate all work across the teams on trunk. To get your code trunk to this level of quality and to keep it there, you need to begin using a CD pipeline with both code and component-level gating. This pipeline must incorporate a robust test automation framework. You will need to have component-based automated tests. Executives will need some simple metrics that are auto-generated each day to understand what is working and what is not so that they can focus resources in the right place every day.
 
-&nbsp;
+

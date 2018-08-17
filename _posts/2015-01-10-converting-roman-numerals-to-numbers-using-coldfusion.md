@@ -14,22 +14,22 @@ categories:
 I recently worked on a project that required translating roman numerals to the numerical counterpart, this needed to work for anything from 1-2000. I wrote my own using TDD and eventually came up with this
 
     component {
-    &nbsp;&nbsp;public function romanToDecimal(romanNumber) {
-    &nbsp;&nbsp;&nbsp;&nbsp;var newNumber = 0;
-    &nbsp;&nbsp;&nbsp;&nbsp;var previousNumber = 0;
-    &nbsp;&nbsp;&nbsp;&nbsp;var romanToNumberMapping = {M:1000, D:500, C:100, L:50, X:10, V:5, I:1};
-    &nbsp;&nbsp;&nbsp;&nbsp;var romanNumeral = ucase(romanNumber);
-    &nbsp;&nbsp;&nbsp;&nbsp;for (var oneChar = romanNumeral.length() - 1; oneChar >= 0; oneChar--) {
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var oneLetter = romanNumeral.charAt(oneChar);
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (previousNumber > romanToNumberMapping[oneLetter]) {
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newNumber-=romanToNumberMapping[oneLetter];
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newNumber+=romanToNumberMapping[oneLetter];
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;previousNumber = romanToNumberMapping[oneLetter];
-    &nbsp;&nbsp;&nbsp;&nbsp;}
-    &nbsp;&nbsp;&nbsp;&nbsp;return newNumber;
-    &nbsp;&nbsp;}
+      public function romanToDecimal(romanNumber) {
+        var newNumber = 0;
+        var previousNumber = 0;
+        var romanToNumberMapping = {M:1000, D:500, C:100, L:50, X:10, V:5, I:1};
+        var romanNumeral = ucase(romanNumber);
+        for (var oneChar = romanNumeral.length() - 1; oneChar >= 0; oneChar--) {
+          var oneLetter = romanNumeral.charAt(oneChar);
+          if (previousNumber > romanToNumberMapping[oneLetter]) {
+            newNumber-=romanToNumberMapping[oneLetter];
+          } else {
+            newNumber+=romanToNumberMapping[oneLetter];
+          }
+          previousNumber = romanToNumberMapping[oneLetter];
+        }
+        return newNumber;
+      }
     }
 
 It&#8217;s simple enough that you should be able to add each roman numeral and it&#8217;s number into the mapping and this should theoretically work for any roman numeral, but I only tested up to 2000. This assumes that you have entered a valid roman numeral that can be translated to 1-2000.

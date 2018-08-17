@@ -22,12 +22,12 @@ Since we&#8217;re only supporting the latest browsers, IE 11, Chrome, Safari and
 
 We tried countless regEx patterns but finally settled on the following which lets you use all arrow keys and the delete key, but still only allows you to enter numbers into the text field. Big thanks to [Scott Busche](https://twitter.com/busches) for coming up with the correct regEx
 
-    $(&#039;.numbersOnly&#039;).keyup(function() {
-    var pattern = new RegExp(/\D/);
-    var validString = $(this).val().replace(pattern, &#039;&#039;);
-    if ($(this).val() !== validString) {
-    $(this).val(validString);
-    }
+    $('.numbersOnly').keyup(function() {
+      var pattern = new RegExp(/\D/);
+      var validString = $(this).val().replace(pattern, '');
+      if ($(this).val() !== validString) {
+        $(this).val(validString);
+      }
     });
 
 Rather than calling a function on key press however we decided to add a specific class to these fields and handle the result with a jQuery selector. The downside to this function is that you are actually allowed to type letters and special characters and they will show up for a millisecond, but they will be removed from the input box.

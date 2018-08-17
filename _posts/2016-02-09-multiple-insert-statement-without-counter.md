@@ -21,8 +21,8 @@ I often have a need to write an INSERT statement that adds multiple rows to a da
     <cfquery>
     INSERT INTO Attendees (Schedule_ID, Attendee_ID, Meeting_ID, User_ID)
     <cfloop list="#variables[eventlocation]#" index="i">
-    &nbsp;&nbsp;SELECT #Schedule_ID#, #i#, #Meeting_ID#, 1
-    &nbsp;&nbsp;UNION ALL
+      SELECT #Schedule_ID#, #i#, #Meeting_ID#, 1
+      UNION ALL
     </cfloop>
     <!--- returns no rows --->
     SELECT 0, 0, 0, 0

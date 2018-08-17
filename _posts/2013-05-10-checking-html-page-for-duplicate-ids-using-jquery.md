@@ -16,18 +16,18 @@ At work our testers make use of the ID elements on HTML tags quite frequently an
 This code does require that jQuery is defined on the page you are testing.
 
     javascript:(function () {
-    var ids = {};
-    var found = false;
-    $(&#039;[id]&#039;).each(function() {
-    if (this.id &amp;&amp; ids[this.id]) {
-    found = true;
-    console.warn(&#039;Duplicate ID #&#039;+this.id);
-    }
-    ids[this.id] = 1;
-    });
-    if (!found) console.log(&#039;No duplicate IDs found&#039;);
+      var ids = {};
+      var found = false;
+      $('[id]').each(function() {
+        if (this.id &amp;&amp; ids[this.id]) {
+          found = true;
+          console.warn('Duplicate ID #'+this.id);
+        }
+        ids[this.id] = 1;
+      });
+      if (!found) console.log('No duplicate IDs found');
     })();
 
 You can copy and paste the entire JavaScript function into a bookmark for quick access.
 
-    javascript:(function () { var ids = {}; var found = false; $(&#039;[id]&#039;).each(function() { if (this.id &amp;&amp; ids[this.id]) { found = true; console.warn(&#039;Duplicate ID #&#039;+this.id); } ids[this.id] = 1; }); if (!found) console.log(&#039;No duplicate IDs found&#039;); })();
+    javascript:(function () { var ids = {}; var found = false; $('[id]').each(function() { if (this.id &amp;&amp; ids[this.id]) { found = true; console.warn('Duplicate ID #'+this.id); } ids[this.id] = 1; }); if (!found) console.log('No duplicate IDs found'); })();

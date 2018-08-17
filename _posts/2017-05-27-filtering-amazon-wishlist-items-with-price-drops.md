@@ -18,19 +18,19 @@ Amazon has recently changed their filters on wish list items so you can no longe
 Update: I added this to [github](https://github.com/mrbusche/amazonPriceDrops).
 
 <pre>function removeItemsWithoutPriceDrops() {
-&nbsp;&nbsp;var lowPrice = 999999;
-&nbsp;&nbsp;var anyRemoved = false;
-&nbsp;&nbsp;var listItems = document.getElementsByClassName(&#039;a-spacing-none g-item-sortable&#039;);
+  var lowPrice = 999999;
+  var anyRemoved = false;
+  var listItems = document.getElementsByClassName('a-spacing-none g-item-sortable');
 
-&nbsp;&nbsp;for (var i = 0; i &lt; listItems.length; i++) { var priceDrop = listItems[i].querySelectorAll(&#039;.itemPriceDrop&#039;); var price = listItems[i].querySelectorAll(&#039;span.a-offscreen&#039;); if (price.length) { price = price[0].innerHTML; price = price.replace(&#039;$&#039;, &#039;&#039;); } else { price = 0; } if (priceDrop.length == 0 || price &gt; lowPrice) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listItems[i].parentElement.removeChild(listItems[i]);
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;anyRemoved = true;
-&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;}
+  for (var i = 0; i &lt; listItems.length; i++) { var priceDrop = listItems[i].querySelectorAll('.itemPriceDrop'); var price = listItems[i].querySelectorAll('span.a-offscreen'); if (price.length) { price = price[0].innerHTML; price = price.replace('$', ''); } else { price = 0; } if (priceDrop.length == 0 || price &gt; lowPrice) {
+      listItems[i].parentElement.removeChild(listItems[i]);
+      anyRemoved = true;
+    }
+  }
 
-&nbsp;&nbsp;if (anyRemoved) {
-&nbsp;&nbsp;&nbsp;&nbsp;removeItemsWithoutPriceDrops();
-&nbsp;&nbsp;}
+  if (anyRemoved) {
+    removeItemsWithoutPriceDrops();
+  }
 }
 
 removeItemsWithoutPriceDrops();
@@ -38,6 +38,8 @@ removeItemsWithoutPriceDrops();
 
 You can also add the following code directly to a bookmark by copy and pasting the code into this [generator](https://mrcoles.com/bookmarklet/).
 
-You can also copy this exact code into a new bookmark `javascript:(function()%7Bfunction removeItemsWithoutPriceDrops() %7Bvar lowPrice %3D 999999%3Bvar anyRemoved %3D false%3Bvar listItems %3D document.getElementsByClassName(&#039;a-spacing-none g-item-sortable&#039;)%3Bfor (var i %3D 0%3B i &lt; listItems.length%3B i%2B%2B) %7Bvar priceDrop %3D listItems%5Bi%5D.querySelectorAll(&#039;.itemPriceDrop&#039;)%3Bvar price %3D listItems%5Bi%5D.querySelectorAll(&#039;span.a-offscreen&#039;)%3Bif (price.length) %7Bprice %3D price%5B0%5D.innerHTML%3Bprice %3D price.replace(&#039;%24&#039;%2C &#039;&#039;)%3B%7D else %7Bprice %3D 0%3B%7Dif (priceDrop.length %3D%3D 0 %7C%7C price &gt; lowPrice) %7BlistItems%5Bi%5D.parentElement.removeChild(listItems%5Bi%5D)%3BanyRemoved %3D true%3B%7D%7Dif (anyRemoved) %7BremoveItemsWithoutPriceDrops()%3B%7D%7DremoveItemsWithoutPriceDrops()%7D)()`
+You can also copy this exact code into a new bookmark
+
+    javascript:(function()%7Bfunction removeItemsWithoutPriceDrops() %7Bvar lowPrice %3D 999999%3Bvar anyRemoved %3D false%3Bvar listItems %3D document.getElementsByClassName('a-spacing-none g-item-sortable')%3Bfor (var i %3D 0%3B i &lt; listItems.length%3B i%2B%2B) %7Bvar priceDrop %3D listItems%5Bi%5D.querySelectorAll('.itemPriceDrop')%3Bvar price %3D listItems%5Bi%5D.querySelectorAll('span.a-offscreen')%3Bif (price.length) %7Bprice %3D price%5B0%5D.innerHTML%3Bprice %3D price.replace('%24'%2C '')%3B%7D else %7Bprice %3D 0%3B%7Dif (priceDrop.length %3D%3D 0 %7C%7C price &gt; lowPrice) %7BlistItems%5Bi%5D.parentElement.removeChild(listItems%5Bi%5D)%3BanyRemoved %3D true%3B%7D%7Dif (anyRemoved) %7BremoveItemsWithoutPriceDrops()%3B%7D%7DremoveItemsWithoutPriceDrops()%7D)()
 
 If you&#8217;re having issues with your wishlist loading in all items you need to add `?sort=universal-price` to your URL. For example <https://www.amazon.com/gp/registry/wishlist/153OV2P85MJD6/?sort=universal-price>

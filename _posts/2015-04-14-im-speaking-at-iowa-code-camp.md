@@ -1,6 +1,6 @@
 ---
 id: 82
-title: "I' speaking at Iowa Code Camp!"
+title: "I'm speaking at Iowa Code Camp!"
 redirect_from:
   - /blog2/2015/04/14/im-speaking-at-iowa-code-camp/
 date: 2015-04-14T03:49:53+00:00
