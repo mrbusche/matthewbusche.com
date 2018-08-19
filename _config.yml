@@ -15,7 +15,7 @@ description: "Developer at Nationwide Insurance"
 tagline: "Things I've learned"
 
 # The subpath of your site, e.g. /blog, for generating urls
-? baseurl
+# baseurl
 
 sass:
   sass_dir: _sass
@@ -37,7 +37,7 @@ navigation:
     url: /search/
 
   # The shortname for your Disqus site to enable comments.
-? disqus
+# disqus
 
 # Author information - author info at the bottom of the post
 author_name: "Matt Busche"
@@ -47,11 +47,11 @@ author_location: "Des Moines, IA"
 #author_image: /images/avatar.jpg
 
 # Sidebar Add banner
-? banner_url
-? banner_image
+# banner_url
+# banner_image
 
 # Sidebar newsletter widget - add your form action url for MailChimp signup form here
-? mailchimp_url
+# mailchimp_url
 
 # Social links in the site footer
 twitter_username: mrbusche
