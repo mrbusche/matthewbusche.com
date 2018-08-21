@@ -75,4 +75,4 @@ markdown: kramdown
 kramdown:
   auto_ids: false
 
-include: _redirects
+include: ["_redirects"]
