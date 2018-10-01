@@ -20,3 +20,5 @@ Just replace the `names` array with a list of the names in your group
     });
 
 As always you can use a [Bookmarklet Creator](https://mrcoles.com/bookmarklet/) to add this as a "bookmark" on your address bar to make filtering super easy.
+
+Note: If you can't find a person, each person needs to acknowledge that they want to publically post their score by visiting the leaderboard page and clicking a link.
