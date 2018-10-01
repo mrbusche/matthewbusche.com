@@ -9,7 +9,7 @@
 title: matthewbusche.com
 
 # A description of your site for social meta tag, search engines, and feed.xml
-description: "Developer at Nationwide Insurance"
+description: "Developer at Nationwide Insurance and Freelance Consultant"
 
 # Tagline near the site title
 tagline: "Things I've learned"
@@ -41,7 +41,7 @@ navigation:
 
 # Author information - author info at the bottom of the post
 author_name: "Matt Busche"
-author_bio: "Matt is a developer at Nationwide Insurance."
+author_bio: "Matt is a developer at Nationwide Insurance and Freelance Consultant."
 author_url: "https://www.matthewbusche.com"
 author_location: "Des Moines, IA"
 #author_image: /images/avatar.jpg
