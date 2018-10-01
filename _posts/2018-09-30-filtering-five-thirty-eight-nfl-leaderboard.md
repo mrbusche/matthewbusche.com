@@ -1,6 +1,6 @@
 ---
 title: "Filtering FiveThirtyEight's NFL Forecasting Leaderboard"
-date: 2018-09-30 10:05:57
+date: 2018-09-30 20:06:43
 layout: post
 tags:
   - FiveThirtyEight
