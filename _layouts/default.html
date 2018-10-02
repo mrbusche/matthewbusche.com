@@ -13,12 +13,14 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }} Feed" href="{{ " /feed.xml
         " | prepend: site.baseurl | prepend: site.url }}">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49379810-1"></script>
+    <script src="https://browser.sentry-cdn.com/4.0.6/bundle.min.js" crossorigin="anonymous"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-49379810-1');
+        Sentry.init({ dsn: 'https://76924085a35e42049ac15347d91fd60b@sentry.io/1292401' });
     </script>
 
 </head>
@@ -29,7 +31,8 @@
             <button id="menu-toggle" aria-expanded="false">Menu</button>
             <div class="nav-menu">
                 <ul class="menu">
-                    {% for link in site.navigation %} {% assign current = nil %} {% if page.url == link.url %} {% assign current = 'nav-current'
+                    {% for link in site.navigation %} {% assign current = nil %} {% if page.url == link.url %} {%
+                    assign current = 'nav-current'
                     %} {% endif %}
                     <li class="{{ current }}">
                         <a class="{{ current }}" href="{{ link.url }}">{{ link.text }}</a>
