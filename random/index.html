@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link
+      href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <title>Random Order Generator</title>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="panel panel-default">
+        <h1 class="panel-heading">Enter a list to generate a random order</h1>
+        <div class="panel-body">
+          <div class="form-group">
+            <label for="teams">Items</label>
+            <textarea
+              id="teams"
+              name="teams"
+              placeholder="Enter items separated by a line break"
+              rows="5"
+              class="form-control"
+              autofocus
+            ></textarea>
+          </div>
+        </div>
+        <h1 id="title" class="panel-heading d-none">Here is your randomly ordered list.</h1>
+        <ol id="randomList"></ol>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.getElementById("teams").addEventListener("paste", e => {
+      window.setTimeout(() => {
+        const data = document.getElementById("teams").value;
+        const list = data.split("\n");
+        const arr = shuffle(list);
+        document.getElementById("title").classList.remove("d-none");
+        const randomList = document.getElementById("randomList");
+        let entry = "";
+        for (const dl in arr) {
+          entry = document.createElement("li");
+          entry.appendChild(document.createTextNode(arr[dl]));
+          randomList.appendChild(entry);
+        }
+      });
+    });
+
+    function shuffle(array) {
+      let currentIndex = array.length;
+      let temporaryValue = "";
+      let randomIndex = "";
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+    }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49379810-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "UA-49379810-1");
+  </script>
+</html>
