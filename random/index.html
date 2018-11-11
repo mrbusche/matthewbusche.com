@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Random Order Generator" />
+    <meta name="author" content="Matt Busche" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link
       href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css"
@@ -36,16 +38,16 @@
     </div>
   </body>
   <script>
-    document.getElementById("teams").addEventListener("paste", e => {
+    document.getElementById('teams').addEventListener('paste', e => {
       window.setTimeout(() => {
-        const data = document.getElementById("teams").value;
-        const list = data.split("\n");
+        const data = document.getElementById('teams').value;
+        const list = data.split('\n');
         const arr = shuffle(list);
-        document.getElementById("title").classList.remove("d-none");
-        const randomList = document.getElementById("randomList");
-        let entry = "";
+        document.getElementById('title').classList.remove('d-none');
+        const randomList = document.getElementById('randomList');
+        let entry = '';
         for (const dl in arr) {
-          entry = document.createElement("li");
+          entry = document.createElement('li');
           entry.appendChild(document.createTextNode(arr[dl]));
           randomList.appendChild(entry);
         }
@@ -54,8 +56,8 @@
 
     function shuffle(array) {
       let currentIndex = array.length;
-      let temporaryValue = "";
-      let randomIndex = "";
+      let temporaryValue = '';
+      let randomIndex = '';
       while (0 !== currentIndex) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
@@ -72,7 +74,7 @@
     function gtag() {
       dataLayer.push(arguments);
     }
-    gtag("js", new Date());
-    gtag("config", "UA-49379810-1");
+    gtag('js', new Date());
+    gtag('config', 'UA-49379810-1');
   </script>
 </html>
