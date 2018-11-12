@@ -18,4 +18,4 @@ layout: page
 
 [Stack Overflow Profile](http://stackoverflow.com/users/1065868/matt-busche)
 
-[Occurrence Counter](https://matthewbusche.com/p/oc/) &#8211; [Github](https://github.com/mrbusche/occurrenceCounter)
+[Occurrence Counter](https://matthewbusche.com/oc/) &#8211; [Github](https://github.com/mrbusche/occurrenceCounter)
