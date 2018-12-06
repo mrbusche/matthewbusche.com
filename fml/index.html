@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FML Calculator</title>
+    <meta name="description" content="Fantasy Movie League Calculator" />
+    <meta name="author" content="Matt Busche" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49379810-1"></script>
+    <script src="https://browser.sentry-cdn.com/4.4.1/bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-49379810-1');
+      Sentry.init({ dsn: 'https://76924085a35e42049ac15347d91fd60b@sentry.io/1292401' });
+    </script>
+  </head>
+  <body>
+    <h1>FML Calculator</h1>
+    <h2>Performance</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Movie</th>
+          <th>Cost</th>
+          <th>Estimate</th>
+          <th>Ratio</th>
+        </tr>
+      </thead>
+      <tbody id="performance"></tbody>
+    </table>
+    <h2 id="results1" style="display: none;">Top 20 results</h2>
+    <div id="results2" style="display: none;">
+      <table id="resultsTable" border="1">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Screen 1</th>
+            <th>Screen 2</th>
+            <th>Screen 3</th>
+            <th>Screen 4</th>
+            <th>Screen 5</th>
+            <th>Screen 6</th>
+            <th>Screen 7</th>
+            <th>Screen 8</th>
+            <th>Cost</th>
+            <th>Box Office</th>
+          </tr>
+        </thead>
+        <tbody id="addMovies"></tbody>
+      </table>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Movies</th>
+          <th>Cost</th>
+          <th>Estimate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><textarea id="movies" name="movies" rows="15" cols="35"></textarea></td>
+          <td><textarea id="movieCost" name="movieCost" rows="15" cols="6"></textarea></td>
+          <td><textarea id="movieRevenue" name="movieRevenue" rows="15" cols="15"></textarea></td>
+        </tr>
+        <tr>
+          <td><button id="sub">get results</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      (() => {
+        'use strict';
+
+        class Movie {
+          constructor(movie, cost, estimate) {
+            this.movie = movie;
+            this.cost = parseInt(cost);
+            this.estimate = parseInt(estimate);
+          }
+        }
+
+        class MovieTheater {
+          constructor(theater) {
+            this.theater = theater;
+          }
+          baseSum(array, iteratee) {
+            let result;
+
+            for (const value of array) {
+              const current = iteratee(value);
+              if (current !== undefined) {
+                result = result === undefined ? current : result + current;
+              }
+            }
+            return result;
+          }
+          sumBy(array, iteratee) {
+            return array != null && array.length ? this.baseSum(array, iteratee) : 0;
+          }
+
+          totalRevenue() {
+            return this.sumBy(this.theater, x => x.estimate);
+          }
+          totalCost() {
+            return this.sumBy(this.theater, x => x.cost);
+          }
+
+          movieList() {
+            return this.theater.map(x => x.movie).join(', ');
+          }
+        }
+
+        var fml = {};
+        fml.combosWithRep = function(l, arr) {
+          if (l === void 0) {
+            l = arr.length;
+          }
+          const data = Array(l),
+            results = [];
+          (function f(pos, start) {
+            if (pos === l) {
+              results.push(data.slice());
+              return;
+            }
+            for (let i = start; i < arr.length; ++i) {
+              data[pos] = arr[i];
+              f(pos + 1, i);
+            }
+          })(0, 0);
+          return results;
+        };
+
+        fml.financial = function(x) {
+          return '$' + x.toLocaleString('en-US');
+        };
+
+        fml.addPerformance = function(movieData) {
+          var newRow, newCell;
+          var tableBodyRef = document.getElementById('performance');
+          var newRow = tableBodyRef.insertRow(tableBodyRef.rows.length);
+          var newCell = newRow.insertCell(0);
+          newCell.appendChild(document.createTextNode(movieData.movie));
+          newCell = newRow.insertCell(1);
+          newCell.appendChild(document.createTextNode(fml.financial(movieData.cost)));
+          newCell = newRow.insertCell(2);
+          newCell.appendChild(document.createTextNode(fml.financial(movieData.estimate)));
+          newCell = newRow.insertCell(3);
+          newCell.appendChild(document.createTextNode(fml.financial(movieData.estimate / movieData.cost)));
+        };
+
+        fml.addTableData = function(order, movies, cost, boxOffice) {
+          var tableBodyRef = document.getElementById('addMovies');
+          var newRow = tableBodyRef.insertRow(tableBodyRef.rows.length);
+          var newCell = newRow.insertCell(0);
+          newCell.appendChild(document.createTextNode(order));
+          newCell = newRow.insertCell(1);
+          const movieResultList = movies.split(',');
+          for (let mv = 0; mv < movieResultList.length; mv++) {
+            newCell.appendChild(document.createTextNode(movieResultList[mv]));
+            newCell = newRow.insertCell(mv + 2);
+          }
+          newCell = newRow.insertCell(9);
+          newCell.appendChild(document.createTextNode(cost));
+          newCell = newRow.insertCell(10);
+          newCell.appendChild(document.createTextNode(boxOffice));
+        };
+
+        fml.getMovieListFromURL = function() {
+          const url = new URL(location.href);
+          const searchParams = new URLSearchParams(url.search);
+          return searchParams.get('data');
+        };
+
+        fml.addMoviesToForm = function(movieData) {
+          document.getElementById('movies').textContent = movieData.slice(0, 15).join('\n');
+          document.getElementById('movieCost').textContent = movieData.slice(15, 30).join('\n');
+          document.getElementById('movieRevenue').textContent = movieData.slice(30, 45).join('\n');
+        };
+
+        fml.generateMovies = function() {
+          const movies = document.getElementById('movies').textContent.split('\n');
+          const movieCost = document.getElementById('movieCost').textContent.split('\n');
+          const movieRevenue = document.getElementById('movieRevenue').textContent.split('\n');
+          const movieObj = [];
+          for (let step = 0; step < 15; step++) {
+            movieObj.push(new Movie(movies[step], movieCost[step], movieRevenue[step]));
+          }
+          movieObj.push(new Movie('blank', 0, -2000000));
+          return movieObj;
+        };
+
+        fml.updateUrl = function() {
+          let newUrl = 'index.html?data=';
+          newUrl +=
+            document
+              .getElementById('movies')
+              .value.split('\n')
+              .join() + ',';
+          newUrl +=
+            document
+              .getElementById('movieCost')
+              .value.split('\n')
+              .join() + ',';
+          newUrl += document
+            .getElementById('movieRevenue')
+            .value.split('\n')
+            .join();
+          window.location = encodeURI(newUrl);
+        };
+
+        var b = document.getElementById('sub');
+        b.onclick = fml.updateUrl;
+
+        const dataInUrl = fml.getMovieListFromURL();
+        const movieData = dataInUrl !== null ? dataInUrl.split(',') : [];
+        if (movieData.length) {
+          fml.addMoviesToForm(movieData);
+          const theMovies = fml.generateMovies(movieData);
+          const sortMovies = theMovies.slice(0, 15);
+          sortMovies.sort((a, b) => a.cost / a.estimate - b.cost / b.estimate);
+          sortMovies.forEach(a => {
+            fml.addPerformance(a);
+          });
+
+          document.getElementById('results1').style.display = 'block';
+          document.getElementById('results2').style.display = 'block';
+          const all = fml.combosWithRep(8, theMovies);
+          const movieTheaters = all.map(it => new MovieTheater(it)).filter(it2 => it2.totalCost() < 1001);
+          movieTheaters.sort((a, b) => b.totalRevenue() - a.totalRevenue());
+          let count = 0;
+          movieTheaters.forEach(a => {
+            if (count < 20) {
+              fml.addTableData(count + 1, a.movieList(), a.totalCost(), fml.financial(a.totalRevenue()));
+            } else {
+              return false;
+            }
+            count++;
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
