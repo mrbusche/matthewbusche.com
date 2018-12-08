@@ -21,8 +21,8 @@
   </head>
   <body>
     <h1>FML Calculator</h1>
-    <h2>Performance</h2>
-    <table border="1">
+    <h2 id="perfHeader" style="display: none;">Performance</h2>
+    <table id="tableHeader" style="display:none" border="1">
       <thead>
         <tr>
           <th>Movie</th>
@@ -141,10 +141,9 @@
         };
 
         fml.addPerformance = function(movieData) {
-          var newRow, newCell;
-          var tableBodyRef = document.getElementById('performance');
-          var newRow = tableBodyRef.insertRow(tableBodyRef.rows.length);
-          var newCell = newRow.insertCell(0);
+          const tableBodyRef = document.getElementById('performance');
+          const newRow = tableBodyRef.insertRow(tableBodyRef.rows.length);
+          let newCell = newRow.insertCell(0);
           newCell.appendChild(document.createTextNode(movieData.movie));
           newCell = newRow.insertCell(1);
           newCell.appendChild(document.createTextNode(fml.financial(movieData.cost)));
@@ -155,9 +154,9 @@
         };
 
         fml.addTableData = function(order, movies, cost, boxOffice) {
-          var tableBodyRef = document.getElementById('addMovies');
-          var newRow = tableBodyRef.insertRow(tableBodyRef.rows.length);
-          var newCell = newRow.insertCell(0);
+          const tableBodyRef = document.getElementById('addMovies');
+          const newRow = tableBodyRef.insertRow(tableBodyRef.rows.length);
+          let newCell = newRow.insertCell(0);
           newCell.appendChild(document.createTextNode(order));
           newCell = newRow.insertCell(1);
           const movieResultList = movies.split(',');
@@ -165,7 +164,6 @@
             newCell.appendChild(document.createTextNode(movieResultList[mv]));
             newCell = newRow.insertCell(mv + 2);
           }
-          newCell = newRow.insertCell(9);
           newCell.appendChild(document.createTextNode(cost));
           newCell = newRow.insertCell(10);
           newCell.appendChild(document.createTextNode(boxOffice));
@@ -228,8 +226,10 @@
             fml.addPerformance(a);
           });
 
-          document.getElementById('results1').style.display = 'block';
-          document.getElementById('results2').style.display = 'block';
+          document.getElementById('perfHeader').removeAttribute('style');
+          document.getElementById('tableHeader').removeAttribute('style');
+          document.getElementById('results1').removeAttribute('style');
+          document.getElementById('results2').removeAttribute('style');
           const all = fml.combosWithRep(8, theMovies);
           const movieTheaters = all.map(it => new MovieTheater(it)).filter(it2 => it2.totalCost() < 1001);
           movieTheaters.sort((a, b) => b.totalRevenue() - a.totalRevenue());
