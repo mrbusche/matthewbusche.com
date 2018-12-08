@@ -1,3 +1,6 @@
 [submodule "oc"]
 	path = oc
 	url = https://github.com/mrbusche/occurrenceCounter
+[submodule "pwa"]
+	path = pwa
+	url = https://github.com/mrbusche/conferencePWA
