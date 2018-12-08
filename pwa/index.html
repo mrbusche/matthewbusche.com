@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Conference PWA POC">
+		<meta name="author" content="Matt Busche">
+		<meta name="theme-color" content="#000000">
+		<!-- <link rel="icon" href="../../favicon.ico"> -->
+		<title>Conference PWA</title>
+		<link rel="manifest" href="manifest.json">
+		<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand" href="#">Conference PWA</a>
+			<div id="lastUpdate" hidden>2017-04-05T02:19:03.605Z</div><!-- http-server is too fast, so default the timestamp here -->
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Schedule</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Speakers</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Map</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="starter-template">
+				<h1>Really Cool Conference App</h1>
+				<p class="lead">Welcome!</p>
+			</div>
+			<div id="schedule" class="table-responsive">
+			</div>
+		</div>
+
+		<div class="spinner">
+			<div class="r1"></div>
+			<div class="r2"></div>
+			<div class="r3"></div>
+			<div class="r4"></div>
+			<div class="r5"></div>
+		</div>
+
+		<script src="scripts/jquery-3.1.1.slim.js"></script>
+		<script src="scripts/bootstrap.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+		<script src="scripts/app.js" async></script>
+	</body>
+</html>
