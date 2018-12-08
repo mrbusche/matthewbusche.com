@@ -4,3 +4,7 @@
 [submodule "fml"]
 	path = fml
 	url = https://github.com/mrbusche/fmlCalculator
+[submodule "pwa"]
+	path = pwa
+	url = https://github.com/mrbusche/conferencePWA
+
