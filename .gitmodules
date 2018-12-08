@@ -8,3 +8,6 @@
 	path = pwa
 	url = https://github.com/mrbusche/conferencePWA
 
+[submodule "random"]
+	path = random
+	url = https://github.com/mrbusche/randomOrder
