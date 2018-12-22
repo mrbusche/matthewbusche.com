@@ -33,7 +33,7 @@ Body
 
 The custom fields must match _exactly_ what you put in your admin and you must pass it in as a list. If you don't pass a list it won't register. The delay is the number of days to delay sending the survey.
 
-My full postman request is below with sensitive information redcated
+My full postman request is below with sensitive information redacted.
 
 ```{
   "info": {
