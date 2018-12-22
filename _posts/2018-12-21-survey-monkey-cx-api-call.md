@@ -1,12 +1,12 @@
 ---
-title: 'Survey Monkey CX API call'
+title: 'SurveyMonkey CX API call'
 date: 2018-12-21 20:56:57
 layout: post
 tags:
   - surveymonkey
 ---
 
-Survey Monkey has a great new API available that allows you to easily send someone an email programmatically. I ran into some hiccups while setting it up and there's almost zero documentation out there.
+SurveyMonkey has a great new API available that allows you to easily send someone an email programmatically. I ran into some hiccups while setting it up and there's almost zero documentation out there.
 
 Endpoint: This is provided at the end of setting up a survey. Should look like
 
