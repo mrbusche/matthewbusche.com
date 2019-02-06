@@ -13,7 +13,7 @@ If you've checked for updates on your Raspberry Pi and nothing is showing here's
 1. Go to the LibreELEC Add-On
 2. Change `Automatic Updates` from Auto to Manual
 3. Enable `Show Custom Channels` and then disable it
-4. From the 'Update Channel`menu choose`LibreELEC-9.0`
+4. From the `Update Channel`menu choose`LibreELEC-9.0`
 5. Go to Available Versions
 6. Install 9.0.0 (or the latest)
 7. Turn `Automatic Updates` back on
