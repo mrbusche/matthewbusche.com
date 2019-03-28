@@ -6,6 +6,13 @@ author: mrbusche
 layout: page
 ---
 
+### 2019
+
+- March 8: [Connectaha](https://connectaha.com/)
+  - [Secure by Design](https://drive.google.com/open?id=1xZ__lWpZcBJkRVotuM3LdjspP0Eu4FISK0zSIc_S_Uw)
+- March 12: Tech Con
+  - Building Awesome DevOps Pipelines
+
 ### 2018
 
 - March 20: Tech Con
