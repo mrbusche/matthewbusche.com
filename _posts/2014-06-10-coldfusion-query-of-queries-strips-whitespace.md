@@ -17,7 +17,7 @@ The query of queries was used to filter a result set down to the past two years 
 
 How to solve the issue?
 
-We googled and found this <a href="http://stackoverflow.com/questions/5750763/how-do-i-discard-a-row-from-a-coldfusion-query" target="_blank">stack overflow question</a>, but that solution only worked for Railo and then we found a post on <a href="http://stackoverflow.com/questions/5750763/how-do-i-discard-a-row-from-a-coldfusion-query" target="_blank">Ben Nadel&#8217;s blog</a> (obviously) that pointed out a Java function that would do what we needed, but when removing more than one row in the query you would eventually run into an index out of bounds error the way he had it structured, but that&#8217;s easy enough to fix.
+We googled and found this <a href="https://stackoverflow.com/questions/5750763/how-do-i-discard-a-row-from-a-coldfusion-query" target="_blank">stack overflow question</a>, but that solution only worked for Railo and then we found a post on <a href="https://stackoverflow.com/questions/5750763/how-do-i-discard-a-row-from-a-coldfusion-query" target="_blank">Ben Nadel&#8217;s blog</a> (obviously) that pointed out a Java function that would do what we needed, but when removing more than one row in the query you would eventually run into an index out of bounds error the way he had it structured, but that&#8217;s easy enough to fix.
 
     <cfloop from="#myQuery.recordCount#" to="1" step="-1" index="currentRow">
       <cfif myQuery.runDate[currentRow] LT left(getStartDateTime(),8)>
@@ -25,7 +25,7 @@ We googled and found this <a href="http://stackoverflow.com/questions/5750763/ho
       </cfif>
     </cfloop>
 
-After implementing this fix our query was working correctly, but we still needed to add <a href="http://help.adobe.com/livedocs/coldfusion/8/htmldocs/help.html?content=functions_t-z_10.html" target="_blank">URLEncodedFormat</a> to our URL parameters, so the whitespace wouldn&#8217;t be stripped (and because it should have been done in the first place).
+After implementing this fix our query was working correctly, but we still needed to add <a href="https://help.adobe.com/livedocs/coldfusion/8/htmldocs/help.html?content=functions_t-z_10.html" target="_blank">URLEncodedFormat</a> to our URL parameters, so the whitespace wouldn&#8217;t be stripped (and because it should have been done in the first place).
 
 FWIW Railo 4.2 does NOT strip out whitespace. Test case below
 
@@ -45,6 +45,6 @@ number 6
 
 string a spacea spacea spaceAAA
 
-You can also run this code on <a href="http://www.trycf.com/scratch-pad/pastebin?id=wrzxdALb" target="_blank">trycf.com</a>
+You can also run this code on <a href="https://www.trycf.com/scratch-pad/pastebin?id=wrzxdALb" target="_blank">trycf.com</a>
 
 UPDATE: Adam Cameron [pinged](https://twitter.com/dacCfml/status/476628676394897408) me on twitter (and Ray added in the comments) that this is fixed in ColdFusion 11.

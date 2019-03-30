@@ -8,15 +8,15 @@ layout: page
 
 [Filter Amazon Price Drops](https://github.com/mrbusche/amazonPriceDrops)
 
-[Conference Progress Web App](http://matthewbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
+[Conference Progress Web App](https://matthewbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
 
-[Fantasy Movie League Calculator](http://matthewbusche.com/fml) &#8211; [Github](https://github.com/mrbusche/fmlCalculator/)
+[Fantasy Movie League Calculator](https://matthewbusche.com/fml) &#8211; [Github](https://github.com/mrbusche/fmlCalculator/)
 
-[Is it Election Day?](http://isitelectionday.com/) &#8211; [Github](https://github.com/mrbusche/isItElectionDay)
+[Is it Election Day?](https://isitelectionday.com/) &#8211; [Github](https://github.com/mrbusche/isItElectionDay)
 
-[Occurrence Counter](http://matthewbusche.com/oc) &#8211; [Github](https://github.com/mrbusche/occurrenceCounter)
+[Occurrence Counter](https://matthewbusche.com/oc) &#8211; [Github](https://github.com/mrbusche/occurrenceCounter)
 
-[Random Order Generator](http://matthewbusche.com/random) &#8211; [Github](https://github.com/mrbusche/randomOrder)
+[Random Order Generator](https://matthewbusche.com/random) &#8211; [Github](https://github.com/mrbusche/randomOrder)
 
 [Github &#8211; Responsive Web Design Presentation](https://github.com/mrbusche/Responsive-Web-Design)
 
@@ -26,4 +26,4 @@ layout: page
 
 [WordPress &#8211; Strip Leading Zeroes from Permalink](https://github.com/mrbusche/Strip_Leading_Zeroes)
 
-[Stack Overflow Profile](http://stackoverflow.com/users/1065868/matt-busche)
+[Stack Overflow Profile](https://stackoverflow.com/users/1065868/matt-busche)

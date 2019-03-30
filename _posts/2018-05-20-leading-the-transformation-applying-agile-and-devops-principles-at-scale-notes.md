@@ -15,7 +15,7 @@ tags:
 
 My personal notes from [Leading the Transformation](https://www.amazon.com/Leading-Transformation-Applying-DevOps-Principles-ebook/dp/B07B43BLLB/) by [Gary Gruver](https://twitter.com/gruvergary)
 
-- Additional reading &#8211; Many specifics referenced in this book are leveraged from a case study of transformation at HP, detailed in [A Practical Approach to Large-Scale Agile Development, by Gary Gruver, Mike Young, and Pat Fulghum](http://ptgmedia.pearsoncmg.com/images/9780321821720/samplepages/9780321821720.pdf).
+- Additional reading &#8211; Many specifics referenced in this book are leveraged from a case study of transformation at HP, detailed in [A Practical Approach to Large-Scale Agile Development, by Gary Gruver, Mike Young, and Pat Fulghum](https://ptgmedia.pearsoncmg.com/images/9780321821720/samplepages/9780321821720.pdf).
 - How teams come together to deliver value in large organizations is a first-order effect. How individual teams work is a second-order effect
 - Done means
   - feature is signed off

@@ -12,7 +12,7 @@ categories:
   - responsive design
 ---
 
-I tweeted this out a while back, but I have been selected to speak at cfObjective() 2014! I [blogged in early November about my proposal](http://matthewbusche.com/blog/index.cfm/2013/11/3/cfObjective-Proposal--Getting-started-with-Responsive-Web-Design) and the people have spoken! I hope to see all of you at the conference!
+I tweeted this out a while back, but I have been selected to speak at cfObjective() 2014! I [blogged in early November about my proposal](https://matthewbusche.com/blog/index.cfm/2013/11/3/cfObjective-Proposal--Getting-started-with-Responsive-Web-Design) and the people have spoken! I hope to see all of you at the conference!
 
 Responsive Web Design has been a buzzword since the term was first coined in May 2010. Come find out what this emerging technology is all about as you are introduced to the basics of Responsive Web Design. We&#8217;ll cover your current options when it comes to designing your own website and we&#8217;ll also discuss emerging best practices and a few examples from industry leaders. We will also take a look at how you can test your responsive design without owning one of each device out there.
 
@@ -34,4 +34,4 @@ Basic CSS and HTML experience
 - Common Misconceptions
 - Who is using responsive web design?
 
-If you&#8217;re interested in attending head on over to [cfobjective.com](http://www.cfobjective.com/) and register before March 1st to get an early bird discount.
+If you&#8217;re interested in attending head on over to [cfobjective.com](https://www.cfobjective.com/) and register before March 1st to get an early bird discount.
