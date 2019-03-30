@@ -8,7 +8,7 @@ author: mrbusche
 layout: page
 ---
 
-Twitter &#8211; <a href="http://twitter.com/mrbusche" target="_blank">twitter.com/mrbusche</a>
+Twitter &#8211; <a href="https://twitter.com/mrbusche" target="_blank">twitter.com/mrbusche</a>
 
 Email &#8211; gmail with twitter
 

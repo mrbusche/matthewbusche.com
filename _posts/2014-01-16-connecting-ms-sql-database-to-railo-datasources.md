@@ -23,4 +23,4 @@ From there open up TCP/IP and make sure Listen All is set to No
 
 After that go to the IP Addresses tab and make sure Active and Enabled are yes (enabled defaults to no) and make sure you&#8217;re using the IP and correct TCP Port when configuring your datasource.
 
-Thanks to [this MSDN post](http://blogs.msdn.com/b/sqlblog/archive/2009/07/17/how-to-configure-sql-server-to-listen-on-different-ports-on-different-ip-addresses.aspx) for getting me on the right track.
+Thanks to [this MSDN post](https://blogs.msdn.com/b/sqlblog/archive/2009/07/17/how-to-configure-sql-server-to-listen-on-different-ports-on-different-ip-addresses.aspx) for getting me on the right track.

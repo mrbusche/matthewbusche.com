@@ -11,7 +11,7 @@ categories:
   - ColdFusion
 ---
 
-I was looking for an existing UDF on cflib.org for current bank holidays but the only one I could find was for <a href="http://cflib.org/udf/getBankHolidays" target="_blank">German holidays only</a>. With this function you can pass in a year otherwise it will assume the current year is to be used.
+I was looking for an existing UDF on cflib.org for current bank holidays but the only one I could find was for <a href="https://cflib.org/udf/getBankHolidays" target="_blank">German holidays only</a>. With this function you can pass in a year otherwise it will assume the current year is to be used.
 
 The following holidays are calculated using this UDF.
 
@@ -90,4 +90,4 @@ The following holidays are calculated using this UDF.
 
 This function is long overdue for me as monitors that run on week days run on Holidays and result in a lot of false positive &#8216;down&#8217; notifications. If the array returned is empty then the scheduled task should run. If the array has records then it&#8217;s a holiday
 
-This UDF requires the <a href="http://cflib.org/index.cfm?event=page.udfbyid&udfid=179" target="_blank">getNthOccOfDayInMonth</a> function from <a href="http://cflib.org/" target="_blank">cflib.org</a>
+This UDF requires the <a href="https://cflib.org/index.cfm?event=page.udfbyid&udfid=179" target="_blank">getNthOccOfDayInMonth</a> function from <a href="https://cflib.org/" target="_blank">cflib.org</a>

@@ -13,6 +13,6 @@ tags:
   - iowacodecamp
 ---
 
-I&#8217;m excited to announce I will be speaking at [Iowa Code Camp](http://iowacodecamp.com/session/list#37) on December 5th in Ankeny, Iowa on Responsible Responsive Web Design.
+I&#8217;m excited to announce I will be speaking at [Iowa Code Camp](https://iowacodecamp.com/session/list#37) on December 5th in Ankeny, Iowa on Responsible Responsive Web Design.
 
 I&#8217;ll be discussing how you can design a website responsibly and delivery a consistent user experience to users on small and large screen devices. I&#8217;ll also talk about how to decrease your website&#8217;s page size quickly and effectively to make your website load fast even on the slowest of connections. We&#8217;ll also cover using the newest HTML specifications even on browsers that do not have native support.
