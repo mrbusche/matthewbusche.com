@@ -12,6 +12,8 @@ layout: page
   - [Secure by Design](https://drive.google.com/open?id=1xZ__lWpZcBJkRVotuM3LdjspP0Eu4FISK0zSIc_S_Uw)
 - March 12: Tech Con
   - Building Awesome DevOps Pipelines
+- May 3rd: [DevOpsDays Des Moines](https://devopsdays.org/events/2019-des-moines/welcome/)
+  - [Web Performance: Where do I start?](https://docs.google.com/presentation/d/1Km9RTAULSGr8Xo6CY9-josMSJV9T1B7eadL_G_deDpo/edit) - [Video](https://youtu.be/Xg6FAU7s61g)
 
 ### 2018
 
