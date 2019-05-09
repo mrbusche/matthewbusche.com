@@ -8,8 +8,10 @@ author: mrbusche
 layout: page
 ---
 
-Twitter &#8211; <a href="https://twitter.com/mrbusche" target="_blank">twitter.com/mrbusche</a>
-
 Email &#8211; gmail with twitter
 
-<a href="https://www.linkedin.com/in/mrbusche" target="_blank">LinkedIn</a>
+[LinkedIn](https://www.linkedin.com/in/mrbusche)
+
+[Stack Overflow Profile](https://stackoverflow.com/users/1065868/matt-busche)
+
+Twitter &#8211; <a href="https://twitter.com/mrbusche" target="_blank">twitter.com/mrbusche</a>
