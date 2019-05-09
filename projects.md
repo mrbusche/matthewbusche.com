@@ -6,24 +6,22 @@ author: mrbusche
 layout: page
 ---
 
-[Filter Amazon Price Drops](https://github.com/mrbusche/amazonPriceDrops)
-
 [Conference Progress Web App](https://matthewbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
 
-[Fantasy Movie League Calculator](https://matthewbusche.com/fml) &#8211; [Github](https://github.com/mrbusche/fmlCalculator/)
+[Fantasy Movie League Calculator](https://fmlcalculator.com/) &#8211; [Github](https://github.com/mrbusche/fmlCalculator/)
+
+[Filter Amazon Price Drops](https://github.com/mrbusche/amazonPriceDrops)
+
+[Filter FiveThirtyEight's NFL Forecasting Leaderboard](https://matthewbusche.com/2018/09/30/filtering-five-thirty-eight-nfl-leaderboard/)
 
 [Is it Election Day?](https://isitelectionday.com/) &#8211; [Github](https://github.com/mrbusche/isItElectionDay)
 
-[Occurrence Counter](https://matthewbusche.com/oc) &#8211; [Github](https://github.com/mrbusche/occurrenceCounter)
+[https://matthewbusche.com](https://github.com/mrbusche/matthewbusche.com)
 
-[Random Order Generator](https://matthewbusche.com/random) &#8211; [Github](https://github.com/mrbusche/randomOrder)
+[Occurrence Counter](https://www.occurrencecounter.com/) &#8211; [Github](https://github.com/mrbusche/occurrenceCounter)
 
-[Github &#8211; Responsive Web Design Presentation](https://github.com/mrbusche/Responsive-Web-Design)
+[Random Order Generator](https://randomordergenerator.com/) &#8211; [Github](https://github.com/mrbusche/randomOrder)
 
-[Github &#8211; Responsible Responsive Web Design Presentation](https://github.com/mrbusche/Responsible-Responsive-Web-Design)
+[Trap Scoring application](https://github.com/mrbusche/trap-scoring)
 
-[This website](https://github.com/mrbusche/matthewbusche.com)
-
-[WordPress &#8211; Strip Leading Zeroes from Permalink](https://github.com/mrbusche/Strip_Leading_Zeroes)
-
-[Stack Overflow Profile](https://stackoverflow.com/users/1065868/matt-busche)
+[You are not dumb](https://youarenotdumb.com/) &#8211; [Github](https://github.com/mrbusche/youarenotdumb)
