@@ -1,6 +1,6 @@
 ---
 title: "I'm speaking at Prairie.Code() 2019!"
-date: 2018-08-15 16:06:57
+date: 2010-05-29 20:06:57
 author: mrbusche
 layout: post
 categories: conferences
