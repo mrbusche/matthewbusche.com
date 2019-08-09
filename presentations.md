@@ -16,7 +16,7 @@ layout: page
   - [Web Performance: Where do I start?](https://docs.google.com/presentation/d/1Km9RTAULSGr8Xo6CY9-josMSJV9T1B7eadL_G_deDpo/edit) - [Video](https://youtu.be/Xg6FAU7s61g)
 - August 7-8, 2019: [MidwestJS](http://midwestjs.com/)
   - [Secure by Design](https://docs.google.com/presentation/d/1JyKFChu0hvP7FWQqkcFgaS7lXiucru40cFXpIoOlQzw)
-  - Web Performance - Where to Start?
+  - [Web Performance - Where to Start?](https://docs.google.com/presentation/d/1QPfz1W1sDDk12AEQMjLm-rPr5X5erDWGIgrHPwBl8nQ)
 - September 11-12, 2019: [DevOpsDays Portland](https://devopsdays.org/events/2019-portland/welcome/)
   - Web Performance: Where do I start (lightning talk)
 - September 13, 2019: [Prairie.Code()](https://prairiecode.amegala.com/Schedule)
