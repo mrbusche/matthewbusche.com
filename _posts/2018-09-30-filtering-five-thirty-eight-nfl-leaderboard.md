@@ -11,9 +11,9 @@ A group of friends and I have a contest going on FiveThirtyEight's [NFL Forecast
 
 Just replace the `names` array with a list of the names in your group
 
-    var table = document.getElementById('leaderboard-table-wrap').getElementsByTagName('tr');
+    const table = document.getElementById('leaderboard-table-wrap').getElementsByTagName('tr');
     Array.from(table).forEach(function(item) {
-      var names = ['Matt Busche', 'Random Dude'];
+      const names = ['Matt Busche', 'Random Dude'];
       if (names.indexOf(item.getElementsByClassName('name')[0].textContent) === -1) {
         item.closest('tr').remove();
       }
