@@ -18,9 +18,9 @@ layout: page
   - [Secure by Design](https://docs.google.com/presentation/d/1JyKFChu0hvP7FWQqkcFgaS7lXiucru40cFXpIoOlQzw)
   - [Web Performance - Where to Start?](https://docs.google.com/presentation/d/1QPfz1W1sDDk12AEQMjLm-rPr5X5erDWGIgrHPwBl8nQ)
 - September 11-12, 2019: [DevOpsDays Portland](https://devopsdays.org/events/2019-portland/welcome/)
-  - Web Performance: [Where do I start (lightning talk)](https://drive.google.com/open?id=1A1vQIC_aUBSQjgAy9ApUoJDmjPO_GyP-TrZHw77DGhw)
+  - [Web Performance: Where do I start](https://drive.google.com/open?id=1A1vQIC_aUBSQjgAy9ApUoJDmjPO_GyP-TrZHw77DGhw)(lightning talk)
 - September 13, 2019: [Prairie.Code()](https://prairiecode.amegala.com/Schedule)
-  - Secure by Design
+  - [Secure by Design](https://docs.google.com/presentation/d/1RGLcg-QeQzsVSfxgFWN03lqALEPsqCU11pj1J0I9z2g/)
 
 ### 2018
 
