@@ -8,6 +8,8 @@ layout: page
 
 [Conference Progress Web App](https://matthewbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
 
+[Dynasty Trade Calculator](http://dynastytradecalc.com/) 
+
 [Fantasy Movie League Calculator](https://fmlcalculator.com/) &#8211; [Github](https://github.com/mrbusche/fmlCalculator/)
 
 [Filter Amazon Price Drops](https://github.com/mrbusche/amazonPriceDrops)
