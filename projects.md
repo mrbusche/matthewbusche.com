@@ -6,7 +6,7 @@ author: mrbusche
 layout: page
 ---
 
-[Conference Progress Web App](https://matthewbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
+[Conference Progressive Web App](https://matthewbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
 
 [Dynasty Trade Calculator](http://dynastytradecalc.com/) 
 
