@@ -9,7 +9,7 @@
 title: matthewbusche.com
 
 # A description of your site for social meta tag, search engines, and feed.xml
-description: "Developer at Nationwide Insurance and Freelance Consultant"
+description: 'Developer at Nationwide Insurance and Freelance Consultant'
 
 # Tagline near the site title
 tagline: "Things I've learned"
@@ -21,7 +21,7 @@ sass:
   sass_dir: _sass
 
 # The base hostname & protocol of your site for where absolute urls are needed
-url: "https://matthewbusche.com"
+url: 'https://matthewbusche.com'
 
 # Site navigation - each item must have a title and a url.
 navigation:
@@ -35,15 +35,17 @@ navigation:
     url: /contact/
   - text: Search
     url: /search/
+  - text: Uses
+    url: /uses/
 
   # The shortname for your Disqus site to enable comments.
 # disqus
 
 # Author information - author info at the bottom of the post
-author_name: "Matt Busche"
-author_bio: "Matt is a developer at Nationwide Insurance and Freelance Consultant."
-author_url: "https://www.matthewbusche.com"
-author_location: "Des Moines, IA"
+author_name: 'Matt Busche'
+author_bio: 'Matt is a developer at Nationwide Insurance and Freelance Consultant.'
+author_url: 'https://www.matthewbusche.com'
+author_location: 'Des Moines, IA'
 #author_image: /images/avatar.jpg
 
 # Sidebar Add banner
@@ -68,11 +70,11 @@ linkedin_username: mrbusche
 
 # http://jekyllrb.com/docs/pagination/
 paginate: 5
-paginate_path: "/blog/page:num/"
-plugins: ["jekyll-paginate", "jekyll-redirect-from"]
+paginate_path: '/blog/page:num/'
+plugins: ['jekyll-paginate', 'jekyll-redirect-from']
 permalink: pretty
 markdown: kramdown
 kramdown:
   auto_ids: false
 
-include: ["_redirects"]
+include: ['_redirects']
