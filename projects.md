@@ -8,7 +8,7 @@ layout: page
 
 [Conference Progressive Web App](https://matthewbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
 
-[Dynasty Trade Calculator](http://dynastytradecalc.com/) 
+[Dynasty Trade Calculator](https://dynastytradecalc.com/)
 
 [Fantasy Movie League Calculator](https://fmlcalculator.com/) &#8211; [Github](https://github.com/mrbusche/fmlCalculator/)
 

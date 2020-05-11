@@ -47,7 +47,7 @@ layout: page
 
 ### 2016
 
-- June 16: <a href="http://www.devobjective.com/" target="_blank" rel="noopener">dev.Objective()</a>
+- June 16: <a href="https://www.devobjective.com/" target="_blank" rel="noopener">dev.Objective()</a>
   - <a href="https://docs.google.com/presentation/d/11Jysy7rKVahfVddCB4fnyk2VSwQ_M-SW0VoFOeoesA0/edit" target="_blank" rel="noopener">Delivering Responsibly</a>
 - March 1: Tech Con
   - <a href="https://docs.google.com/presentation/d/1kL7xLnHYPyRFFNbsJ8kJci4tQrcZCo2GjM84-I3McRo/edit?usp=sharing" target="_blank" rel="noopener">Responsible Responsive Web Design</a>
@@ -56,19 +56,19 @@ layout: page
 
 ### 2015
 
-- December 6: <a href="http://iowacodecamp.com/session/list" target="_blank" rel="noopener">Iowa Code Camp</a>
+- December 6: <a href="https://iowacodecamp.com/session/list" target="_blank" rel="noopener">Iowa Code Camp</a>
   - <a href="https://matthewbusche.com/p/iowacodecamp/#/" target="_blank" rel="noopener">Responsible Responsive Web Design</a> (with a lot of Designing for Performance)
 - June 9: <a href="https://dsmjs.com/" target="_blank" rel="noopener">DSM JS</a>
   - <a href="https://matthewbusche.com/p/rrwd" target="_blank" rel="noopener">Responsible Responsive Web Design</a>
-- May 9: <a href="http://iowacodecamp.com/" target="_blank" rel="noopener">Iowa Code Camp</a>
+- May 9: <a href="https://iowacodecamp.com/" target="_blank" rel="noopener">Iowa Code Camp</a>
   - <a href="https://matthewbusche.com/p/rrwd" target="_blank" rel="noopener">Responsible Responsive Web Design</a>
 - February 24: Tech Con
   - <a href="https://matthewbusche.com/p/techcon/techcon.pdf" target="_blank" rel="noopener">Responsible Responsive Web Design</a> (PDF)
 
 ### 2014
 
-- September 13-14: <a href="http://www.ncdevcon.com/" target="_blank" rel="noopener">NCDevCon</a>
+- September 13-14: <a href="https://www.ncdevcon.com/" target="_blank" rel="noopener">NCDevCon</a>
   - <a href="https://matthewbusche.com/p/responsive-NCDevCon/#/" target="_blank" rel="noopener">Getting Started With Responsive Web Design &#8211; Slides</a>
   - <a href="https://textiles.online.ncsu.edu/online/Play/d40c35ec04c542f2b2a0bb01ddd9016d1d?catalog=f3393fc7-f068-4b21-84cd-23d1cebcd014" target="_blank" rel="noopener">Getting Started With Responsive Web Design &#8211; Video</a>
-- May 14-16: cf.Objective() (now <a href="http://www.devobjective.com/" target="_blank" rel="noopener">dev.Objective()</a>)
+- May 14-16: cf.Objective() (now <a href="https://www.devobjective.com/" target="_blank" rel="noopener">dev.Objective()</a>)
   - <a href="https://matthewbusche.com/p/responsive/#/" target="_blank" rel="noopener">Getting Started With Responsive Web Design &#8211; Slides</a>
