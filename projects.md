@@ -8,15 +8,13 @@ layout: page
 
 [Conference Progressive Web App](https://matthewbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
 
-[Dynasty Trade Calculator](https://dynastytradecalc.com/)
+[Dynasty Football Trade Calculator](https://dynastytradecalc.com/)
 
 [Fantasy Movie League Calculator](https://fmlcalculator.com/) &#8211; [Github](https://github.com/mrbusche/fmlCalculator/)
 
 [Filter Amazon Price Drops](https://github.com/mrbusche/amazonPriceDrops)
 
-[Filter FiveThirtyEight's NFL Forecasting Leaderboard](https://matthewbusche.com/2018/09/30/filtering-five-thirty-eight-nfl-leaderboard/)
-
-[FiveThirtyEight's Leaderboard](https://538-leaderboard.netlify.com/)
+[Filter FiveThirtyEight's NFL Forecasting Leaderboard](https://538-leaderboard.netlify.app/)
 
 [Is it Election Day?](https://isitelectionday.com/) &#8211; [Github](https://github.com/mrbusche/isItElectionDay)
 
@@ -28,4 +26,6 @@ layout: page
 
 [Trap Scoring application](https://github.com/mrbusche/trap-scoring)
 
-[You are not dumb](https://youarenotdumb.com/) &#8211; [Github](https://github.com/mrbusche/youarenotdumb)
+[Vegan Recipes](https://veganrecipes.netlify.app) &#8211; [Github](https://github.com/mrbusche/recipesapp)
+
+[You are not dumb](https://youarenotdumb.netlify.app) &#8211; [Github](https://github.com/mrbusche/youarenotdumb)
