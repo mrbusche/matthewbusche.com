@@ -8,8 +8,8 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 3.8.6"
-gem "jekyll-redirect-from"
+gem "jekyll", "~> 4.0.0"
+gem "jekyll-redirect-from", ">= 0.15.0"
 gem "jekyll-paginate"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
