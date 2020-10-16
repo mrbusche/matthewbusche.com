@@ -4,13 +4,15 @@ date: 2020-10-15 21:05:00
 layout: post
 tags:
   - git
+  - azure
+  - github
 ---
 
-To do this you'll need an Azure Devops Personal Access Token and a Github access token
+To do this you'll need an [Azure Devops Personal Access Token](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page) and a [Github Personal Access Token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token)
 
 Thanks to [CoderDave](https://github.com/n3wt0n/AzureDevOpsToGitHubRepoMigrator) for the great starting point.
 
-Here's a shell script you can use that'll copy a repository, including tags, branches and full commit history.
+Here's a [shell script](https://www.shellscript.sh/) you can use that'll copy a repository, including tags, branches and full commit history.
 
 It's important to note that the local copy of the repository will be left in an unusable state. That's why the shell script checks out a fresh copy of the repository and deletes it.
 
