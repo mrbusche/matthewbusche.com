@@ -16,3 +16,9 @@ Add a script to your `package.json` file
 ```
 
 where index is the name of your js file with the code you want to execute
+
+You can execute this script by running
+
+```javascript
+npm run local
+```
