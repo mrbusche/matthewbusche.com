@@ -6,7 +6,7 @@ tags:
   - concourse
 ---
 
-To rename a Concourse job and retain history, you can use the `old_name` attribute.
+To rename a Concourse job and retain history, you can use the [`old_name`](https://concourse-ci.org/jobs.html#schema.job.old_name) attribute.
 
 ```yaml
 jobs:
