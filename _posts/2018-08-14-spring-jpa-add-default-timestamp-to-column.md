@@ -14,7 +14,8 @@ tags:
 
 Spring JPA is awesome, but I ran into some issues adding a default timestamp to the column. The database should be set to have a default value, but that wasn't an option here. I found the annotation pretty quickly, but instead of checking the database to see if it worked I was debugging in IntelliJ and that's where the hiccup occurred. The value isn't set on the object at object creation it's only set once the entity has been saved. The following is what I ended up using
 
-<pre>@Column(name = "creationDate")
+```java
+@Column(name = "creationDate")
 @CreationTimestamp //this adds the default timestamp on save
 private Timestamp createDate;
-</pre>
+```

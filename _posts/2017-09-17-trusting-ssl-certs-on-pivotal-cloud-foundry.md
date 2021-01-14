@@ -19,7 +19,8 @@ If you run into a scenario where you&#8217;re using a temporary SSL cert or a wi
 
 Note: the TRUST_CERTS: is indented under the env: and since this would be going into a yaml file the indentation does matter
 
-<pre>- name: mbusche
+```yaml
+- name: mbusche
   instances: 1
   memory: 1024M
   disk_quota: 1024M
@@ -28,7 +29,7 @@ Note: the TRUST_CERTS: is indented under the env: and since this would be going 
   stack: cflinuxfs2
   timeout: 180
   services:
-  - mbusche-config-server
+    - mbusche-config-server
   env:
     TRUST_CERTS: test.matthewbusche.com
-</pre>
+```
