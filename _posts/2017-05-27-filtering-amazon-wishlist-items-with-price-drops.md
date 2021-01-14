@@ -17,16 +17,23 @@ Amazon has recently changed their filters on wish list items so you can no longe
 
 Update: I added this to [github](https://github.com/mrbusche/amazonPriceDrops).
 
-<pre>javascript: (function() {
+Update 2: I created a Spring Boot app that allows you to set your [Amazon wishlist URL and a price drop percentage](https://github.com/mrbusche/amazon-price-checker) or price to alert you on. You'll need to fork the app and update to change values. You'll get emails when your triggers are hit.
+
+```javascript
+javascript: (function () {
   function removeItemsWithoutPriceDrops() {
     const lowPrice = 999999;
+    const priceDropMin = 1;
     let anyRemoved = false;
     const listItems = document.getElementsByClassName('a-spacing-none g-item-sortable');
 
     for (var i = 0; i < listItems.length; i++) {
-      let priceDrop = listItems[i].querySelectorAll('span.a-size-small.a-color-tertiary')[1].innerText.startsWith('Price dropped');
+      let priceDropSpan = listItems[i].querySelectorAll('span.a-size-base.a-color-base');
+      let priceDrop = priceDropSpan.length > 0 ? priceDropSpan[0].innerText.startsWith('Price dropped') : false;
       let price = priceDrop ? listItems[i].querySelectorAll('span.a-offscreen') : 0;
-      if (!priceDrop || price > lowPrice) {
+      let priceDropPercent = priceDropSpan.length > 0 ? priceDropSpan[0].innerText : '';
+      priceDropPercent = priceDropPercent.replace('Price dropped', '').replace('% since added', '');
+      if (!priceDrop || price > lowPrice || parseInt(priceDropPercent) < priceDropMin) {
         listItems[i].parentElement.removeChild(listItems[i]);
         anyRemoved = true;
       }
@@ -39,7 +46,7 @@ Update: I added this to [github](https://github.com/mrbusche/amazonPriceDrops).
 
   removeItemsWithoutPriceDrops();
 })();
-</pre>
+```
 
 You can copy and paste the above code directly into a new bookmark.
 
