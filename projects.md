@@ -6,7 +6,11 @@ author: mrbusche
 layout: page
 ---
 
+[Amazon Price Checker](https://github.com/mrbusche/amazon-price-checker)
+
 [Conference Progressive Web App](https://matthewbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
+
+[Cottage Checker](https://github.com/mrbusche/cottage-checker)
 
 [Dynasty Football Trade Calculator](https://dynastytradecalc.com/)
 
@@ -20,14 +24,15 @@ layout: page
 
 [https://matthewbusche.com](https://github.com/mrbusche/matthewbusche.com)
 
+[Kirkendall Bridges Checker](https://github.com/mrbusche/kirkendall-bridges-checker)
+
 [Occurrence Counter](https://www.occurrencecounter.com/) &#8211; [Github](https://github.com/mrbusche/occurrenceCounter)
 
 [Random Order Generator](https://randomordergenerator.com/) &#8211; [Github](https://github.com/mrbusche/randomOrder)
+
+[Random Website Checker](https://github.com/mrbusche/random-website-checker)
 
 [Trap Scoring application](https://github.com/mrbusche/trap-scoring)
 
 [Vegan Recipes](https://veganrecipes.netlify.app) &#8211; [Github](https://github.com/mrbusche/recipesapp)
 
-[Website Checker](https://github.com/mrbusche/website-checker)
-
-[You are not dumb](https://youarenotdumb.netlify.app) &#8211; [Github](https://github.com/mrbusche/youarenotdumb)
