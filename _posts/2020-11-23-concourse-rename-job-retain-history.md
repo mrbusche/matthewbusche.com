@@ -14,9 +14,9 @@ jobs:
     old_name: 8-jdk-centos
 ```
 
-Once you've fly'd the pipeline with the new old_name attribute you can remove it and fly it again.
+Once you've fly'd the pipeline with the new and old_name attributes you can remove old_name and fly it again, it's no longer needed.
 
-A good reason to rename a job would be because of the recent concourse deprecations with valid identifiers. Our existing job started with a number, which stop being allowed in a future Concourse version.
+A good reason to rename a job would be because of recent concourse deprecations with valid identifiers. Our existing job started with a number, which will stop being allowed in a future Concourse version.
 
 ```
 DEPRECATION WARNING:
