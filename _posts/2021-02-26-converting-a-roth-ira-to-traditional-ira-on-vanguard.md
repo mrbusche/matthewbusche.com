@@ -1,10 +1,11 @@
 ---
-title: Converting a roth ira to traditional ira on Vanguard
+title: Converting a Roth IRA to a Traditional IRA at Vanguard
 date: 2021-02-26 16:01:30
 layout: post
 tags:
   - vanguard
   - ira
+  - conversion
 ---
 
 I mistakenly put money into my Traditional IRA at Vanguard this year instead of my Roth IRA. I couldn't for the life me find directions on how to change this, so I called Vanguard. It's actually very simple.
