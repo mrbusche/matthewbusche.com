@@ -5,5 +5,8 @@
   "assignees": [
     "@mrbusche"
   ],
-  "ignoreUnstable": false
+  "ignoreUnstable": false,
+  "ignorePaths": [
+    "p/reveal/package.json"
+   ]
 }
