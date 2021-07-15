@@ -8,8 +8,8 @@ layout: page
 
 ## Editor + Terminal
 
-- Visual Studio Code for JavaScript and HTML development
-- IntelliJ IDEA for and Java based back end work
+- Visual Studio Code for JavaScript (front end and back end) and HTML development
+- IntelliJ IDEA for any Java based back end work
 - Cmder is my terminal of choice, but Git Bash if I need to use curl
 
 ## Desktop Apps
