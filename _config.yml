@@ -43,17 +43,9 @@ navigation:
 
 # Author information - author info at the bottom of the post
 author_name: 'Matt Busche'
-author_bio: 'Matt is a developer at Nationwide Insurance and Freelance Consultant.'
+author_bio: 'Software Engineer and Wheel of Fortune Expert'
 author_url: 'https://www.matthewbusche.com'
 author_location: 'Des Moines, IA'
-#author_image: /images/avatar.jpg
-
-# Sidebar Add banner
-# banner_url
-# banner_image
-
-# Sidebar newsletter widget - add your form action url for MailChimp signup form here
-# mailchimp_url
 
 # Social links in the site footer
 twitter_username: mrbusche
@@ -63,13 +55,13 @@ github_username: mrbusche
 #codepen_username: "username"
 #dribbble_uername: "username"
 #medium_username: "@username"
-#instagram_username: "username"
+instagram_username: mrbusche
 #pinterest_username: "username"
 linkedin_username: mrbusche
 #weibo_username: "username"
 
 # https://jekyllrb.com/docs/pagination/
-paginate: 5
+paginate: 10
 paginate_path: '/blog/page:num/'
 plugins: ['jekyll-paginate', 'jekyll-redirect-from']
 permalink: pretty
