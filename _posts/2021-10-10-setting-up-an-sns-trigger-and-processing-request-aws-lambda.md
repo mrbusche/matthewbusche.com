@@ -1,10 +1,10 @@
 ---
 title: Setting up an SNS trigger and processing the request in AWS Lambda
-date: 2021-10-10 15:01:30
+date: 2021-10-10 15:05:30
 layout: post
 tags:
   - lambda
-  - cron
+  - sns
 ---
 
 Setting up an SNS topic is pretty well documented, but I struggled with how to take action when the event is triggered. 
