@@ -3,8 +3,8 @@ title: Generating a Cybersource Flex Key using ColdFusion
 date: 2021-09-01 15:01:30
 layout: post
 tags:
-  + cybersource
-  + coldfusion
+  - cybersource
+  - coldfusion
 ---
 
 Cybersource is a payment provider with poor examples and poor documentation. I struggled through this for about 25 hours before I found the right combination of settings.
