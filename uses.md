@@ -16,9 +16,10 @@ layout: page
 
 - I use Google Keep for any note taking and Google Tasks for any recurring reminders
 - Backup at work is done through OneDrive, at home I use Google Drive
+- I use [scoop](https://github.com/ScoopInstaller/Scoop) to install apps when possible
 
 ## Hardware
 
-- At work I have a Dell Latitude with 16 GB of RAM
-- At home I have a Lenovo Yoga 710
-- I use the Microsoft Natural Ergonomic Keyboard 4000 at home and work
+- At work I have a Dell Latitude E7470
+- At home I have a [Surface Laptop Studio](https://www.microsoft.com/en-us/d/surface-laptop-studio/8srdf62swkpf)
+- I use the [Microsoft Ergonomic Keyboard](https://www.microsoft.com/en-us/d/microsoft-ergonomic-keyboard/93841ngdwr1h) and a [Logitech MX Master 2S](https://www.logitech.com/en-us/eol/mx-master-2s-mouse.910-005131.html)
