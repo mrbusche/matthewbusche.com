@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"/>
     <link rel="canonical" href="{{ page.url | replace:'/index.html','/' | prepend: site.baseurl | prepend: site.url }}"/>
     <link rel="alternate" type="application/rss+xml" title="{{site.title}} Feed" href="{{' /feed.xml' | prepend: site.baseurl | prepend: site.url}}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6BH2CYRY8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R6BH2CYRY8');
+    </script>
   </head>
 
   <body>
@@ -48,13 +57,5 @@
     {{ content }}
     {% include footer.html %}
     <script type="text/javascript" src="{{ site.baseurl }}/js/custom.js"></script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6BH2CYRY8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-R6BH2CYRY8');
-    </script>
   </body>
 </html>
