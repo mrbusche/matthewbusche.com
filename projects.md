@@ -6,8 +6,6 @@ author: mrbusche
 layout: page
 ---
 
-[Amazon Price Checker](https://github.com/mrbusche/amazon-price-checker)
-
 [Conference Progressive Web App](https://matthewbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
 
 [Cottage Checker](https://github.com/mrbusche/cottage-checker)
@@ -28,7 +26,7 @@ layout: page
 
 [Kirkendall Bridges Checker](https://github.com/mrbusche/kirkendall-bridges-checker)
 
-[Occurrence Counter](https://www.occurrencecounter.netlify.app/) &#8211; [Github](https://github.com/mrbusche/occurrenceCounter)
+[Occurrence Counter](https://occurrencecounter.netlify.app/) &#8211; [Github](https://github.com/mrbusche/occurrenceCounter)
 
 [Random Order Generator](https://randomordergenerator.netlify.app/) &#8211; [Github](https://github.com/mrbusche/randomOrder)
 
