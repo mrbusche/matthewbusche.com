@@ -1,5 +1,5 @@
 ---
-title: AWS CloudFront create redirect
+title: AWS CloudFront create redirect using CloudFormation
 date: 2022-12-14 21:09:30
 layout: post
 tags:
