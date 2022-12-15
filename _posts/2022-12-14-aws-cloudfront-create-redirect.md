@@ -12,7 +12,7 @@ When decommissioning a website, it's ideal to set up a permanent redirect for th
 You can use any statusCode, but in this instance a 301 is appropriate because this is a permanent redirect.
 
 ```yaml
-# This would be already existing other than the FunctionAssociations section that should be added
+# The Distribution should already existing. We just need to add the FunctionAssociations
 Resources:
   rDistribution:
     Type: AWS::CloudFront::Distribution # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html
