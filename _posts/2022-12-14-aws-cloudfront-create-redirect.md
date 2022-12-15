@@ -47,3 +47,4 @@ BuscheRedirectFunction: # https://docs.aws.amazon.com/AWSCloudFormation/latest/U
       FunctionConfig:
         Comment: rewrite requests from busche to matthewbusche.com
         Runtime: cloudfront-js-1.0
+```
