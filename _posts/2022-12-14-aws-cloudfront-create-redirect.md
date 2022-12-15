@@ -12,7 +12,7 @@ When decommissioning a website, it's ideal to set up a permanent redirect for th
 You can use any statusCode, but in this instance a 301 is appropriate because this is a permanent redirect.
 
 ```yaml
-# The Distribution should already existing. We just need to add the FunctionAssociations
+# The Distribution should already exist. We just need to add the FunctionAssociations
 Resources:
   rDistribution:
     Type: AWS::CloudFront::Distribution # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html
@@ -23,11 +23,14 @@ Resources:
         DefaultCacheBehavior:
           TargetOriginId: BuscheOrigin
           ViewerProtocolPolicy: redirect-to-https
+        ### new code ###  
         FunctionAssociations:
           - EventType: viewer-request
             FunctionARN: !GetAtt BuscheRedirectFunction.FunctionMetadata.FunctionARN #name needs to match redirect function
+        ### end new code ###
         HttpVersion: http2
-        
+
+### new function ###
 BuscheRedirectFunction: # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html
     Type: AWS::CloudFront::Function
     Properties:
@@ -47,4 +50,5 @@ BuscheRedirectFunction: # https://docs.aws.amazon.com/AWSCloudFormation/latest/U
       FunctionConfig:
         Comment: rewrite requests from busche to matthewbusche.com
         Runtime: cloudfront-js-1.0
+### end new function ###
 ```
