@@ -16,7 +16,7 @@ Given a JSON file named `data.json`
 }
 ```
 
-You can out output the keys and values using the following
+You can output the keys and values using the following
 
 ```shell
 jq -r 'to_entries|map("\(.key)=\(.value|tostring)")|.[]' data.json > file.txt
@@ -28,7 +28,7 @@ name=Matt
 job=Engineer
 ```
 
-You can upper case the key, by piping `ascii_upcase1` to `.key`
+You can upper case the key, by piping `ascii_upcase` to `.key`
 
 ```shell
 jq -r 'to_entries|map("\(.key|ascii_upcase)=\(.value|tostring)")|.[]' data.json > file.txt
@@ -40,7 +40,7 @@ NAME=Matt
 JOB=Engineer
 ```
 
-You can prepend text to the keys as well, here we'll prepend `WOW_` to each key
+You can also prepend text to the keys as well, here we'll prepend `WOW_` to each key
 
 ```shell
 jq -r 'to_entries|map("WOW_\(.key|ascii_upcase)=\(.value|tostring)")|.[]' data.json > file.txt
