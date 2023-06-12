@@ -30,7 +30,7 @@ layout: page
   - [Secure by Design](https://drive.google.com/open?id=1BYOTcCUqhNt0yhhVqTDM_HesaA-ode0hTUYrHW0WjN4) &#8211; [Video](https://www.youtube.com/watch?v=dSvCjYdQf_E&t=9s)
 - April 19: [Central Iowa Java User Group](https://www.meetup.com/central-iowa-java-users-group/events/249360803/)
   - [Secure by Design](https://drive.google.com/open?id=1eEEnyBEoQVjByWWC34v2RRpLZMqEzv87powHkV1Kx5U)
-- October 2: [Iowa Technology Summit](https://www.iowatechsummit.com/)
+- October 2: [Iowa Technology Summit](https://www.technologyiowa.org/)
   - [Secure by Design](https://docs.google.com/presentation/d/1mWw78bRNo1vd3s-ght9CTMs_7g-07MSoHiJCykiYKRE/edit#slide=id.g41867286b2_0_68)
 
 ### 2017
@@ -52,7 +52,7 @@ layout: page
 - March 1: Tech Con
   - <a href="https://docs.google.com/presentation/d/1kL7xLnHYPyRFFNbsJ8kJci4tQrcZCo2GjM84-I3McRo/edit?usp=sharing" target="_blank" rel="noopener">Responsible Responsive Web Design</a>
 - March 21: <a href="https://www.dsmwebgeeks.com/" target="_blank" rel="noopener">DSM Web Geeks</a>
-  - <a href="https://docs.google.com/presentation/d/1tMkfxplam0G_lATb38l0BqvoACFawlKGFqDncHMTElY" target="_blank" rel="noopener">Designing for Performance</a> &#8211; <a href="https://www.youtube.com/watch?v=5fYuIDcbm2g" target="_blank" rel="noopener">Video</a>
+  - <a href="https://docs.google.com/presentation/d/1tMkfxplam0G_lATb38l0BqvoACFawlKGFqDncHMTElY" target="_blank" rel="noopener">Designing for Performance</a>
 
 ### 2015
 

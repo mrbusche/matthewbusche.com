@@ -22,7 +22,7 @@ layout: page
 
 [Is it Election Day?](https://isitelectionday.com/) &#8211; [Github](https://github.com/mrbusche/isItElectionDay)
 
-[https://mrbusche.com](https://github.com/mrbusche/mrbusche.com)
+[https://mrbusche.com](https://github.com/mrbusche/matthewbusche.com)
 
 [Kirkendall Bridges Checker](https://github.com/mrbusche/kirkendall-bridges-checker)
 
@@ -35,4 +35,3 @@ layout: page
 [Trap Scoring application](https://github.com/mrbusche/trap-scoring)
 
 [Vegan Recipes](https://veganrecipes.netlify.app) &#8211; [Github](https://github.com/mrbusche/recipesapp)
-

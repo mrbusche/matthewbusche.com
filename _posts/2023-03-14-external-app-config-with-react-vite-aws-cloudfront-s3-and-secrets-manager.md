@@ -33,7 +33,7 @@ Outputs:
 
 ### Add your secrets using Secrets Manager in your AWS account
 
-[Adding secrets to AWS Secrets Manager]([url](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html))
+[Adding secrets to AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html)
 
 ### Create a CodePipeline step to deploy your application to S3
 
@@ -52,7 +52,6 @@ Outputs:
   InputArtifacts:
     - Name: Source
 ```
-
 
 ### Update your deploy to S3 step to pull in the secrets
 
@@ -80,7 +79,7 @@ aws s3 cp ./dist/ ${s3BucketPath} --recursive --sse AES256 --profile ${profile} 
 
 Finally, add a script to your package.json file to allow new developers to download the `.env` file from your S3 bucket to your local file system
 
-```
+```shell
 "config": "npx path-exists-cli .env && echo 'exists' || aws s3 cp s3://insert-your-bucket-path/.env.production ./.env",
 ```
 

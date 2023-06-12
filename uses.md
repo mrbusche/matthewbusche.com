@@ -22,4 +22,4 @@ layout: page
 
 - At work I have a Dell Latitude E7470
 - At home I have a [Surface Laptop Studio](https://www.microsoft.com/en-us/d/surface-laptop-studio/8srdf62swkpf)
-- I use the [Microsoft Ergonomic Keyboard](https://www.microsoft.com/en-us/d/microsoft-ergonomic-keyboard/93841ngdwr1h) and a [Logitech MX Master 2S](https://www.logitech.com/en-us/eol/mx-master-2s-mouse.910-005131.html)
+- I use the [Microsoft Ergonomic Keyboard](https://www.microsoft.com/en-us/d/microsoft-ergonomic-keyboard/93841ngdwr1h) and a [Logitech MX Master 3S](https://www.logitech.com/en-us/products/mice/mx-master-3s.html)
