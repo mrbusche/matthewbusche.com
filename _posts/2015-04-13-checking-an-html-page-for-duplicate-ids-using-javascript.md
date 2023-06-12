@@ -11,7 +11,7 @@ categories:
   - JavaScript
 ---
 
-A couple years back I wrote a post about [Checking an HTML page for duplicate IDs using jQuery](https://mrbusche.com/blog/index.cfm/2013/5/10/Checking-HTML-page-for-duplicate-IDs-using-jQuery). A pretty useful tool when you need to ensure IDs on a page are unique. The downside to that code was that it required jQuery and the app I&#8217;m currently working with does not use jQuery, so I modifed the existing code to write a pure JavaScript solution that does the same thing.
+A couple years back I wrote a post about [Checking an HTML page for duplicate IDs using jQuery](https://mrbusche.com/2013/05/10/checking-html-page-for-duplicate-ids-using-jquery/). A pretty useful tool when you need to ensure IDs on a page are unique. The downside to that code was that it required jQuery and the app I&#8217;m currently working with does not use jQuery, so I modifed the existing code to write a pure JavaScript solution that does the same thing.
 
     var allElements = document.getElementsByTagName("*");
     var allIds = {};
