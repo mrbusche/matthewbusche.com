@@ -18,4 +18,4 @@ I&#8217;ll be talking about what exactly responsive design is and if you should 
 
 I&#8217;ll be covering many of the available frameworks and discuss the pros and cons of each one. I will also talk about emerging best practices and who the industry leaders are when it comes to designing a great responsive website.
 
-My original talk is located [here](https://matthewbusche.com/p/responsive/#/). If you attended my presentation and there was anything you particularly liked or disliked please let me know. Any and all feedback is welcome.
+My original talk is located [here](https://mrbusche.com/p/responsive/#/). If you attended my presentation and there was anything you particularly liked or disliked please let me know. Any and all feedback is welcome.

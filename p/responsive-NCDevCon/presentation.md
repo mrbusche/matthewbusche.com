@@ -4,7 +4,7 @@ Matt Busche
 
 @mrbusche
 
-matthewbusche.com/p/responsive-NCDevCon
+mrbusche.com/p/responsive-NCDevCon
 
 
 

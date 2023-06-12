@@ -1,6 +1,6 @@
 # Getting started with Responsive Web Design
 
-<!-- ##matthewbusche.com/responsive -->
+<!-- ##mrbusche.com/responsive -->
 
 Matt Busche
 

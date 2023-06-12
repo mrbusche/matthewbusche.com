@@ -12,7 +12,7 @@ If you need to override the domain on a session cookie you can add the following
       @Bean
       public ServletContextInitializer servletContextInitializer() {
         return servletContext -> {
-          servletContext.getSessionCookieConfig().setDomain("matthewbusche.com");
+          servletContext.getSessionCookieConfig().setDomain("mrbusche.com");
         };
       }
     }
