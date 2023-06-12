@@ -1,5 +1,5 @@
 # Redirect default Netlify subdomain to primary domain
 https://friendly-agnesi-83c86d.netlify.com/* https://mrbusche.com/:splat 301!
-https://mrbusche.com/fml https://fmlcalculator.com 301!
-https://mrbusche.com/oc https://www.occurrencecounter.com/ 301!
-https://mrbusche.com/random https://randomordergenerator.com/ 301!
+https://mrbusche.com/fml https://fmlcalculator.netlify.app 301!
+https://mrbusche.com/oc https://www.occurrencecounter.netlify.app 301!
+https://mrbusche.com/random https://randomordergenerator.netlify.app 301!
