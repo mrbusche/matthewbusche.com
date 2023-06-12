@@ -31,5 +31,5 @@ Note: the TRUST_CERTS: is indented under the env: and since this would be going 
   services:
     - mbusche-config-server
   env:
-    TRUST_CERTS: test.matthewbusche.com
+    TRUST_CERTS: test.mrbusche.com
 ```

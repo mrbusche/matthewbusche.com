@@ -4,7 +4,7 @@ Matt Busche
 
 <a href="https://twitter.com/mrbusche" target="_blank">@mrbusche</a>
 
-<a href="http://matthewbusche.com/p/rrwd/" target="_blank">matthewbusche.com/p/rrwd</a>
+<a href="http://mrbusche.com/p/rrwd/" target="_blank">mrbusche.com/p/rrwd</a>
 
 
 

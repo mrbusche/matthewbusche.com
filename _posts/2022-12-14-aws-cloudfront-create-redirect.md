@@ -23,7 +23,7 @@ Resources:
         DefaultCacheBehavior:
           TargetOriginId: BuscheOrigin
           ViewerProtocolPolicy: redirect-to-https
-        ### new code ###  
+        ### new code ###
         FunctionAssociations:
           - EventType: viewer-request
             FunctionARN: !GetAtt BuscheRedirectFunction.FunctionMetadata.FunctionARN #name needs to match redirect function
@@ -39,16 +39,16 @@ BuscheRedirectFunction: # https://docs.aws.amazon.com/AWSCloudFormation/latest/U
       FunctionCode: |
         function handler(event) {
           return {
-            statusCode: 301, 
+            statusCode: 301,
             statusDescription: 'Found',
             headers: {
               'cloudfront-functions': { value: 'generated-by-CloudFront-Functions' },
-              'location': { value: 'https://matthewbusche.com' }
+              'location': { value: 'https://mrbusche.com' }
             }
           };
         }
       FunctionConfig:
-        Comment: rewrite requests from busche to matthewbusche.com
+        Comment: rewrite requests from busche to mrbusche.com
         Runtime: cloudfront-js-1.0
 ### end new function ###
 ```

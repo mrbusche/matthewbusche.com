@@ -11,7 +11,7 @@ categories:
   - groovy
 ---
 
-I wrote up a [post](https://matthewbusche.com/blog/index.cfm/2015/1/10/Converting-roman-numerals-to-numbers-using-ColdFusion) last week about my experience converting roman numerals to numbers using ColdFusion and I promised a follow up doing the same thing in Grails.
+I wrote up a [post](https://mrbusche.com/blog/index.cfm/2015/1/10/Converting-roman-numerals-to-numbers-using-ColdFusion) last week about my experience converting roman numerals to numbers using ColdFusion and I promised a follow up doing the same thing in Grails.
 
 I did learn an interesting tidbit about Grails, the maximum numbers of tests you can have in a where clause is 999. Not a big deal as this is a somewhat contrived example, but something to note nonetheless. Without further ado here is my code, once again this assumes you have entered a valid roman numeral and I&#8217;ve tested the accuracy up to 2000.
 

@@ -4,7 +4,7 @@ Matt Busche
 
 <a href="https://twitter.com/mrbusche" target="_blank">@mrbusche</a>
 
-<a href="http://matthewbusche.com/p/iowacodecamp/" target="_blank">matthewbusche.com/p/iowacodecamp</a>
+<a href="http://mrbusche.com/p/iowacodecamp/" target="_blank">mrbusche.com/p/iowacodecamp</a>
 
 
 

@@ -6,7 +6,7 @@ author: mrbusche
 layout: page
 ---
 
-[Conference Progressive Web App](https://matthewbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
+[Conference Progressive Web App](https://mrbusche.com/pwa) &#8211; [Github](https://github.com/mrbusche/conferencePWA)
 
 [Cottage Checker](https://github.com/mrbusche/cottage-checker)
 
@@ -22,7 +22,7 @@ layout: page
 
 [Is it Election Day?](https://isitelectionday.com/) &#8211; [Github](https://github.com/mrbusche/isItElectionDay)
 
-[https://matthewbusche.com](https://github.com/mrbusche/matthewbusche.com)
+[https://mrbusche.com](https://github.com/mrbusche/mrbusche.com)
 
 [Kirkendall Bridges Checker](https://github.com/mrbusche/kirkendall-bridges-checker)
 
