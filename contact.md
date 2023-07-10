@@ -10,8 +10,10 @@ layout: page
 
 Email &#8211; gmail with twitter
 
+[Goodreads](https://www.goodreads.com/user/show/2840919-matt-busche)
+
 [LinkedIn](https://www.linkedin.com/in/mrbusche)
 
 [Stack Overflow Profile](https://stackoverflow.com/users/1065868/matt-busche)
 
-Twitter &#8211; <a href="https://twitter.com/mrbusche" target="_blank">twitter.com/mrbusche</a>
+[Twitter](https://twitter.com/mrbusche)
