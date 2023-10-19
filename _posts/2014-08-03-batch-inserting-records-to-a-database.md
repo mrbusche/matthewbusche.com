@@ -11,9 +11,9 @@ categories:
   - ColdFusion
 ---
 
-I was writing some code for a client that processed a csv file and inserted each row into a database, when there were a couple hundred rows the processing time was very quick, but when there are 8000 rows this can take quite a while even on a very fast database, so I wrote up some code to batch insert the records (which I&#8217;ve done too many times).
+I was writing some code for a client that processed a csv file and inserted each row into a database, when there were a couple hundred rows the processing time was very quick, but when there are 8000 rows this can take quite a while even on a very fast database, so I wrote up some code to batch insert the records (which I've done too many times).
 
-I was using MSSQL, so the max parameters I could send at one time was [2100](https://social.msdn.microsoft.com/Forums/sqlserver/en-US/f2ec73eb-f1e0-4048-95d0-1b1ff6c6fdf3/maximum-parameters-in-where-clause) (210 rows x 10 columns), but your mileage may vary. I&#8217;d set rowsPerInsert as high as possible and decrease as necessary. You should be able to easily modify the pseudo code below.
+I was using MSSQL, so the max parameters I could send at one time was [2100](https://social.msdn.microsoft.com/Forums/sqlserver/en-US/f2ec73eb-f1e0-4048-95d0-1b1ff6c6fdf3/maximum-parameters-in-where-clause) (210 rows x 10 columns), but your mileage may vary. I'd set rowsPerInsert as high as possible and decrease as necessary. You should be able to easily modify the pseudo code below.
 
     <cfscript>
       totalrows = 5000; // this would come from a structCount or something similar

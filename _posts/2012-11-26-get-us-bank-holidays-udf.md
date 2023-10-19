@@ -21,7 +21,7 @@ The following holidays are calculated using this UDF.
     <td>Official Date</td>
   </tr>
   <tr>
-    <td>New Year&#8217;s Day</td>
+    <td>New Year's Day</td>
     <td>January 1</td>
   </tr>
   <tr>
@@ -41,11 +41,11 @@ The following holidays are calculated using this UDF.
     <td>January 20th (Year after election year &#8211; multiple of 4)</td>
   </tr>
   <tr>
-    <td>MLK&#8217;s Birthday</td>
+    <td>MLK's Birthday</td>
     <td>Third Monday in January</td>
   </tr>
   <tr>
-    <td>George Washington&#8217;s Birthday</td>
+    <td>George Washington's Birthday</td>
     <td>Third Monday in February</td>
   </tr>
   <tr>
@@ -88,6 +88,6 @@ The following holidays are calculated using this UDF.
       <cfreturn strResult />
     </cffunction>
 
-This function is long overdue for me as monitors that run on week days run on Holidays and result in a lot of false positive &#8216;down&#8217; notifications. If the array returned is empty then the scheduled task should run. If the array has records then it&#8217;s a holiday
+This function is long overdue for me as monitors that run on week days run on Holidays and result in a lot of false positive &#8216;down' notifications. If the array returned is empty then the scheduled task should run. If the array has records then it's a holiday
 
 This UDF requires the <a href="https://cflib.org/index.cfm?event=page.udfbyid&udfid=179" target="_blank">getNthOccOfDayInMonth</a> function from <a href="https://cflib.org/" target="_blank">cflib.org</a>

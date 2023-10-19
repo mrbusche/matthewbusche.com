@@ -11,14 +11,14 @@ categories:
   - Uncategorized
 ---
 
-Spock is an excellent test framework that is built on top of Groovy and can be used to replace JUnit for testing Java classes. The majority of spock syntax is simple, but sometimes we run into issues where it is difficult to mock a class. Session is one of those examples. Given we want to do something simple, say get the name from Spring Security in session we&#8217;d have a method call like this
+Spock is an excellent test framework that is built on top of Groovy and can be used to replace JUnit for testing Java classes. The majority of spock syntax is simple, but sometimes we run into issues where it is difficult to mock a class. Session is one of those examples. Given we want to do something simple, say get the name from Spring Security in session we'd have a method call like this
 
     private String getUserId() {
       Authentication auth = SecurityContextHolder.getContext().getAuthentication();
       return auth.getName();
     }
 
-To test this we need to mock session for this method and also for any method that calls this private method. To do so you need to mock the Authentication class and the SecurityContext class. Since this mocking is needed in multiple methods I&#8217;ve created a separate method in my spock class to mock the security context. The full test and method look like below
+To test this we need to mock session for this method and also for any method that calls this private method. To do so you need to mock the Authentication class and the SecurityContext class. Since this mocking is needed in multiple methods I've created a separate method in my spock class to mock the security context. The full test and method look like below
 
     void "test getUserId"() {
       given:

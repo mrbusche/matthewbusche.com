@@ -15,7 +15,7 @@ tags:
   - trust certs
 ---
 
-If you run into a scenario where you&#8217;re using a temporary SSL cert or a wildcard cert with Pivotal Cloud Foundry you may run into an issue where your cert is not being trusted. This is NOT something you should use in production, but if you&#8217;re trying to get things up and running for a proof of concept the solution below should get you past an SSL errors.
+If you run into a scenario where you're using a temporary SSL cert or a wildcard cert with Pivotal Cloud Foundry you may run into an issue where your cert is not being trusted. This is NOT something you should use in production, but if you're trying to get things up and running for a proof of concept the solution below should get you past an SSL errors.
 
 Note: the TRUST_CERTS: is indented under the env: and since this would be going into a yaml file the indentation does matter
 

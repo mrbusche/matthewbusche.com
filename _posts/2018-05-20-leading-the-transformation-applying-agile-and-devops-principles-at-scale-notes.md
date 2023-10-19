@@ -27,7 +27,7 @@ My personal notes from [Leading the Transformation](https://www.amazon.com/Leadi
 - When estimates are off many organizations react by spending more and more in planning instead of focusing on delivering software
 - Instead of scolding people who commit on a red build, create a process that eliminates the problem
   - Usually roll back the last commit
-- Many organizations ask their manual testers to learn to automation what they have been doing manually for years. Some orgs buy tools to record what the manual testers are doing and that&#8217;s even worse
+- Many organizations ask their manual testers to learn to automation what they have been doing manually for years. Some orgs buy tools to record what the manual testers are doing and that's even worse
   - Record and playback is awful because if any UI changes the whole test is trash
 - An acceptance test should test one thing and one thing only.
 - All configurations should be in version control

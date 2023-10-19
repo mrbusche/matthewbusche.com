@@ -11,7 +11,7 @@ categories:
   - java
 ---
 
-I&#8217;ve recently been switched to a Java project and one of the most frustrating parts of the application (other than barely knowing Java) is the error page would only show a &#8220;An error as occurred&#8221; message and not the actual stack trace. In production this is a perfectly valid scenario, but when developing having to go back to RAD and scroll through the console to find the error message was wasting a lot of time, so after a decent amount of googling I found a way to [dump the stack trace](https://www.coderanch.com/t/292791/JSP/java/Printing-Stacktrace-error-jsp) to the page.
+I've recently been switched to a Java project and one of the most frustrating parts of the application (other than barely knowing Java) is the error page would only show a &#8220;An error as occurred&#8221; message and not the actual stack trace. In production this is a perfectly valid scenario, but when developing having to go back to RAD and scroll through the console to find the error message was wasting a lot of time, so after a decent amount of googling I found a way to [dump the stack trace](https://www.coderanch.com/t/292791/JSP/java/Printing-Stacktrace-error-jsp) to the page.
 
 The code ended up looking like this. In the message board post they used exception instead of error, but hopefully you get the point.
 

@@ -23,7 +23,7 @@ sass:
 # The base hostname & protocol of your site for where absolute urls are needed
 url: 'https://mrbusche.com'
 
-# Site navigation - each item must have a title and a url.
+# Site navigation - each item must have a title and an url.
 navigation:
   - text: Home
     url: /

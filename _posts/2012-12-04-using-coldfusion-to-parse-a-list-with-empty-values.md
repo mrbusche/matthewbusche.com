@@ -11,7 +11,7 @@ categories:
   - ColdFusion
 ---
 
-I was parsing through a csv file today and having issues with empty values. The data I&#8217;m receiving is in a format the 3rd party cannot update, so my data looked something like this
+I was parsing through a csv file today and having issues with empty values. The data I'm receiving is in a format the 3rd party cannot update, so my data looked something like this
 
     1,,abc,32,,gef
 
@@ -30,7 +30,7 @@ produces
     32
     gef
 
-After googling this for a bit I gave up and asked my [brother](https://twitter.com/busches). He told me to use the &#8216;includeemptyfields&#8217; attribute in [listtoarray()](https://help.adobe.com/en_US/ColdFusion/9.0/CFMLRef/WSc3ff6d0ea77859461172e0811cbec22c24-7f0f.html). I knew I could turn a list into an array, but I wasn&#8217;t aware of the third attribute until today, the default is obviously false, so blank values were never included.
+After googling this for a bit I gave up and asked my [brother](https://twitter.com/busches). He told me to use the &#8216;includeemptyfields' attribute in [listtoarray()](https://help.adobe.com/en_US/ColdFusion/9.0/CFMLRef/WSc3ff6d0ea77859461172e0811cbec22c24-7f0f.html). I knew I could turn a list into an array, but I wasn't aware of the third attribute until today, the default is obviously false, so blank values were never included.
 
 The code below produces the desired output. Notice I am now looping through an array instead of a list.
 

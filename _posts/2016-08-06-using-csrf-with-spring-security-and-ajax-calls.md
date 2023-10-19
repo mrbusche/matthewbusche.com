@@ -16,13 +16,13 @@ tags:
   - csrf
 ---
 
-I&#8217;m fairly new to Spring and especially Spring Security, so I had quite the time figuring out why ajax calls were failing after enabling CSRF (to allow ClearTrust)
+I'm fairly new to Spring and especially Spring Security, so I had quite the time figuring out why ajax calls were failing after enabling CSRF (to allow ClearTrust)
 
 First we allowed CSRF which is a strange syntax in my opinion
 
     <security:csrf disabled="false" />
 
-After we did that we were getting &#8220;405: Method Not Allowed&#8221; responses on all of our ajax requests. After some googling we discovered this is a security precaution to prevent cross site attacks, which makes a lot of sense. The biggest problem was we had probably 25 ajax calls and didn&#8217;t want to spend all day updating them individually, so we ended up adding in the csrf token and header name into the head meta tags in our application. This meant they were available on every page automatically and since they stay valid as long as the users&#8217; session this made the most sense.
+After we did that we were getting &#8220;405: Method Not Allowed&#8221; responses on all of our ajax requests. After some googling we discovered this is a security precaution to prevent cross site attacks, which makes a lot of sense. The biggest problem was we had probably 25 ajax calls and didn't want to spend all day updating them individually, so we ended up adding in the csrf token and header name into the head meta tags in our application. This meant they were available on every page automatically and since they stay valid as long as the users' session this made the most sense.
 
 Added to the header template
 

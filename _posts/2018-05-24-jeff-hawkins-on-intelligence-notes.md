@@ -16,9 +16,9 @@ tags:
 
 [On Intelligence](https://www.amazon.com/Intelligence-Understanding-Creation-Intelligent-Machines-ebook/dp/B003J4VE5Y/): How a New Understanding of the Brain Will Lead to the Creation of Truly Intelligent Machines by Jeff Hawkins is a truly fascinating book. It delves deep into how the brain works and why it is so hard to train a bot to do normal human things. Our brain is able to make low-level sensory predictions about what it expects to see, hear, and feel at given moment and it does all of these task in parallel. Here are other things I found interesting.
 
-- Deep blue beat Garry Kasparov at his own game, chess, but the successes were hollow. Deep blue didn&#8217;t win by being smarter than a human it won by being millions of times faster than a human, deep blue had no intuition.
-- These successful AI programs are good at one thing and one thing only just like a calculator is great at math but can&#8217;t do anything else.
-- A computer just mindlessly executes instructions. It doesn&#8217;t know any more context than we have given it.
+- Deep blue beat Garry Kasparov at his own game, chess, but the successes were hollow. Deep blue didn't win by being smarter than a human it won by being millions of times faster than a human, deep blue had no intuition.
+- These successful AI programs are good at one thing and one thing only just like a calculator is great at math but can't do anything else.
+- A computer just mindlessly executes instructions. It doesn't know any more context than we have given it.
 - Our intuition is often the biggest obstacle to uncovering the truth. Intuitive but incorrect assumptions keep us from seeing the correct answer.
 - The strengthening and formation of synapses is what causes memories to be stored.
 - The best ideas in science are almost always simple, elegant, and unexpected.

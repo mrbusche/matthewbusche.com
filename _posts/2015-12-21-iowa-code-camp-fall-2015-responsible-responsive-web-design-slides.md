@@ -11,6 +11,6 @@ categories:
   - Uncategorized
 ---
 
-I sent out a tweet about this, but in case you missed it I&#8217;ve posted my slides from my [Responsible Responsive Web Design](https://mrbusche.com/p/iowacodecamp/#/) presentation at [Iowa Code Camp](https://iowacodecamp.com/) 2016. Thanks a lot to everyone who came out to watch the presentation live and everyone that attended at all.
+I sent out a tweet about this, but in case you missed it I've posted my slides from my [Responsible Responsive Web Design](https://mrbusche.com/p/iowacodecamp/#/) presentation at [Iowa Code Camp](https://iowacodecamp.com/) 2016. Thanks a lot to everyone who came out to watch the presentation live and everyone that attended at all.
 
 See you all in late April or early May for Iowa Code Camp Spring 2016!

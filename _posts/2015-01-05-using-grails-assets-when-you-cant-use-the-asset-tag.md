@@ -17,7 +17,7 @@ In Grails 2.4+ the asset pipeline plugin is included by default and you can acce
       <asset:stylesheet src="application.css"/>
       <asset:image src="logo.png" width="200" height="200"/>
 
-However, it&#8217;s not always feasible to be able to use that syntax. One example is when loading an svg image with a png fallback. The code would ideally look like this when the HTML is generated.
+However, it's not always feasible to be able to use that syntax. One example is when loading an svg image with a png fallback. The code would ideally look like this when the HTML is generated.
 
     <svg width="180" height="60">
       <image xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="logo.svg" src="logo.png"></image>
