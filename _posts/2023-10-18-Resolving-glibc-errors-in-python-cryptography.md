@@ -1,6 +1,6 @@
 ---
 title: Resolving glibc errors with python module
-date: 2023-10-05 22:09:30
+date: 2023-10-18 22:09:30
 layout: post
 tags:
   - python
