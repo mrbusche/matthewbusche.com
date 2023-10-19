@@ -15,11 +15,11 @@ tags:
   - websphere
 ---
 
-I&#8217;m still fairly new to Websphere, but this seemed like a pretty common problem someone would have and I couldn&#8217;t find anything that properly explained the issue to me. I was running into an issue where WebSphere kept saying it was unable to check if application exists when it was being deployed. I thought initially this was a permissions problem, so I fooled around with permissions but had the same issue. If you scroll down a ways on the stack trace it says
+I'm still fairly new to Websphere, but this seemed like a pretty common problem someone would have and I couldn't find anything that properly explained the issue to me. I was running into an issue where WebSphere kept saying it was unable to check if application exists when it was being deployed. I thought initially this was a permissions problem, so I fooled around with permissions but had the same issue. If you scroll down a ways on the stack trace it says
 
 > insufficient or empty credentials
 
-I double checked my configuration in Hudson/Jenkins and testing the connection worked fine, so I continued searching for other solutions. There are literally 3 search results on google for &#8220;unable to check if application exists&#8221; and 0 results on bing. Most of the other articles I found offered no help. Eventually I circled back around and decided to look at the access level my user had in WebSphere. Turns out it wasn&#8217;t listed as a user! I&#8217;m still not sure how testing the connection in Hudson worked but I wasn&#8217;t listed as a user in WebSphere. I checked this half a dozen times just to make sure I wasn&#8217;t mistaken.
+I double checked my configuration in Hudson/Jenkins and testing the connection worked fine, so I continued searching for other solutions. There are literally 3 search results on google for &#8220;unable to check if application exists&#8221; and 0 results on bing. Most of the other articles I found offered no help. Eventually I circled back around and decided to look at the access level my user had in WebSphere. Turns out it wasn't listed as a user! I'm still not sure how testing the connection in Hudson worked but I wasn't listed as a user in WebSphere. I checked this half a dozen times just to make sure I wasn't mistaken.
 
 To add a user in WebSphere
 
@@ -31,7 +31,7 @@ To add a user in WebSphere
 6. Click OK
 7. Click Save
 
-Step 7 is super important because it requires an additional save than most programs do and I find myself forgetting to do the second confirmation too often. After you&#8217;ve added the appropriate permissions redeploy your ear and you should be all set.
+Step 7 is super important because it requires an additional save than most programs do and I find myself forgetting to do the second confirmation too often. After you've added the appropriate permissions redeploy your ear and you should be all set.
 
 Full stack trace of the error I was getting
 

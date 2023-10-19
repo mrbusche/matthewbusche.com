@@ -22,4 +22,4 @@ My latest project was moving a bunch of applications from running on WebSphere u
 
 What the heck does java:comp/env/string mean?
 
-Turns out it&#8217;s pretty obvious once you know. It&#8217;s a JNDI Entry in Liberty (Namespace binding in WebSphere). You need to enter a new JNDI entry with a name of string/nw/environment with a value of dev, it, pt, prod, whatever your environment name is. This is generally something you&#8217;d add to a properties file, but considering this app is crazy old maybe that wasn&#8217;t an option.
+Turns out it's pretty obvious once you know. It's a JNDI Entry in Liberty (Namespace binding in WebSphere). You need to enter a new JNDI entry with a name of string/nw/environment with a value of dev, it, pt, prod, whatever your environment name is. This is generally something you'd add to a properties file, but considering this app is crazy old maybe that wasn't an option.

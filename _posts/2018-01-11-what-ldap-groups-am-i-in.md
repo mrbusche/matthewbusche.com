@@ -11,7 +11,7 @@ categories:
   - Uncategorized
 ---
 
-Ever wonder what LDAP groups you&#8217;re a part of? There&#8217;s a super simple command that will tell you
+Ever wonder what LDAP groups you're a part of? There's a super simple command that will tell you
 
     net user ${windowsUsername} /domain
 
@@ -19,7 +19,7 @@ In my case
 
     net user mrbusche /domain
 
-Keep in mind this will run against your current domain on your computer, so if you&#8217;re a VPN user this may not work correctly if you&#8217;re computer domain is not your companies LDAP domain
+Keep in mind this will run against your current domain on your computer, so if you're a VPN user this may not work correctly if you're computer domain is not your companies LDAP domain
 
 If you need more details and are the logged in user you can also run the following. This provides a lot more detail and the ldap groups aren't split into two columns where you potentially can't see the full name.
 

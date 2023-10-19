@@ -13,11 +13,11 @@ categories:
   - responsive design
 ---
 
-I&#8217;ve taken inspiration from [Stephen Moretti](https://twitter.com/grailsOverflow) and his [CFOverflow](https://twitter.com/cfOverflow) twitter account and started twitter accounts for Groovy, Grails and Responsive Web Design that post the latest questions on each topic from Stack Overflow. For Groovy it posts the latest questions tagged Groovy and the same goes for Grails. I originally set these up as just one feed, but the questions coming in to the two feeds don&#8217;t really overlap as much as I thought they might so I decided to split them into two accounts.
+I've taken inspiration from [Stephen Moretti](https://twitter.com/grailsOverflow) and his [CFOverflow](https://twitter.com/cfOverflow) twitter account and started twitter accounts for Groovy, Grails and Responsive Web Design that post the latest questions on each topic from Stack Overflow. For Groovy it posts the latest questions tagged Groovy and the same goes for Grails. I originally set these up as just one feed, but the questions coming in to the two feeds don't really overlap as much as I thought they might so I decided to split them into two accounts.
 
 For the Responsive Web Design account the latest [Stack Overflow](https://stackoverflow.com/) posts tagged &#8220;media queries&#8221; or &#8220;responsive design&#8221; are posted.
 
-Stephen said he added some filters to prevent duplicates from posting, but I haven&#8217;t done that yet. If duplicates start showing up in the feeds I will take a look at the filters.
+Stephen said he added some filters to prevent duplicates from posting, but I haven't done that yet. If duplicates start showing up in the feeds I will take a look at the filters.
 
 If anyone thinks other feeds should be added to these accounts let me know and I can get them added. Any feedback at all in appreciated
 

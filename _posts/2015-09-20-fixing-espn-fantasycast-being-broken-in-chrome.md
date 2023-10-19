@@ -11,7 +11,7 @@ categories:
   - Uncategorized
 ---
 
-This is the 2nd year in a row that ESPN has had a bug in their Fantasy Cast website so it does not render properly in Chrome. If your page looks like this, it&#8217;s broken. The good news is it&#8217;s easy to fix with a simple bookmarklet.
+This is the 2nd year in a row that ESPN has had a bug in their Fantasy Cast website so it does not render properly in Chrome. If your page looks like this, it's broken. The good news is it's easy to fix with a simple bookmarklet.
 
  <img src="/images/2015/09/fantasy.png" alt="fantasy" />
 

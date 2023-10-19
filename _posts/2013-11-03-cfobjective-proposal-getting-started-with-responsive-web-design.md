@@ -15,15 +15,15 @@ categories:
 
 Interested in learning about responsive web design? Head on over to the [cf.Objective() Trello board](https://trello.com/b/4M6JSoyL/cf-objective-call-for-speakers-2014) and vote for [my talk on Responsive Web Design](https://trello.com/c/K6N8dJBx/106-getting-started-with-responsive-web-design-matt-busche) and any others that you would like to attend.
 
-Here&#8217;s a brief description of what my talk will be about
+Here's a brief description of what my talk will be about
 
 Target Audience: Anyone interested in creating one website for all devices
 
 Assumed Knowledge: Basic CSS and HTML experience
 
-Objective: Introduce responsive web design and why it&#8217;s important
+Objective: Introduce responsive web design and why it's important
 
-Why I&#8217;m Qualified: Part of a team that created a mobile website for a large insurance company.
+Why I'm Qualified: Part of a team that created a mobile website for a large insurance company.
 
 What the audience will learn:
 
@@ -37,4 +37,4 @@ Fixed vs Fluid layout
 
 Concept of columns and grids
 
-Anything else you&#8217;d like to learn? Feel free to comment here and/or on the Trello board and if my talk is selected I&#8217;ll try to work a few suggestions in as well.
+Anything else you'd like to learn? Feel free to comment here and/or on the Trello board and if my talk is selected I'll try to work a few suggestions in as well.

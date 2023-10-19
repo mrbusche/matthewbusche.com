@@ -11,7 +11,7 @@ categories:
   - version control
 ---
 
-I always seem to struggle finding how to do this since I do it so infrequently, so I&#8217;m posting this here to save me a few minutes next time I need to do this. It&#8217;s really a very simple process and provides a nice reminder of what should be included in the commit message (if you have any sort of guidelines around it).
+I always seem to struggle finding how to do this since I do it so infrequently, so I'm posting this here to save me a few minutes next time I need to do this. It's really a very simple process and provides a nice reminder of what should be included in the commit message (if you have any sort of guidelines around it).
 
 Find the folder you want to add the default message to and right click it. Go to TortoiseSVN > Properties
 

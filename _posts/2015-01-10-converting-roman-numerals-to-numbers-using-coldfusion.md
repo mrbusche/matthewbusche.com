@@ -32,8 +32,8 @@ I recently worked on a project that required translating roman numerals to the n
       }
     }
 
-It&#8217;s simple enough that you should be able to add each roman numeral and it&#8217;s number into the mapping and this should theoretically work for any roman numeral, but I only tested up to 2000. This assumes that you have entered a valid roman numeral that can be translated to 1-2000.
+It's simple enough that you should be able to add each roman numeral and it's number into the mapping and this should theoretically work for any roman numeral, but I only tested up to 2000. This assumes that you have entered a valid roman numeral that can be translated to 1-2000.
 
-The tests are written in MXUnit, so it&#8217;s a lot of repetition. I&#8217;ll be following up with a groovy example using spock that should have a much cleaner looking test. I&#8217;ve attached the test file and additionally have submitted this to cflib for approval.
+The tests are written in MXUnit, so it's a lot of repetition. I'll be following up with a groovy example using spock that should have a much cleaner looking test. I've attached the test file and additionally have submitted this to cflib for approval.
 
-You can download the test <a href="https://mrbusche.com/blog/enclosures/testRoman.txt" target="_blank">here</a> if you&#8217;re so inclined.
+You can download the test <a href="https://mrbusche.com/blog/enclosures/testRoman.txt" target="_blank">here</a> if you're so inclined.
