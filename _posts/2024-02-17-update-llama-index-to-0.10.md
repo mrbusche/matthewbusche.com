@@ -7,7 +7,7 @@ tags:
   - openai
 ---
 
-With the release of [LlamaIndex v0.10]([url](https://blog.llamaindex.ai/llamaindex-v0-10-838e735948f8)) imports have changed from top level llama_index package to `llama_index.core`, `llama_index.embeddings`, and `llama_index.llms`
+With the release of [LlamaIndex v0.10](https://blog.llamaindex.ai/llamaindex-v0-10-838e735948f8) imports have changed from top level llama_index package to `llama_index.core`, `llama_index.embeddings`, and `llama_index.llms`
 
 `ServiceContext` has also been deprecated and replaced with `Settings`. A concise version of existing code is below
 
