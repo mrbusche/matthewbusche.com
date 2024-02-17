@@ -28,11 +28,13 @@ def evaluate_llama(dataset):
     from llama_index.evaluation import BatchEvalRunner
 ```
 
-Updated code removes creating and pass `ServiceContext` around with the new `Settings` object. The migration tool for LlamaIndex does not take into account needing to add some new packages to requirements.txt
+Updated code removes creating and passing `ServiceContext` around with the new `Settings` object, which also reduces passing around llmb and embed_model as well. This part is all straightforward, but the migration tool does not take into account needing to add some new packages to requirements.txt
 
 ```shell
 pip install llama_index_core llama-index-embeddings-azure-openai llama-index-llms-azure-openai
 ```
+
+Once you've installed new packages, you should be able to update your imports. A concise version of the changes is listed below.
 
 ```python
 from llama_index.core import Settings
