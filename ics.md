@@ -1,7 +1,7 @@
 ---
 id: 101
 title: ICS
-date: 2023-03-25T15:54:31+00:00
+date: 2024-02-25T15:54:31+00:00
 author: mrbusche
 layout: page
 ---
@@ -10,4 +10,4 @@ layout: page
 
 [How to Subscribe to someone's calendar](https://support.google.com/calendar/answer/37100)
 
-[DAM to DSM Intermediate Training Schedule](mrbusche.com/ics/intermediate.ics)
+[DAM to DSM Intermediate Training Schedule 2024](mrbusche.com/ics/intermediate.ics)
