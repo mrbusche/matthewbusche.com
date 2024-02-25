@@ -10,4 +10,4 @@ layout: page
 
 [How to Subscribe to someone's calendar](https://support.google.com/calendar/answer/37100)
 
-[DAM to DSM Intermediate Training Schedule 2024](mrbusche.com/ics/intermediate.ics)
+[DAM to DSM Intermediate Training Schedule 2024](intermediate.ics)
