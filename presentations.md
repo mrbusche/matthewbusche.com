@@ -10,6 +10,7 @@ layout: page
 
 - June 18: [Des Moines Artificial Intelligence Group](https://www.meetup.com/des-moines-artificial-intelligence-group/)
   - [Leveraging RAG in Large Organizations](https://docs.google.com/presentation/d/1rjrqZvxp3nKiMcdwsLwKsVYX4atnNm9doHq7G46XKuA/edit#slide=id.g26fa9d244e7_0_50)
+
 ### 2019
 
 - March 8: [Connectaha](https://connectaha.com/)
