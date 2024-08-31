@@ -8,16 +8,17 @@ tags:
 ---
 
 
-My school district recently held a book club for "The Anxious Generation" by Jonathan Haidt and it was a real eye opener for me and other parents. The book focuses on how smartphones and social media have caused mental health to plummet in teens and tweens
+Our school district recently hosted a book club discussion on "The Anxious Generation" by Jonathan Haidt, and it was an eye-opening experience for me and many other parents. The book dives deep into how smartphones and social media have significantly impacted the mental health of today’s teens and tweens.
 
-There are 4 main proposals from the book
+Haidt presents four key proposals to address this crisis:
 
-1. No smartphones before high school ("dumb phones" and watches are ok)
-2. Phone-free schools
-3. No social media before age 16
-4. More free play which leads to more responsibility and indepence
+1. Delay smartphones until high school (allowing “dumb phones” or smartwatches instead)
 
-If you are a parent of a child please do yourself a favor and read this book.
+2. Implement phone-free school environments
+
+3. Restrict social media use until age 16
+
+4. Encourage more free play to build responsibility and independence
 
 Here are some of my favorite quotes grouped by category
 
