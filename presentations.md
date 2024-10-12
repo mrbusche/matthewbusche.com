@@ -8,8 +8,12 @@ layout: page
 
 ### 2024
 
+- October 12: [Devopsdays Des Moines](https://devopsdays.org/events/2024-des-moines/)
+  - [Leveraging RAG in Large Organizations](https://docs.google.com/presentation/d/1e2dxQwz9SxiycjOcSMt3Px5c-yKA5-NeY5nzPv7tJ8I)
+- September 25: [DevOpsDSM](https://www.meetup.com/devopsdsm/events/303375865)
+  - [A Comprehensive Exploration of RAG](https://docs.google.com/presentation/d/1e2dxQwz9SxiycjOcSMt3Px5c-yKA5-NeY5nzPv7tJ8I)
 - June 18: [Des Moines Artificial Intelligence Group](https://www.meetup.com/des-moines-artificial-intelligence-group/)
-  - [Leveraging RAG in Large Organizations](https://docs.google.com/presentation/d/1rjrqZvxp3nKiMcdwsLwKsVYX4atnNm9doHq7G46XKuA/edit#slide=id.g26fa9d244e7_0_50)
+  - [Leveraging RAG in Large Organizations](https://docs.google.com/presentation/d/1rjrqZvxp3nKiMcdwsLwKsVYX4atnNm9doHq7G46XKuA/)
 
 ### 2019
 
