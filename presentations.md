@@ -8,6 +8,9 @@ layout: page
 
 ### 2024
 
+- October 26: [Iowa Code Camp](https://iowacodecamp.com/)
+  - [A Comprehensive Exploration of RAG](https://docs.google.com/presentation/d/1e2dxQwz9SxiycjOcSMt3Px5c-yKA5-NeY5nzPv7tJ8I/)
+  - [Automating Code Refactoring with OpenRewrite](https://docs.google.com/presentation/d/1d4WJFt7_kT-Lsg4CFsnjkQ1suIfUhOWPIG0GpHGlcjU/)
 - October 12: [Devopsdays Des Moines](https://devopsdays.org/events/2024-des-moines/)
   - [Leveraging RAG in Large Organizations](https://docs.google.com/presentation/d/1e2dxQwz9SxiycjOcSMt3Px5c-yKA5-NeY5nzPv7tJ8I)
 - September 25: [DevOpsDSM](https://www.meetup.com/devopsdsm/events/303375865)
