@@ -11,7 +11,7 @@ tags:
 
 ### Forget the majority, it's all about the minority.
 
-In "Revent of the Tipping Point," Malcolm Gladwell explores the fascinating dynamics of social epidemics. He reveals how a small percentage of individuals can trigger widespread change, overturning the traditional notion that mass movements require mass participation.
+In "Revenge of the Tipping Point," Malcolm Gladwell explores the fascinating dynamics of social epidemics. He reveals how a small percentage of individuals can trigger widespread change, overturning the traditional notion that mass movements require mass participation.
 
 ### The Rule of Thirds
 
