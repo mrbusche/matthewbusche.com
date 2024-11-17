@@ -1,6 +1,6 @@
 ---
 title: iOS in app browser basic authentication
-date: 2020-11-06-21 21:01:30
+date: 2020-11-06 21:01:30
 layout: post
 tags:
   - ios

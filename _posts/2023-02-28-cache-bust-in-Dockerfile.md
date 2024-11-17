@@ -8,7 +8,7 @@ tags:
 
 If you have an application without a build system, but need to cache bust a js file, this will do the trick
 
-```Dockerfile
+```dockerfile
 FROM nginx:1
 
 COPY --chown=nginx:nginx html/ /usr/share/nginx/html

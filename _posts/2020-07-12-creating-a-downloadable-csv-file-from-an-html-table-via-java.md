@@ -28,17 +28,17 @@ Add an empty form to your page that posts to your controller action
 JavaScript to grab the HTML
 
 ```javascript
-document.getElementById('download').onclick = function () {
-  let theData = document.getElementById('reportData');
+document.getElementById("download").onclick = function () {
+  let theData = document.getElementById("reportData");
   // this gets the first table on the screen and pulls the HTML, but you can target by id, class, etc
-  theData.value = document.getElementsByClassName('table')[0].outerHTML;
-  document.getElementById('myForm').submit();
+  theData.value = document.getElementsByClassName("table")[0].outerHTML;
+  document.getElementById("myForm").submit();
 };
 ```
 
 Add [jsoup](https://mvnrepository.com/artifact/org.jsoup/jsoup) to your build file. Use the latest version.
 
-```gradle
+```
 compile 'org.jsoup:jsoup:1.13.1'
 ```
 
