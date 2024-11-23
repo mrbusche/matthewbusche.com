@@ -7,7 +7,7 @@ tags:
   - generative-ai
 ---
 
-https://www.manning.com/books/generative-ai-in-action
+[Generative AI in Action](https://www.manning.com/books/generative-ai-in-action)
 
 Not a lot of notes because a lot was things I've already learned. Would be a great resource for anyone new to the space.
 

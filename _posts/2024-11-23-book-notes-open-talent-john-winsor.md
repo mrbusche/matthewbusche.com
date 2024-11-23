@@ -7,6 +7,8 @@ tags:
   - enterprise
 ---
 
+[Open Talent by John Winsor](https://johnwinsor.com/open-talent-book)
+
 - The post-Covid era has been an even bigger black swan, one that calls into question all our assumptions about how the world is supposed to work. According to Taleb, black swan events contain three elements:
 
   - The element of surprise, which catches everyone off guard
@@ -14,14 +16,16 @@ tags:
   - The appearance of inevitability after the fact, given all the relevant signals and data
 
 - Leaders who want to change their own minds may want to consider an important reframing of recent events. The millions of dissatisfied employees who are joining the Great Resignation aren't rejecting work.
-- They are rejecting jobs that pay them less than they feel they are worth and that constrain their creativity and stifle their potential. They are looking for ways to do more while doing better for themselves. The organizations that have been experimenting with open talent strategies and outsidein innovation are capturing them and, as a result, continuing to push forward and succeed.
+- They are rejecting jobs that pay them less than they feel they are worth and that constrain their creativity and stifle their potential. They are looking for ways to do more while doing better for themselves. The organizations that have been experimenting with open talent strategies and outside in innovation are capturing them and, as a result, continuing to push forward and succeed.
 
 - How to change your mind.
-- Disruption offers new opportunities for grand change, especially since the supply of talent has already made the shift. Companies must begin to adapt to talent because talent is no longer adapting to corporations. Platforms fundamentally change how workers engage with their employers and vice versa, shifting the power structure so that talent has the edge. By removing the idea of a physical workspace, open talent is no longer hampered by office politics and can thrive, focused on the things that motivate people the most.
+
+  - Disruption offers new opportunities for grand change, especially since the supply of talent has already made the shift. Companies must begin to adapt to talent because talent is no longer adapting to corporations. Platforms fundamentally change how workers engage with their employers and vice versa, shifting the power structure so that talent has the edge. By removing the idea of a physical workspace, open talent is no longer hampered by office politics and can thrive, focused on the things that motivate people the most.
 
 - Companies that can move quickly enough to profit from change don't bog themselves down with a ton of bureaucracy when they set out to innovate. They don't micromanage the process from the top down, and they don't insist on owning all the means they employ to succeed. Their teams are light on their feet, have a sense of ownership over outcomes, and are empowered to make their own decisions and recruit all the help they need.
 
-- What Are the Goals of Your Center of Excellence?
+What Are the Goals of Your Center of Excellence?
+
 - A COE's overarching goal should be to take full advantage of all the talent opportunities that are available. Every organization is unique, but we suggest you start with these three principles:
 
   - Understand your readiness. While many people inside your organization may be using open talent already, there can be, as we've seen, many blind spots and roadblocks when you try to institutionalize it. The better you understand your readiness, the better your chances of a successful adoption.
@@ -41,7 +45,7 @@ tags:
 
 - The biggest opportunity for you when you start your open talent journey is to tap into your current team to help you solve problems and do the tasks you need. There is always a combination of cognitive surplus and people inside your organization looking for mobility with upskilling and project work.
 
-- Our research shows that, using platforms, it typically takes four days to hire a freelancer to do the work you need instead of the average twoplus months to find the right talent in this talent-constrained environment through traditional methods. We also find that the freelance talent you hire on a platform is typically 30 percent less expensive and 40 percent more productive than the internal employee performing the same tasks. You see this massive gain in productivity because you're hiring freelancers to do a task, not to play a role in the company. You are paying them to do the work you want, not to spend time at corporate meetings, office gatherings, and the like.
+- Our research shows that, using platforms, it typically takes four days to hire a freelancer to do the work you need instead of the average two plus months to find the right talent in this talent-constrained environment through traditional methods. We also find that the freelance talent you hire on a platform is typically 30 percent less expensive and 40 percent more productive than the internal employee performing the same tasks. You see this massive gain in productivity because you're hiring freelancers to do a task, not to play a role in the company. You are paying them to do the work you want, not to spend time at corporate meetings, office gatherings, and the like.
 
 - External talent clouds for strategic advantages, cost savings, and flexibility. The ETC is a term we use for this growing practice; it's an efficient and cost-effective way that companies can obtain the specialized talents they need from outside sources without sacrificing quality or productivity.
 - How does an ETC work? The key to success in this phase rests on strong and trusting relationships with the right platform partners. Our recommendation is to take a two-fold approach. Revisit how you managed your full-time staff and determine which of these roles are better suited for freelance workers. The goal here should be to become agile yet to remain focused on the indispensability of certain positions for the company's operations to run smoothly.

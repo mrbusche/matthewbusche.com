@@ -6,7 +6,7 @@ tags:
   - book-notes
 ---
 
-https://beusefulbook.com/
+[Be Useful](https://beusefulbook.com/)
 
 - You can explain that governors don't have control over a global financial disaster-but the truth is, you get credit when the economy's on the way up even though you have very little to do with it, so it's only fair that you get the blame on the way down.
 

@@ -20,7 +20,9 @@ tags:
 - The importance of ongoing learning and upskilling cannot be overstated. It is perhaps the most important part of architecture modernization. If teams don't have the time and opportunity to learn and practice modern concepts, there is a serious risk that new architecture will be designed with the old ways of thinking, and many of its flaws will be carried across.
 
 - Architecture modernization is about converting dated architecture, which is a business liability, into modern architecture that provides a competitive advantage.
+
 - Modernization requires short-term compromises for long-term prosperity, which is why leaders are reluctant to commit, but this creates a negative spiral where the architecture becomes even more of a liability.
+
 - As more of the world is run by software, systems will become more complex, and architecture will become even more important.
 
 - Modernization does not happen without learning new skills and acting differently. Leaders need to be aware that a significant investment is necessary for supporting every employee involved in modernization to ensure they have the required skills. If not, modernization may take far longer, or the new architecture may look just like the old one or even worse. Learning and upskilling (the topic of chapter 17) is not a onetime workshop or training course; it's an ongoing financial and time investment. Learning needs to be built into the organization's culture.

@@ -7,7 +7,7 @@ tags:
   - generative-ai
 ---
 
-https://learning.oreilly.com/library/view/generative-deep-learning/9781098134174/
+[Generative Deep Learning by David Foster](https://learning.oreilly.com/library/view/generative-deep-learning/9781098134174/)
 
 - A generative model must also be probabilistic rather than deterministic, because we want to be able to sample many different variations of the output, rather than get the same output every time.
 
