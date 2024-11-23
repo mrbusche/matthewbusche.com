@@ -8,6 +8,8 @@ layout: page
 
 ### 2024
 
+- November 21: [Central Iowa Java User Group](https://www.meetup.com/central-iowa-java-users-group/)
+  - [Automating Code Refactoring with OpenRewrite](https://docs.google.com/presentation/d/1_UZBqDGvGLYRgXDWrH3w0woCi1qo6huTkKTPwpFQVAQ/edit#slide=id.g26fa9d244e7_0_50)
 - October 26: [Iowa Code Camp](https://iowacodecamp.com/)
   - [A Comprehensive Exploration of RAG](https://docs.google.com/presentation/d/1e2dxQwz9SxiycjOcSMt3Px5c-yKA5-NeY5nzPv7tJ8I/)
   - [Automating Code Refactoring with OpenRewrite](https://docs.google.com/presentation/d/1d4WJFt7_kT-Lsg4CFsnjkQ1suIfUhOWPIG0GpHGlcjU/)
