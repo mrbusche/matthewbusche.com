@@ -1,6 +1,6 @@
 ---
 title: Links - Seth Godin Severe weather alert
-date: 2024-12-01 20:25:30
+date: 2024-12-02 22:46:30
 layout: post
 tags:
   - links
