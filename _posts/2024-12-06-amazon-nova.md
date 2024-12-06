@@ -34,3 +34,7 @@ Amazon announced their [Amazon Nova foundation models](https://aws.amazon.com/bl
 ### Premier
 
 - Availability in early 2025
+
+Simon Willison compares them to the [Google Gemini family of models](https://simonwillison.net/2024/Dec/4/amazon-nova/).
+
+Costs for micro are $0.035 per million input and $0.14 for output, $0.06 and $0.24 for lite, and $0.80 and $3.20 for Pro. The micro model is slightly cheaper than Gemini 1.5 Flash-8B and appears to be the cheapest model available.
