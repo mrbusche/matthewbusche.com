@@ -17,12 +17,12 @@ myFunction:
       myCron:
         Type: Schedule
         Properties:
-          Schedule: "cron(? 10 * * Mon *)"
+          Schedule: 'cron(? 10 * * Mon *)'
 ```
 
 ```javascript
-if (event["detail-type"] === "Scheduled Event") {
-	console.log("cron triggered");
+if (event['detail-type'] === 'Scheduled Event') {
+	console.log('cron triggered');
 	return await somethingThatWasScheduled(event);
 }
 ```

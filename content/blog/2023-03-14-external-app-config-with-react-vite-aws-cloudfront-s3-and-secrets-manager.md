@@ -42,7 +42,7 @@ Outputs:
     Category: Build
     Owner: AWS
     Provider: CodeBuild
-    Version: "1"
+    Version: '1'
   Configuration:
     ProjectName: !Sub ${pProduct}-${pBusinessUnit}-S3Upload-${AWS::Region}
     # The env variables are necessary to retrieve the secret id, you can omit if you'd like to hard code it

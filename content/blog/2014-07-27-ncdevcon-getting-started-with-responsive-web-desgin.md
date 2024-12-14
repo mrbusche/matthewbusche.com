@@ -1,6 +1,6 @@
 ---
 id: 46
-title: "NCDevCon - Getting Started with Responsive Web Design"
+title: 'NCDevCon - Getting Started with Responsive Web Design'
 redirect_from:
   - /blog2/2014/07/27/ncdevcon-getting-started-with-responsive-web-desgin/
 date: 2014-07-27T03:30:34+00:00

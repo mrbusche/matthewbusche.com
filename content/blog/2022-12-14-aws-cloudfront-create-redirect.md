@@ -33,7 +33,7 @@ Resources:
 BuscheRedirectFunction: # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html
   Type: AWS::CloudFront::Function
   Properties:
-    Name: "busche-redirect"
+    Name: 'busche-redirect'
     AutoPublish: true
     FunctionCode: |
       function handler(event) {

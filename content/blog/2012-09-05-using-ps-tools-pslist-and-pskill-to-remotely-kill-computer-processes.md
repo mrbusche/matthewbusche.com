@@ -1,6 +1,6 @@
 ---
 id: 4
-title: "Using PS Tools - pslist and pskill to remotely kill computer processes"
+title: 'Using PS Tools - pslist and pskill to remotely kill computer processes'
 redirect_from:
   - /blog2/2012/09/05/using-ps-tools-pslist-and-pskill-to-remotely-kill-computer-processes/
 date: 2012-09-05T02:57:39+00:00

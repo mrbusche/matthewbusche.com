@@ -2,11 +2,7 @@
 <html lang="en">
 	<head>
 		<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" />
-		<link
-			rel="stylesheet"
-			href="../css/bootstrap-multiselect.css"
-			type="text/css"
-		/>
+		<link rel="stylesheet" href="../css/bootstrap-multiselect.css" type="text/css" />
 	</head>
 	<body>
 		<select id="college" multiple="multiple">
@@ -19,33 +15,28 @@
 
 		<script type="text/javascript" src="../js/jquerys.js"></script>
 		<script type="text/javascript" src="../js/bootstrap.js"></script>
-		<script
-			type="text/javascript"
-			src="../js/bootstrap-multiselect.js"
-		></script>
+		<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
 
 		<script type="text/javascript">
-			var jQueryInstalled = typeof jQuery != "undefined";
-			var bootstrapInstalled =
-				jQueryInstalled && typeof $().emulateTransitionEnd == "function";
-			var multiselectInstalled =
-				bootstrapInstalled && typeof $().multiselect == "function";
+			var jQueryInstalled = typeof jQuery != 'undefined';
+			var bootstrapInstalled = jQueryInstalled && typeof $().emulateTransitionEnd == 'function';
+			var multiselectInstalled = bootstrapInstalled && typeof $().multiselect == 'function';
 			var boostrapCSSInstalled = multiselectInstalled && isBootstrapCSSLoaded();
 
-			console.log("jQueryInstalled :: " + jQueryInstalled);
-			console.log("bootstrapInstalled :: " + bootstrapInstalled);
-			console.log("multiselectInstalled :: " + multiselectInstalled);
-			console.log("boostrapCSSInstalled :: " + boostrapCSSInstalled);
+			console.log('jQueryInstalled :: ' + jQueryInstalled);
+			console.log('bootstrapInstalled :: ' + bootstrapInstalled);
+			console.log('multiselectInstalled :: ' + multiselectInstalled);
+			console.log('boostrapCSSInstalled :: ' + boostrapCSSInstalled);
 			if (multiselectInstalled) {
 				$(document).ready(function () {
-					$("#college").multiselect();
+					$('#college').multiselect();
 				});
 			}
 			function isBootstrapCSSLoaded() {
 				var loaded = true;
 				var span = $('<span class="bs hidden"></span>');
-				var bs = $("body").append(span).find(".bs");
-				if (bs.css("display") !== "none") {
+				var bs = $('body').append(span).find('.bs');
+				if (bs.css('display') !== 'none') {
 					loaded = false;
 				}
 				bs.remove();
@@ -54,17 +45,14 @@
 		</script>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
-			_gaq.push(["_setAccount", "UA-49379810-1"]);
-			_gaq.push(["_trackPageview"]);
+			_gaq.push(['_setAccount', 'UA-49379810-1']);
+			_gaq.push(['_trackPageview']);
 			(function () {
-				var ga = document.createElement("script");
-				ga.type = "text/javascript";
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
 				ga.async = true;
-				ga.src =
-					("https:" == document.location.protocol
-						? "https://ssl"
-						: "http://www") + ".google-analytics.com/ga.js";
-				var s = document.getElementsByTagName("script")[0];
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
 				s.parentNode.insertBefore(ga, s);
 			})();
 		</script>

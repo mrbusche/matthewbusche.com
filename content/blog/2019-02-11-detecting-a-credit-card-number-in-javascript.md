@@ -1,5 +1,5 @@
 ---
-title: "Detecting a Credit Card number in a field using JavaScript"
+title: 'Detecting a Credit Card number in a field using JavaScript'
 date: 2019-02-11 21:14:00
 tags:
   - javascript

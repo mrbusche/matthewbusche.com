@@ -1,5 +1,5 @@
 ---
-title: "SurveyMonkey CX API call"
+title: 'SurveyMonkey CX API call'
 date: 2018-12-21 20:56:57
 tags:
   - surveymonkey

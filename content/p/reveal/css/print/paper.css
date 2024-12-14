@@ -48,7 +48,7 @@
 	li,
 	div {
 		font-size: 20pt !important;
-		font-family: Georgia, "Times New Roman", Times, serif !important;
+		font-family: Georgia, 'Times New Roman', Times, serif !important;
 		color: #000;
 	}
 
@@ -64,7 +64,7 @@
 		color: #000 !important;
 		height: auto;
 		line-height: normal;
-		font-family: Georgia, "Times New Roman", Times, serif !important;
+		font-family: Georgia, 'Times New Roman', Times, serif !important;
 		text-shadow: 0 0 0 #000 !important;
 		text-align: left;
 		letter-spacing: normal;

@@ -1,6 +1,6 @@
 pre {
 	white-space: pre-wrap;
-	font-family: "Courier New", Courier, monospace;
+	font-family: 'Courier New', Courier, monospace;
 }
 body {
 	background: red;
@@ -18,7 +18,7 @@ body {
 		background: blue;
 	}
 	pre {
-		font-family: "Times New Roman", Times, serif;
+		font-family: 'Times New Roman', Times, serif;
 	}
 }
 
@@ -35,6 +35,6 @@ body {
 		background: orange;
 	}
 	pre {
-		font-family: "Courier New", Courier, monospace;
+		font-family: 'Courier New', Courier, monospace;
 	}
 }

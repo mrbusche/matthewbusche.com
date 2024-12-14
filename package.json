@@ -47,5 +47,11 @@
 	},
 	"dependencies": {
 		"@zachleat/heading-anchors": "^1.0.1"
+	},
+	"prettier": {
+		"trailingComma": "all",
+		"printWidth": 140,
+		"semi": true,
+		"singleQuote": true
 	}
 }

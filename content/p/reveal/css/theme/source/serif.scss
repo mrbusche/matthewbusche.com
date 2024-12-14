@@ -6,14 +6,14 @@
  */
 
 // Default mixins and settings -----------------
-@import "../template/mixins";
-@import "../template/settings";
+@import '../template/mixins';
+@import '../template/settings';
 // ---------------------------------------------
 
 // Override theme settings (see ../template/settings.scss)
-$mainFont: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+$mainFont: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
 $mainColor: #000;
-$headingFont: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+$headingFont: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
 $headingColor: #383d3d;
 $headingTextShadow: none;
 $headingTextTransform: none;
@@ -27,5 +27,5 @@ $selectionBackgroundColor: #26351c;
 }
 
 // Theme template ------------------------------
-@import "../template/theme";
+@import '../template/theme';
 // ---------------------------------------------

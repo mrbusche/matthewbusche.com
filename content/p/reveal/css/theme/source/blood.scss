@@ -11,8 +11,8 @@
  */
 
 // Default mixins and settings -----------------
-@import "../template/mixins";
-@import "../template/settings";
+@import '../template/mixins';
+@import '../template/settings';
 // ---------------------------------------------
 
 // Include theme-specific fonts
@@ -25,12 +25,12 @@ $coal: #222;
 $codeBackground: #23241f;
 
 // Main text
-$mainFont: Ubuntu, "sans-serif";
+$mainFont: Ubuntu, 'sans-serif';
 $mainFontSize: 36px;
 $mainColor: #eee;
 
 // Headings
-$headingFont: Ubuntu, "sans-serif";
+$headingFont: Ubuntu, 'sans-serif';
 $headingTextShadow: 2px 2px 2px $coal;
 
 // h1 shadow, borrowed humbly from
@@ -62,7 +62,7 @@ $selectionColor: #fff;
 }
 
 // Theme template ------------------------------
-@import "../template/theme";
+@import '../template/theme';
 // ---------------------------------------------
 
 // some overrides after theme template import

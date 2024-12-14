@@ -1,6 +1,6 @@
 ---
 id: 190
-title: "Iowa Code Camp Fall 2015 - Responsible Responsive Web Design Slides"
+title: 'Iowa Code Camp Fall 2015 - Responsible Responsive Web Design Slides'
 redirect_from:
   - /blog2/2015/12/21/iowa-code-camp-fall-2015-responsible-responsive-web-design-slides/
 date: 2015-12-21T03:06:47+00:00

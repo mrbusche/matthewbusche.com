@@ -9,7 +9,7 @@
 title: mrbusche.com
 
 # A description of your site for social meta tag, search engines, and feed.xml
-description: "Software Engineer and Wheel of Fortune Expert"
+description: 'Software Engineer and Wheel of Fortune Expert'
 
 # Tagline near the site title
 tagline: "Things I've learned"
@@ -21,7 +21,7 @@ sass:
   sass_dir: _sass
 
 # The base hostname & protocol of your site for where absolute urls are needed
-url: "https://mrbusche.com"
+url: 'https://mrbusche.com'
 
 # Site navigation - each item must have a title and an url.
 navigation:
@@ -42,10 +42,10 @@ navigation:
 # disqus
 
 # Author information - author info at the bottom of the post
-author_name: "Matt Busche"
-author_bio: "Software Engineer and Wheel of Fortune Expert"
-author_url: "https://www.mrbusche.com"
-author_location: "Des Moines, IA"
+author_name: 'Matt Busche'
+author_bio: 'Software Engineer and Wheel of Fortune Expert'
+author_url: 'https://www.mrbusche.com'
+author_location: 'Des Moines, IA'
 
 # Social links in the site footer
 twitter_username: mrbusche
@@ -62,11 +62,11 @@ linkedin_username: mrbusche
 
 # https://jekyllrb.com/docs/pagination/
 paginate: 10
-paginate_path: "/blog/page:num/"
-plugins: ["jekyll-paginate", "jekyll-redirect-from"]
+paginate_path: '/blog/page:num/'
+plugins: ['jekyll-paginate', 'jekyll-redirect-from']
 permalink: pretty
 markdown: kramdown
 kramdown:
   auto_ids: false
 
-include: ["_redirects"]
+include: ['_redirects']

@@ -1,5 +1,5 @@
 ---
-title: "Java setting tracking mode for session"
+title: 'Java setting tracking mode for session'
 date: 2018-08-18 08:06:57
 tags:
   - java

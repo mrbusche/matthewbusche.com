@@ -16,21 +16,8 @@
 body {
 	background: #222;
 	background: -moz-radial-gradient(center, circle cover, #626262 0%, #222 100%);
-	background: -webkit-gradient(
-		radial,
-		center center,
-		0px,
-		center center,
-		100%,
-		color-stop(0%, #626262),
-		color-stop(100%, #222)
-	);
-	background: -webkit-radial-gradient(
-		center,
-		circle cover,
-		#626262 0%,
-		#222 100%
-	);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #626262), color-stop(100%, #222));
+	background: -webkit-radial-gradient(center, circle cover, #626262 0%, #222 100%);
 	background: -o-radial-gradient(center, circle cover, #626262 0%, #222 100%);
 	background: -ms-radial-gradient(center, circle cover, #626262 0%, #222 100%);
 	background: radial-gradient(center, circle cover, #626262 0%, #222 100%);
@@ -38,7 +25,7 @@ body {
 }
 
 .reveal {
-	font-family: Ubuntu, "sans-serif";
+	font-family: Ubuntu, 'sans-serif';
 	font-size: 36px;
 	font-weight: normal;
 	color: #eee;
@@ -67,7 +54,7 @@ body {
 .reveal h6 {
 	margin: 0 0 20px 0;
 	color: #eee;
-	font-family: Ubuntu, "sans-serif";
+	font-family: Ubuntu, 'sans-serif';
 	font-weight: normal;
 	line-height: 1.2;
 	letter-spacing: normal;

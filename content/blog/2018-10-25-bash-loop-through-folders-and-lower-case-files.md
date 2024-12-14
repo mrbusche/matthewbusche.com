@@ -1,5 +1,5 @@
 ---
-title: "Bash loop through folders recursively and lower case files"
+title: 'Bash loop through folders recursively and lower case files'
 date: 2018-10-25 09:35:57
 tags:
   - bash

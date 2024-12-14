@@ -1,5 +1,5 @@
 ---
-title: "Angular Loading JavaScript file in different environments"
+title: 'Angular Loading JavaScript file in different environments'
 date: 2018-09-15 09:43:57
 tags:
   - angular

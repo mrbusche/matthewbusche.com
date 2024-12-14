@@ -1,6 +1,6 @@
 ---
 id: 60
-title: "Grails - Reloading a service without stopping your app"
+title: 'Grails - Reloading a service without stopping your app'
 redirect_from:
   - /blog2/2014/12/20/grails-reloading-a-service-without-stopping-your-app/
 date: 2014-12-20T03:38:18+00:00

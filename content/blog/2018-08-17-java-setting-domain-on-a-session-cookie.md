@@ -1,5 +1,5 @@
 ---
-title: "Java settting domain on a session cookie"
+title: 'Java settting domain on a session cookie'
 date: 2018-08-17 08:06:57
 tags:
   - java

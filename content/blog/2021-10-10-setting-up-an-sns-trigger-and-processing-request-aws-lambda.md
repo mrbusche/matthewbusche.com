@@ -30,7 +30,7 @@ anotherFunction:
   Properties:
     Policies:
       - AWSLambdaExecute
-      - Version: "2012-10-17"
+      - Version: '2012-10-17'
         Statement:
           - Effect: Allow
             Action:
@@ -43,14 +43,14 @@ SNS calling function
 ```javascript
 const message = {
 	default: JSON.stringify({
-		name: "John Doe",
+		name: 'John Doe',
 		timestamp: new Date(),
 	}),
 };
 var params = {
 	TopicArn: YOUR_SNS_TOPIC,
-	Subject: "An Important Event",
-	MessageStructure: "json",
+	Subject: 'An Important Event',
+	MessageStructure: 'json',
 	Message: JSON.stringify(message),
 };
 await sns.publish(params).promise();
@@ -59,9 +59,9 @@ await sns.publish(params).promise();
 SNS processing function
 
 ```javascript
-if (event.Records && event.Records[0].EventSource === "aws:sns") {
+if (event.Records && event.Records[0].EventSource === 'aws:sns') {
 	const message = JSON.parse(event.Records[0].Sns.Message);
-	console.log(["SNS event", message]);
+	console.log(['SNS event', message]);
 	doSomething(message);
 }
 ```

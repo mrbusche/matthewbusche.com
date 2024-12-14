@@ -1,5 +1,5 @@
 ---
-title: "jQuery Validate unique email addresses"
+title: 'jQuery Validate unique email addresses'
 date: 2019-07-01 20:06:57
 author: mrbusche
 tags:

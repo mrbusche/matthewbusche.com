@@ -1,6 +1,6 @@
 ---
 id: 51
-title: "NCDevCon - Responsive Web Design slides and video"
+title: 'NCDevCon - Responsive Web Design slides and video'
 redirect_from:
   - /blog2/2014/09/16/ncdevcon-responsive-web-design-slides-and-video/
 date: 2014-09-16T03:33:54+00:00
