@@ -1,7 +1,6 @@
 ---
 title: Converting a Roth IRA to a Traditional IRA at Vanguard
 date: 2021-02-26 16:01:30
-layout: post
 tags:
   - vanguard
   - ira
@@ -14,7 +13,7 @@ I mistakenly put money into my Traditional IRA at Vanguard this year instead of 
 2. Click on FORMS in the header
 3. Click Add or remove money, trade within your account
 4. Click Remove excess distributions or contributions, convert from a traditional to a Roth IRA, or recharacterize contributions
-Click Remove excess contributions, convert assets, or recharacterize contributions
+   Click Remove excess contributions, convert assets, or recharacterize contributions
 5. Fill out the rest of form
 
 <i>Disclaimer: I'm not a tax professional, just a dude who messed up his contributions.</i>

@@ -1,7 +1,6 @@
 ---
-title: 'VS Code hide open editors pane'
+title: "VS Code hide open editors pane"
 date: 2019-04-21 20:50:00
-layout: post
 tags:
   - vscode
 ---

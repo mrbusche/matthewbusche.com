@@ -1,7 +1,6 @@
 ---
 title: Concourse rename job and retain history
 date: 2020-11-23 21:01:30
-layout: post
 tags:
   - concourse
 ---

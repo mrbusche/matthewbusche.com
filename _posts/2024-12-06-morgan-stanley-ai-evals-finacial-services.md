@@ -1,7 +1,6 @@
 ---
 title: Links - Morgan Stanley uses AI evals to shape the future of financial services
 date: 2024-12-06 16:01:30
-layout: post
 tags:
   - links
   - genai

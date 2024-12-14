@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2016/05/20/moving-a-file-from-a-local-computer-to-a-server-through-a-jump-server/
 date: 2016-05-20T02:25:12+00:00
 author: mrbusche
-layout: post
 permalink: /2016/05/20/moving-a-file-from-a-local-computer-to-a-server-through-a-jump-server/
 categories:
   - linux

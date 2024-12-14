@@ -1,7 +1,6 @@
 ---
 title: Updating LlamaIndex to version 0.10
 date: 2024-02-17 14:12:30
-layout: post
 tags:
   - llamaindex
   - openai

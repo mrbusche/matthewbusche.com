@@ -1,7 +1,6 @@
 ---
 title: Links - Lucky Maverick | The Secret to Success - Mimic Evolution
 date: 2024-12-06 15:26:30
-layout: post
 tags:
   - links
 ---

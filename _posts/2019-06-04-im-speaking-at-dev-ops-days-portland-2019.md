@@ -2,9 +2,8 @@
 title: "I'm speaking at DevOpsDays Portland 2019!"
 date: 2019-06-04 20:06:57
 author: mrbusche
-layout: post
 categories: conferences
-tags: ['conferences', 'devopsdays']
+tags: ["conferences", "devopsdays"]
 ---
 
 I'm happy to announce I'll be speaking at [DevOpsDays Portland](https://devopsdays.org/events/2019-portland/welcome/) on September 12, 2019! The conference will be held at the Oregon Convention Center.

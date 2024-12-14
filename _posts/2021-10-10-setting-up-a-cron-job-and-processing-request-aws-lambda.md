@@ -1,14 +1,12 @@
 ---
 title: Setting up a cron job and processing the request in AWS Lambda
 date: 2021-10-10 15:01:30
-layout: post
 tags:
   - lambda
   - cron
 ---
 
-Setting up a cron job in AWS lambda is pretty trivial, but I struggled with how to take action when the event is triggered. Turns out it's pretty straightforward. The `event['detail-type']` will be `Scheduled Event`. 
-
+Setting up a cron job in AWS lambda is pretty trivial, but I struggled with how to take action when the event is triggered. Turns out it's pretty straightforward. The `event['detail-type']` will be `Scheduled Event`.
 
 ```yaml
 myFunction:
@@ -23,8 +21,8 @@ myFunction:
 ```
 
 ```javascript
-if (event['detail-type'] === 'Scheduled Event') {
-  console.log('cron triggered');
+if (event["detail-type"] === "Scheduled Event") {
+  console.log("cron triggered");
   return await somethingThatWasScheduled(event);
 }
 ```

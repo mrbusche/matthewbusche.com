@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2013/12/09/what-tab-is-playing-that-sound/
 date: 2013-12-09T02:59:56+00:00
 author: mrbusche
-layout: post
 permalink: /2013/12/09/what-tab-is-playing-that-sound/
 categories:
   - computer management

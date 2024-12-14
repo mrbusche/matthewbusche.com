@@ -1,12 +1,10 @@
 ---
 title: The Anxious Generation Book  Notes
 date: 2024-08-31 16:09:30
-layout: post
 tags:
   - book notes
   - book review
 ---
-
 
 Our school district recently hosted a book club discussion on "The Anxious Generation" by Jonathan Haidt, and it was an eye-opening experience for me and many other parents. The book dives deep into how smartphones and social media have significantly impacted the mental health of today’s teens and tweens.
 
@@ -36,9 +34,9 @@ Here are some of my favorite quotes grouped by category
 
 ## Free play
 
-> Children can only learn how to not get hurt in situations where it is possible to get hurt, such as wrestling with a friend, having a pretend sword fight, or negotiating with another child to enjoy a seesaw when a failed negotiation can lead to pain in one's posterior, as well as embarrassment. When parents, teachers, and coaches get  involved, it becomes less free, less playful, and less beneficial. Adults usually can't stop themselves from directing and protecting.
+> Children can only learn how to not get hurt in situations where it is possible to get hurt, such as wrestling with a friend, having a pretend sword fight, or negotiating with another child to enjoy a seesaw when a failed negotiation can lead to pain in one's posterior, as well as embarrassment. When parents, teachers, and coaches get involved, it becomes less free, less playful, and less beneficial. Adults usually can't stop themselves from directing and protecting.
 
-> A key feature of free play is that mistakes are generally not very costly. Everyone is clumsy at first, and everyone makes mistakes every day. Gradually, from trial and error, and with direct feedback from playmates elementary school students become ready to take on the greater social complexity of middle school. It's not homework that gets them ready, nor is it classes on handling their emotions. Such adult-led lessons may provide useful information, but information doesn't do much to shape a developing brain. Play does. 
+> A key feature of free play is that mistakes are generally not very costly. Everyone is clumsy at first, and everyone makes mistakes every day. Gradually, from trial and error, and with direct feedback from playmates elementary school students become ready to take on the greater social complexity of middle school. It's not homework that gets them ready, nor is it classes on handling their emotions. Such adult-led lessons may provide useful information, but information doesn't do much to shape a developing brain. Play does.
 
 > Experience, not information, is the key to emotional development. It is in unsupervised, child-led play where children best learn to tolerate bruises, handle their emotions, read other children's emotions, take turns, resolve conflicts, and play fair. Children are intrinsically motivated to acquire these skills because they want to be included in the playgroup and keep the fun going.
 

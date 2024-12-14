@@ -1,7 +1,6 @@
 ---
 title: AWS CloudFront create redirect using CloudFormation
 date: 2022-12-14 21:09:30
-layout: post
 tags:
   - aws
   - CloudFront
@@ -32,23 +31,23 @@ Resources:
 
 ### new function ###
 BuscheRedirectFunction: # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html
-    Type: AWS::CloudFront::Function
-    Properties:
-      Name: "busche-redirect"
-      AutoPublish: true
-      FunctionCode: |
-        function handler(event) {
-          return {
-            statusCode: 301,
-            statusDescription: 'Found',
-            headers: {
-              'cloudfront-functions': { value: 'generated-by-CloudFront-Functions' },
-              'location': { value: 'https://mrbusche.com' }
-            }
-          };
-        }
-      FunctionConfig:
-        Comment: rewrite requests from busche to mrbusche.com
-        Runtime: cloudfront-js-1.0
+  Type: AWS::CloudFront::Function
+  Properties:
+    Name: "busche-redirect"
+    AutoPublish: true
+    FunctionCode: |
+      function handler(event) {
+        return {
+          statusCode: 301,
+          statusDescription: 'Found',
+          headers: {
+            'cloudfront-functions': { value: 'generated-by-CloudFront-Functions' },
+            'location': { value: 'https://mrbusche.com' }
+          }
+        };
+      }
+    FunctionConfig:
+      Comment: rewrite requests from busche to mrbusche.com
+      Runtime: cloudfront-js-1.0
 ### end new function ###
 ```

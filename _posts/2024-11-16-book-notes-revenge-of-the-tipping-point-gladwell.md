@@ -1,7 +1,6 @@
 ---
 title: Book Notes - Revenge of the Tipping Point by Malcolm Gladwell
 date: 2024-11-16 11:39:30
-layout: post
 tags:
   - book-notes
   - generative-ai

@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2014/12/09/windows-media-center-reports-no-signal-when-recording/
 date: 2014-12-09T03:37:17+00:00
 author: mrbusche
-layout: post
 permalink: /2014/12/09/windows-media-center-reports-no-signal-when-recording/
 categories:
   - windows media center

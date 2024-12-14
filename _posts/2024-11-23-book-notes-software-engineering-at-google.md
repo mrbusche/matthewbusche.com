@@ -1,7 +1,6 @@
 ---
 title: Book Notes - Software Engineering at Google
 date: 2024-11-23 11:59:30
-layout: post
 tags:
   - book-notes
   - engineering

@@ -1,7 +1,6 @@
 ---
 title: "Current request is not of type HttpServletRequest"
 date: 2018-10-24 10:05:57
-layout: post
 tags: java
 ---
 

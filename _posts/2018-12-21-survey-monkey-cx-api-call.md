@@ -1,7 +1,6 @@
 ---
 title: "SurveyMonkey CX API call"
 date: 2018-12-21 20:56:57
-layout: post
 tags:
   - surveymonkey
 ---

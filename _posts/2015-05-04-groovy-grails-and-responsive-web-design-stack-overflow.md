@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2015/05/04/groovy-grails-and-responsive-web-design-stack-overflow/
 date: 2015-05-04T03:51:22+00:00
 author: mrbusche
-layout: post
 permalink: /2015/05/04/groovy-grails-and-responsive-web-design-stack-overflow/
 categories:
   - grails

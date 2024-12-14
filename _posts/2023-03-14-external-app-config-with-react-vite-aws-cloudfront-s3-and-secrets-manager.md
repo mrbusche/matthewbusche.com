@@ -1,7 +1,6 @@
 ---
 title: External app config with React, Vite, AWS CloudFront, S3, and Secrets Manager
 date: 2023-03-14 21:09:30
-layout: post
 tags:
   - aws
   - cloudfront
@@ -43,7 +42,7 @@ Outputs:
     Category: Build
     Owner: AWS
     Provider: CodeBuild
-    Version: '1'
+    Version: "1"
   Configuration:
     ProjectName: !Sub ${pProduct}-${pBusinessUnit}-S3Upload-${AWS::Region}
     # The env variables are necessary to retrieve the secret id, you can omit if you'd like to hard code it

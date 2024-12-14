@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2018/05/24/jeff-hawkins-on-intelligence-notes/
 date: 2018-05-24T01:44:42+00:00
 author: mrbusche
-layout: post
 permalink: /2018/05/24/jeff-hawkins-on-intelligence-notes/
 categories:
   - book review

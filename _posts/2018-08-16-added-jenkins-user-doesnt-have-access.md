@@ -1,7 +1,6 @@
 ---
 title: "User added in Jenkins doesn't have access"
 date: 2018-08-15 08:06:57
-layout: post
 tags: jenkins
 ---
 

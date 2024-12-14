@@ -3,8 +3,6 @@ id: 422
 title: Spring JPA add default timestamp to column
 date: 2018-08-14T21:51:36+00:00
 author: mrbusche
-layout: post
-permalink: /2018/08/14/spring-jpa-add-default-timestamp-to-column
 categories:
   - java
   - hibernate

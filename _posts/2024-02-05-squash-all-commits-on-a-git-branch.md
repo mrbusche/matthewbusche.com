@@ -1,7 +1,6 @@
 ---
 title: Squash all commits on a git branch
 date: 2024-02-05 20:39:30
-layout: post
 tags:
   - git
 ---

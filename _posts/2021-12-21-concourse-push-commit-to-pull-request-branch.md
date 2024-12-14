@@ -1,7 +1,6 @@
 ---
 title: Concourse push commit to pull request branch
 date: 2021-12-21 21:01:30
-layout: post
 tags:
   - concourse
 ---

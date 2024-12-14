@@ -2,9 +2,8 @@
 title: "I'm speaking at MidwestJS 2019!"
 date: 2019-06-25 20:06:57
 author: mrbusche
-layout: post
 categories: conferences
-tags: ['conferences', 'midwestjs']
+tags: ["conferences", "midwestjs"]
 ---
 
 I'm happy to announce I'll be speaking at [MidwestJS](http://midwestjs.com/) on August 7-9, 2019! The conference will be held at Schulze Hall at the University of St Thomas in beautiful downtown Minneapolis.

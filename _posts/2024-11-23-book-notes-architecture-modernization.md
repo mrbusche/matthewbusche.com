@@ -1,7 +1,6 @@
 ---
 title: Book Notes - Architecture Modernization
 date: 2024-11-23 11:53:30
-layout: post
 tags:
   - book-notes
   - architecture

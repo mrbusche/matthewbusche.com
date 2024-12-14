@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2014/09/16/ncdevcon-responsive-web-design-slides-and-video/
 date: 2014-09-16T03:33:54+00:00
 author: mrbusche
-layout: post
 permalink: /2014/09/16/ncdevcon-responsive-web-design-slides-and-video/
 categories:
   - NCDevCon

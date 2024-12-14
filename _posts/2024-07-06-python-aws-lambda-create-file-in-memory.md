@@ -1,7 +1,6 @@
 ---
 title: Python AWS Lambda Create file in memory
 date: 2024-07-06 16:09:30
-layout: post
 tags:
   - python
   - lambda

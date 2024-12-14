@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2016/02/09/multiple-insert-statement-without-counter/
 date: 2016-02-09T02:41:10+00:00
 author: mrbusche
-layout: post
 permalink: /2016/02/09/multiple-insert-statement-without-counter/
 categories:
   - ColdFusion

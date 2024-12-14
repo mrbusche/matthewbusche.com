@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2017/06/02/finding-the-version-of-a-jar-file/
 date: 2017-06-02T02:26:36+00:00
 author: mrbusche
-layout: post
 permalink: /2017/06/02/finding-the-version-of-a-jar-file/
 categories:
   - java

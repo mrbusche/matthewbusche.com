@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2014/01/16/connecting-ms-sql-database-to-railo-datasources/
 date: 2014-01-16T03:22:29+00:00
 author: mrbusche
-layout: post
 permalink: /2014/01/16/connecting-ms-sql-database-to-railo-datasources/
 categories:
   - ColdFusion

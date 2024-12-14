@@ -1,7 +1,6 @@
 ---
 title: Unzip Docker image and contents
 date: 2023-02-15 21:09:30
-layout: post
 tags:
   - docker
 ---

@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2016/03/06/im-speaking-at-dev-objective-2016/
 date: 2016-03-06T20:17:56+00:00
 author: mrbusche
-layout: post
 permalink: /2016/03/06/im-speaking-at-dev-objective-2016/
 categories:
   - dev.objective

@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2017/10/19/importing-an-ssl-certificate-into-websphere/
 date: 2017-10-19T02:18:39+00:00
 author: mrbusche
-layout: post
 permalink: /2017/10/19/importing-an-ssl-certificate-into-websphere/
 categories:
   - websphere

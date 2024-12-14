@@ -1,7 +1,6 @@
 ---
-title: 'Combining multiple json fetch requests into one array'
+title: "Combining multiple json fetch requests into one array"
 date: 2020-03-25 21:04:30
-layout: post
 tags:
   - json
   - fetch

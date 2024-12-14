@@ -1,7 +1,6 @@
 ---
 title: Creating a downloadable csv file from an HTML table via java
 date: 2020-07-12 21:05:00
-layout: post
 tags:
   - html
   - javascript

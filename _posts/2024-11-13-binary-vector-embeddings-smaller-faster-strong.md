@@ -1,7 +1,6 @@
 ---
 title: Binary Vector Embeddings - Smaller, Faster, Stronger
 date: 2024-11-13 21:36:30
-layout: post
 tags:
   - ai
   - vectorembeddings

@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2014/06/10/coldfusion-query-of-queries-strips-whitespace/
 date: 2014-06-10T03:27:58+00:00
 author: mrbusche
-layout: post
 permalink: /2014/06/10/coldfusion-query-of-queries-strips-whitespace/
 categories:
   - ColdFusion

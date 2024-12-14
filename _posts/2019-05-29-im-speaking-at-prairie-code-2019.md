@@ -2,9 +2,8 @@
 title: "I'm speaking at Prairie.Code() 2019!"
 date: 2019-05-29 20:06:57
 author: mrbusche
-layout: post
 categories: conferences
-tags: ['conferences', 'prairie code']
+tags: ["conferences", "prairie code"]
 ---
 
 I'm happy to announce I'll be speaking at [Prairie.Code()](https://prairiecode.amegala.com/) on September 13, 2019! The conference will be held at the Holiday Inn Conference Center near the Des Moines airport.

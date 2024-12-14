@@ -1,11 +1,10 @@
 ---
 id: 96
 title: Contact
-date: 2024-11-15-16T11:07:10+00:00
+date: 2024-11-15T11:07:10+00:00
 redirect_from:
   - /blog2/contact
 author: mrbusche
-layout: page
 ---
 
 Email &#8211; gmail with twitter

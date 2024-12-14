@@ -1,7 +1,6 @@
 ---
 title: Book Notes - Observability for Large Language Models
 date: 2024-11-23 11:39:30
-layout: post
 tags:
   - book-notes
   - llms

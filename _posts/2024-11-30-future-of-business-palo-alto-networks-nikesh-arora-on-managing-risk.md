@@ -1,7 +1,6 @@
 ---
 title: Future of Business - Palo Alto Networks’ Nikesh Arora on Managing Risk in the Age of AI
 date: 2024-11-30 21:35:30
-layout: post
 tags:
   - generative-ai
 ---

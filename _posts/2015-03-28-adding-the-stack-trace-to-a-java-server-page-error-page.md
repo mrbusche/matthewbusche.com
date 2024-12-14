@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2015/03/28/adding-the-stack-trace-to-a-java-server-page-error-page/
 date: 2015-03-28T03:46:16+00:00
 author: mrbusche
-layout: post
 permalink: /2015/03/28/adding-the-stack-trace-to-a-java-server-page-error-page/
 categories:
   - java

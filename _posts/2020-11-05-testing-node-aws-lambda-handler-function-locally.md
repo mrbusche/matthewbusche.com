@@ -1,7 +1,6 @@
 ---
 title: Testing Node AWS Lambda handler function locally
 date: 2020-11-05 21:01:30
-layout: post
 tags:
   - node
   - lambda

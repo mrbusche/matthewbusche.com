@@ -1,12 +1,11 @@
 ---
 title: Resolving glibc errors with python module
 date: 2023-10-18 22:09:30
-layout: post
 tags:
   - python
 ---
 
-We recently switched out our lambda build image to a debian based image and started receiving errors around glibc. 
+We recently switched out our lambda build image to a debian based image and started receiving errors around glibc.
 
 ```shell
 [ERROR] Runtime.ImportModuleError. Unable to import module 'app':

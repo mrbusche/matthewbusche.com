@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2013/05/10/checking-html-page-for-duplicate-ids-using-jquery/
 date: 2013-05-10T02:50:15+00:00
 author: mrbusche
-layout: post
 permalink: /2013/05/10/checking-html-page-for-duplicate-ids-using-jquery/
 categories:
   - jQuery

@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2014/08/03/batch-inserting-records-to-a-database/
 date: 2014-08-03T03:32:43+00:00
 author: mrbusche
-layout: post
 permalink: /2014/08/03/batch-inserting-records-to-a-database/
 categories:
   - ColdFusion

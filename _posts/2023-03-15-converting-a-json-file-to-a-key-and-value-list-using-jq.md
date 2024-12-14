@@ -1,11 +1,9 @@
 ---
 title: Converting a JSON file to a key and value list using jq
 date: 2023-03-14 22:09:30
-layout: post
 tags:
   - jq
 ---
-
 
 Given a JSON file named `data.json`
 
@@ -23,6 +21,7 @@ jq -r 'to_entries|map("\(.key)=\(.value|tostring)")|.[]' data.json > file.txt
 ```
 
 `file.txt` contains
+
 ```
 name=Matt
 job=Engineer
@@ -35,6 +34,7 @@ jq -r 'to_entries|map("\(.key|ascii_upcase)=\(.value|tostring)")|.[]' data.json 
 ```
 
 `file.txt` now contains
+
 ```
 NAME=Matt
 JOB=Engineer

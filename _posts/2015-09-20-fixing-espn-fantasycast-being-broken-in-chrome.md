@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2015/09/20/fixing-espn-fantasycast-being-broken-in-chrome/
 date: 2015-09-20T19:59:19+00:00
 author: mrbusche
-layout: post
 permalink: /2015/09/20/fixing-espn-fantasycast-being-broken-in-chrome/
 categories:
   - Uncategorized

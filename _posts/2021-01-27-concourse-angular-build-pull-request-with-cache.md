@@ -1,12 +1,10 @@
 ---
 title: Concourse build angular app on pull request with cache
 date: 2021-01-27 21:01:30
-layout: post
 tags:
   - concourse
   - angular
 ---
-
 
 ```yaml
 resource_types:

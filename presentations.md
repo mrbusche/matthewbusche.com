@@ -3,7 +3,6 @@ id: 88
 title: Presentations
 date: 2015-05-16T03:54:31+00:00
 author: mrbusche
-layout: page
 ---
 
 ### 2024

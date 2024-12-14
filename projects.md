@@ -3,7 +3,6 @@ id: 90
 title: Projects
 date: 2015-05-16T03:56:03+00:00
 author: mrbusche
-layout: page
 ---
 
 [Conference Progressive Web App](https://mrbusche.com/pwa) &#8211; [GitHub](https://github.com/mrbusche/conferencePWA)

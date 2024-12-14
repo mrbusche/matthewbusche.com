@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2015/07/02/websphere-unable-to-check-if-application-exists/
 date: 2015-07-02T20:42:57+00:00
 author: mrbusche
-layout: post
 permalink: /2015/07/02/websphere-unable-to-check-if-application-exists/
 categories:
   - java

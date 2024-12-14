@@ -1,7 +1,6 @@
 ---
 title: Cache bust JavaScript, CSS or other file in Dockerfile
 date: 2023-02-15 21:09:30
-layout: post
 tags:
   - docker
 ---

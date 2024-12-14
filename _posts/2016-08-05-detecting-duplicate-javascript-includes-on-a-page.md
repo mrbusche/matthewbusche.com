@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2016/08/05/detecting-duplicate-javascript-includes-on-a-page/
 date: 2016-08-05T02:37:09+00:00
 author: mrbusche
-layout: post
 permalink: /2016/08/05/detecting-duplicate-javascript-includes-on-a-page/
 categories:
   - JavaScript

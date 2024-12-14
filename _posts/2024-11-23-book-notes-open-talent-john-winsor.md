@@ -1,7 +1,6 @@
 ---
 title: Book Notes - Open Talent by John Winsor
 date: 2024-11-23 11:45:30
-layout: post
 tags:
   - book-notes
   - enterprise

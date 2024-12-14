@@ -1,10 +1,9 @@
 ---
-title: 'jQuery Validate unique email addresses'
+title: "jQuery Validate unique email addresses"
 date: 2019-07-01 20:06:57
 author: mrbusche
-layout: post
 categories: jQuery
-tags: ['jQuery']
+tags: ["jQuery"]
 ---
 
 jQuery Validate offers a lot of great features out of the box, but one feature it's lacking is validating if something is not found is a list. Fortunately, it's super easy to add your own validators. In my case I want to find if something doesn't exist in a list.

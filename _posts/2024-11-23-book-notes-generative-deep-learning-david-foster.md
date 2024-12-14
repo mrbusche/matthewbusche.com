@@ -1,7 +1,6 @@
 ---
 title: Book Notes - Generative Deep Learning by David Foster
 date: 2024-11-23 11:41:30
-layout: post
 tags:
   - book-notes
   - generative-ai

@@ -1,7 +1,6 @@
 ---
 title: Unhobbling LLMs - Letting AI Off the Leash
 date: 2024-11-14 21:38:30
-layout: post
 tags:
   - ai
 ---

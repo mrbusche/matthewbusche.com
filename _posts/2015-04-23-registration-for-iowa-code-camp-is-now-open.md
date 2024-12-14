@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2015/04/23/registration-for-iowa-code-camp-is-now-open/
 date: 2015-04-23T03:50:39+00:00
 author: mrbusche
-layout: post
 permalink: /2015/04/23/registration-for-iowa-code-camp-is-now-open/
 categories:
   - conferences

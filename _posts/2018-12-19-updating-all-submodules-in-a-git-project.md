@@ -1,7 +1,6 @@
 ---
-title: 'Updating all sub modules in a git project'
+title: "Updating all sub modules in a git project"
 date: 2018-12-19 11:56:57
-layout: post
 tags:
   - git
 ---

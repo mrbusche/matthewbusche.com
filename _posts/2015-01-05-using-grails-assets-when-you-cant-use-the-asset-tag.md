@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2015/01/05/using-grails-assets-when-you-cant-use-the-asset-tag/
 date: 2015-01-05T03:40:33+00:00
 author: mrbusche
-layout: post
 permalink: /2015/01/05/using-grails-assets-when-you-cant-use-the-asset-tag/
 categories:
   - grails

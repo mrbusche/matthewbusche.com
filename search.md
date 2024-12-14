@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Search
 description: Search this Site
 ---

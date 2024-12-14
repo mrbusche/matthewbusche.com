@@ -2,7 +2,6 @@
 title: "I'm speaking at Iowa Technology Summit"
 date: 2018-08-15 16:06:57
 author: mrbusche
-layout: post
 categories: conferences
 tags: ["conferences", "iowa tech summit"]
 ---

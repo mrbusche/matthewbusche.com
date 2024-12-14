@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2018/08/04/spring-boot-db2-and-mssql-configuration/
 date: 2018-08-04T20:51:36+00:00
 author: mrbusche
-layout: post
 permalink: /2018/08/04/spring-boot-db2-and-mssql-configuration/
 categories:
   - java

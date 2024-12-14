@@ -1,7 +1,6 @@
 ---
 title: Book Notes - GitHub Actions in Action
 date: 2024-11-23 11:42:30
-layout: post
 tags:
   - book-notes
   - github-actions

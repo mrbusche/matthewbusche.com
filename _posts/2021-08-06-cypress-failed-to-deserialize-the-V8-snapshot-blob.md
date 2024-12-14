@@ -1,7 +1,6 @@
 ---
 title: Cypress - Failed to deserialize the snapshot blob
 date: 2021-08-06 16:01:30
-layout: post
 tags:
   - cypress
 ---

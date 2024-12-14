@@ -5,7 +5,6 @@ redirect_from:
   - /blog2/2016/12/18/espn-fantasycast-broken-in-chrome/
 date: 2016-12-18T17:43:03+00:00
 author: mrbusche
-layout: post
 permalink: /2016/12/18/espn-fantasycast-broken-in-chrome/
 categories:
   - Uncategorized

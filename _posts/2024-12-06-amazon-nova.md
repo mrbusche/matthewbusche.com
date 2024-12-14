@@ -1,7 +1,6 @@
 ---
 title: Amazon Nova foundation models
 date: 2024-12-06 14:54:00
-layout: post
 tags:
   - aws
   - nova

@@ -1,7 +1,6 @@
 ---
 title: Legal Item Summarizer is live
 date: 2024-11-10 20:39:30
-layout: post
 tags:
   - nationwide
   - generative-ai
