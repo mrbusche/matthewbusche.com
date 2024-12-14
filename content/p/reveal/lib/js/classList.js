@@ -1,17 +1,14 @@
 /*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js*/
-if (
-	typeof document !== "undefined" &&
-	!("classList" in document.createElement("a"))
-) {
+if (typeof document !== 'undefined' && !('classList' in document.createElement('a'))) {
 	(function (j) {
-		var a = "classList",
-			f = "prototype",
+		var a = 'classList',
+			f = 'prototype',
 			m = (j.HTMLElement || j.Element)[f],
 			b = Object,
 			k =
 				String[f].trim ||
 				function () {
-					return this.replace(/^\s+|\s+$/g, "");
+					return this.replace(/^\s+|\s+$/g, '');
 				},
 			c =
 				Array[f].indexOf ||
@@ -31,17 +28,11 @@ if (
 				this.message = p;
 			},
 			g = function (p, o) {
-				if (o === "") {
-					throw new n(
-						"SYNTAX_ERR",
-						"An invalid or illegal string was specified",
-					);
+				if (o === '') {
+					throw new n('SYNTAX_ERR', 'An invalid or illegal string was specified');
 				}
 				if (/\s/.test(o)) {
-					throw new n(
-						"INVALID_CHARACTER_ERR",
-						"String contains an invalid character",
-					);
+					throw new n('INVALID_CHARACTER_ERR', 'String contains an invalid character');
 				}
 				return c.call(p, o);
 			},
@@ -66,18 +57,18 @@ if (
 			return this[o] || null;
 		};
 		e.contains = function (o) {
-			o += "";
+			o += '';
 			return g(this, o) !== -1;
 		};
 		e.add = function (o) {
-			o += "";
+			o += '';
 			if (g(this, o) === -1) {
 				this.push(o);
 				this._updateClassName();
 			}
 		};
 		e.remove = function (p) {
-			p += "";
+			p += '';
 			var o = g(this, p);
 			if (o !== -1) {
 				this.splice(o, 1);
@@ -85,7 +76,7 @@ if (
 			}
 		};
 		e.toggle = function (o) {
-			o += "";
+			o += '';
 			if (g(this, o) === -1) {
 				this.add(o);
 			} else {
@@ -93,7 +84,7 @@ if (
 			}
 		};
 		e.toString = function () {
-			return this.join(" ");
+			return this.join(' ');
 		};
 		if (b.defineProperty) {
 			var l = { get: i, enumerable: true, configurable: true };

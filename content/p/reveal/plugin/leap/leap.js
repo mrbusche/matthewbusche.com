@@ -16,7 +16,7 @@
 	function i(n, s) {
 		if (!t[n]) {
 			if (!e[n]) {
-				var o = typeof require == "function" && require;
+				var o = typeof require == 'function' && require;
 				if (!s && o) return o(n, !0);
 				if (r) return r(n, !0);
 				throw new Error("Cannot find module '" + n + "'");
@@ -34,19 +34,19 @@
 		}
 		return t[n].exports;
 	}
-	var r = typeof require == "function" && require;
+	var r = typeof require == 'function' && require;
 	for (var s = 0; s < n.length; s++) i(n[s]);
 	return i;
 })(
 	{
 		1: [
 			function (require, module, exports) {
-				var chooseProtocol = require("./protocol").chooseProtocol,
-					EventEmitter = require("events").EventEmitter,
-					_ = require("underscore");
+				var chooseProtocol = require('./protocol').chooseProtocol,
+					EventEmitter = require('events').EventEmitter,
+					_ = require('underscore');
 				var BaseConnection = (module.exports = function (opts) {
 					this.opts = _.defaults(opts || {}, {
-						host: "127.0.0.1",
+						host: '127.0.0.1',
 						enableGestures: false,
 						port: 6437,
 						enableHeartbeat: true,
@@ -55,25 +55,17 @@
 					});
 					this.host = opts.host;
 					this.port = opts.port;
-					this.on("ready", function () {
+					this.on('ready', function () {
 						this.enableGestures(this.opts.enableGestures);
 						if (this.opts.enableHeartbeat) this.startHeartbeat();
 					});
-					this.on("disconnect", function () {
+					this.on('disconnect', function () {
 						if (this.opts.enableHeartbeat) this.stopHeartbeat();
 					});
 					this.heartbeatTimer = null;
 				});
 				BaseConnection.prototype.getUrl = function () {
-					return (
-						"ws://" +
-						this.host +
-						":" +
-						this.port +
-						"/v" +
-						this.opts.requestProtocolVersion +
-						".json"
-					);
+					return 'ws://' + this.host + ':' + this.port + '/v' + this.opts.requestProtocolVersion + '.json';
 				};
 				BaseConnection.prototype.sendHeartbeat = function () {
 					if (this.protocol) {
@@ -82,13 +74,11 @@
 					}
 				};
 				BaseConnection.prototype.handleOpen = function () {
-					this.emit("connect");
+					this.emit('connect');
 				};
 				BaseConnection.prototype.enableGestures = function (enabled) {
 					this.gesturesEnabled = enabled ? true : false;
-					this.send(
-						this.protocol.encode({ enableGestures: this.gesturesEnabled }),
-					);
+					this.send(this.protocol.encode({ enableGestures: this.gesturesEnabled }));
 				};
 				BaseConnection.prototype.handleClose = function () {
 					this.disconnect();
@@ -105,14 +95,14 @@
 					this.socket.close();
 					delete this.socket;
 					delete this.protocol;
-					this.emit("disconnect");
+					this.emit('disconnect');
 				};
 				BaseConnection.prototype.handleData = function (data) {
 					var message = JSON.parse(data);
 					var messageEvent;
 					if (this.protocol === undefined) {
 						messageEvent = this.protocol = chooseProtocol(message);
-						this.emit("ready");
+						this.emit('ready');
 					} else {
 						messageEvent = this.protocol(message);
 					}
@@ -135,11 +125,11 @@
 				BaseConnection.prototype.setHeartbeatState = function (state) {
 					if (this.heartbeatState === state) return;
 					this.heartbeatState = state;
-					this.emit(this.heartbeatState ? "focus" : "blur");
+					this.emit(this.heartbeatState ? 'focus' : 'blur');
 				};
 				_.extend(BaseConnection.prototype, EventEmitter.prototype);
 			},
-			{ "./protocol": 12, events: 17, underscore: 20 },
+			{ './protocol': 12, events: 17, underscore: 20 },
 		],
 		2: [
 			function (require, module, exports) {
@@ -163,7 +153,7 @@
 		],
 		3: [
 			function (require, module, exports) {
-				var Connection = (module.exports = require("./base_connection"));
+				var Connection = (module.exports = require('./base_connection'));
 				Connection.prototype.setupSocket = function () {
 					var connection = this;
 					var socket = new WebSocket(this.getUrl());
@@ -182,25 +172,25 @@
 					if (!this.protocol.sendHeartbeat || this.heartbeatTimer) return;
 					var connection = this;
 					var propertyName = null;
-					if (typeof document.hidden !== "undefined") {
-						propertyName = "hidden";
-					} else if (typeof document.mozHidden !== "undefined") {
-						propertyName = "mozHidden";
-					} else if (typeof document.msHidden !== "undefined") {
-						propertyName = "msHidden";
-					} else if (typeof document.webkitHidden !== "undefined") {
-						propertyName = "webkitHidden";
+					if (typeof document.hidden !== 'undefined') {
+						propertyName = 'hidden';
+					} else if (typeof document.mozHidden !== 'undefined') {
+						propertyName = 'mozHidden';
+					} else if (typeof document.msHidden !== 'undefined') {
+						propertyName = 'msHidden';
+					} else if (typeof document.webkitHidden !== 'undefined') {
+						propertyName = 'webkitHidden';
 					} else {
 						propertyName = undefined;
 					}
 					var windowVisible = true;
-					var focusListener = window.addEventListener("focus", function (e) {
+					var focusListener = window.addEventListener('focus', function (e) {
 						windowVisible = true;
 					});
-					var blurListener = window.addEventListener("blur", function (e) {
+					var blurListener = window.addEventListener('blur', function (e) {
 						windowVisible = false;
 					});
-					this.on("disconnect", function () {
+					this.on('disconnect', function () {
 						if (connection.heartbeatTimer) {
 							clearTimeout(connection.heartbeatTimer);
 							delete connection.heartbeatTimer;
@@ -209,10 +199,7 @@
 						window.removeEventListener(blurListener);
 					});
 					this.heartbeatTimer = setInterval(function () {
-						var isVisible =
-							propertyName === undefined
-								? true
-								: document[propertyName] === false;
+						var isVisible = propertyName === undefined ? true : document[propertyName] === false;
 						if (isVisible && windowVisible) {
 							connection.sendHeartbeat();
 						} else {
@@ -221,26 +208,23 @@
 					}, this.opts.heartbeatInterval);
 				};
 			},
-			{ "./base_connection": 1 },
+			{ './base_connection': 1 },
 		],
 		4: [
 			function (require, module, exports) {
 				!(function (process) {
-					var Frame = require("./frame"),
-						CircularBuffer = require("./circular_buffer"),
-						Pipeline = require("./pipeline"),
-						EventEmitter = require("events").EventEmitter,
-						gestureListener = require("./gesture").gestureListener,
-						_ = require("underscore");
+					var Frame = require('./frame'),
+						CircularBuffer = require('./circular_buffer'),
+						Pipeline = require('./pipeline'),
+						EventEmitter = require('events').EventEmitter,
+						gestureListener = require('./gesture').gestureListener,
+						_ = require('underscore');
 					var Controller = (module.exports = function (opts) {
-						var inNode =
-							typeof process !== "undefined" && process.title === "node";
+						var inNode = typeof process !== 'undefined' && process.title === 'node';
 						opts = _.defaults(opts || {}, { inNode: inNode });
 						this.inNode = opts.inNode;
 						opts = _.defaults(opts || {}, {
-							frameEventName: this.useAnimationLoop()
-								? "animationFrame"
-								: "deviceFrame",
+							frameEventName: this.useAnimationLoop() ? 'animationFrame' : 'deviceFrame',
 							supressAnimationLoop: false,
 						});
 						this.supressAnimationLoop = opts.supressAnimationLoop;
@@ -251,9 +235,7 @@
 						this.lastConnectionFrame = Frame.Invalid;
 						this.accumulatedGestures = [];
 						if (opts.connectionType === undefined) {
-							this.connectionType = this.inBrowser()
-								? require("./connection")
-								: require("./node_connection");
+							this.connectionType = this.inBrowser() ? require('./connection') : require('./node_connection');
 						} else {
 							this.connectionType = opts.connectionType;
 						}
@@ -271,20 +253,13 @@
 						return !this.inNode;
 					};
 					Controller.prototype.useAnimationLoop = function () {
-						return this.inBrowser() && typeof chrome === "undefined";
+						return this.inBrowser() && typeof chrome === 'undefined';
 					};
 					Controller.prototype.connect = function () {
 						var controller = this;
-						if (
-							this.connection.connect() &&
-							this.inBrowser() &&
-							!controller.supressAnimationLoop
-						) {
+						if (this.connection.connect() && this.inBrowser() && !controller.supressAnimationLoop) {
 							var callback = function () {
-								controller.emit(
-									"animationFrame",
-									controller.lastConnectionFrame,
-								);
+								controller.emit('animationFrame', controller.lastConnectionFrame);
 								window.requestAnimFrame(callback);
 							};
 							window.requestAnimFrame(callback);
@@ -309,10 +284,7 @@
 										if (controller.lastFrame != frame) {
 											immediateRunnerCallback(controller.lastFrame);
 										} else {
-											controller.once(
-												controller.frameEventName,
-												immediateRunnerCallback,
-											);
+											controller.once(controller.frameEventName, immediateRunnerCallback);
 										}
 									});
 								};
@@ -327,16 +299,14 @@
 					};
 					Controller.prototype.processFrame = function (frame) {
 						if (frame.gestures) {
-							this.accumulatedGestures = this.accumulatedGestures.concat(
-								frame.gestures,
-							);
+							this.accumulatedGestures = this.accumulatedGestures.concat(frame.gestures);
 						}
 						if (this.pipeline) {
 							frame = this.pipeline.run(frame);
 							if (!frame) frame = Frame.Invalid;
 						}
 						this.lastConnectionFrame = frame;
-						this.emit("deviceFrame", frame);
+						this.emit('deviceFrame', frame);
 					};
 					Controller.prototype.processFinishedFrame = function (frame) {
 						this.lastFrame = frame;
@@ -348,58 +318,52 @@
 						if (frame.gestures) {
 							frame.gestures = this.accumulatedGestures;
 							this.accumulatedGestures = [];
-							for (
-								var gestureIdx = 0;
-								gestureIdx != frame.gestures.length;
-								gestureIdx++
-							) {
-								this.emit("gesture", frame.gestures[gestureIdx], frame);
+							for (var gestureIdx = 0; gestureIdx != frame.gestures.length; gestureIdx++) {
+								this.emit('gesture', frame.gestures[gestureIdx], frame);
 							}
 						}
-						this.emit("frame", frame);
+						this.emit('frame', frame);
 					};
 					Controller.prototype.setupConnectionEvents = function () {
 						var controller = this;
-						this.connection.on("frame", function (frame) {
+						this.connection.on('frame', function (frame) {
 							controller.processFrame(frame);
 						});
 						this.on(this.frameEventName, function (frame) {
 							controller.processFinishedFrame(frame);
 						});
-						this.connection.on("disconnect", function () {
-							controller.emit("disconnect");
+						this.connection.on('disconnect', function () {
+							controller.emit('disconnect');
 						});
-						this.connection.on("ready", function () {
-							controller.emit("ready");
+						this.connection.on('ready', function () {
+							controller.emit('ready');
 						});
-						this.connection.on("connect", function () {
-							controller.emit("connect");
+						this.connection.on('connect', function () {
+							controller.emit('connect');
 						});
-						this.connection.on("focus", function () {
-							controller.emit("focus");
+						this.connection.on('focus', function () {
+							controller.emit('focus');
 						});
-						this.connection.on("blur", function () {
-							controller.emit("blur");
+						this.connection.on('blur', function () {
+							controller.emit('blur');
 						});
-						this.connection.on("protocol", function (protocol) {
-							controller.emit("protocol", protocol);
+						this.connection.on('protocol', function (protocol) {
+							controller.emit('protocol', protocol);
 						});
-						this.connection.on("deviceConnect", function (evt) {
-							controller.emit(
-								evt.state ? "deviceConnected" : "deviceDisconnected",
-							);
+						this.connection.on('deviceConnect', function (evt) {
+							controller.emit(evt.state ? 'deviceConnected' : 'deviceDisconnected');
 						});
 					};
 					_.extend(Controller.prototype, EventEmitter.prototype);
-				})(require("__browserify_process"));
+				})(require('__browserify_process'));
 			},
 			{
-				"./circular_buffer": 2,
-				"./connection": 3,
-				"./frame": 5,
-				"./gesture": 6,
-				"./node_connection": 16,
-				"./pipeline": 10,
+				'./circular_buffer': 2,
+				'./connection': 3,
+				'./frame': 5,
+				'./gesture': 6,
+				'./node_connection': 16,
+				'./pipeline': 10,
 				__browserify_process: 18,
 				events: 17,
 				underscore: 20,
@@ -407,14 +371,14 @@
 		],
 		5: [
 			function (require, module, exports) {
-				var Hand = require("./hand"),
-					Pointable = require("./pointable"),
-					createGesture = require("./gesture").createGesture,
-					glMatrix = require("gl-matrix"),
+				var Hand = require('./hand'),
+					Pointable = require('./pointable'),
+					createGesture = require('./gesture').createGesture,
+					glMatrix = require('gl-matrix'),
 					mat3 = glMatrix.mat3,
 					vec3 = glMatrix.vec3,
-					InteractionBox = require("./interaction_box"),
-					_ = require("underscore");
+					InteractionBox = require('./interaction_box'),
+					_ = require('underscore');
 				var Frame = (module.exports = function (data) {
 					this.valid = true;
 					this.id = data.id;
@@ -433,45 +397,30 @@
 					this._rotation = _.flatten(data.r);
 					this._scaleFactor = data.s;
 					this.data = data;
-					this.type = "frame";
+					this.type = 'frame';
 					this.currentFrameRate = data.currentFrameRate;
 					var handMap = {};
-					for (
-						var handIdx = 0, handCount = data.hands.length;
-						handIdx != handCount;
-						handIdx++
-					) {
+					for (var handIdx = 0, handCount = data.hands.length; handIdx != handCount; handIdx++) {
 						var hand = new Hand(data.hands[handIdx]);
 						hand.frame = this;
 						this.hands.push(hand);
 						this.handsMap[hand.id] = hand;
 						handMap[hand.id] = handIdx;
 					}
-					for (
-						var pointableIdx = 0, pointableCount = data.pointables.length;
-						pointableIdx != pointableCount;
-						pointableIdx++
-					) {
+					for (var pointableIdx = 0, pointableCount = data.pointables.length; pointableIdx != pointableCount; pointableIdx++) {
 						var pointable = new Pointable(data.pointables[pointableIdx]);
 						pointable.frame = this;
 						this.pointables.push(pointable);
 						this.pointablesMap[pointable.id] = pointable;
 						(pointable.tool ? this.tools : this.fingers).push(pointable);
-						if (
-							pointable.handId !== undefined &&
-							handMap.hasOwnProperty(pointable.handId)
-						) {
+						if (pointable.handId !== undefined && handMap.hasOwnProperty(pointable.handId)) {
 							var hand = this.hands[handMap[pointable.handId]];
 							hand.pointables.push(pointable);
 							(pointable.tool ? hand.tools : hand.fingers).push(pointable);
 						}
 					}
 					if (data.gestures) {
-						for (
-							var gestureIdx = 0, gestureCount = data.gestures.length;
-							gestureIdx != gestureCount;
-							gestureIdx++
-						) {
+						for (var gestureIdx = 0, gestureCount = data.gestures.length; gestureIdx != gestureCount; gestureIdx++) {
 							this.gestures.push(createGesture(data.gestures[gestureIdx]));
 						}
 					}
@@ -521,59 +470,42 @@
 				};
 				Frame.prototype.translation = function (sinceFrame) {
 					if (!this.valid || !sinceFrame.valid) return vec3.create();
-					return vec3.subtract(
-						vec3.create(),
-						this._translation,
-						sinceFrame._translation,
-					);
+					return vec3.subtract(vec3.create(), this._translation, sinceFrame._translation);
 				};
 				Frame.prototype.toString = function () {
 					var str =
-						"Frame [ id:" +
+						'Frame [ id:' +
 						this.id +
-						" | timestamp:" +
+						' | timestamp:' +
 						this.timestamp +
-						" | Hand count:(" +
+						' | Hand count:(' +
 						this.hands.length +
-						") | Pointable count:(" +
+						') | Pointable count:(' +
 						this.pointables.length +
-						")";
-					if (this.gestures)
-						str += " | Gesture count:(" + this.gestures.length + ")";
-					str += " ]";
+						')';
+					if (this.gestures) str += ' | Gesture count:(' + this.gestures.length + ')';
+					str += ' ]';
 					return str;
 				};
 				Frame.prototype.dump = function () {
-					var out = "";
-					out += "Frame Info:<br/>";
+					var out = '';
+					out += 'Frame Info:<br/>';
 					out += this.toString();
-					out += "<br/><br/>Hands:<br/>";
-					for (
-						var handIdx = 0, handCount = this.hands.length;
-						handIdx != handCount;
-						handIdx++
-					) {
-						out += "  " + this.hands[handIdx].toString() + "<br/>";
+					out += '<br/><br/>Hands:<br/>';
+					for (var handIdx = 0, handCount = this.hands.length; handIdx != handCount; handIdx++) {
+						out += '  ' + this.hands[handIdx].toString() + '<br/>';
 					}
-					out += "<br/><br/>Pointables:<br/>";
-					for (
-						var pointableIdx = 0, pointableCount = this.pointables.length;
-						pointableIdx != pointableCount;
-						pointableIdx++
-					) {
-						out += "  " + this.pointables[pointableIdx].toString() + "<br/>";
+					out += '<br/><br/>Pointables:<br/>';
+					for (var pointableIdx = 0, pointableCount = this.pointables.length; pointableIdx != pointableCount; pointableIdx++) {
+						out += '  ' + this.pointables[pointableIdx].toString() + '<br/>';
 					}
 					if (this.gestures) {
-						out += "<br/><br/>Gestures:<br/>";
-						for (
-							var gestureIdx = 0, gestureCount = this.gestures.length;
-							gestureIdx != gestureCount;
-							gestureIdx++
-						) {
-							out += "  " + this.gestures[gestureIdx].toString() + "<br/>";
+						out += '<br/><br/>Gestures:<br/>';
+						for (var gestureIdx = 0, gestureCount = this.gestures.length; gestureIdx != gestureCount; gestureIdx++) {
+							out += '  ' + this.gestures[gestureIdx].toString() + '<br/>';
 						}
 					}
-					out += "<br/><br/>Raw JSON:<br/>";
+					out += '<br/><br/>Raw JSON:<br/>';
 					out += JSON.stringify(this.data);
 					return out;
 				};
@@ -594,7 +526,7 @@
 						return Hand.Invalid;
 					},
 					toString: function () {
-						return "invalid frame";
+						return 'invalid frame';
 					},
 					dump: function () {
 						return this.toString();
@@ -617,37 +549,37 @@
 				};
 			},
 			{
-				"./gesture": 6,
-				"./hand": 7,
-				"./interaction_box": 9,
-				"./pointable": 11,
-				"gl-matrix": 19,
+				'./gesture': 6,
+				'./hand': 7,
+				'./interaction_box': 9,
+				'./pointable': 11,
+				'gl-matrix': 19,
 				underscore: 20,
 			},
 		],
 		6: [
 			function (require, module, exports) {
-				var glMatrix = require("gl-matrix"),
+				var glMatrix = require('gl-matrix'),
 					vec3 = glMatrix.vec3,
-					EventEmitter = require("events").EventEmitter,
-					_ = require("underscore");
+					EventEmitter = require('events').EventEmitter,
+					_ = require('underscore');
 				var createGesture = (exports.createGesture = function (data) {
 					var gesture;
 					switch (data.type) {
-						case "circle":
+						case 'circle':
 							gesture = new CircleGesture(data);
 							break;
-						case "swipe":
+						case 'swipe':
 							gesture = new SwipeGesture(data);
 							break;
-						case "screenTap":
+						case 'screenTap':
 							gesture = new ScreenTapGesture(data);
 							break;
-						case "keyTap":
+						case 'keyTap':
 							gesture = new KeyTapGesture(data);
 							break;
 						default:
-							throw "unkown gesture type";
+							throw 'unkown gesture type';
 					}
 					gesture.id = data.id;
 					gesture.handIds = data.handIds;
@@ -657,31 +589,25 @@
 					gesture.type = data.type;
 					return gesture;
 				});
-				var gestureListener = (exports.gestureListener = function (
-					controller,
-					type,
-				) {
+				var gestureListener = (exports.gestureListener = function (controller, type) {
 					var handlers = {};
 					var gestureMap = {};
 					var gestureCreator = function () {
 						var candidateGesture = gestureMap[gesture.id];
 						if (candidateGesture !== undefined) gesture.update(gesture, frame);
-						if (gesture.state == "start" || gesture.state == "stop") {
-							if (
-								type == gesture.type &&
-								gestureMap[gesture.id] === undefined
-							) {
+						if (gesture.state == 'start' || gesture.state == 'stop') {
+							if (type == gesture.type && gestureMap[gesture.id] === undefined) {
 								gestureMap[gesture.id] = new Gesture(gesture, frame);
 								gesture.update(gesture, frame);
 							}
-							if (gesture.state == "stop") {
+							if (gesture.state == 'stop') {
 								delete gestureMap[gesture.id];
 							}
 						}
 					};
-					controller.on("gesture", function (gesture, frame) {
+					controller.on('gesture', function (gesture, frame) {
 						if (gesture.type == type) {
-							if (gesture.state == "start" || gesture.state == "stop") {
+							if (gesture.state == 'start' || gesture.state == 'stop') {
 								if (gestureMap[gesture.id] === undefined) {
 									var gestureTracker = new Gesture(gesture, frame);
 									gestureMap[gesture.id] = gestureTracker;
@@ -691,26 +617,26 @@
 								}
 							}
 							gestureMap[gesture.id].update(gesture, frame);
-							if (gesture.state == "stop") {
+							if (gesture.state == 'stop') {
 								delete gestureMap[gesture.id];
 							}
 						}
 					});
 					var builder = {
 						start: function (cb) {
-							handlers["start"] = cb;
+							handlers['start'] = cb;
 							return builder;
 						},
 						stop: function (cb) {
-							handlers["stop"] = cb;
+							handlers['stop'] = cb;
 							return builder;
 						},
 						complete: function (cb) {
-							handlers["stop"] = cb;
+							handlers['stop'] = cb;
 							return builder;
 						},
 						update: function (cb) {
-							handlers["update"] = cb;
+							handlers['update'] = cb;
 							return builder;
 						},
 					};
@@ -733,7 +659,7 @@
 					this.radius = data.radius;
 				};
 				CircleGesture.prototype.toString = function () {
-					return "CircleGesture [" + JSON.stringify(this) + "]";
+					return 'CircleGesture [' + JSON.stringify(this) + ']';
 				};
 				var SwipeGesture = function (data) {
 					this.startPosition = data.startPosition;
@@ -742,7 +668,7 @@
 					this.speed = data.speed;
 				};
 				SwipeGesture.prototype.toString = function () {
-					return "SwipeGesture [" + JSON.stringify(this) + "]";
+					return 'SwipeGesture [' + JSON.stringify(this) + ']';
 				};
 				var ScreenTapGesture = function (data) {
 					this.position = data.position;
@@ -750,7 +676,7 @@
 					this.progress = data.progress;
 				};
 				ScreenTapGesture.prototype.toString = function () {
-					return "ScreenTapGesture [" + JSON.stringify(this) + "]";
+					return 'ScreenTapGesture [' + JSON.stringify(this) + ']';
 				};
 				var KeyTapGesture = function (data) {
 					this.position = data.position;
@@ -758,18 +684,18 @@
 					this.progress = data.progress;
 				};
 				KeyTapGesture.prototype.toString = function () {
-					return "KeyTapGesture [" + JSON.stringify(this) + "]";
+					return 'KeyTapGesture [' + JSON.stringify(this) + ']';
 				};
 			},
-			{ events: 17, "gl-matrix": 19, underscore: 20 },
+			{ events: 17, 'gl-matrix': 19, underscore: 20 },
 		],
 		7: [
 			function (require, module, exports) {
-				var Pointable = require("./pointable"),
-					glMatrix = require("gl-matrix"),
+				var Pointable = require('./pointable'),
+					glMatrix = require('gl-matrix'),
 					mat3 = glMatrix.mat3,
 					vec3 = glMatrix.vec3,
-					_ = require("underscore");
+					_ = require('underscore');
 				var Hand = (module.exports = function (data) {
 					this.id = data.id;
 					this.palmPosition = data.palmPosition;
@@ -790,9 +716,7 @@
 				});
 				Hand.prototype.finger = function (id) {
 					var finger = this.frame.finger(id);
-					return finger && finger.handId == this.id
-						? finger
-						: Pointable.Invalid;
+					return finger && finger.handId == this.id ? finger : Pointable.Invalid;
 				};
 				Hand.prototype.rotationAngle = function (sinceFrame, axis) {
 					if (!this.valid || !sinceFrame.valid) return 0;
@@ -843,15 +767,7 @@
 					];
 				};
 				Hand.prototype.toString = function () {
-					return (
-						"Hand [ id: " +
-						this.id +
-						" | palm velocity:" +
-						this.palmVelocity +
-						" | sphere center:" +
-						this.sphereCenter +
-						" ] "
-					);
+					return 'Hand [ id: ' + this.id + ' | palm velocity:' + this.palmVelocity + ' | sphere center:' + this.sphereCenter + ' ] ';
 				};
 				Hand.Invalid = {
 					valid: false,
@@ -865,7 +781,7 @@
 						return Pointable.Invalid;
 					},
 					toString: function () {
-						return "invalid frame";
+						return 'invalid frame';
 					},
 					dump: function () {
 						return this.toString();
@@ -887,53 +803,52 @@
 					},
 				};
 			},
-			{ "./pointable": 11, "gl-matrix": 19, underscore: 20 },
+			{ './pointable': 11, 'gl-matrix': 19, underscore: 20 },
 		],
 		8: [
 			function (require, module, exports) {
 				!(function () {
 					module.exports = {
-						Controller: require("./controller"),
-						Frame: require("./frame"),
-						Gesture: require("./gesture"),
-						Hand: require("./hand"),
-						Pointable: require("./pointable"),
-						InteractionBox: require("./interaction_box"),
-						Connection: require("./connection"),
-						CircularBuffer: require("./circular_buffer"),
-						UI: require("./ui"),
-						glMatrix: require("gl-matrix"),
-						mat3: require("gl-matrix").mat3,
-						vec3: require("gl-matrix").vec3,
+						Controller: require('./controller'),
+						Frame: require('./frame'),
+						Gesture: require('./gesture'),
+						Hand: require('./hand'),
+						Pointable: require('./pointable'),
+						InteractionBox: require('./interaction_box'),
+						Connection: require('./connection'),
+						CircularBuffer: require('./circular_buffer'),
+						UI: require('./ui'),
+						glMatrix: require('gl-matrix'),
+						mat3: require('gl-matrix').mat3,
+						vec3: require('gl-matrix').vec3,
 						loopController: undefined,
 						loop: function (opts, callback) {
 							if (callback === undefined) {
 								callback = opts;
 								opts = {};
 							}
-							if (!this.loopController)
-								this.loopController = new this.Controller(opts);
+							if (!this.loopController) this.loopController = new this.Controller(opts);
 							this.loopController.loop(callback);
 						},
 					};
 				})();
 			},
 			{
-				"./circular_buffer": 2,
-				"./connection": 3,
-				"./controller": 4,
-				"./frame": 5,
-				"./gesture": 6,
-				"./hand": 7,
-				"./interaction_box": 9,
-				"./pointable": 11,
-				"./ui": 13,
-				"gl-matrix": 19,
+				'./circular_buffer': 2,
+				'./connection': 3,
+				'./controller': 4,
+				'./frame': 5,
+				'./gesture': 6,
+				'./hand': 7,
+				'./interaction_box': 9,
+				'./pointable': 11,
+				'./ui': 13,
+				'gl-matrix': 19,
 			},
 		],
 		9: [
 			function (require, module, exports) {
-				var glMatrix = require("gl-matrix"),
+				var glMatrix = require('gl-matrix'),
 					vec3 = glMatrix.vec3;
 				var InteractionBox = (module.exports = function (data) {
 					this.valid = true;
@@ -943,9 +858,7 @@
 					this.height = data.size[1];
 					this.depth = data.size[2];
 				});
-				InteractionBox.prototype.denormalizePoint = function (
-					normalizedPosition,
-				) {
+				InteractionBox.prototype.denormalizePoint = function (normalizedPosition) {
 					return vec3.fromValues(
 						(normalizedPosition[0] - 0.5) * this.size[0] + this.center[0],
 						(normalizedPosition[1] - 0.5) * this.size[1] + this.center[1],
@@ -966,19 +879,11 @@
 					return vec;
 				};
 				InteractionBox.prototype.toString = function () {
-					return (
-						"InteractionBox [ width:" +
-						this.width +
-						" | height:" +
-						this.height +
-						" | depth:" +
-						this.depth +
-						" ]"
-					);
+					return 'InteractionBox [ width:' + this.width + ' | height:' + this.height + ' | depth:' + this.depth + ' ]';
 				};
 				InteractionBox.Invalid = { valid: false };
 			},
-			{ "gl-matrix": 19 },
+			{ 'gl-matrix': 19 },
 		],
 		10: [
 			function (require, module, exports) {
@@ -1001,7 +906,7 @@
 		],
 		11: [
 			function (require, module, exports) {
-				var glMatrix = require("gl-matrix"),
+				var glMatrix = require('gl-matrix'),
 					vec3 = glMatrix.vec3;
 				var Pointable = (module.exports = function (data) {
 					this.valid = true;
@@ -1020,36 +925,18 @@
 				});
 				Pointable.prototype.toString = function () {
 					if (this.tool == true) {
-						return (
-							"Pointable [ id:" +
-							this.id +
-							" " +
-							this.length +
-							"mmx | with:" +
-							this.width +
-							"mm | direction:" +
-							this.direction +
-							" ]"
-						);
+						return 'Pointable [ id:' + this.id + ' ' + this.length + 'mmx | with:' + this.width + 'mm | direction:' + this.direction + ' ]';
 					} else {
-						return (
-							"Pointable [ id:" +
-							this.id +
-							" " +
-							this.length +
-							"mmx | direction: " +
-							this.direction +
-							" ]"
-						);
+						return 'Pointable [ id:' + this.id + ' ' + this.length + 'mmx | direction: ' + this.direction + ' ]';
 					}
 				};
 				Pointable.Invalid = { valid: false };
 			},
-			{ "gl-matrix": 19 },
+			{ 'gl-matrix': 19 },
 		],
 		12: [
 			function (require, module, exports) {
-				var Frame = require("./frame");
+				var Frame = require('./frame');
 				var Event = function (data) {
 					this.type = data.type;
 					this.state = data.state;
@@ -1079,7 +966,7 @@
 							};
 							break;
 						default:
-							throw "unrecognized version";
+							throw 'unrecognized version';
 					}
 					return protocol;
 				});
@@ -1089,21 +976,21 @@
 						return JSON.stringify(message);
 					};
 					protocol.version = version;
-					protocol.versionLong = "Version " + version;
-					protocol.type = "protocol";
+					protocol.versionLong = 'Version ' + version;
+					protocol.type = 'protocol';
 					return protocol;
 				};
 			},
-			{ "./frame": 5 },
+			{ './frame': 5 },
 		],
 		13: [
 			function (require, module, exports) {
 				exports.UI = {
-					Region: require("./ui/region"),
-					Cursor: require("./ui/cursor"),
+					Region: require('./ui/region'),
+					Cursor: require('./ui/cursor'),
 				};
 			},
-			{ "./ui/cursor": 14, "./ui/region": 15 },
+			{ './ui/cursor': 14, './ui/region': 15 },
 		],
 		14: [
 			function (require, module, exports) {
@@ -1123,8 +1010,8 @@
 		],
 		15: [
 			function (require, module, exports) {
-				var EventEmitter = require("events").EventEmitter,
-					_ = require("underscore");
+				var EventEmitter = require('events').EventEmitter,
+					_ = require('underscore');
 				var Region = (module.exports = function (start, end) {
 					this.start = new Vector(start);
 					this.end = new Vector(end);
@@ -1148,8 +1035,7 @@
 				};
 				Region.prototype.listener = function (opts) {
 					var region = this;
-					if (opts && opts.nearThreshold)
-						this.setupNearRegion(opts.nearThreshold);
+					if (opts && opts.nearThreshold) this.setupNearRegion(opts.nearThreshold);
 					return function (frame) {
 						return region.updatePosition(frame);
 					};
@@ -1163,36 +1049,28 @@
 				};
 				Region.prototype.setupNearRegion = function (distance) {
 					var nearRegion = (this.nearRegion = new Region(
-						[
-							this.start.x - distance,
-							this.start.y - distance,
-							this.start.z - distance,
-						],
-						[
-							this.end.x + distance,
-							this.end.y + distance,
-							this.end.z + distance,
-						],
+						[this.start.x - distance, this.start.y - distance, this.start.z - distance],
+						[this.end.x + distance, this.end.y + distance, this.end.z + distance],
 					));
 					var region = this;
-					nearRegion.on("enter", function (frame) {
-						region.emit("near", frame);
+					nearRegion.on('enter', function (frame) {
+						region.emit('near', frame);
 					});
-					nearRegion.on("exit", function (frame) {
-						region.emit("far", frame);
+					nearRegion.on('exit', function (frame) {
+						region.emit('far', frame);
 					});
-					region.on("exit", function (frame) {
-						region.emit("near", frame);
+					region.on('exit', function (frame) {
+						region.emit('near', frame);
 					});
 				};
 				Region.prototype.updatePosition = function (frame) {
 					if (this.nearRegion) this.nearRegion.updatePosition(frame);
 					if (this.hasPointables(frame) && this.enteredFrame == null) {
 						this.enteredFrame = frame;
-						this.emit("enter", this.enteredFrame);
+						this.emit('enter', this.enteredFrame);
 					} else if (!this.hasPointables(frame) && this.enteredFrame != null) {
 						this.enteredFrame = null;
-						this.emit("exit", this.enteredFrame);
+						this.emit('exit', this.enteredFrame);
 					}
 					return frame;
 				};
@@ -1224,12 +1102,10 @@
 					if (!process.EventEmitter) process.EventEmitter = function () {};
 					var EventEmitter = (exports.EventEmitter = process.EventEmitter);
 					var isArray =
-						typeof Array.isArray === "function"
+						typeof Array.isArray === 'function'
 							? Array.isArray
 							: function (xs) {
-									return (
-										Object.prototype.toString.call(xs) === "[object Array]"
-									);
+									return Object.prototype.toString.call(xs) === '[object Array]';
 								};
 					function indexOf(xs, x) {
 						if (xs.indexOf) return xs.indexOf(x);
@@ -1244,12 +1120,8 @@
 						this._events.maxListeners = n;
 					};
 					EventEmitter.prototype.emit = function (type) {
-						if (type === "error") {
-							if (
-								!this._events ||
-								!this._events.error ||
-								(isArray(this._events.error) && !this._events.error.length)
-							) {
+						if (type === 'error') {
+							if (!this._events || !this._events.error || (isArray(this._events.error) && !this._events.error.length)) {
 								if (arguments[1] instanceof Error) {
 									throw arguments[1];
 								} else {
@@ -1261,7 +1133,7 @@
 						if (!this._events) return false;
 						var handler = this._events[type];
 						if (!handler) return false;
-						if (typeof handler == "function") {
+						if (typeof handler == 'function') {
 							switch (arguments.length) {
 								case 1:
 									handler.call(this);
@@ -1289,11 +1161,11 @@
 						}
 					};
 					EventEmitter.prototype.addListener = function (type, listener) {
-						if ("function" !== typeof listener) {
-							throw new Error("addListener only takes instances of Function");
+						if ('function' !== typeof listener) {
+							throw new Error('addListener only takes instances of Function');
 						}
 						if (!this._events) this._events = {};
-						this.emit("newListener", type, listener);
+						this.emit('newListener', type, listener);
 						if (!this._events[type]) {
 							this._events[type] = listener;
 						} else if (isArray(this._events[type])) {
@@ -1307,9 +1179,9 @@
 								if (m && m > 0 && this._events[type].length > m) {
 									this._events[type].warned = true;
 									console.error(
-										"(node) warning: possible EventEmitter memory " +
-											"leak detected. %d listeners added. " +
-											"Use emitter.setMaxListeners() to increase limit.",
+										'(node) warning: possible EventEmitter memory ' +
+											'leak detected. %d listeners added. ' +
+											'Use emitter.setMaxListeners() to increase limit.',
 										this._events[type].length,
 									);
 									console.trace();
@@ -1331,10 +1203,8 @@
 						return this;
 					};
 					EventEmitter.prototype.removeListener = function (type, listener) {
-						if ("function" !== typeof listener) {
-							throw new Error(
-								"removeListener only takes instances of Function",
-							);
+						if ('function' !== typeof listener) {
+							throw new Error('removeListener only takes instances of Function');
 						}
 						if (!this._events || !this._events[type]) return this;
 						var list = this._events[type];
@@ -1353,8 +1223,7 @@
 							this._events = {};
 							return this;
 						}
-						if (type && this._events && this._events[type])
-							this._events[type] = null;
+						if (type && this._events && this._events[type]) this._events[type] = null;
 						return this;
 					};
 					EventEmitter.prototype.listeners = function (type) {
@@ -1365,7 +1234,7 @@
 						}
 						return this._events[type];
 					};
-				})(require("__browserify_process"));
+				})(require('__browserify_process'));
 			},
 			{ __browserify_process: 18 },
 		],
@@ -1373,12 +1242,8 @@
 			function (require, module, exports) {
 				var process = (module.exports = {});
 				process.nextTick = (function () {
-					var canSetImmediate =
-						typeof window !== "undefined" && window.setImmediate;
-					var canPost =
-						typeof window !== "undefined" &&
-						window.postMessage &&
-						window.addEventListener;
+					var canSetImmediate = typeof window !== 'undefined' && window.setImmediate;
+					var canPost = typeof window !== 'undefined' && window.postMessage && window.addEventListener;
 					if (canSetImmediate) {
 						return function (f) {
 							return window.setImmediate(f);
@@ -1387,9 +1252,9 @@
 					if (canPost) {
 						var queue = [];
 						window.addEventListener(
-							"message",
+							'message',
 							function (ev) {
-								if (ev.source === window && ev.data === "process-tick") {
+								if (ev.source === window && ev.data === 'process-tick') {
 									ev.stopPropagation();
 									if (queue.length > 0) {
 										var fn = queue.shift();
@@ -1401,25 +1266,25 @@
 						);
 						return function nextTick(fn) {
 							queue.push(fn);
-							window.postMessage("process-tick", "*");
+							window.postMessage('process-tick', '*');
 						};
 					}
 					return function nextTick(fn) {
 						setTimeout(fn, 0);
 					};
 				})();
-				process.title = "browser";
+				process.title = 'browser';
 				process.browser = true;
 				process.env = {};
 				process.argv = [];
 				process.binding = function (name) {
-					throw new Error("process.binding is not supported");
+					throw new Error('process.binding is not supported');
 				};
 				process.cwd = function () {
-					return "/";
+					return '/';
 				};
 				process.chdir = function (dir) {
-					throw new Error("process.chdir is not supported");
+					throw new Error('process.chdir is not supported');
 				};
 			},
 			{},
@@ -1428,14 +1293,10 @@
 			function (require, module, exports) {
 				!(function () {
 					!(function () {
-						"use strict";
+						'use strict';
 						var shim = {};
-						if (typeof exports === "undefined") {
-							if (
-								typeof define == "function" &&
-								typeof define.amd == "object" &&
-								define.amd
-							) {
+						if (typeof exports === 'undefined') {
+							if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
 								shim.exports = {};
 								define(function () {
 									return shim.exports;
@@ -1596,9 +1457,9 @@
 								};
 							})();
 							vec2.str = function (a) {
-								return "vec2(" + a[0] + ", " + a[1] + ")";
+								return 'vec2(' + a[0] + ', ' + a[1] + ')';
 							};
-							if (typeof exports !== "undefined") {
+							if (typeof exports !== 'undefined') {
 								exports.vec2 = vec2;
 							}
 							var vec3 = {};
@@ -1797,9 +1658,9 @@
 								};
 							})();
 							vec3.str = function (a) {
-								return "vec3(" + a[0] + ", " + a[1] + ", " + a[2] + ")";
+								return 'vec3(' + a[0] + ', ' + a[1] + ', ' + a[2] + ')';
 							};
-							if (typeof exports !== "undefined") {
+							if (typeof exports !== 'undefined') {
 								exports.vec3 = vec3;
 							}
 							var vec4 = {};
@@ -2010,11 +1871,9 @@
 								};
 							})();
 							vec4.str = function (a) {
-								return (
-									"vec4(" + a[0] + ", " + a[1] + ", " + a[2] + ", " + a[3] + ")"
-								);
+								return 'vec4(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' + a[3] + ')';
 							};
-							if (typeof exports !== "undefined") {
+							if (typeof exports !== 'undefined') {
 								exports.vec4 = vec4;
 							}
 							var mat2 = {};
@@ -2129,11 +1988,9 @@
 								return out;
 							};
 							mat2.str = function (a) {
-								return (
-									"mat2(" + a[0] + ", " + a[1] + ", " + a[2] + ", " + a[3] + ")"
-								);
+								return 'mat2(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' + a[3] + ')';
 							};
-							if (typeof exports !== "undefined") {
+							if (typeof exports !== 'undefined') {
 								exports.mat2 = mat2;
 							}
 							var mat3 = {};
@@ -2265,11 +2122,7 @@
 									a20 = a[6],
 									a21 = a[7],
 									a22 = a[8];
-								return (
-									a00 * (a22 * a11 - a12 * a21) +
-									a01 * (-a22 * a10 + a12 * a20) +
-									a02 * (a21 * a10 - a11 * a20)
-								);
+								return a00 * (a22 * a11 - a12 * a21) + a01 * (-a22 * a10 + a12 * a20) + a02 * (a21 * a10 - a11 * a20);
 							};
 							mat3.mul = mat3.multiply = function (out, a, b) {
 								var a00 = a[0],
@@ -2303,34 +2156,32 @@
 							};
 							mat3.str = function (a) {
 								return (
-									"mat3(" +
+									'mat3(' +
 									a[0] +
-									", " +
+									', ' +
 									a[1] +
-									", " +
+									', ' +
 									a[2] +
-									", " +
+									', ' +
 									a[3] +
-									", " +
+									', ' +
 									a[4] +
-									", " +
+									', ' +
 									a[5] +
-									", " +
+									', ' +
 									a[6] +
-									", " +
+									', ' +
 									a[7] +
-									", " +
+									', ' +
 									a[8] +
-									")"
+									')'
 								);
 							};
-							if (typeof exports !== "undefined") {
+							if (typeof exports !== 'undefined') {
 								exports.mat3 = mat3;
 							}
 							var mat4 = {};
-							var mat4Identity = new Float32Array([
-								1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
-							]);
+							var mat4Identity = new Float32Array([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]);
 							if (!GLMAT_EPSILON) {
 								var GLMAT_EPSILON = 1e-6;
 							}
@@ -2464,13 +2315,7 @@
 									b09 = a21 * a32 - a22 * a31,
 									b10 = a21 * a33 - a23 * a31,
 									b11 = a22 * a33 - a23 * a32,
-									det =
-										b00 * b11 -
-										b01 * b10 +
-										b02 * b09 +
-										b03 * b08 -
-										b04 * b07 +
-										b05 * b06;
+									det = b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
 								if (!det) {
 									return null;
 								}
@@ -2510,78 +2355,22 @@
 									a31 = a[13],
 									a32 = a[14],
 									a33 = a[15];
-								out[0] =
-									a11 * (a22 * a33 - a23 * a32) -
-									a21 * (a12 * a33 - a13 * a32) +
-									a31 * (a12 * a23 - a13 * a22);
-								out[1] = -(
-									a01 * (a22 * a33 - a23 * a32) -
-									a21 * (a02 * a33 - a03 * a32) +
-									a31 * (a02 * a23 - a03 * a22)
-								);
-								out[2] =
-									a01 * (a12 * a33 - a13 * a32) -
-									a11 * (a02 * a33 - a03 * a32) +
-									a31 * (a02 * a13 - a03 * a12);
-								out[3] = -(
-									a01 * (a12 * a23 - a13 * a22) -
-									a11 * (a02 * a23 - a03 * a22) +
-									a21 * (a02 * a13 - a03 * a12)
-								);
-								out[4] = -(
-									a10 * (a22 * a33 - a23 * a32) -
-									a20 * (a12 * a33 - a13 * a32) +
-									a30 * (a12 * a23 - a13 * a22)
-								);
-								out[5] =
-									a00 * (a22 * a33 - a23 * a32) -
-									a20 * (a02 * a33 - a03 * a32) +
-									a30 * (a02 * a23 - a03 * a22);
-								out[6] = -(
-									a00 * (a12 * a33 - a13 * a32) -
-									a10 * (a02 * a33 - a03 * a32) +
-									a30 * (a02 * a13 - a03 * a12)
-								);
-								out[7] =
-									a00 * (a12 * a23 - a13 * a22) -
-									a10 * (a02 * a23 - a03 * a22) +
-									a20 * (a02 * a13 - a03 * a12);
-								out[8] =
-									a10 * (a21 * a33 - a23 * a31) -
-									a20 * (a11 * a33 - a13 * a31) +
-									a30 * (a11 * a23 - a13 * a21);
-								out[9] = -(
-									a00 * (a21 * a33 - a23 * a31) -
-									a20 * (a01 * a33 - a03 * a31) +
-									a30 * (a01 * a23 - a03 * a21)
-								);
-								out[10] =
-									a00 * (a11 * a33 - a13 * a31) -
-									a10 * (a01 * a33 - a03 * a31) +
-									a30 * (a01 * a13 - a03 * a11);
-								out[11] = -(
-									a00 * (a11 * a23 - a13 * a21) -
-									a10 * (a01 * a23 - a03 * a21) +
-									a20 * (a01 * a13 - a03 * a11)
-								);
-								out[12] = -(
-									a10 * (a21 * a32 - a22 * a31) -
-									a20 * (a11 * a32 - a12 * a31) +
-									a30 * (a11 * a22 - a12 * a21)
-								);
-								out[13] =
-									a00 * (a21 * a32 - a22 * a31) -
-									a20 * (a01 * a32 - a02 * a31) +
-									a30 * (a01 * a22 - a02 * a21);
-								out[14] = -(
-									a00 * (a11 * a32 - a12 * a31) -
-									a10 * (a01 * a32 - a02 * a31) +
-									a30 * (a01 * a12 - a02 * a11)
-								);
-								out[15] =
-									a00 * (a11 * a22 - a12 * a21) -
-									a10 * (a01 * a22 - a02 * a21) +
-									a20 * (a01 * a12 - a02 * a11);
+								out[0] = a11 * (a22 * a33 - a23 * a32) - a21 * (a12 * a33 - a13 * a32) + a31 * (a12 * a23 - a13 * a22);
+								out[1] = -(a01 * (a22 * a33 - a23 * a32) - a21 * (a02 * a33 - a03 * a32) + a31 * (a02 * a23 - a03 * a22));
+								out[2] = a01 * (a12 * a33 - a13 * a32) - a11 * (a02 * a33 - a03 * a32) + a31 * (a02 * a13 - a03 * a12);
+								out[3] = -(a01 * (a12 * a23 - a13 * a22) - a11 * (a02 * a23 - a03 * a22) + a21 * (a02 * a13 - a03 * a12));
+								out[4] = -(a10 * (a22 * a33 - a23 * a32) - a20 * (a12 * a33 - a13 * a32) + a30 * (a12 * a23 - a13 * a22));
+								out[5] = a00 * (a22 * a33 - a23 * a32) - a20 * (a02 * a33 - a03 * a32) + a30 * (a02 * a23 - a03 * a22);
+								out[6] = -(a00 * (a12 * a33 - a13 * a32) - a10 * (a02 * a33 - a03 * a32) + a30 * (a02 * a13 - a03 * a12));
+								out[7] = a00 * (a12 * a23 - a13 * a22) - a10 * (a02 * a23 - a03 * a22) + a20 * (a02 * a13 - a03 * a12);
+								out[8] = a10 * (a21 * a33 - a23 * a31) - a20 * (a11 * a33 - a13 * a31) + a30 * (a11 * a23 - a13 * a21);
+								out[9] = -(a00 * (a21 * a33 - a23 * a31) - a20 * (a01 * a33 - a03 * a31) + a30 * (a01 * a23 - a03 * a21));
+								out[10] = a00 * (a11 * a33 - a13 * a31) - a10 * (a01 * a33 - a03 * a31) + a30 * (a01 * a13 - a03 * a11);
+								out[11] = -(a00 * (a11 * a23 - a13 * a21) - a10 * (a01 * a23 - a03 * a21) + a20 * (a01 * a13 - a03 * a11));
+								out[12] = -(a10 * (a21 * a32 - a22 * a31) - a20 * (a11 * a32 - a12 * a31) + a30 * (a11 * a22 - a12 * a21));
+								out[13] = a00 * (a21 * a32 - a22 * a31) - a20 * (a01 * a32 - a02 * a31) + a30 * (a01 * a22 - a02 * a21);
+								out[14] = -(a00 * (a11 * a32 - a12 * a31) - a10 * (a01 * a32 - a02 * a31) + a30 * (a01 * a12 - a02 * a11));
+								out[15] = a00 * (a11 * a22 - a12 * a21) - a10 * (a01 * a22 - a02 * a21) + a20 * (a01 * a12 - a02 * a11);
 								return out;
 							};
 							mat4.determinant = function (a) {
@@ -2613,14 +2402,7 @@
 									b09 = a21 * a32 - a22 * a31,
 									b10 = a21 * a33 - a23 * a31,
 									b11 = a22 * a33 - a23 * a32;
-								return (
-									b00 * b11 -
-									b01 * b10 +
-									b02 * b09 +
-									b03 * b08 -
-									b04 * b07 +
-									b05 * b06
-								);
+								return b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
 							};
 							mat4.mul = mat4.multiply = function (out, a, b) {
 								var a00 = a[0],
@@ -2956,15 +2738,7 @@
 								out[15] = 1;
 								return out;
 							};
-							mat4.frustum = function (
-								out,
-								left,
-								right,
-								bottom,
-								top,
-								near,
-								far,
-							) {
+							mat4.frustum = function (out, left, right, bottom, top, near, far) {
 								var rl = 1 / (right - left),
 									tb = 1 / (top - bottom),
 									nf = 1 / (near - far);
@@ -3111,42 +2885,42 @@
 							};
 							mat4.str = function (a) {
 								return (
-									"mat4(" +
+									'mat4(' +
 									a[0] +
-									", " +
+									', ' +
 									a[1] +
-									", " +
+									', ' +
 									a[2] +
-									", " +
+									', ' +
 									a[3] +
-									", " +
+									', ' +
 									a[4] +
-									", " +
+									', ' +
 									a[5] +
-									", " +
+									', ' +
 									a[6] +
-									", " +
+									', ' +
 									a[7] +
-									", " +
+									', ' +
 									a[8] +
-									", " +
+									', ' +
 									a[9] +
-									", " +
+									', ' +
 									a[10] +
-									", " +
+									', ' +
 									a[11] +
-									", " +
+									', ' +
 									a[12] +
-									", " +
+									', ' +
 									a[13] +
-									", " +
+									', ' +
 									a[14] +
-									", " +
+									', ' +
 									a[15] +
-									")"
+									')'
 								);
 							};
-							if (typeof exports !== "undefined") {
+							if (typeof exports !== 'undefined') {
 								exports.mat4 = mat4;
 							}
 							var quat = {};
@@ -3312,11 +3086,9 @@
 							quat.sqrLen = quat.squaredLength = vec4.squaredLength;
 							quat.normalize = vec4.normalize;
 							quat.str = function (a) {
-								return (
-									"quat(" + a[0] + ", " + a[1] + ", " + a[2] + ", " + a[3] + ")"
-								);
+								return 'quat(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' + a[3] + ')';
 							};
-							if (typeof exports !== "undefined") {
+							if (typeof exports !== 'undefined') {
 								exports.quat = quat;
 							}
 						})(shim.exports);
@@ -3357,15 +3129,15 @@
 							if (!(this instanceof _)) return new _(obj);
 							this._wrapped = obj;
 						};
-						if (typeof exports !== "undefined") {
-							if (typeof module !== "undefined" && module.exports) {
+						if (typeof exports !== 'undefined') {
+							if (typeof module !== 'undefined' && module.exports) {
 								exports = module.exports = _;
 							}
 							exports._ = _;
 						} else {
 							root._ = _;
 						}
-						_.VERSION = "1.4.4";
+						_.VERSION = '1.4.4';
 						var each =
 							(_.each =
 							_.forEach =
@@ -3375,16 +3147,12 @@
 										obj.forEach(iterator, context);
 									} else if (obj.length === +obj.length) {
 										for (var i = 0, l = obj.length; i < l; i++) {
-											if (iterator.call(context, obj[i], i, obj) === breaker)
-												return;
+											if (iterator.call(context, obj[i], i, obj) === breaker) return;
 										}
 									} else {
 										for (var key in obj) {
 											if (_.has(obj, key)) {
-												if (
-													iterator.call(context, obj[key], key, obj) === breaker
-												)
-													return;
+												if (iterator.call(context, obj[key], key, obj) === breaker) return;
 											}
 										}
 									}
@@ -3392,19 +3160,13 @@
 						_.map = _.collect = function (obj, iterator, context) {
 							var results = [];
 							if (obj == null) return results;
-							if (nativeMap && obj.map === nativeMap)
-								return obj.map(iterator, context);
+							if (nativeMap && obj.map === nativeMap) return obj.map(iterator, context);
 							each(obj, function (value, index, list) {
-								results[results.length] = iterator.call(
-									context,
-									value,
-									index,
-									list,
-								);
+								results[results.length] = iterator.call(context, value, index, list);
 							});
 							return results;
 						};
-						var reduceError = "Reduce of empty array with no initial value";
+						var reduceError = 'Reduce of empty array with no initial value';
 						_.reduce =
 							_.foldl =
 							_.inject =
@@ -3413,9 +3175,7 @@
 									if (obj == null) obj = [];
 									if (nativeReduce && obj.reduce === nativeReduce) {
 										if (context) iterator = _.bind(iterator, context);
-										return initial
-											? obj.reduce(iterator, memo)
-											: obj.reduce(iterator);
+										return initial ? obj.reduce(iterator, memo) : obj.reduce(iterator);
 									}
 									each(obj, function (value, index, list) {
 										if (!initial) {
@@ -3433,9 +3193,7 @@
 							if (obj == null) obj = [];
 							if (nativeReduceRight && obj.reduceRight === nativeReduceRight) {
 								if (context) iterator = _.bind(iterator, context);
-								return initial
-									? obj.reduceRight(iterator, memo)
-									: obj.reduceRight(iterator);
+								return initial ? obj.reduceRight(iterator, memo) : obj.reduceRight(iterator);
 							}
 							var length = obj.length;
 							if (length !== +length) {
@@ -3467,11 +3225,9 @@
 						_.filter = _.select = function (obj, iterator, context) {
 							var results = [];
 							if (obj == null) return results;
-							if (nativeFilter && obj.filter === nativeFilter)
-								return obj.filter(iterator, context);
+							if (nativeFilter && obj.filter === nativeFilter) return obj.filter(iterator, context);
 							each(obj, function (value, index, list) {
-								if (iterator.call(context, value, index, list))
-									results[results.length] = value;
+								if (iterator.call(context, value, index, list)) results[results.length] = value;
 							});
 							return results;
 						};
@@ -3488,14 +3244,9 @@
 							iterator || (iterator = _.identity);
 							var result = true;
 							if (obj == null) return result;
-							if (nativeEvery && obj.every === nativeEvery)
-								return obj.every(iterator, context);
+							if (nativeEvery && obj.every === nativeEvery) return obj.every(iterator, context);
 							each(obj, function (value, index, list) {
-								if (
-									!(result =
-										result && iterator.call(context, value, index, list))
-								)
-									return breaker;
+								if (!(result = result && iterator.call(context, value, index, list))) return breaker;
 							});
 							return !!result;
 						};
@@ -3506,21 +3257,15 @@
 									iterator || (iterator = _.identity);
 									var result = false;
 									if (obj == null) return result;
-									if (nativeSome && obj.some === nativeSome)
-										return obj.some(iterator, context);
+									if (nativeSome && obj.some === nativeSome) return obj.some(iterator, context);
 									each(obj, function (value, index, list) {
-										if (
-											result ||
-											(result = iterator.call(context, value, index, list))
-										)
-											return breaker;
+										if (result || (result = iterator.call(context, value, index, list))) return breaker;
 									});
 									return !!result;
 								});
 						_.contains = _.include = function (obj, target) {
 							if (obj == null) return false;
-							if (nativeIndexOf && obj.indexOf === nativeIndexOf)
-								return obj.indexOf(target) != -1;
+							if (nativeIndexOf && obj.indexOf === nativeIndexOf) return obj.indexOf(target) != -1;
 							return any(obj, function (value) {
 								return value === target;
 							});
@@ -3539,7 +3284,7 @@
 						};
 						_.where = function (obj, attrs, first) {
 							if (_.isEmpty(attrs)) return first ? null : [];
-							return _[first ? "find" : "filter"](obj, function (value) {
+							return _[first ? 'find' : 'filter'](obj, function (value) {
 								for (var key in attrs) {
 									if (attrs[key] !== value[key]) return false;
 								}
@@ -3550,42 +3295,26 @@
 							return _.where(obj, attrs, true);
 						};
 						_.max = function (obj, iterator, context) {
-							if (
-								!iterator &&
-								_.isArray(obj) &&
-								obj[0] === +obj[0] &&
-								obj.length < 65535
-							) {
+							if (!iterator && _.isArray(obj) && obj[0] === +obj[0] && obj.length < 65535) {
 								return Math.max.apply(Math, obj);
 							}
 							if (!iterator && _.isEmpty(obj)) return -Infinity;
 							var result = { computed: -Infinity, value: -Infinity };
 							each(obj, function (value, index, list) {
-								var computed = iterator
-									? iterator.call(context, value, index, list)
-									: value;
-								computed >= result.computed &&
-									(result = { value: value, computed: computed });
+								var computed = iterator ? iterator.call(context, value, index, list) : value;
+								computed >= result.computed && (result = { value: value, computed: computed });
 							});
 							return result.value;
 						};
 						_.min = function (obj, iterator, context) {
-							if (
-								!iterator &&
-								_.isArray(obj) &&
-								obj[0] === +obj[0] &&
-								obj.length < 65535
-							) {
+							if (!iterator && _.isArray(obj) && obj[0] === +obj[0] && obj.length < 65535) {
 								return Math.min.apply(Math, obj);
 							}
 							if (!iterator && _.isEmpty(obj)) return Infinity;
 							var result = { computed: Infinity, value: Infinity };
 							each(obj, function (value, index, list) {
-								var computed = iterator
-									? iterator.call(context, value, index, list)
-									: value;
-								computed < result.computed &&
-									(result = { value: value, computed: computed });
+								var computed = iterator ? iterator.call(context, value, index, list) : value;
+								computed < result.computed && (result = { value: value, computed: computed });
 							});
 							return result.value;
 						};
@@ -3625,7 +3354,7 @@
 									}
 									return left.index < right.index ? -1 : 1;
 								}),
-								"value",
+								'value',
 							);
 						};
 						var group = function (obj, value, context, behavior) {
@@ -3639,9 +3368,7 @@
 						};
 						_.groupBy = function (obj, value, context) {
 							return group(obj, value, context, function (result, key, value) {
-								(_.has(result, key) ? result[key] : (result[key] = [])).push(
-									value,
-								);
+								(_.has(result, key) ? result[key] : (result[key] = [])).push(value);
 							});
 						};
 						_.countBy = function (obj, value, context) {
@@ -3651,16 +3378,13 @@
 							});
 						};
 						_.sortedIndex = function (array, obj, iterator, context) {
-							iterator =
-								iterator == null ? _.identity : lookupIterator(iterator);
+							iterator = iterator == null ? _.identity : lookupIterator(iterator);
 							var value = iterator.call(context, obj);
 							var low = 0,
 								high = array.length;
 							while (low < high) {
 								var mid = (low + high) >>> 1;
-								iterator.call(context, array[mid]) < value
-									? (low = mid + 1)
-									: (high = mid);
+								iterator.call(context, array[mid]) < value ? (low = mid + 1) : (high = mid);
 							}
 							return low;
 						};
@@ -3672,25 +3396,17 @@
 						};
 						_.size = function (obj) {
 							if (obj == null) return 0;
-							return obj.length === +obj.length
-								? obj.length
-								: _.keys(obj).length;
+							return obj.length === +obj.length ? obj.length : _.keys(obj).length;
 						};
 						_.first =
 							_.head =
 							_.take =
 								function (array, n, guard) {
 									if (array == null) return void 0;
-									return n != null && !guard
-										? slice.call(array, 0, n)
-										: array[0];
+									return n != null && !guard ? slice.call(array, 0, n) : array[0];
 								};
 						_.initial = function (array, n, guard) {
-							return slice.call(
-								array,
-								0,
-								array.length - (n == null || guard ? 1 : n),
-							);
+							return slice.call(array, 0, array.length - (n == null || guard ? 1 : n));
 						};
 						_.last = function (array, n, guard) {
 							if (array == null) return void 0;
@@ -3712,9 +3428,7 @@
 						var flatten = function (input, shallow, output) {
 							each(input, function (value) {
 								if (_.isArray(value)) {
-									shallow
-										? push.apply(output, value)
-										: flatten(value, shallow, output);
+									shallow ? push.apply(output, value) : flatten(value, shallow, output);
 								} else {
 									output.push(value);
 								}
@@ -3737,11 +3451,7 @@
 							var results = [];
 							var seen = [];
 							each(initial, function (value, index) {
-								if (
-									isSorted
-										? !index || seen[seen.length - 1] !== value
-										: !_.contains(seen, value)
-								) {
+								if (isSorted ? !index || seen[seen.length - 1] !== value : !_.contains(seen, value)) {
 									seen.push(value);
 									results.push(array[index]);
 								}
@@ -3767,10 +3477,10 @@
 						};
 						_.zip = function () {
 							var args = slice.call(arguments);
-							var length = _.max(_.pluck(args, "length"));
+							var length = _.max(_.pluck(args, 'length'));
 							var results = new Array(length);
 							for (var i = 0; i < length; i++) {
-								results[i] = _.pluck(args, "" + i);
+								results[i] = _.pluck(args, '' + i);
 							}
 							return results;
 						};
@@ -3791,28 +3501,22 @@
 							var i = 0,
 								l = array.length;
 							if (isSorted) {
-								if (typeof isSorted == "number") {
+								if (typeof isSorted == 'number') {
 									i = isSorted < 0 ? Math.max(0, l + isSorted) : isSorted;
 								} else {
 									i = _.sortedIndex(array, item);
 									return array[i] === item ? i : -1;
 								}
 							}
-							if (nativeIndexOf && array.indexOf === nativeIndexOf)
-								return array.indexOf(item, isSorted);
+							if (nativeIndexOf && array.indexOf === nativeIndexOf) return array.indexOf(item, isSorted);
 							for (; i < l; i++) if (array[i] === item) return i;
 							return -1;
 						};
 						_.lastIndexOf = function (array, item, from) {
 							if (array == null) return -1;
 							var hasIndex = from != null;
-							if (
-								nativeLastIndexOf &&
-								array.lastIndexOf === nativeLastIndexOf
-							) {
-								return hasIndex
-									? array.lastIndexOf(item, from)
-									: array.lastIndexOf(item);
+							if (nativeLastIndexOf && array.lastIndexOf === nativeLastIndexOf) {
+								return hasIndex ? array.lastIndexOf(item, from) : array.lastIndexOf(item);
 							}
 							var i = hasIndex ? from : array.length;
 							while (i--) if (array[i] === item) return i;
@@ -3834,8 +3538,7 @@
 							return range;
 						};
 						_.bind = function (func, context) {
-							if (func.bind === nativeBind && nativeBind)
-								return nativeBind.apply(func, slice.call(arguments, 1));
+							if (func.bind === nativeBind && nativeBind) return nativeBind.apply(func, slice.call(arguments, 1));
 							var args = slice.call(arguments, 2);
 							return function () {
 								return func.apply(context, args.concat(slice.call(arguments)));
@@ -3860,9 +3563,7 @@
 							hasher || (hasher = _.identity);
 							return function () {
 								var key = hasher.apply(this, arguments);
-								return _.has(memo, key)
-									? memo[key]
-									: (memo[key] = func.apply(this, arguments));
+								return _.has(memo, key) ? memo[key] : (memo[key] = func.apply(this, arguments));
 							};
 						};
 						_.delay = function (func, wait) {
@@ -3872,10 +3573,7 @@
 							}, wait);
 						};
 						_.defer = function (func) {
-							return _.delay.apply(
-								_,
-								[func, 1].concat(slice.call(arguments, 1)),
-							);
+							return _.delay.apply(_, [func, 1].concat(slice.call(arguments, 1)));
 						};
 						_.throttle = function (func, wait) {
 							var context, args, timeout, result;
@@ -3956,10 +3654,9 @@
 						_.keys =
 							nativeKeys ||
 							function (obj) {
-								if (obj !== Object(obj)) throw new TypeError("Invalid object");
+								if (obj !== Object(obj)) throw new TypeError('Invalid object');
 								var keys = [];
-								for (var key in obj)
-									if (_.has(obj, key)) keys[keys.length] = key;
+								for (var key in obj) if (_.has(obj, key)) keys[keys.length] = key;
 								return keys;
 							};
 						_.values = function (obj) {
@@ -3969,8 +3666,7 @@
 						};
 						_.pairs = function (obj) {
 							var pairs = [];
-							for (var key in obj)
-								if (_.has(obj, key)) pairs.push([key, obj[key]]);
+							for (var key in obj) if (_.has(obj, key)) pairs.push([key, obj[key]]);
 							return pairs;
 						};
 						_.invert = function (obj) {
@@ -4037,22 +3733,17 @@
 							var className = toString.call(a);
 							if (className != toString.call(b)) return false;
 							switch (className) {
-								case "[object String]":
+								case '[object String]':
 									return a == String(b);
-								case "[object Number]":
+								case '[object Number]':
 									return a != +a ? b != +b : a == 0 ? 1 / a == 1 / b : a == +b;
-								case "[object Date]":
-								case "[object Boolean]":
+								case '[object Date]':
+								case '[object Boolean]':
 									return +a == +b;
-								case "[object RegExp]":
-									return (
-										a.source == b.source &&
-										a.global == b.global &&
-										a.multiline == b.multiline &&
-										a.ignoreCase == b.ignoreCase
-									);
+								case '[object RegExp]':
+									return a.source == b.source && a.global == b.global && a.multiline == b.multiline && a.ignoreCase == b.ignoreCase;
 							}
-							if (typeof a != "object" || typeof b != "object") return false;
+							if (typeof a != 'object' || typeof b != 'object') return false;
 							var length = aStack.length;
 							while (length--) {
 								if (aStack[length] == a) return bStack[length] == b;
@@ -4061,7 +3752,7 @@
 							bStack.push(b);
 							var size = 0,
 								result = true;
-							if (className == "[object Array]") {
+							if (className == '[object Array]') {
 								size = a.length;
 								result = size == b.length;
 								if (result) {
@@ -4072,25 +3763,13 @@
 							} else {
 								var aCtor = a.constructor,
 									bCtor = b.constructor;
-								if (
-									aCtor !== bCtor &&
-									!(
-										_.isFunction(aCtor) &&
-										aCtor instanceof aCtor &&
-										_.isFunction(bCtor) &&
-										bCtor instanceof bCtor
-									)
-								) {
+								if (aCtor !== bCtor && !(_.isFunction(aCtor) && aCtor instanceof aCtor && _.isFunction(bCtor) && bCtor instanceof bCtor)) {
 									return false;
 								}
 								for (var key in a) {
 									if (_.has(a, key)) {
 										size++;
-										if (
-											!(result =
-												_.has(b, key) && eq(a[key], b[key], aStack, bStack))
-										)
-											break;
+										if (!(result = _.has(b, key) && eq(a[key], b[key], aStack, bStack))) break;
 									}
 								}
 								if (result) {
@@ -4119,27 +3798,24 @@
 						_.isArray =
 							nativeIsArray ||
 							function (obj) {
-								return toString.call(obj) == "[object Array]";
+								return toString.call(obj) == '[object Array]';
 							};
 						_.isObject = function (obj) {
 							return obj === Object(obj);
 						};
-						each(
-							["Arguments", "Function", "String", "Number", "Date", "RegExp"],
-							function (name) {
-								_["is" + name] = function (obj) {
-									return toString.call(obj) == "[object " + name + "]";
-								};
-							},
-						);
+						each(['Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp'], function (name) {
+							_['is' + name] = function (obj) {
+								return toString.call(obj) == '[object ' + name + ']';
+							};
+						});
 						if (!_.isArguments(arguments)) {
 							_.isArguments = function (obj) {
-								return !!(obj && _.has(obj, "callee"));
+								return !!(obj && _.has(obj, 'callee'));
 							};
 						}
-						if (typeof /./ !== "function") {
+						if (typeof /./ !== 'function') {
 							_.isFunction = function (obj) {
-								return typeof obj === "function";
+								return typeof obj === 'function';
 							};
 						}
 						_.isFinite = function (obj) {
@@ -4149,11 +3825,7 @@
 							return _.isNumber(obj) && obj != +obj;
 						};
 						_.isBoolean = function (obj) {
-							return (
-								obj === true ||
-								obj === false ||
-								toString.call(obj) == "[object Boolean]"
-							);
+							return obj === true || obj === false || toString.call(obj) == '[object Boolean]';
 						};
 						_.isNull = function (obj) {
 							return obj === null;
@@ -4185,34 +3857,25 @@
 						};
 						var entityMap = {
 							escape: {
-								"&": "&amp;",
-								"<": "&lt;",
-								">": "&gt;",
-								'"': "&quot;",
-								"'": "&#x27;",
-								"/": "&#x2F;",
+								'&': '&amp;',
+								'<': '&lt;',
+								'>': '&gt;',
+								'"': '&quot;',
+								"'": '&#x27;',
+								'/': '&#x2F;',
 							},
 						};
 						entityMap.unescape = _.invert(entityMap.escape);
 						var entityRegexes = {
-							escape: new RegExp(
-								"[" + _.keys(entityMap.escape).join("") + "]",
-								"g",
-							),
-							unescape: new RegExp(
-								"(" + _.keys(entityMap.unescape).join("|") + ")",
-								"g",
-							),
+							escape: new RegExp('[' + _.keys(entityMap.escape).join('') + ']', 'g'),
+							unescape: new RegExp('(' + _.keys(entityMap.unescape).join('|') + ')', 'g'),
 						};
-						_.each(["escape", "unescape"], function (method) {
+						_.each(['escape', 'unescape'], function (method) {
 							_[method] = function (string) {
-								if (string == null) return "";
-								return ("" + string).replace(
-									entityRegexes[method],
-									function (match) {
-										return entityMap[method][match];
-									},
-								);
+								if (string == null) return '';
+								return ('' + string).replace(entityRegexes[method], function (match) {
+									return entityMap[method][match];
+								});
 							};
 						});
 						_.result = function (object, property) {
@@ -4232,7 +3895,7 @@
 						};
 						var idCounter = 0;
 						_.uniqueId = function (prefix) {
-							var id = ++idCounter + "";
+							var id = ++idCounter + '';
 							return prefix ? prefix + id : id;
 						};
 						_.templateSettings = {
@@ -4243,60 +3906,47 @@
 						var noMatch = /(.)^/;
 						var escapes = {
 							"'": "'",
-							"\\": "\\",
-							"\r": "r",
-							"\n": "n",
-							" ": "t",
-							"\u2028": "u2028",
-							"\u2029": "u2029",
+							'\\': '\\',
+							'\r': 'r',
+							'\n': 'n',
+							' ': 't',
+							'\u2028': 'u2028',
+							'\u2029': 'u2029',
 						};
 						var escaper = /\\|'|\r|\n|\t|\u2028|\u2029/g;
 						_.template = function (text, data, settings) {
 							var render;
 							settings = _.defaults({}, settings, _.templateSettings);
 							var matcher = new RegExp(
-								[
-									(settings.escape || noMatch).source,
-									(settings.interpolate || noMatch).source,
-									(settings.evaluate || noMatch).source,
-								].join("|") + "|$",
-								"g",
+								[(settings.escape || noMatch).source, (settings.interpolate || noMatch).source, (settings.evaluate || noMatch).source].join(
+									'|',
+								) + '|$',
+								'g',
 							);
 							var index = 0;
 							var source = "__p+='";
-							text.replace(
-								matcher,
-								function (match, escape, interpolate, evaluate, offset) {
-									source += text
-										.slice(index, offset)
-										.replace(escaper, function (match) {
-											return "\\" + escapes[match];
-										});
-									if (escape) {
-										source +=
-											"'+\n((__t=(" + escape + "))==null?'':_.escape(__t))+\n'";
-									}
-									if (interpolate) {
-										source +=
-											"'+\n((__t=(" + interpolate + "))==null?'':__t)+\n'";
-									}
-									if (evaluate) {
-										source += "';\n" + evaluate + "\n__p+='";
-									}
-									index = offset + match.length;
-									return match;
-								},
-							);
+							text.replace(matcher, function (match, escape, interpolate, evaluate, offset) {
+								source += text.slice(index, offset).replace(escaper, function (match) {
+									return '\\' + escapes[match];
+								});
+								if (escape) {
+									source += "'+\n((__t=(" + escape + "))==null?'':_.escape(__t))+\n'";
+								}
+								if (interpolate) {
+									source += "'+\n((__t=(" + interpolate + "))==null?'':__t)+\n'";
+								}
+								if (evaluate) {
+									source += "';\n" + evaluate + "\n__p+='";
+								}
+								index = offset + match.length;
+								return match;
+							});
 							source += "';\n";
-							if (!settings.variable)
-								source = "with(obj||{}){\n" + source + "}\n";
+							if (!settings.variable) source = 'with(obj||{}){\n' + source + '}\n';
 							source =
-								"var __t,__p='',__j=Array.prototype.join," +
-								"print=function(){__p+=__j.call(arguments,'');};\n" +
-								source +
-								"return __p;\n";
+								"var __t,__p='',__j=Array.prototype.join," + "print=function(){__p+=__j.call(arguments,'');};\n" + source + 'return __p;\n';
 							try {
-								render = new Function(settings.variable || "obj", "_", source);
+								render = new Function(settings.variable || 'obj', '_', source);
 							} catch (e) {
 								e.source = source;
 								throw e;
@@ -4305,12 +3955,7 @@
 							var template = function (data) {
 								return render.call(this, data, _);
 							};
-							template.source =
-								"function(" +
-								(settings.variable || "obj") +
-								"){\n" +
-								source +
-								"}";
+							template.source = 'function(' + (settings.variable || 'obj') + '){\n' + source + '}';
 							return template;
 						};
 						_.chain = function (obj) {
@@ -4320,26 +3965,19 @@
 							return this._chain ? _(obj).chain() : obj;
 						};
 						_.mixin(_);
-						each(
-							["pop", "push", "reverse", "shift", "sort", "splice", "unshift"],
-							function (name) {
-								var method = ArrayProto[name];
-								_.prototype[name] = function () {
-									var obj = this._wrapped;
-									method.apply(obj, arguments);
-									if ((name == "shift" || name == "splice") && obj.length === 0)
-										delete obj[0];
-									return result.call(this, obj);
-								};
-							},
-						);
-						each(["concat", "join", "slice"], function (name) {
+						each(['pop', 'push', 'reverse', 'shift', 'sort', 'splice', 'unshift'], function (name) {
 							var method = ArrayProto[name];
 							_.prototype[name] = function () {
-								return result.call(
-									this,
-									method.apply(this._wrapped, arguments),
-								);
+								var obj = this._wrapped;
+								method.apply(obj, arguments);
+								if ((name == 'shift' || name == 'splice') && obj.length === 0) delete obj[0];
+								return result.call(this, obj);
+							};
+						});
+						each(['concat', 'join', 'slice'], function (name) {
+							var method = ArrayProto[name];
+							_.prototype[name] = function () {
+								return result.call(this, method.apply(this._wrapped, arguments));
 							};
 						});
 						_.extend(_.prototype, {
@@ -4370,9 +4008,9 @@
 						}
 					);
 				})();
-				Leap = require("../lib/index");
+				Leap = require('../lib/index');
 			},
-			{ "../lib/index": 8 },
+			{ '../lib/index': 8 },
 		],
 	},
 	{},
@@ -4390,12 +4028,12 @@
 		controller = new Leap.Controller({ enableGestures: true }),
 		lastGesture = 0,
 		leapConfig = Reveal.getConfig().leap,
-		pointer = document.createElement("div"),
+		pointer = document.createElement('div'),
 		config = {
 			autoCenter: true, // Center pointer around detected position.
 			gestureDelay: 500, // How long to delay between gestures.
 			naturalSwipe: true, // Swipe as if it were a touch screen.
-			pointerColor: "#00aaff", // Default color of the pointer.
+			pointerColor: '#00aaff', // Default color of the pointer.
 			pointerOpacity: 0.7, // Default opacity of the pointer.
 			pointerSize: 15, // Default minimum height/width of the pointer.
 			pointerTolerance: 120, // Bigger = slower pointer.
@@ -4413,10 +4051,10 @@
 		}
 	}
 
-	pointer.id = "leap";
+	pointer.id = 'leap';
 
-	pointer.style.position = "absolute";
-	pointer.style.visibility = "hidden";
+	pointer.style.position = 'absolute';
+	pointer.style.visibility = 'hidden';
 	pointer.style.zIndex = 50;
 	pointer.style.opacity = config.pointerOpacity;
 	pointer.style.backgroundColor = config.pointerColor;
@@ -4424,7 +4062,7 @@
 	body.appendChild(pointer);
 
 	// Leap's loop
-	controller.on("frame", function (frame) {
+	controller.on('frame', function (frame) {
 		// Timing code to rate limit gesture execution
 		now = new Date().getTime();
 
@@ -4438,10 +4076,10 @@
 				size = config.pointerSize;
 			}
 
-			pointer.style.width = size + "px";
-			pointer.style.height = size + "px";
-			pointer.style.borderRadius = size - 5 + "px";
-			pointer.style.visibility = "visible";
+			pointer.style.width = size + 'px';
+			pointer.style.height = size + 'px';
+			pointer.style.borderRadius = size - 5 + 'px';
+			pointer.style.visibility = 'visible';
 
 			tipPosition = frame.fingers[0].tipPosition;
 
@@ -4453,32 +4091,19 @@
 				}
 
 				pointer.style.top =
-					-1 *
-						(((tipPosition[1] - enteredPosition[1]) * body.offsetHeight) /
-							config.pointerTolerance) +
-					body.offsetHeight / 2 +
-					"px";
+					-1 * (((tipPosition[1] - enteredPosition[1]) * body.offsetHeight) / config.pointerTolerance) + body.offsetHeight / 2 + 'px';
 
 				pointer.style.left =
-					((tipPosition[0] - enteredPosition[0]) * body.offsetWidth) /
-						config.pointerTolerance +
-					body.offsetWidth / 2 +
-					"px";
+					((tipPosition[0] - enteredPosition[0]) * body.offsetWidth) / config.pointerTolerance + body.offsetWidth / 2 + 'px';
 			} else {
-				pointer.style.top =
-					(1 - (tipPosition[1] - 50) / config.pointerTolerance) *
-						body.offsetHeight +
-					"px";
+				pointer.style.top = (1 - (tipPosition[1] - 50) / config.pointerTolerance) * body.offsetHeight + 'px';
 
-				pointer.style.left =
-					(tipPosition[0] * body.offsetWidth) / config.pointerTolerance +
-					body.offsetWidth / 2 +
-					"px";
+				pointer.style.left = (tipPosition[0] * body.offsetWidth) / config.pointerTolerance + body.offsetWidth / 2 + 'px';
 			}
 		} else {
 			// Hide pointer on exit
 			entered = false;
-			pointer.style.visibility = "hidden";
+			pointer.style.visibility = 'hidden';
 		}
 
 		// Gestures
@@ -4488,7 +4113,7 @@
 			// One hand gestures
 			if (frame.hands.length === 1) {
 				// Swipe gestures. 3+ fingers.
-				if (frame.fingers.length > 2 && gesture.type === "swipe") {
+				if (frame.fingers.length > 2 && gesture.type === 'swipe') {
 					// Define here since some gestures will throw undefined for these.
 					var x = gesture.direction[0],
 						y = gesture.direction[1];
@@ -4516,7 +4141,7 @@
 			// Two hand gestures
 			else if (frame.hands.length === 2) {
 				// Upward two hand swipe gesture
-				if (gesture.type === "swipe" && gesture.direction[1] > 0) {
+				if (gesture.type === 'swipe' && gesture.direction[1] > 0) {
 					Reveal.toggleOverview();
 				}
 

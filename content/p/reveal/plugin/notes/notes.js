@@ -12,12 +12,8 @@
 var RevealNotes = (function () {
 	function openNotes() {
 		var jsFileLocation = document.querySelector('script[src$="notes.js"]').src; // this js file path
-		jsFileLocation = jsFileLocation.replace(/notes\.js(\?.*)?$/, ""); // the js folder path
-		var notesPopup = window.open(
-			jsFileLocation + "notes.html",
-			"reveal.js - Notes",
-			"width=1100,height=700",
-		);
+		jsFileLocation = jsFileLocation.replace(/notes\.js(\?.*)?$/, ''); // the js folder path
+		var notesPopup = window.open(jsFileLocation + 'notes.html', 'reveal.js - Notes', 'width=1100,height=700');
 
 		/**
 		 * Connect to the notes window through a postmessage handshake.
@@ -30,26 +26,18 @@ var RevealNotes = (function () {
 			var connectInterval = setInterval(function () {
 				notesPopup.postMessage(
 					JSON.stringify({
-						namespace: "reveal-notes",
-						type: "connect",
-						url:
-							window.location.protocol +
-							"//" +
-							window.location.host +
-							window.location.pathname,
+						namespace: 'reveal-notes',
+						type: 'connect',
+						url: window.location.protocol + '//' + window.location.host + window.location.pathname,
 						state: Reveal.getState(),
 					}),
-					"*",
+					'*',
 				);
 			}, 500);
 
-			window.addEventListener("message", function (event) {
+			window.addEventListener('message', function (event) {
 				var data = JSON.parse(event.data);
-				if (
-					data &&
-					data.namespace === "reveal-notes" &&
-					data.type === "connected"
-				) {
+				if (data && data.namespace === 'reveal-notes' && data.type === 'connected') {
 					clearInterval(connectInterval);
 					onConnected();
 				}
@@ -61,29 +49,28 @@ var RevealNotes = (function () {
 		 */
 		function post() {
 			var slideElement = Reveal.getCurrentSlide(),
-				notesElement = slideElement.querySelector("aside.notes");
+				notesElement = slideElement.querySelector('aside.notes');
 
 			var messageData = {
-				namespace: "reveal-notes",
-				type: "state",
-				notes: "",
+				namespace: 'reveal-notes',
+				type: 'state',
+				notes: '',
 				markdown: false,
 				state: Reveal.getState(),
 			};
 
 			// Look for notes defined in a slide attribute
-			if (slideElement.hasAttribute("data-notes")) {
-				messageData.notes = slideElement.getAttribute("data-notes");
+			if (slideElement.hasAttribute('data-notes')) {
+				messageData.notes = slideElement.getAttribute('data-notes');
 			}
 
 			// Look for notes defined in an aside element
 			if (notesElement) {
 				messageData.notes = notesElement.innerHTML;
-				messageData.markdown =
-					typeof notesElement.getAttribute("data-markdown") === "string";
+				messageData.markdown = typeof notesElement.getAttribute('data-markdown') === 'string';
 			}
 
-			notesPopup.postMessage(JSON.stringify(messageData), "*");
+			notesPopup.postMessage(JSON.stringify(messageData), '*');
 		}
 
 		/**
@@ -92,13 +79,13 @@ var RevealNotes = (function () {
 		 */
 		function onConnected() {
 			// Monitor events that trigger a change in state
-			Reveal.addEventListener("slidechanged", post);
-			Reveal.addEventListener("fragmentshown", post);
-			Reveal.addEventListener("fragmenthidden", post);
-			Reveal.addEventListener("overviewhidden", post);
-			Reveal.addEventListener("overviewshown", post);
-			Reveal.addEventListener("paused", post);
-			Reveal.addEventListener("resumed", post);
+			Reveal.addEventListener('slidechanged', post);
+			Reveal.addEventListener('fragmentshown', post);
+			Reveal.addEventListener('fragmenthidden', post);
+			Reveal.addEventListener('overviewhidden', post);
+			Reveal.addEventListener('overviewshown', post);
+			Reveal.addEventListener('paused', post);
+			Reveal.addEventListener('resumed', post);
 
 			// Post the initial state
 			post();
@@ -115,18 +102,11 @@ var RevealNotes = (function () {
 
 		// Open the notes when the 's' key is hit
 		document.addEventListener(
-			"keydown",
+			'keydown',
 			function (event) {
 				// Disregard the event if the target is editable or a
 				// modifier is present
-				if (
-					document.querySelector(":focus") !== null ||
-					event.shiftKey ||
-					event.altKey ||
-					event.ctrlKey ||
-					event.metaKey
-				)
-					return;
+				if (document.querySelector(':focus') !== null || event.shiftKey || event.altKey || event.ctrlKey || event.metaKey) return;
 
 				if (event.keyCode === 83) {
 					event.preventDefault();

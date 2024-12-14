@@ -153,16 +153,12 @@
 		<div id="upcoming-slide"><span class="label">UPCOMING:</span></div>
 		<div id="speaker-controls">
 			<div class="speaker-controls-time">
-				<h4 class="label">
-					Time <span class="reset-button">Click to Reset</span>
-				</h4>
+				<h4 class="label">Time <span class="reset-button">Click to Reset</span></h4>
 				<div class="clock">
 					<span class="clock-value">0:00 AM</span>
 				</div>
 				<div class="timer">
-					<span class="hours-value">00</span
-					><span class="minutes-value">:00</span
-					><span class="seconds-value">:00</span>
+					<span class="hours-value">00</span><span class="minutes-value">:00</span><span class="seconds-value">:00</span>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -186,9 +182,9 @@
 					connected = false;
 
 				var socket = io.connect(window.location.origin),
-					socketId = "{{socketId}}";
+					socketId = '{{socketId}}';
 
-				socket.on("statechanged", function (data) {
+				socket.on('statechanged', function (data) {
 					// ignore data from sockets that aren't ours
 					if (data.socketId !== socketId) {
 						return;
@@ -206,12 +202,12 @@
 					handleStateMessage(data);
 				});
 
-				window.addEventListener("message", function (event) {
+				window.addEventListener('message', function (event) {
 					var data = JSON.parse(event.data);
 
-					if (data && data.namespace === "reveal") {
+					if (data && data.namespace === 'reveal') {
 						if (/ready/.test(data.eventName)) {
-							socket.emit("connect", { socketId: socketId });
+							socket.emit('connect', { socketId: socketId });
 						}
 					}
 				});
@@ -226,29 +222,20 @@
 
 					// No need for updating the notes in case of fragment changes
 					if (data.notes) {
-						notes.classList.remove("hidden");
+						notes.classList.remove('hidden');
 						if (data.markdown) {
 							notesValue.innerHTML = marked(data.notes);
 						} else {
 							notesValue.innerHTML = data.notes;
 						}
 					} else {
-						notes.classList.add("hidden");
+						notes.classList.add('hidden');
 					}
 
 					// Update the note slides
-					currentSlide.contentWindow.postMessage(
-						JSON.stringify({ method: "setState", args: [data.state] }),
-						"*",
-					);
-					upcomingSlide.contentWindow.postMessage(
-						JSON.stringify({ method: "setState", args: [data.state] }),
-						"*",
-					);
-					upcomingSlide.contentWindow.postMessage(
-						JSON.stringify({ method: "next" }),
-						"*",
-					);
+					currentSlide.contentWindow.postMessage(JSON.stringify({ method: 'setState', args: [data.state] }), '*');
+					upcomingSlide.contentWindow.postMessage(JSON.stringify({ method: 'setState', args: [data.state] }), '*');
+					upcomingSlide.contentWindow.postMessage(JSON.stringify({ method: 'next' }), '*');
 				}
 
 				// Limit to max one state update per X ms
@@ -260,11 +247,8 @@
 				 * isn't set on the current slide iframe.
 				 */
 				function setupKeyboard() {
-					document.addEventListener("keydown", function (event) {
-						currentSlide.contentWindow.postMessage(
-							JSON.stringify({ method: "triggerKey", args: [event.keyCode] }),
-							"*",
-						);
+					document.addEventListener('keydown', function (event) {
+						currentSlide.contentWindow.postMessage(JSON.stringify({ method: 'triggerKey', args: [event.keyCode] }), '*');
 					});
 				}
 
@@ -272,37 +256,31 @@
 				 * Creates the preview iframes.
 				 */
 				function setupIframes(data) {
-					var params = [
-						"receiver",
-						"progress=false",
-						"history=false",
-						"transition=none",
-						"backgroundTransition=none",
-					].join("&");
+					var params = ['receiver', 'progress=false', 'history=false', 'transition=none', 'backgroundTransition=none'].join('&');
 
-					var hash = "#/" + data.state.indexh + "/" + data.state.indexv;
-					var currentURL = "/?" + params + "&postMessageEvents=true" + hash;
-					var upcomingURL = "/?" + params + "&controls=false" + hash;
+					var hash = '#/' + data.state.indexh + '/' + data.state.indexv;
+					var currentURL = '/?' + params + '&postMessageEvents=true' + hash;
+					var upcomingURL = '/?' + params + '&controls=false' + hash;
 
-					currentSlide = document.createElement("iframe");
-					currentSlide.setAttribute("width", 1280);
-					currentSlide.setAttribute("height", 1024);
-					currentSlide.setAttribute("src", currentURL);
-					document.querySelector("#current-slide").appendChild(currentSlide);
+					currentSlide = document.createElement('iframe');
+					currentSlide.setAttribute('width', 1280);
+					currentSlide.setAttribute('height', 1024);
+					currentSlide.setAttribute('src', currentURL);
+					document.querySelector('#current-slide').appendChild(currentSlide);
 
-					upcomingSlide = document.createElement("iframe");
-					upcomingSlide.setAttribute("width", 640);
-					upcomingSlide.setAttribute("height", 512);
-					upcomingSlide.setAttribute("src", upcomingURL);
-					document.querySelector("#upcoming-slide").appendChild(upcomingSlide);
+					upcomingSlide = document.createElement('iframe');
+					upcomingSlide.setAttribute('width', 640);
+					upcomingSlide.setAttribute('height', 512);
+					upcomingSlide.setAttribute('src', upcomingURL);
+					document.querySelector('#upcoming-slide').appendChild(upcomingSlide);
 				}
 
 				/**
 				 * Setup the notes UI.
 				 */
 				function setupNotes() {
-					notes = document.querySelector(".speaker-controls-notes");
-					notesValue = document.querySelector(".speaker-controls-notes .value");
+					notes = document.querySelector('.speaker-controls-notes');
+					notesValue = document.querySelector('.speaker-controls-notes .value');
 				}
 
 				/**
@@ -311,11 +289,11 @@
 				 */
 				function setupTimer() {
 					var start = new Date(),
-						timeEl = document.querySelector(".speaker-controls-time"),
-						clockEl = timeEl.querySelector(".clock-value"),
-						hoursEl = timeEl.querySelector(".hours-value"),
-						minutesEl = timeEl.querySelector(".minutes-value"),
-						secondsEl = timeEl.querySelector(".seconds-value");
+						timeEl = document.querySelector('.speaker-controls-time'),
+						clockEl = timeEl.querySelector('.clock-value'),
+						hoursEl = timeEl.querySelector('.hours-value'),
+						minutesEl = timeEl.querySelector('.minutes-value'),
+						secondsEl = timeEl.querySelector('.seconds-value');
 
 					function _updateTimer() {
 						var diff,
@@ -329,16 +307,16 @@
 						minutes = Math.floor((diff / (1000 * 60)) % 60);
 						seconds = Math.floor((diff / 1000) % 60);
 
-						clockEl.innerHTML = now.toLocaleTimeString("en-US", {
+						clockEl.innerHTML = now.toLocaleTimeString('en-US', {
 							hour12: true,
-							hour: "2-digit",
-							minute: "2-digit",
+							hour: '2-digit',
+							minute: '2-digit',
 						});
 						hoursEl.innerHTML = zeroPadInteger(hours);
-						hoursEl.className = hours > 0 ? "" : "mute";
-						minutesEl.innerHTML = ":" + zeroPadInteger(minutes);
-						minutesEl.className = minutes > 0 ? "" : "mute";
-						secondsEl.innerHTML = ":" + zeroPadInteger(seconds);
+						hoursEl.className = hours > 0 ? '' : 'mute';
+						minutesEl.innerHTML = ':' + zeroPadInteger(minutes);
+						minutesEl.className = minutes > 0 ? '' : 'mute';
+						secondsEl.innerHTML = ':' + zeroPadInteger(seconds);
 					}
 
 					// Update once directly
@@ -347,7 +325,7 @@
 					// Then update every second
 					setInterval(_updateTimer, 1000);
 
-					timeEl.addEventListener("click", function () {
+					timeEl.addEventListener('click', function () {
 						start = new Date();
 						_updateTimer();
 						return false;
@@ -355,7 +333,7 @@
 				}
 
 				function zeroPadInteger(num) {
-					var str = "00" + parseInt(num);
+					var str = '00' + parseInt(num);
 					return str.substring(str.length - 2);
 				}
 

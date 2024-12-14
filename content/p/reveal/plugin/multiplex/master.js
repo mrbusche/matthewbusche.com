@@ -9,19 +9,16 @@
 	var socket = io.connect(multiplex.url);
 
 	var notify = function (slideElement, indexh, indexv, origin) {
-		if (typeof origin === "undefined" && origin !== "remote") {
+		if (typeof origin === 'undefined' && origin !== 'remote') {
 			var nextindexh;
 			var nextindexv;
 
 			var fragmentindex = Reveal.getIndices().f;
-			if (typeof fragmentindex == "undefined") {
+			if (typeof fragmentindex == 'undefined') {
 				fragmentindex = 0;
 			}
 
-			if (
-				slideElement.nextElementSibling &&
-				slideElement.parentNode.nodeName == "SECTION"
-			) {
+			if (slideElement.nextElementSibling && slideElement.parentNode.nodeName == 'SECTION') {
 				nextindexh = indexh;
 				nextindexv = indexv + 1;
 			} else {
@@ -39,23 +36,18 @@
 				socketId: multiplex.id,
 			};
 
-			socket.emit("slidechanged", slideData);
+			socket.emit('slidechanged', slideData);
 		}
 	};
 
-	Reveal.addEventListener("slidechanged", function (event) {
+	Reveal.addEventListener('slidechanged', function (event) {
 		notify(event.currentSlide, event.indexh, event.indexv, event.origin);
 	});
 
 	var fragmentNotify = function (event) {
-		notify(
-			Reveal.getCurrentSlide(),
-			Reveal.getIndices().h,
-			Reveal.getIndices().v,
-			event.origin,
-		);
+		notify(Reveal.getCurrentSlide(), Reveal.getIndices().h, Reveal.getIndices().v, event.origin);
 	};
 
-	Reveal.addEventListener("fragmentshown", fragmentNotify);
-	Reveal.addEventListener("fragmenthidden", fragmentNotify);
+	Reveal.addEventListener('fragmentshown', fragmentNotify);
+	Reveal.addEventListener('fragmenthidden', fragmentNotify);
 })();

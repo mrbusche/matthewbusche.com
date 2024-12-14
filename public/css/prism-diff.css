@@ -2,7 +2,7 @@
  * New diff- syntax
  */
 
-pre[class*="language-diff-"] {
+pre[class*='language-diff-'] {
 	--eleventy-code-padding: 1.25em;
 	padding-left: var(--eleventy-code-padding);
 	padding-right: var(--eleventy-code-padding);
