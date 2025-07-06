@@ -16,25 +16,29 @@ How to solve the issue?
 
 We googled and found this <a href="https://stackoverflow.com/questions/5750763/how-do-i-discard-a-row-from-a-coldfusion-query" target="_blank">stack overflow question</a>, but that solution only worked for Railo and then we found a post on <a href="https://stackoverflow.com/questions/5750763/how-do-i-discard-a-row-from-a-coldfusion-query" target="_blank">Ben Nadel's blog</a> (obviously) that pointed out a Java function that would do what we needed, but when removing more than one row in the query you would eventually run into an index out of bounds error the way he had it structured, but that's easy enough to fix.
 
-    <cfloop from="#myQuery.recordCount#" to="1" step="-1" index="currentRow">
-      <cfif myQuery.runDate[currentRow] LT left(getStartDateTime(),8)>
-        <cfset myQuery.removeRows(currentRow - 1, 1)>
-      </cfif>
-    </cfloop>
+```java
+<cfloop from="#myQuery.recordCount#" to="1" step="-1" index="currentRow">
+  <cfif myQuery.runDate[currentRow] LT left(getStartDateTime(),8)>
+    <cfset myQuery.removeRows(currentRow - 1, 1)>
+  </cfif>
+</cfloop>
+```
 
 After implementing this fix our query was working correctly, but we still needed to add <a href="https://help.adobe.com/livedocs/coldfusion/8/htmldocs/help.html?content=functions_t-z_10.html" target="_blank">URLEncodedFormat</a> to our URL parameters, so the whitespace wouldn't be stripped (and because it should have been done in the first place).
 
 FWIW Railo 4.2 does NOT strip out whitespace. Test case below
 
-    <cfset q = queryNew("columnA", "varchar", [["   AAA"]])>
-    <cfquery name="test" dbtype="query">
-    SELECT columnA
-    FROM q
-    </cfquery>
+```java
+  <cfset q = queryNew("columnA", "varchar", [["   AAA"]])>
+  <cfquery name="test" dbtype="query">
+  SELECT columnA
+  FROM q
+  </cfquery>
 
-    <cfdump eval=test>
-    <cfdump eval=len(test.columnA)>
-    <cfdump var="#replace(test.columnA,' ','a space','all')#">
+  <cfdump eval=test>
+  <cfdump eval=len(test.columnA)>
+  <cfdump var="#replace(test.columnA,' ','a space','all')#">
+```
 
 Returns
 
