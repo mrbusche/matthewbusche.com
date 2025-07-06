@@ -3,6 +3,7 @@ import { feedPlugin } from '@11ty/eleventy-plugin-rss';
 import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import pluginNavigation from '@11ty/eleventy-navigation';
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
+import htmlmin from 'html-minifier-terser';
 
 import pluginFilters from './_config/filters.js';
 
@@ -13,6 +14,23 @@ export default async function (eleventyConfig) {
 		if (data.draft && process.env.ELEVENTY_RUN_MODE === 'build') {
 			return false;
 		}
+	});
+
+	eleventyConfig.addTransform('htmlmin', function (content) {
+		if ((this.page.outputPath || '').endsWith('.html')) {
+			let minified = htmlmin.minify(content, {
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true,
+				minifyJS: true,
+				// minifyCSS: true,
+			});
+
+			return minified;
+		}
+
+		// If not an HTML output, return content as-is
+		return content;
 	});
 
 	// Copy the contents of the `public` folder to the output folder
