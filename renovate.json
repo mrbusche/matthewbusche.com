@@ -8,5 +8,6 @@
   "ignoreUnstable": false,
   "ignorePaths": [
     "p/reveal/package.json"
-   ]
+   ],
+  "schedule": ["weekly"]
 }
