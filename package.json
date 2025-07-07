@@ -1,0 +1,49 @@
+{
+	"name": "mrbusche.com",
+	"version": "1.0.0",
+	"description": "Matt Busche's blog",
+	"type": "module",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
+		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
+		"start": "npx @11ty/eleventy --serve --quiet",
+		"start-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/ --serve --quiet",
+		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/mrbusche/matthewbusche.com.git"
+	},
+	"author": {
+		"name": "Matt Busche",
+		"email": "mrbusche@gmail.com",
+		"url": "https://mrbusche.com/"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=24"
+	},
+	"bugs": {
+		"url": "https://github.com/mrbusche/matthewbusche.com/issues"
+	},
+	"homepage": "https://github.com/mrbusche/matthewbusche.com#readme",
+	"devDependencies": {
+		"@11ty/eleventy": "3.1.2",
+		"@11ty/eleventy-img": "6.0.4",
+		"@11ty/eleventy-navigation": "1.0.4",
+		"@11ty/eleventy-plugin-rss": "2.0.4",
+		"@11ty/eleventy-plugin-syntaxhighlight": "5.0.1",
+		"cross-env": "7.0.3",
+		"html-minifier-terser": "7.2.0",
+		"luxon": "3.6.1",
+		"prismjs": "1.30.0",
+		"zod": "3.25.74",
+		"zod-validation-error": "3.5.2"
+	},
+	"dependencies": {
+		"@zachleat/heading-anchors": "1.0.3"
+	}
+}
