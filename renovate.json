@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "assignees": [
+    "@mrbusche"
+  ],
+  "ignoreUnstable": false,
+  "ignorePaths": [
+    "p/reveal/package.json"
+   ]
+}
