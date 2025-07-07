@@ -9,5 +9,9 @@
   "ignorePaths": [
     "p/reveal/package.json"
    ],
-  "schedule": ["weekly"]
+  {
+  "schedule": [
+    "* 0-3 * * 5"
+  ]
+}
 }
