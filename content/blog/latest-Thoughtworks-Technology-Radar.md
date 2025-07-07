@@ -1,7 +1,7 @@
 ---
 title: Thoughtworks Technology Radar update Fall 2024
 date: 2024-11-10 20:39:30
-permalink: /2024/11/03/latest-Thoughtworks-Technology-Radar copy/
+permalink: /2024/11/03/latest-Thoughtworks-Technology-Radar/
 tags:
   - techradar
   - thoughtworks

@@ -1,7 +1,7 @@
 ---
 title: Cache bust JavaScript, CSS or other file in Dockerfile
 date: 2023-02-15 21:09:30
-permalink: /2023/02/28/cache-bust-in-Dockerfile/
+permalink: /2023/02/15/cache-bust-in-Dockerfile/
 tags:
   - docker
 ---
