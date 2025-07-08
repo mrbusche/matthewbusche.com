@@ -21,7 +21,6 @@ tags:
 - Finally, attempting to de-risk a product launch through early access programs or limited user testing can introduce bias and create a false sense of security. Early access programs and user testing often fail to capture the full range of user behavior and potential edge cases that arise in real-world usage with a wide range of users.
 
 - Put differently, you should be aware of the following things when building with LLMS:
-
   - Failure will happen-it's a question of when, not if.
   - Users will do things you can't possibly predict.
   - You will ship a bug fix that breaks something else.
