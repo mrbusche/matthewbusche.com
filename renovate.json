@@ -1,15 +1,7 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "assignees": [
-    "@mrbusche"
-  ],
-  "ignoreUnstable": false,
-  "ignorePaths": [
-    "p/reveal/package.json"
-   ],
-  "schedule": [
-    "* 0-3 * * 5"
-  ]
+	"extends": ["config:base"],
+	"assignees": ["@mrbusche"],
+	"ignoreUnstable": false,
+	"ignorePaths": ["p/reveal/package.json"],
+	"schedule": ["* 0-3 * * 5"]
 }

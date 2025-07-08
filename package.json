@@ -7,6 +7,7 @@
 		"build": "npx @11ty/eleventy",
 		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
 		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
+		"prettier:fix": "prettier --write .",
 		"start": "npx @11ty/eleventy --serve --quiet",
 		"start-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/ --serve --quiet",
 		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
@@ -39,6 +40,7 @@
 		"cross-env": "7.0.3",
 		"html-minifier-terser": "7.2.0",
 		"luxon": "3.6.1",
+		"prettier": "^3.6.2",
 		"prismjs": "1.30.0",
 		"zod": "3.25.75",
 		"zod-validation-error": "4.0.0-beta.1"
