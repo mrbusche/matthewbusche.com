@@ -42,7 +42,7 @@
 		"luxon": "3.7.1",
 		"prettier": "3.6.2",
 		"prismjs": "1.30.0",
-		"zod": "3.25.75",
+		"zod": "3.26.0-canary.20250708T225111",
 		"zod-validation-error": "4.0.0-beta.1"
 	},
 	"dependencies": {
