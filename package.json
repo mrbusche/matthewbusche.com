@@ -39,7 +39,7 @@
 		"@11ty/eleventy-plugin-syntaxhighlight": "5.0.1",
 		"cross-env": "7.0.3",
 		"html-minifier-terser": "7.2.0",
-		"luxon": "3.6.1",
+		"luxon": "3.7.1",
 		"prettier": "3.6.2",
 		"prismjs": "1.30.0",
 		"zod": "3.25.75",
