@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DraftKings Lineup Optimizer</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<style>
+			.loader {
+				border-top-color: #3498db;
+				animation: spin 1s linear infinite;
+			}
+			@keyframes spin {
+				to {
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body class="bg-gray-100 text-gray-800">
+		<div class="container mx-auto p-4 md:p-8 max-w-8xl">
+			<header class="text-center mb-8">
+				<h1 class="text-4xl font-bold text-gray-900">DraftKings Lineup Optimizer</h1>
+				<p class="text-lg text-gray-600 mt-2">Generate 10 optimal NFL lineups based on your player projections.</p>
+			</header>
+
+			<div class="bg-white p-6 rounded-lg shadow-md mb-8">
+				<h2 class="text-2xl font-semibold mb-4">1. Paste Player CSV Data</h2>
+				<p class="text-gray-600 mb-4">
+					Paste your data from a CSV file. It must contain the columns: "Player", "DK Position", "DK Projection", and "DK Salary".
+				</p>
+				<textarea
+					id="csv-input"
+					class="w-full h-64 p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+					placeholder="Player,DK Position,DK Projection,DK Salary&#10;Patrick Mahomes,QB,25.5,8000&#10;Christian McCaffrey,RB,22.1,8500&#10;Justin Jefferson,WR,20.8,9000&#10;..."
+				></textarea>
+			</div>
+
+			<div class="text-center mb-8">
+				<button
+					id="generate-btn"
+					class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-indigo-700 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300"
+				>
+					Generate Lineups
+				</button>
+			</div>
+
+			<div id="status" class="text-center my-4"></div>
+
+			<div id="results" class="space-y-6">
+				<!-- Generated lineups will be inserted here -->
+			</div>
+		</div>
+
+		<script>
+			// --- CONFIGURATION ---
+			const SALARY_CAP = 50000;
+			const MIN_SALARY = 48000;
+			const NUM_LINEUPS_TO_GENERATE = 10;
+			const ROSTER_CONFIG = {
+				QB: 1,
+				RB: 2,
+				WR: 3,
+				TE: 1,
+				DST: 1,
+				FLEX: 1,
+			};
+			const FLEX_POSITIONS = ['RB', 'WR', 'TE'];
+
+			// --- DOM ELEMENTS ---
+			const generateBtn = document.getElementById('generate-btn');
+			const csvInput = document.getElementById('csv-input');
+			const resultsDiv = document.getElementById('results');
+			const statusDiv = document.getElementById('status');
+
+			// --- EVENT LISTENER ---
+			generateBtn.addEventListener('click', handleGenerateClick);
+
+			/**
+			 * Main handler for the "Generate Lineups" button click.
+			 */
+			async function handleGenerateClick() {
+				const csvText = csvInput.value.trim();
+				if (!csvText) {
+					showError('Input Missing', 'Please paste your CSV data into the text box.');
+					return;
+				}
+
+				// Reset UI
+				resultsDiv.innerHTML = '';
+				showLoadingStatus('Parsing player data...');
+
+				try {
+					// The process is wrapped in a timeout to allow the UI to update
+					await new Promise((resolve) => setTimeout(resolve, 50));
+
+					const players = parseCSV(csvText);
+
+					if (players.length === 0) {
+						showError(
+							'Parsing Error',
+							'Could not parse any players. Please check that the CSV data is correctly formatted and includes the required headers.',
+						);
+						hideLoadingStatus();
+						return;
+					}
+
+					// Group players by position
+					const playersByPosition = groupPlayersByPosition(players);
+
+					// Validate if we have enough players for a valid lineup
+					const validationError = hasEnoughPlayers(playersByPosition);
+					if (validationError) {
+						showError('Not Enough Players', validationError);
+						hideLoadingStatus();
+						return;
+					}
+
+					showLoadingStatus(`Generating optimal lineups... This may take a moment.`);
+					await new Promise((resolve) => setTimeout(resolve, 50));
+
+					const lineups = await findTopLineups(playersByPosition);
+
+					displayLineups(lineups);
+					hideLoadingStatus();
+				} catch (error) {
+					console.error('An error occurred:', error);
+					showError('An Unexpected Error Occurred', `An error occurred during lineup generation: ${error.message}`);
+					hideLoadingStatus();
+				}
+			}
+
+			/**
+			 * The core optimization logic. Spawns a web worker to run an exhaustive search.
+			 * @param {Object} playersByPosition - Players grouped by position.
+			 * @returns {Promise<Array<Object>>} A promise that resolves to the top N lineups.
+			 */
+			function findTopLineups(playersByPosition) {
+				return new Promise((resolve, reject) => {
+					// Use a Web Worker to run the heavy computation in a background thread,
+					// preventing the UI from freezing.
+					const workerScript = `
+                    const SALARY_CAP = ${SALARY_CAP};
+                    const MIN_SALARY = ${MIN_SALARY};
+                    const NUM_LINEUPS = ${NUM_LINEUPS_TO_GENERATE};
+
+                    // --- UTILITY: COMBINATIONS GENERATOR ---
+                    function getCombinations(arr, k) {
+                        const result = [];
+                        const comboData = [];
+                        function combine(startIndex, currentCombo) {
+                            if (currentCombo.length === k) {
+                                let salary = 0;
+                                let projection = 0;
+                                for(const player of currentCombo) {
+                                    salary += player.salary;
+                                    projection += player.projection;
+                                }
+                                result.push({ players: [...currentCombo], salary, projection });
+                                return;
+                            }
+                            if (startIndex >= arr.length) return;
+
+                            currentCombo.push(arr[startIndex]);
+                            combine(startIndex + 1, currentCombo);
+                            currentCombo.pop();
+                            combine(startIndex + 1, currentCombo);
+                        }
+                        const memo = new Map();
+                        function combineMemo(startIndex, k) {
+                            if (k === 0) return [[]];
+                            if (startIndex >= arr.length) return [];
+                            const key = startIndex + ',' + k;
+                            if (memo.has(key)) return memo.get(key);
+
+                            const res = [];
+                            // Include arr[startIndex]
+                            const combosWith = combineMemo(startIndex + 1, k - 1);
+                            for (const c of combosWith) {
+                                res.push([arr[startIndex], ...c]);
+                            }
+                            // Exclude arr[startIndex]
+                            const combosWithout = combineMemo(startIndex + 1, k);
+                            res.push(...combosWithout);
+
+                            memo.set(key, res);
+                            return res;
+                        }
+
+                        const combos = combineMemo(0, k);
+                        return combos.map(c => {
+                             let salary = 0;
+                             let projection = 0;
+                             c.forEach(p => { salary += p.salary; projection += p.projection; });
+                             return { players: c, salary, projection };
+                        });
+                    }
+
+                    // --- MAIN WORKER LOGIC ---
+                    self.onmessage = (e) => {
+                        const { playersByPosition } = e.data;
+                        const topLineups = [];
+                        let minProjectionInTop = -1;
+
+                        const updateTopLineups = (lineup) => {
+                            if (topLineups.length < NUM_LINEUPS) {
+                                topLineups.push(lineup);
+                                minProjectionInTop = Math.min(...topLineups.map(l => l.totalProjection));
+                            } else if (lineup.totalProjection > minProjectionInTop) {
+                                let minIndex = 0;
+                                for(let i = 1; i < topLineups.length; i++) {
+                                    if(topLineups[i].totalProjection < topLineups[minIndex].totalProjection) {
+                                        minIndex = i;
+                                    }
+                                }
+                                topLineups[minIndex] = lineup;
+                                minProjectionInTop = Math.min(...topLineups.map(l => l.totalProjection));
+                            }
+                        };
+
+                        // 1. Pre-generate all necessary position combinations and sort by salary for pruning
+                        postMessage({ type: 'status', message: 'Generating player combinations...' });
+                        const qbs = playersByPosition.QB;
+                        const rbs2 = getCombinations(playersByPosition.RB, 2).sort((a,b) => a.salary - b.salary);
+                        const rbs3 = getCombinations(playersByPosition.RB, 3).sort((a,b) => a.salary - b.salary);
+                        const wrs3 = getCombinations(playersByPosition.WR, 3).sort((a,b) => a.salary - b.salary);
+                        const wrs4 = getCombinations(playersByPosition.WR, 4).sort((a,b) => a.salary - b.salary);
+                        const tes = playersByPosition.TE;
+                        const tes2 = getCombinations(playersByPosition.TE, 2).sort((a,b) => a.salary - b.salary);
+                        const dsts = playersByPosition.DST;
+
+                        // --- RUN EXHAUSTIVE SEARCH FOR EACH ROSTER CONSTRUCTION ---
+
+                        // Case 1: FLEX is RB (3RB, 3WR, 1TE)
+                        postMessage({ type: 'status', message: 'Analyzing lineups with RB at FLEX...' });
+                        for (const qb of qbs) {
+                            for (const dst of dsts) {
+                                const s1 = qb.salary + dst.salary; if (s1 > SALARY_CAP) continue;
+                                for (const te of tes) {
+                                    const s2 = s1 + te.salary; if (s2 > SALARY_CAP) continue;
+                                    for (const rb3 of rbs3) {
+                                        const s3 = s2 + rb3.salary; if (s3 > SALARY_CAP) break;
+                                        for (const wr3 of wrs3) {
+                                            const totalSalary = s3 + wr3.salary;
+                                            if (totalSalary > SALARY_CAP) break;
+                                            if (totalSalary >= MIN_SALARY) {
+                                                const players = [qb, dst, te, ...rb3.players, ...wr3.players];
+                                                const totalProjection = qb.projection + dst.projection + te.projection + rb3.projection + wr3.projection;
+                                                updateTopLineups({ players, totalProjection, totalSalary });
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // Case 2: FLEX is WR (2RB, 4WR, 1TE)
+                        postMessage({ type: 'status', message: 'Analyzing lineups with WR at FLEX...' });
+                         for (const qb of qbs) {
+                            for (const dst of dsts) {
+                                const s1 = qb.salary + dst.salary; if (s1 > SALARY_CAP) continue;
+                                for (const te of tes) {
+                                    const s2 = s1 + te.salary; if (s2 > SALARY_CAP) continue;
+                                    for (const rb2 of rbs2) {
+                                        const s3 = s2 + rb2.salary; if (s3 > SALARY_CAP) break;
+                                        for (const wr4 of wrs4) {
+                                            const totalSalary = s3 + wr4.salary;
+                                            if (totalSalary > SALARY_CAP) break;
+                                            if (totalSalary >= MIN_SALARY) {
+                                                const players = [qb, dst, te, ...rb2.players, ...wr4.players];
+                                                const totalProjection = qb.projection + dst.projection + te.projection + rb2.projection + wr4.projection;
+                                                updateTopLineups({ players, totalProjection, totalSalary });
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // Case 3: FLEX is TE (2RB, 3WR, 2TE)
+                        postMessage({ type: 'status', message: 'Analyzing lineups with TE at FLEX...' });
+                        for (const qb of qbs) {
+                            for (const dst of dsts) {
+                                const s1 = qb.salary + dst.salary; if (s1 > SALARY_CAP) continue;
+                                for (const rb2 of rbs2) {
+                                    const s2 = s1 + rb2.salary; if (s2 > SALARY_CAP) break;
+                                    for (const wr3 of wrs3) {
+                                        const s3 = s2 + wr3.salary; if (s3 > SALARY_CAP) break;
+                                        for (const te2 of tes2) {
+                                            const totalSalary = s3 + te2.salary;
+                                            if (totalSalary > SALARY_CAP) break;
+                                            if (totalSalary >= MIN_SALARY) {
+                                                const players = [qb, dst, ...rb2.players, ...wr3.players, ...te2.players];
+                                                const totalProjection = qb.projection + dst.projection + rb2.projection + wr3.projection + te2.projection;
+                                                updateTopLineups({ players, totalProjection, totalSalary });
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        topLineups.sort((a, b) => b.totalProjection - a.totalProjection);
+                        postMessage({ type: 'result', lineups: topLineups });
+                    };
+                `;
+					const blob = new Blob([workerScript], { type: 'application/javascript' });
+					const worker = new Worker(URL.createObjectURL(blob));
+
+					worker.onmessage = (e) => {
+						const { type, message, lineups } = e.data;
+						if (type === 'status') {
+							showLoadingStatus(message);
+						} else if (type === 'result') {
+							resolve(lineups);
+							worker.terminate();
+						}
+					};
+
+					worker.onerror = (e) => {
+						reject(new Error(`Worker error: ${e.message}`));
+						worker.terminate();
+					};
+
+					worker.postMessage({ playersByPosition });
+				});
+			}
+
+			// --- UTILITY FUNCTIONS ---
+
+			/**
+			 * Parses the raw CSV text input into an array of player objects.
+			 * @param {string} csvText - The raw CSV string.
+			 * @returns {Array<Object>} An array of player objects.
+			 */
+			function parseCSV(csvText) {
+				const players = [];
+				// Normalize line endings and split into lines
+				const lines = csvText.trim().replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
+
+				if (lines.length < 2) return [];
+
+				// Clean up header by removing quotes and BOM character if present
+				const headerLine = lines[0].trim().startsWith('\uFEFF') ? lines[0].trim().substring(1) : lines[0].trim();
+				const headers = headerLine.split(',').map((h) => h.trim().replace(/"/g, ''));
+
+				const requiredHeaders = ['Player', 'DK Position', 'DK Projection', 'DK Salary'];
+				const headerIndices = {};
+
+				requiredHeaders.forEach((reqHeader) => {
+					const index = headers.indexOf(reqHeader);
+					if (index === -1) {
+						throw new Error(`Missing required CSV header: "${reqHeader}"`);
+					}
+					headerIndices[reqHeader] = index;
+				});
+
+				for (let i = 1; i < lines.length; i++) {
+					const line = lines[i].trim();
+					if (!line) continue;
+
+					// Regex to split by comma, but ignore commas inside double quotes
+					const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map((v) => v.trim().replace(/"/g, ''));
+
+					try {
+						const name = values[headerIndices['Player']];
+						const position = values[headerIndices['DK Position']].toUpperCase();
+						const projection = parseFloat(values[headerIndices['DK Projection']]);
+						const salary = parseInt(values[headerIndices['DK Salary']], 10);
+
+						if (name && position && !isNaN(projection) && !isNaN(salary)) {
+							players.push({ name, position, projection, salary });
+						}
+					} catch (e) {
+						// Log and skip rows that might be malformed
+						console.warn(`Skipping invalid row: ${line}`);
+					}
+				}
+				return players;
+			}
+
+			/**
+			 * Groups an array of players by their position.
+			 * @param {Array<Object>} players - The array of player objects.
+			 * @returns {Object} An object with positions as keys and arrays of players as values.
+			 */
+			function groupPlayersByPosition(players) {
+				const grouped = { QB: [], RB: [], WR: [], TE: [], DST: [] };
+				players.forEach((player) => {
+					if (grouped.hasOwnProperty(player.position)) {
+						grouped[player.position].push(player);
+					}
+				});
+
+				// Sort by projection descending. This is a good practice for optimizers.
+				for (const pos in grouped) {
+					grouped[pos].sort((a, b) => b.projection - a.projection);
+				}
+				return grouped;
+			}
+
+			/**
+			 * Checks if there are enough players at each position to form a valid lineup.
+			 * @param {Object} playersByPosition - Players grouped by position.
+			 * @returns {string|null} An error message string if not enough players, otherwise null.
+			 */
+			function hasEnoughPlayers(playersByPosition) {
+				const { QB, RB, WR, TE, DST } = playersByPosition;
+
+				if (QB.length < ROSTER_CONFIG.QB) return `Not enough Quarterbacks. Need ${ROSTER_CONFIG.QB}, found ${QB.length}.`;
+				if (RB.length < ROSTER_CONFIG.RB) return `Not enough Running Backs. Need ${ROSTER_CONFIG.RB}, found ${RB.length}.`;
+				if (WR.length < ROSTER_CONFIG.WR) return `Not enough Wide Receivers. Need ${ROSTER_CONFIG.WR}, found ${WR.length}.`;
+				if (TE.length < ROSTER_CONFIG.TE) return `Not enough Tight Ends. Need ${ROSTER_CONFIG.TE}, found ${TE.length}.`;
+				if (DST.length < ROSTER_CONFIG.DST) return `Not enough Defenses. Need ${ROSTER_CONFIG.DST}, found ${DST.length}.`;
+
+				// Check if there are enough players across RB, WR, TE to fill the FLEX spot
+				const hasFlexOption = RB.length >= ROSTER_CONFIG.RB + 1 || WR.length >= ROSTER_CONFIG.WR + 1 || TE.length >= ROSTER_CONFIG.TE + 1;
+
+				if (!hasFlexOption) {
+					return `Not enough players for the FLEX position. You need at least ${ROSTER_CONFIG.RB + 1} RBs, or ${
+						ROSTER_CONFIG.WR + 1
+					} WRs, or ${ROSTER_CONFIG.TE + 1} TEs.`;
+				}
+
+				return null; // No error
+			}
+
+			// --- UI DISPLAY FUNCTIONS ---
+
+			/**
+			 * Renders the generated lineups to the DOM.
+			 * @param {Array<Object>} lineups - The array of top lineups to display.
+			 */
+			function displayLineups(lineups) {
+				if (lineups.length === 0) {
+					resultsDiv.innerHTML = `
+                    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-md shadow-md" role="alert">
+                      <p class="font-bold">No Valid Lineups Found</p>
+                      <p>Could not generate any valid lineups between $${MIN_SALARY.toLocaleString()} and $${SALARY_CAP.toLocaleString()}. Try adding more players or adjusting your CSV data.</p>
+                    </div>`;
+					return;
+				}
+
+				const headers = ['', 'QB', 'RB 1', 'RB 2', 'WR 1', 'WR 2', 'WR 3', 'TE', 'FLEX', 'DST', 'Total Projection', 'Total Salary'];
+
+				const tableHeaderHtml = `
+                <thead>
+                    <tr class="bg-gray-50">
+                        ${headers
+													.map((h) => `<th class="p-3 text-xs font-semibold text-gray-600 uppercase tracking-wider text-left">${h}</th>`)
+													.join('')}
+                    </tr>
+                </thead>`;
+
+				const tableBodyHtml = lineups
+					.map((lineup, index) => {
+						const lineupByPos = { QB: [], RB: [], WR: [], TE: [], DST: [], FLEX: [] };
+						const corePositions = { ...ROSTER_CONFIG };
+						delete corePositions.FLEX;
+
+						// First, fill the core positions
+						lineup.players.forEach((p) => {
+							if (lineupByPos[p.position] && lineupByPos[p.position].length < corePositions[p.position]) {
+								lineupByPos[p.position].push(p);
+							}
+						});
+
+						// Then, find the FLEX player
+						const flexPlayer = lineup.players.find((p) => {
+							const isCore = lineupByPos[p.position]?.some((coreP) => coreP.name === p.name);
+							return FLEX_POSITIONS.includes(p.position) && !isCore;
+						});
+						if (flexPlayer) lineupByPos.FLEX.push(flexPlayer);
+
+						const playerCells = [
+							lineupByPos.QB[0],
+							...lineupByPos.RB,
+							...lineupByPos.WR,
+							lineupByPos.TE[0],
+							lineupByPos.FLEX[0],
+							lineupByPos.DST[0],
+						];
+
+						const cellsHtml = playerCells
+							.map((player) => {
+								if (!player) return `<td class="p-3 border-t border-gray-200"></td>`;
+								return `
+                        <td class="p-3 border-t border-gray-200 whitespace-nowrap">
+                            <div class="font-semibold">${player.name.slice(0, 15)}</div>
+                            <div class="text-xs text-gray-600">Proj: ${player.projection.toFixed(2)}</div>
+                            <div class="text-xs text-gray-600">Sal: $${player.salary.toLocaleString()}</div>
+                        </td>
+                    `;
+							})
+							.join('');
+
+						return `
+                    <tr class="bg-white hover:bg-gray-50">
+                        <td class="p-3 border-t border-gray-200 font-bold text-gray-700">#${index + 1}</td>
+                        ${cellsHtml}
+                        <td class="p-3 border-t border-gray-200 font-bold text-green-600">${lineup.totalProjection.toFixed(2)}</td>
+                        <td class="p-3 border-t border-gray-200 font-semibold text-gray-800">$${lineup.totalSalary.toLocaleString()}</td>
+                    </tr>
+                `;
+					})
+					.join('');
+
+				resultsDiv.innerHTML = `
+                <div class="bg-white rounded-lg shadow-md overflow-x-auto">
+                    <table class="w-full">
+                        ${tableHeaderHtml}
+                        <tbody>
+                            ${tableBodyHtml}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+			}
+
+			/**
+			 * Shows a loading message and spinner.
+			 * @param {string} message - The message to display.
+			 */
+			function showLoadingStatus(message) {
+				statusDiv.innerHTML = `
+                <div class="flex items-center justify-center p-4">
+                    <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mr-4"></div>
+                    <p class="text-lg font-medium text-gray-700">${message}</p>
+                </div>
+            `;
+				generateBtn.disabled = true;
+				generateBtn.classList.add('opacity-50', 'cursor-not-allowed');
+			}
+
+			/**
+			 * Hides the loading message and spinner.
+			 */
+			function hideLoadingStatus() {
+				statusDiv.innerHTML = '';
+				generateBtn.disabled = false;
+				generateBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+			}
+
+			/**
+			 * Shows an error message in the results area.
+			 * @param {string} title - The title of the error.
+			 * @param {string} message - The error message content.
+			 */
+			function showError(title, message) {
+				resultsDiv.innerHTML = `
+                <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md shadow-md" role="alert">
+                  <p class="font-bold">${title}</p>
+                  <p>${message}</p>
+                </div>`;
+			}
+		</script>
+	</body>
+</html>
