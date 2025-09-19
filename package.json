@@ -43,7 +43,7 @@
 		"prettier": "3.6.2",
 		"prismjs": "1.30.0",
 		"zod": "4.1.9",
-		"zod-validation-error": "4.0.1"
+		"zod-validation-error": "4.0.2"
 	},
 	"dependencies": {
 		"@zachleat/heading-anchors": "1.0.4"
