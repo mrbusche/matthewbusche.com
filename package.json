@@ -40,7 +40,7 @@
 		"cross-env": "10.1.0",
 		"html-minifier-terser": "7.2.0",
 		"luxon": "3.7.2",
-		"prettier": "3.7.1",
+		"prettier": "3.7.2",
 		"prismjs": "1.30.0",
 		"zod": "4.1.13",
 		"zod-validation-error": "5.0.0"
