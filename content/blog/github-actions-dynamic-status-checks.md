@@ -10,7 +10,6 @@ If you maintain a library of Docker images, you know the power of the strategy m
 
 But there's a catch: Required Status Checks.
 
-
 ```yaml
 jobs:
   build:
