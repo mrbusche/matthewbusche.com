@@ -6,7 +6,7 @@ tags:
   - github-actions
 ---
 
-If you maintain a library of Docker images, you know the power of the strategy matrix. It's the simplest way to support multiple language versions (Node 22, 24, 25) across different OS flavors (Debian 12, 13) without writing a thousand lines of YAML.
+If you maintain a library of Docker images, you know the power of the strategy matrix in GitHub Actions. It's the easiest way to support multiple language versions (Node 22, 24, 25) across different OS variants (Debian 12, 13) without writing a thousand lines of YAML.
 
 But there's a catch: Required Status Checks.
 
