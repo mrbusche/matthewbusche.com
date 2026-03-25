@@ -91,11 +91,11 @@ export default async function (eleventyConfig) {
 		},
 		metadata: {
 			language: 'en',
-			title: 'Blog Title',
-			subtitle: 'This is a longer description about your blog.',
-			base: 'https://example.com/',
+			title: 'mrbusche.com blog',
+			subtitle: 'Stuff mrbusche has learned',
+			base: 'https://mrbusche.com/',
 			author: {
-				name: 'Your Name',
+				name: 'Matt Busche',
 			},
 		},
 	});
