@@ -10,6 +10,6 @@
 
 [[redirects]]
 	from = "/oc"
-	to = "/occurence-counter"
+	to = "/occurrence-counter"
 	status = 301
 	force = true
