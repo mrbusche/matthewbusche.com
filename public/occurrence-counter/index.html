@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Occurrence Counter" />
+		<meta name="author" content="Matt Busche" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<title>Occurrence Counter</title>
+	</head>
+
+	<body>
+		<span id="contributeongithub">
+			<a href="https://github.com/mrbusche/matthewbusche.com/tree/main/public/occurrence-counter">Contribute on GitHub</a>
+		</span>
+		<h1>Occurrence Counter</h1>
+		<h5>Supports return, pipe, or comma delimited lists</h5>
+		<div class="flex-container">
+			<div id="one" class="flex-child">
+				<label for="data">
+					<textarea id="data" rows="25" autofocus></textarea>
+				</label>
+			</div>
+			<div id="results" class="flex-child right"></div>
+		</div>
+		<label for="mincount">
+			Minimum count
+			<input id="minCount" type="text" size="3" value="0" />
+		</label>
+		<script src="js/counter.js"></script>
+	</body>
+</html>
