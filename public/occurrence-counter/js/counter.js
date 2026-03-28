@@ -1,40 +1,65 @@
+const dataEl = document.getElementById('data');
+const minCountEl = document.getElementById('minCount');
+const resultsEl = document.getElementById('results');
 let minResults = 0;
+
 function calculate() {
-	const data = document.getElementById('data').value;
-	const list = data.split(determineDelimiter(data));
+	const value = dataEl.value;
+	const list = value.split(determineDelimiter(value));
 
-	const countedItems = new Map();
-	list.forEach(function (item, index) {
-		countedItems.set(item, (countedItems.get(item) || 0) + 1);
-	});
-	const sortedMap = new Map([...countedItems.entries()].sort());
+	const counts = new Map();
+	for (let i = 0, len = list.length; i < len; i++) {
+		const item = list[i];
+		counts.set(item, (counts.get(item) || 0) + 1);
+	}
 
-	let result = '';
-	sortedMap.forEach(function (value, key) {
-		if (value >= minResults) {
-			result += key + ' - ' + value + '<br>';
+	const keys = Array.from(counts.keys()).sort();
+	const output = [];
+	for (let i = 0, len = keys.length; i < len; i++) {
+		const key = keys[i];
+		const count = counts.get(key);
+		if (count >= minResults) {
+			output.push(key + ' - ' + count);
 		}
-	});
-	document.getElementById('results').innerHTML = result;
+	}
+
+	resultsEl.innerHTML = output.join('<br>');
 }
 
-function determineDelimiter(data) {
-	const returnCount = data.split('\n').length;
-	const commaCount = data.split(',').length;
-	const pipeCount = data.split('|').length;
+function determineDelimiter(value) {
+	let newline = 1;
+	let comma = 1;
+	let pipe = 1;
 
-	if (returnCount > commaCount && returnCount > pipeCount) {
+	for (let i = 0, len = value.length; i < len; i++) {
+		switch (value[i]) {
+			case '\n':
+				newline++;
+				break;
+			case ',':
+				comma++;
+				break;
+			case '|':
+				pipe++;
+				break;
+		}
+	}
+
+	if (newline > comma && newline > pipe) {
 		return '\n';
-	} else if (commaCount > pipeCount) {
+	}
+	if (comma > pipe) {
 		return ',';
 	}
 	return '|';
 }
 
-document.getElementById('data').addEventListener('keyup', function () {
-	calculate();
-});
-document.getElementById('minCount').addEventListener('input', function () {
-	minResults = document.getElementById('minCount').value;
+function updateMinResults() {
+	minResults = +minCountEl.value || 0;
+}
+
+dataEl.addEventListener('input', calculate);
+minCountEl.addEventListener('input', function () {
+	updateMinResults();
 	calculate();
 });
