@@ -24,7 +24,7 @@ The faster you can make the trial-and-error cycle work, the quicker you can find
 
 ## Less Data
 
-> You don’t always need more data. Usually, you need less.
+> You don't always need more data. Usually, you need less.
 
 > The more data we have, the more likely we are to drown in it. - Taleb
 

@@ -7,7 +7,7 @@ tags:
   - book review
 ---
 
-Our school district recently hosted a book club discussion on "The Anxious Generation" by Jonathan Haidt, and it was an eye-opening experience for me and many other parents. The book dives deep into how smartphones and social media have significantly impacted the mental health of today’s teens and tweens.
+Our school district recently hosted a book club discussion on "The Anxious Generation" by Jonathan Haidt, and it was an eye-opening experience for me and many other parents. The book dives deep into how smartphones and social media have significantly impacted the mental health of today's teens and tweens.
 
 Haidt presents four key proposals to address this crisis:
 
@@ -31,7 +31,7 @@ Here are some of my favorite quotes grouped by category
 
 > Social media therefore harmed the social lives even of students who stayed away from it. (My added context: students felt left out if they weren't on a social media app)
 
-> Compared with boys, when girls go onto social media, they are subjected to more severe and constant judgments about their looks and their bodies, and they’re confronted with beauty standards that are further out of reach.
+> Compared with boys, when girls go onto social media, they are subjected to more severe and constant judgments about their looks and their bodies, and they're confronted with beauty standards that are further out of reach.
 
 ## Free play
 
@@ -49,10 +49,10 @@ Here are some of my favorite quotes grouped by category
 
 > If a child goes through puberty doing a lot of archery, or painting, or video games, or social media, the activities will cause lasting structural changes in the brain, especially if they are rewarding.
 
-> Natural sleep patterns shift during puberty. Teens start to go to bed later, but because their weekday mornings are dictated by school start times, they can’t sleep later. Rather, most teens just get less sleep than their brains and bodies need. This is a shame because sleep is vital for good performance in school and life, particularly during puberty, when the brain is rewiring itself even faster than it did in the years before puberty.
+> Natural sleep patterns shift during puberty. Teens start to go to bed later, but because their weekday mornings are dictated by school start times, they can't sleep later. Rather, most teens just get less sleep than their brains and bodies need. This is a shame because sleep is vital for good performance in school and life, particularly during puberty, when the brain is rewiring itself even faster than it did in the years before puberty.
 
 ## Friendships
 
-> All know that they will be chosen or passed over based in part on their appearance. But for adolescent girls, the stakes are higher because a girl’s social standing is usually more closely tied to her beauty and sex appeal than is the case for boys.
+> All know that they will be chosen or passed over based in part on their appearance. But for adolescent girls, the stakes are higher because a girl's social standing is usually more closely tied to her beauty and sex appeal than is the case for boys.
 
-> The happiest girls “aren’t the ones who have the most friendships but the ones who have strong, supportive friendships, even if that means having a single terrific friend.”
+> The happiest girls “aren't the ones who have the most friendships but the ones who have strong, supportive friendships, even if that means having a single terrific friend.”
