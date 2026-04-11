@@ -30,6 +30,6 @@ A while after implementing this I ran into an error where the first line was abo
 
 ```css
 pre {
-	white-space: pre-wrap;
+  white-space: pre-wrap;
 }
 ```

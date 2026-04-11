@@ -21,7 +21,7 @@ Add an empty form to your page that posts to your controller action
 
 ```html
 <form id="myForm" method="post" action="/csvExport">
-	<input id="reportData" type="hidden" name="policyDetails" />
+  <input id="reportData" type="hidden" name="policyDetails" />
 </form>
 ```
 
@@ -29,10 +29,10 @@ JavaScript to grab the HTML
 
 ```javascript
 document.getElementById('download').onclick = function () {
-	let theData = document.getElementById('reportData');
-	// this gets the first table on the screen and pulls the HTML, but you can target by id, class, etc
-	theData.value = document.getElementsByClassName('table')[0].outerHTML;
-	document.getElementById('myForm').submit();
+  let theData = document.getElementById('reportData');
+  // this gets the first table on the screen and pulls the HTML, but you can target by id, class, etc
+  theData.value = document.getElementsByClassName('table')[0].outerHTML;
+  document.getElementById('myForm').submit();
 };
 ```
 

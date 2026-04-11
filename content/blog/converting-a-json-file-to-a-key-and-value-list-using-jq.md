@@ -10,8 +10,8 @@ Given a JSON file named `data.json`
 
 ```json
 {
-	"name": "Matt",
-	"job": "Engineer"
+  "name": "Matt",
+  "job": "Engineer"
 }
 ```
 

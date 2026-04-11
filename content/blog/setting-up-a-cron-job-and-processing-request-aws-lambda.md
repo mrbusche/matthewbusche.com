@@ -23,7 +23,7 @@ myFunction:
 
 ```javascript
 if (event['detail-type'] === 'Scheduled Event') {
-	console.log('cron triggered');
-	return await somethingThatWasScheduled(event);
+  console.log('cron triggered');
+  return await somethingThatWasScheduled(event);
 }
 ```

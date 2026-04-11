@@ -13,7 +13,7 @@ My latest project was moving a bunch of applications from running on WebSphere u
 
 ```html
 <bean id="environment" class="org.springframework.jndi.JndiObjectFactoryBean">
-	<property name="jndiName" value="java:comp/env/string/nw/environment" />
+  <property name="jndiName" value="java:comp/env/string/nw/environment" />
 </bean>
 ```
 
