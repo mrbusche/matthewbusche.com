@@ -1,201 +1,201 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="description" content="Random Order Generator" />
-		<meta name="author" content="Matt Busche" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<style>
-			*,
-			*::after,
-			*::before {
-				box-sizing: border-box;
-			}
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Random Order Generator" />
+    <meta name="author" content="Matt Busche" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
 
-			html {
-				font-family: sans-serif;
-				line-height: 1.15;
-				-webkit-text-size-adjust: 100%;
-				-ms-text-size-adjust: 100%;
-				-ms-overflow-style: scrollbar;
-				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-			}
+      html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        -ms-overflow-style: scrollbar;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
 
-			body,
-			html {
-				height: 100%;
-			}
-			.content {
-				flex: 1 0 auto;
-			}
-			.footer {
-				flex-shrink: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				padding: 1rem;
-				background-color: #efefef;
-				text-align: center;
-			}
+      body,
+      html {
+        height: 100%;
+      }
+      .content {
+        flex: 1 0 auto;
+      }
+      .footer {
+        flex-shrink: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        background-color: #efefef;
+        text-align: center;
+      }
 
-			body {
-				display: flex;
-				flex-direction: column;
-				margin: 0;
-				font-family:
-					-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-					'Segoe UI Symbol', 'Noto Color Emoji';
-				font-size: 1rem;
-				font-weight: 400;
-				line-height: 1.5;
-				color: #212529;
-				text-align: left;
-				background-color: #fff;
-			}
+      body {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+          'Segoe UI Symbol', 'Noto Color Emoji';
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: left;
+        background-color: #fff;
+      }
 
-			[tabindex='-1']:focus {
-				outline: 0 !important;
-			}
+      [tabindex='-1']:focus {
+        outline: 0 !important;
+      }
 
-			img {
-				vertical-align: middle;
-				border-style: none;
-			}
+      img {
+        vertical-align: middle;
+        border-style: none;
+      }
 
-			label {
-				display: inline-block;
-				margin-bottom: 0.5rem;
-			}
+      label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
 
-			textarea {
-				margin: 0;
-				font-family: inherit;
-				font-size: inherit;
-				line-height: inherit;
-				overflow: auto;
-				resize: vertical;
-			}
+      textarea {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        overflow: auto;
+        resize: vertical;
+      }
 
-			h1 {
-				margin-bottom: 0.5rem;
-				margin-top: 0;
-				font-family: inherit;
-				font-weight: 500;
-				line-height: 1.2;
-				color: inherit;
-				font-size: 2.5rem;
-			}
+      h1 {
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.2;
+        color: inherit;
+        font-size: 2.5rem;
+      }
 
-			.container-fluid {
-				width: 100%;
-				padding-right: 15px;
-				padding-left: 15px;
-				margin-right: auto;
-				margin-left: auto;
-			}
+      .container-fluid {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+      }
 
-			.form-control {
-				display: block;
-				width: 100%;
-				padding: 0.375rem 0.75rem;
-				font-size: 1rem;
-				line-height: 1.5;
-				background-color: #fff;
-				background-clip: padding-box;
-				border: 1px solid #ced4da;
-				border-radius: 0.25rem;
-				transition:
-					border-color 0.15s ease-in-out,
-					box-shadow 0.15s ease-in-out;
-				color: #6c757d;
-				opacity: 1;
-				height: auto;
-			}
+      .form-control {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition:
+          border-color 0.15s ease-in-out,
+          box-shadow 0.15s ease-in-out;
+        color: #6c757d;
+        opacity: 1;
+        height: auto;
+      }
 
-			.d-none {
-				display: none;
-			}
-		</style>
-		<title>Random Order Generator</title>
-	</head>
+      .d-none {
+        display: none;
+      }
+    </style>
+    <title>Random Order Generator</title>
+  </head>
 
-	<body>
-		<div class="content container-fluid">
-			<div>
-				<h1>Paste a list to generate a random order</h1>
-				<textarea
-					id="teams"
-					name="teams"
-					placeholder="Paste items separated by a line break"
-					rows="5"
-					class="form-control"
-					autofocus
-				></textarea>
-				<h1 id="title" class="d-none">Here is your randomly ordered list.</h1>
-				<ol id="randomList"></ol>
-			</div>
-		</div>
-		<footer class="footer">
-			Created by <a href="https://mrbusche.com" target="_blank" rel="noopener noreferrer">Matt Busche</a>
-			<a href="https://twitter.com/mrbusche" target="_blank" rel="noopener noreferrer">
-				<img
-					alt="twitter"
-					src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAS1BMVEUdofL///8aoPEKmfEVnvERnPEDlvDx+f6n2vpcvPWAyvdEsfTj8/3d8P3a7/zD5vu74/ut3fqg1/mS0fiGzPh8yPdRt/QyqfMAlPCGNm7pAAAAcklEQVQY063Oyw7DMAhEUWDAsZO+3///pW2RmHTf3IUXR9YI2S4z+ckt3+YtgjZgn3dRnca1FLsD4NBvp9pAV72JJ3I3hrJXbeJM24On4Fg4h1TohbD1aPQpbQmayHNOe0CIfs9/Fw9Zs0AzNO7RjfJ/b/csAlhCi+ExAAAAAElFTkSuQmCC"
-			/></a>
-			<a
-				href="https://github.com/mrbusche/matthewbusche.com/tree/main/public/random-order-generator"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<img
-					alt="github"
-					src="
+  <body>
+    <div class="content container-fluid">
+      <div>
+        <h1>Paste a list to generate a random order</h1>
+        <textarea
+          id="teams"
+          name="teams"
+          placeholder="Paste items separated by a line break"
+          rows="5"
+          class="form-control"
+          autofocus
+        ></textarea>
+        <h1 id="title" class="d-none">Here is your randomly ordered list.</h1>
+        <ol id="randomList"></ol>
+      </div>
+    </div>
+    <footer class="footer">
+      Created by <a href="https://mrbusche.com" target="_blank" rel="noopener noreferrer">Matt Busche</a>
+      <a href="https://twitter.com/mrbusche" target="_blank" rel="noopener noreferrer">
+        <img
+          alt="twitter"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAS1BMVEUdofL///8aoPEKmfEVnvERnPEDlvDx+f6n2vpcvPWAyvdEsfTj8/3d8P3a7/zD5vu74/ut3fqg1/mS0fiGzPh8yPdRt/QyqfMAlPCGNm7pAAAAcklEQVQY063Oyw7DMAhEUWDAsZO+3///pW2RmHTf3IUXR9YI2S4z+ckt3+YtgjZgn3dRnca1FLsD4NBvp9pAV72JJ3I3hrJXbeJM24On4Fg4h1TohbD1aPQpbQmayHNOe0CIfs9/Fw9Zs0AzNO7RjfJ/b/csAlhCi+ExAAAAAElFTkSuQmCC"
+      /></a>
+      <a
+        href="https://github.com/mrbusche/matthewbusche.com/tree/main/public/random-order-generator"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          alt="github"
+          src="
       data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAe1BMVEX///8WFBUUEhMLCQoHBAYAAAAQDQ8iICG0srOFg4RoZ2dxcHAvLS75+fn29vaCgIFfXV5GREUtKywpJyj8/PzPzs6TkpJjY2NYV1dMS0sZFxjn5+fd3d3Z2NjV1NXGxsbGxca6ubqwsLA0MzQdGx2cnJx7enp3dnZvbm+Alsl1AAAA0ElEQVQY013O13KDMBBA0a2SAAE2mOpeUv7/C7NDNFYm5/GupBVsmjBFxDiFBt6CZyZEYvYBklIdJk7L1ISIkQwykWw1KM/nSsV70eo8swbb4Z2M8DaK8w08GKXKsRLkB+yY1iHHYSXeQUduD3/sHXWAaJPMbiJa/H/SYiTq6tzqjihCySRFjgUjl3AX/9TieABzOBZCyHeA/jVMSovVelmtud7GV33B3I/p50h6BdPqN/yuahlJ2vS49svHFsXlpZeoX2A+9XmB7HYCc7rB5geYUQlDWYO9BgAAAABJRU5ErkJggg=="
-			/></a>
-		</footer>
-	</body>
-	<script>
-		const teamsEl = document.getElementById('teams');
-		const titleEl = document.getElementById('title');
-		const randomListEl = document.getElementById('randomList');
+      /></a>
+    </footer>
+  </body>
+  <script>
+    const teamsEl = document.getElementById('teams');
+    const titleEl = document.getElementById('title');
+    const randomListEl = document.getElementById('randomList');
 
-		teamsEl.addEventListener('input', generateRandomOrder);
+    teamsEl.addEventListener('input', generateRandomOrder);
 
-		function generateRandomOrder() {
-			const value = teamsEl.value;
-			if (!value) {
-				titleEl.classList.add('d-none');
-				randomListEl.textContent = '';
-				return;
-			}
+    function generateRandomOrder() {
+      const value = teamsEl.value;
+      if (!value) {
+        titleEl.classList.add('d-none');
+        randomListEl.textContent = '';
+        return;
+      }
 
-			const items = value.split('\n');
-			const shuffled = shuffle(items);
-			const fragment = document.createDocumentFragment();
+      const items = value.split('\n');
+      const shuffled = shuffle(items);
+      const fragment = document.createDocumentFragment();
 
-			for (let i = 0, len = shuffled.length; i < len; i++) {
-				const li = document.createElement('li');
-				li.textContent = shuffled[i];
-				fragment.appendChild(li);
-			}
+      for (let i = 0, len = shuffled.length; i < len; i++) {
+        const li = document.createElement('li');
+        li.textContent = shuffled[i];
+        fragment.appendChild(li);
+      }
 
-			randomListEl.textContent = '';
-			randomListEl.appendChild(fragment);
-			titleEl.classList.remove('d-none');
-		}
+      randomListEl.textContent = '';
+      randomListEl.appendChild(fragment);
+      titleEl.classList.remove('d-none');
+    }
 
-		function shuffle(array) {
-			let currentIndex = array.length;
-			let randomIndex;
-			while (currentIndex > 1) {
-				randomIndex = Math.floor(Math.random() * currentIndex);
-				currentIndex -= 1;
-				const temporaryValue = array[currentIndex];
-				array[currentIndex] = array[randomIndex];
-				array[randomIndex] = temporaryValue;
-			}
-			return array;
-		}
-	</script>
+    function shuffle(array) {
+      let currentIndex = array.length;
+      let randomIndex;
+      while (currentIndex > 1) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        const temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+    }
+  </script>
 </html>

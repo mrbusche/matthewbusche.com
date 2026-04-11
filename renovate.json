@@ -1,6 +1,6 @@
 {
-	"extends": ["config:recommended"],
-	"assignees": ["@mrbusche"],
-	"ignoreUnstable": false,
-	"ignorePaths": ["p/reveal/package.json"]
+  "extends": ["config:recommended"],
+  "assignees": ["@mrbusche"],
+  "ignoreUnstable": false,
+  "ignorePaths": ["p/reveal/package.json"]
 }
