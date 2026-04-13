@@ -41,7 +41,7 @@
     "html-minifier-terser": "7.2.0",
     "luxon": "3.7.2",
     "oxfmt": "0.44.0",
-    "oxlint": "1.59.0",
+    "oxlint": "1.60.0",
     "prismjs": "1.30.0",
     "zod": "4.3.6",
     "zod-validation-error": "5.0.0"
