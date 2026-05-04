@@ -5,7 +5,7 @@ export default function (data) {
   // Draft content, validate `draft` front matter
   let result = z
     .object({
-      draft: z.boolean().or(z.undefined()),
+      draft: z.boolean().optional(),
     })
     .safeParse(data);
 
