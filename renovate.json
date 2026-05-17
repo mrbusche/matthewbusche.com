@@ -1,6 +1,25 @@
 {
   "extends": ["config:recommended"],
+  "timezone": "America/Chicago",
+  "schedule": ["on friday after 9am and before 5pm"],
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "enabled": true
+    },
+    {
+      "matchManagers": ["nvm"],
+      "matchFileNames": [".nvmrc"],
+      "enabled": true
+    },
+    {
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
+      "groupName": "all dependencies",
+      "groupSlug": "all"
+    }
+  ],
   "assignees": ["@mrbusche"],
   "ignoreUnstable": false,
-  "ignorePaths": ["p/reveal/package.json"]
+  "ignorePaths": ["p/reveal/package.json"],
+  "commitMessagePrefix": "chore(deps): "
 }
