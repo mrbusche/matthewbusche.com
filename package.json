@@ -40,8 +40,8 @@
     "cross-env": "10.1.0",
     "html-minifier-terser": "7.2.0",
     "luxon": "3.7.2",
-    "oxfmt": "0.52.0",
-    "oxlint": "1.67.0",
+    "oxfmt": "0.53.0",
+    "oxlint": "1.68.0",
     "prismjs": "1.30.0",
     "zod": "4.4.3",
     "zod-validation-error": "5.0.0"
